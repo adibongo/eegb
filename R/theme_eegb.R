@@ -11,7 +11,7 @@ suppressPackageStartupMessages({
 })
 
 # Lagos Business School deck palette (matches the slides and the Python style)
-eegb <- c(navy = "#141B4D", teal = "#0B5E82", teal2 = "#1C7293", gold = "#D99A2B",
+eegb <- c(navy = "#122867", teal = "#0A6AA1", teal2 = "#0088C7", gold = "#D99A2B",
          rust = "#B5541A", slate = "#5C6B7A", ink = "#1A2233", light = "#F3F6F9",
          grid = "#E1E7EE", olive = "#8C8A4E", sky = "#7FB3C8")
 eegb_palette <- unname(eegb[c("teal", "gold", "navy", "rust", "teal2", "olive", "sky", "slate")])

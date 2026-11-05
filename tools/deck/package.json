@@ -3,7 +3,8 @@
   "private": true,
   "description": "Builds the EEGB teaching decks: node build.js all",
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "pptxgenjs": "^4.0.1",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.5"
   }
 }

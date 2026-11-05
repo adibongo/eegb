@@ -14,7 +14,7 @@ matplotlib.use("Agg")            # draws to files; works in RStudio, terminals a
 import matplotlib.pyplot as plt
 
 # Lagos Business School deck palette (matches the slides and the R theme)
-NAVY, TEAL, TEAL2, GOLD = "#141B4D", "#0B5E82", "#1C7293", "#D99A2B"
+NAVY, TEAL, TEAL2, GOLD = "#122867", "#0A6AA1", "#0088C7", "#D99A2B"
 RUST, SLATE, INK, LIGHT, GRID = "#B5541A", "#5C6B7A", "#1A2233", "#F3F6F9", "#E1E7EE"
 OLIVE, SKY = "#8C8A4E", "#7FB3C8"
 PALETTE = [TEAL, GOLD, NAVY, RUST, TEAL2, OLIVE, SKY, SLATE]
