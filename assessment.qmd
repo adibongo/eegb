@@ -1,0 +1,39 @@
+---
+title: "Assessment"
+subtitle: "How your grade is built — and how to do well"
+---
+
+| Component | Weight | What it involves |
+|---|---|---|
+| **Class participation** (in-person + online) | 30% | Cold calls, in-class problem-solving, polls and short reaction notes |
+| **Short quizzes / polls** | 10% | Pre-class checks on the readings |
+| **Practice-based assignment** | 20% | Case analysis or policy brief; data labs (FRED / IMF / CBN / NBS / World Bank); a country or industry macro policy memo |
+| **Final exam** | 40% | On-site, closed-book examination |
+
+## Practice-based assignments
+
+- **Data Lab Pack** — two short labs, one graded, using FRED, IMF, CBN, NBS or World Bank data. Every session's lab on this site is good practice.
+- **Case brief** — competition in platform markets ([Session 4](sessions/s04/index.qmd)) or supply-chain redesign ([Session 12](sessions/s12/index.qmd)).
+- **Policy memo** — a country or sector macro strategy: a risk assessment plus an actionable playbook. Nigeria / Africa relevance is strongly encouraged. See the memo template in [Session 16](sessions/s16/index.qmd).
+
+## How to do well in participation
+
+1. **Read the case before class** and decide what you would recommend.
+2. **Bring a number** — from the readings, the datasets or your own company.
+3. **Answer the question asked**, then give your reasoning.
+4. **Build on classmates** — agree, disagree or add evidence.
+
+## The final exam
+
+Closed-book, in class. Expect short cases that ask you to trace how a shock travels through the economy to a business, do simple calculations (real vs nominal, elasticity, debt dynamics, duration, the cost of a dollar loan), and make a recommendation. Practice questions are in [Session 16](sessions/s16/index.qmd).
+
+## Facilitators
+
+| Facilitator | Sessions |
+|---|---|
+| **Prof. Bongo Adi** (course lead) — badi@lbs.edu.ng | 1, 2, 6, 7, 12, 13, 16 |
+| **Kelechi Nnamdi** | 3, 4, 5, 12, 13, 16 |
+| **Elvis Ozegbe** | 8, 9, 10, 11, 16 |
+| **Sumendra Dash** (guest) | 14, 15 |
+
+Consultation with Prof. Bongo Adi is by appointment.

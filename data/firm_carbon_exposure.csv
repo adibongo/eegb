@@ -1,0 +1,41 @@
+firm_id,sector,revenue_ngn_bn,ebitda_ngn_bn,scope1_kt_co2e,scope2_kt_co2e,eu_export_share,publishes_tcfd
+CEME01,Cement,1027.8,392.6,739.3,44.2,0.115,0
+CEME02,Cement,558.1,163.9,479.2,23.5,0.121,1
+CEME03,Cement,493.0,205.3,558.3,19.2,0.097,0
+CEME04,Cement,497.8,179.5,329.2,25.9,0.116,0
+CEME05,Cement,553.0,246.9,363.9,23.7,0.105,0
+CEME06,Cement,987.3,363.1,702.7,44.1,0.103,1
+OIL01,Oil & gas upstream,802.5,355.7,317.0,26.2,0.061,0
+OIL02,Oil & gas upstream,1601.3,789.3,655.3,83.3,0.043,0
+OIL03,Oil & gas upstream,2189.4,1008.4,1230.2,70.8,0.07,0
+OIL04,Oil & gas upstream,1135.5,483.8,776.3,37.4,0.041,0
+OIL05,Oil & gas upstream,1320.4,597.1,763.7,56.3,0.044,0
+POWE01,Power generation,636.8,194.6,781.2,18.4,0.0,1
+POWE02,Power generation,952.2,276.3,753.1,35.4,0.0,0
+POWE03,Power generation,557.8,160.3,630.3,14.5,0.0,0
+POWE04,Power generation,703.0,206.9,549.9,18.0,0.0,0
+BREW01,Breweries & beverages,699.4,150.1,51.2,23.4,0.02,0
+BREW02,Breweries & beverages,1200.4,217.2,73.2,36.3,0.024,0
+BREW03,Breweries & beverages,453.8,68.6,34.0,11.5,0.008,0
+BREW04,Breweries & beverages,541.9,84.4,28.5,20.1,0.016,0
+BREW05,Breweries & beverages,635.8,109.8,32.8,13.7,0.014,0
+BANK01,Banking,852.2,337.0,1.4,7.3,0.0,0
+BANK02,Banking,1105.2,471.4,2.8,17.8,0.0,1
+BANK03,Banking,1677.9,685.3,1.8,24.3,0.0,0
+BANK04,Banking,1611.3,628.7,4.1,15.6,0.0,1
+BANK05,Banking,1216.7,373.9,2.2,10.2,0.0,0
+BANK06,Banking,1244.1,431.8,2.7,8.1,0.0,1
+TELE01,Telecoms,1836.2,802.4,57.0,56.4,0.0,1
+TELE02,Telecoms,2284.2,1112.4,75.9,117.1,0.0,1
+TELE03,Telecoms,3339.9,1352.1,129.3,171.5,0.0,0
+AGRI01,Agribusiness,218.9,37.5,42.2,9.6,0.109,0
+AGRI02,Agribusiness,227.1,36.6,65.4,6.5,0.137,0
+AGRI03,Agribusiness,370.0,67.8,94.0,17.0,0.129,0
+AGRI04,Agribusiness,567.4,85.7,109.1,13.5,0.122,0
+AGRI05,Agribusiness,254.0,48.1,77.8,10.2,0.148,0
+STEE01,Steel & metals,248.0,41.8,156.0,11.7,0.23,1
+STEE02,Steel & metals,564.1,98.8,426.7,32.7,0.18,1
+STEE03,Steel & metals,158.7,29.5,110.2,6.8,0.236,0
+SOLA01,Solar & clean energy,97.7,22.3,0.7,3.0,0.0,1
+SOLA02,Solar & clean energy,201.9,44.7,1.6,9.0,0.0,1
+SOLA03,Solar & clean energy,192.2,42.2,1.9,8.1,0.0,0

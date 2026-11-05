@@ -1,0 +1,27 @@
+---
+title: "About this site"
+---
+
+**Economic Environment of Global Business (EEGB)** equips MBA students with a rigorous, applied understanding of how micro- and macroeconomic forces shape firm strategy, risk and performance in a world of technological disruption, policy shifts and geopolitical change — especially in Africa and Nigeria. This site supports the **MEMBA 14** programme at Lagos Business School, Pan-Atlantic University.
+
+## Design principles
+
+- **Managers first.** Every idea is explained in plain English, tied to a Nigerian business decision, and then computed.
+- **Two languages, one result.** Every chart and lab exists in both R and Python, so participants can use either inside RStudio.
+- **Reproducible.** All datasets are generated with fixed random seeds (`tools/make_data.py`); every slide figure has an ID (e.g. `S11-F06`) and a script that regenerates it.
+- **Honest about data.** The course datasets are stylised teaching data. Labs show how to fetch official series from the World Bank and FRED.
+- **Open.** Slides, data and code are public on [GitHub](https://github.com/adibongo/eegb).
+
+The site structure follows the course's sister site, [Data Analytics I](https://markanalytics.online/da1-mmba11/), which is modelled on PsyTeachR's [Hack Your Data Beautiful](https://psyteachr.github.io/hack-your-data/).
+
+## How the materials are built
+
+| Piece | Tool | Where |
+|---|---|---|
+| Datasets | Python (numpy, pandas) | `tools/make_data.py` → `data/` |
+| Figures | R (ggplot2) and Python (matplotlib) | `sessions/sNN/R/` and `sessions/sNN/python/` |
+| Slide decks | pptxgenjs (Lagos Business School template) | `tools/deck/` → `sessions/sNN/slides/` |
+| Hex logos | SVG drawn in Python, rendered with sharp | `tools/make_hex.py` → `assets/logos/` |
+| Website | Quarto | `*.qmd` → `docs/` |
+
+Facilitators: **Prof. Bongo Adi**, **Kelechi Nnamdi**, **Elvis Ozegbe** and **Sumendra Dash** (guest), Lagos Business School.

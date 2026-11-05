@@ -1,0 +1,11 @@
+country,gdp_per_capita_usd,gdp_per_capita_ppp,population_m,informal_share_gdp,real_growth_5y_avg,hdi
+Nigeria,1100,6300,230,0.57,2.9,0.55
+Ghana,2300,7300,34,0.38,3.1,0.6
+Kenya,2100,6100,56,0.33,4.6,0.6
+South Africa,6200,15800,63,0.18,0.8,0.72
+Egypt,3400,16800,114,0.3,3.8,0.73
+Côte d'Ivoire,2700,6900,30,0.4,6.0,0.55
+India,2600,10200,1440,0.45,6.8,0.65
+Indonesia,5000,15500,280,0.23,5.0,0.71
+Vietnam,4400,14300,100,0.25,6.0,0.73
+Brazil,10300,21000,212,0.29,3.0,0.76

@@ -1,0 +1,12 @@
+side,item,amount_ngn_bn,duration_years,rate_pct,fixed_rate_long
+asset,Cash & CBN reserves,1450,0.0,0.0,0
+asset,Treasury bills,620,0.4,17.0,0
+asset,FGN bonds (held to maturity),1850,7.5,13.0,1
+asset,Loans to corporates,2300,1.2,24.0,0
+asset,Loans to retail & SMEs,950,1.0,29.0,0
+asset,Fixed assets & other,330,0.0,0.0,0
+liability,Current & savings deposits,4600,0.3,4.0,0
+liability,Term deposits,1650,0.5,18.0,0
+liability,Interbank & CBN borrowing,450,0.1,26.0,0
+liability,Long-term borrowing,300,3.0,12.0,0
+equity,Shareholders' funds,750,0.0,0.0,0

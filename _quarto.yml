@@ -1,0 +1,99 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - setup.qmd
+    - pre-module.qmd
+    - intra-module.qmd
+    - assessment.qmd
+    - datasets.qmd
+    - about.qmd
+    - sessions/*/index.qmd
+  resources:
+    - data/*.csv
+    - assets/logos/*
+    - sessions/*/slides/*.pptx
+    - sessions/*/slides/*.pdf
+    - sessions/*/R/*.R
+    - sessions/*/python/*.py
+    - R/theme_eegb.R
+    - python/eegb_style.py
+    - tools/fetch_official_data.py
+    - tools/fetch_official_data.R
+    - install_packages.R
+    - requirements.txt
+
+website:
+  title: "EEGB · MEMBA 14"
+  site-url: "https://markanalytics.online/eegb/"
+  repo-url: "https://github.com/adibongo/eegb"
+  repo-actions: [source, issue]
+  favicon: assets/logos/eegb_hex_256.png
+  page-navigation: true
+  bread-crumbs: false
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    logo: assets/logos/eegb_hex_256.png
+    background: "#141B4D"
+    foreground: "#FFFFFF"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Setup"
+        href: setup.qmd
+      - text: "Before & between"
+        menu:
+          - {text: "Pre-module", href: pre-module.qmd}
+          - {text: "Intra-module online sessions", href: intra-module.qmd}
+          - {text: "Assessment", href: assessment.qmd}
+      - text: "Part I"
+        menu:
+          - {text: "1 · Data Literacy for Managers", href: sessions/s01/index.qmd}
+          - {text: "2 · Demand, Supply & Elasticity", href: sessions/s02/index.qmd}
+          - {text: "3 · Forecasting & Market Sizing", href: sessions/s03/index.qmd}
+          - {text: "4 · Market Structure & Platforms", href: sessions/s04/index.qmd}
+          - {text: "5 · Market Failures", href: sessions/s05/index.qmd}
+      - text: "Part II"
+        menu:
+          - {text: "6 · AD–AS & Inflation", href: sessions/s06/index.qmd}
+          - {text: "7 · National Accounts", href: sessions/s07/index.qmd}
+          - {text: "8 · Monetary Policy", href: sessions/s08/index.qmd}
+          - {text: "9 · Fiscal Policy & Debt", href: sessions/s09/index.qmd}
+          - {text: "10 · Financial Stability", href: sessions/s10/index.qmd}
+      - text: "Part III"
+        menu:
+          - {text: "11 · Exchange Rates & Capital Flows", href: sessions/s11/index.qmd}
+          - {text: "12 · Trade & Industrial Policy", href: sessions/s12/index.qmd}
+      - text: "Part IV"
+        menu:
+          - {text: "13 · Climate & Energy Transition", href: sessions/s13/index.qmd}
+          - {text: "14 · Country Risk & Scenarios", href: sessions/s14/index.qmd}
+          - {text: "15 · Hedging & Resilience", href: sessions/s15/index.qmd}
+          - {text: "16 · Capstone & Review", href: sessions/s16/index.qmd}
+      - text: "Datasets"
+        href: datasets.qmd
+    right:
+      - icon: github
+        href: https://github.com/adibongo/eegb
+        aria-label: GitHub
+  page-footer:
+    left: "Economic Environment of Global Business · MEMBA 14 · Lagos Business School"
+    right: "Prof. Bongo Adi · [About](/about.qmd) · Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    toc: true
+    toc-depth: 2
+    toc-title: "On this page"
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    anchor-sections: true
+    smooth-scroll: true
+    lightbox: true
+    mainfont: "Lato"
+    link-external-newwindow: true

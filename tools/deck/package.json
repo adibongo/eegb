@@ -1,0 +1,9 @@
+{
+  "name": "eegb-deck-builder",
+  "private": true,
+  "description": "Builds the EEGB teaching decks: node build.js all",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1",
+    "sharp": "^0.33.0"
+  }
+}

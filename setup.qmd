@@ -1,0 +1,99 @@
+---
+title: "Setup"
+subtitle: "Get R, Python and the course materials running in RStudio — about 30 minutes, once"
+---
+
+::: {.callout-note appearance="simple"}
+**Coding is optional in EEGB.** You can follow every session from the slides and this site. The R and Python labs are there for anyone who wants to work with the data — and they make the Data Lab Pack much easier. If you have never coded, start with **R**. Do this setup **before Session 1**.
+:::
+
+## Step 1 · Install R and RStudio
+
+1. Install **R** from [cran.r-project.org](https://cran.r-project.org/) (Windows: "Download R for Windows → base"; Mac: choose the Apple silicon or Intel `.pkg`).
+2. Install **RStudio Desktop** (free) from [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop/).
+3. Open RStudio. The **Console** (bottom left) should show R version 4.3 or higher.
+
+::: {.callout-tip appearance="simple"}
+**No admin rights on a work laptop?** Use [Posit Cloud](https://posit.cloud/) in your browser and upload the course ZIP into a new project.
+:::
+
+## Step 2 · Install Python (only if you will use Python)
+
+1. Install **Python 3.10 or newer** from [python.org/downloads](https://www.python.org/downloads/). On Windows, tick **"Add Python to PATH"**.
+2. In RStudio: **Tools → Global Options → Python → Select…** and choose the Python you installed.
+3. Open any `.py` file and press **Ctrl + Enter** (Mac: **Cmd + Enter**) to run a line.
+
+## Step 3 · Get the course materials
+
+- **Easiest:** go to the [GitHub repository](https://github.com/adibongo/eegb), click **Code → Download ZIP**, and unzip it (e.g. to `Documents/eegb`).
+- **With Git:** in RStudio, **File → New Project → Version Control → Git**, and paste `https://github.com/adibongo/eegb.git`.
+
+Then double-click **`eegb.Rproj`** to open the project.
+
+::: {.callout-important appearance="simple"}
+**Always open `eegb.Rproj` first.** It sets the working directory to the project root, where every script expects the `data/` folder.
+:::
+
+## Step 4 · Install the packages
+
+**R** — in the Console:
+
+```r
+source("install_packages.R")
+```
+
+**Python** — in the RStudio **Terminal** tab:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Step 5 · Check that everything works
+
+::: {.panel-tabset group="lang"}
+## Python
+```bash
+python sessions/s01/python/s01_figures.py
+```
+
+## R
+```r
+source("sessions/s01/R/s01_figures.R")
+```
+:::
+
+You should see lines like `saved sessions/s01/figures/r/s01_f01.png`. Open the file: it is the same chart as on the Session 1 slides. **You're ready.**
+
+## Optional · Download official data
+
+The course datasets are stylised. To pull real series (World Bank indicators for Nigeria and peers, and US series from FRED):
+
+::: {.panel-tabset group="lang"}
+## Python
+```bash
+python tools/fetch_official_data.py
+```
+
+## R
+```r
+source("tools/fetch_official_data.R")
+```
+:::
+
+The files are saved in `data/official/`. You need an internet connection.
+
+## How the repository is organised
+
+```
+eegb/
+├── eegb.Rproj                ← open this first
+├── data/                     ← every dataset (CSV)
+├── sessions/
+│   └── s01 … s16/
+│       ├── slides/           ← teaching deck (.pptx and .pdf)
+│       ├── R/  python/       ← figure scripts and labs
+│       └── figures/          ← charts the scripts produce
+├── R/theme_eegb.R            ← shared R chart style
+├── python/eegb_style.py      ← shared Python chart style
+└── tools/                    ← data, logo, deck and website builders
+```

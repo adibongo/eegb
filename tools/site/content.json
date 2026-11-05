@@ -1,0 +1,3591 @@
+{
+ "s01": {
+  "objectives": [
+   {
+    "title": "Think Like an Economist",
+    "body": "Use incentives, opportunity cost and marginal thinking to frame a business decision."
+   },
+   {
+    "title": "Read Official Data",
+    "body": "Find, read and question CBN, NBS, IMF and FRED data — levels, rates of change, breaks and revisions."
+   },
+   {
+    "title": "Build a Macro Dashboard",
+    "body": "Choose the few numbers your board should watch and present them clearly every month."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s01/figures/python/s01_f01.png",
+    "id": "S01-F01",
+    "title": "Headline, Food and Core Inflation",
+    "kicker": "INFLATION",
+    "points": [
+     "Headline inflation covers everything in the basket; food is about half of a Nigerian household budget.",
+     "Core removes volatile farm produce and energy — a better guide to underlying pressure.",
+     "Inflation climbed from about 22% to 34% after the mid-2023 reforms.",
+     "In January 2025 the CPI was rebased: the sudden drop is partly a change of yardstick, not only a change in prices."
+    ]
+   },
+   {
+    "img": "sessions/s01/figures/python/s01_f02.png",
+    "id": "S01-F02",
+    "title": "Two Prices for One Dollar",
+    "kicker": "THE EXCHANGE RATE",
+    "points": [
+     "For years the official rate and the parallel market rate differed — at times by more than 100%.",
+     "A big premium is a signal of rationing: dollars are scarce at the official price.",
+     "Firms that could not access official dollars paid the parallel price — and priced their goods off it.",
+     "After the 2023–24 unification the gap almost closed, at a much weaker naira."
+    ]
+   },
+   {
+    "img": "sessions/s01/figures/python/s01_f03.png",
+    "id": "S01-F03",
+    "title": "Strong Correlations Can Mislead",
+    "kicker": "CORRELATION IS NOT CAUSATION",
+    "points": [
+     "Credit growth and inflation move closely together (r = 0.82) — but both jumped after the 2023 devaluation, which revalued dollar loans and raised prices.",
+     "The oil price and reserves have a weak correlation (r = 0.31), yet the causal channel is clear: oil earnings supply most of Nigeria's dollars.",
+     "Correlation strength tells you how tightly two series move, not whether one causes the other.",
+     "Ask: is there a third factor, a time lag, or reverse causation?"
+    ]
+   },
+   {
+    "img": "sessions/s01/figures/python/s01_f05.png",
+    "id": "S01-F05",
+    "title": "Did Savers Beat Inflation?",
+    "kicker": "THE REAL INTEREST RATE",
+    "points": [
+     "Real rate = policy rate − inflation.",
+     "For most of 2015–2024 it was negative: money in the bank lost purchasing power.",
+     "Negative real rates push savers into dollars, property and stocks — and weaken the naira.",
+     "In 2025 the real rate turned clearly positive, helped by rate hikes — and by the CPI rebasing."
+    ]
+   },
+   {
+    "img": "sessions/s01/figures/python/s01_f06.png",
+    "id": "S01-F06",
+    "title": "The PMI as a Nowcast",
+    "kicker": "AN EARLY SIGNAL",
+    "points": [
+     "The Purchasing Managers' Index asks firms whether output, orders and employment are up or down.",
+     "It is published within days of the month's end.",
+     "Shaded periods: the PMI dropped below 50 in every downturn.",
+     "Use it alongside your own sales data, not instead of it."
+    ]
+   },
+   {
+    "img": "sessions/s01/figures/python/s01_f04.png",
+    "id": "S01-F04",
+    "title": "Six Numbers on One Page",
+    "kicker": "THE DASHBOARD",
+    "points": [
+     "Each panel: latest value, the trend over three years and the change on a year ago.",
+     "Inflation, policy rate, exchange rate, oil price, reserves and PMI cover prices, money, the currency and activity.",
+     "Same layout every month, so directors see change at a glance.",
+     "Add one line of 'so what' under each number for your business."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Economics is a management tool: incentives, opportunity cost and marginal thinking frame every decision.",
+    "Always separate nominal from real and naira from dollars.",
+    "Know your sources, and check for rebasing, revisions and multiple rates.",
+    "Correlation is not causation: look for third factors, lags and reverse causation.",
+    "A good board dashboard is short, consistent and tied to a 'so what'."
+   ],
+   "prework": "Re-read the Note on Microeconomics for Managers, sections on demand, supply and elasticity. Bring one price your company changed in the last year and what happened to volumes.",
+   "next": "Session 2: Demand, Supply & Elasticity"
+  },
+  "glossary": [
+   {
+    "term": "Opportunity cost",
+    "def": "The value of the best alternative you give up."
+   },
+   {
+    "term": "Marginal",
+    "def": "The extra benefit or cost of one more unit."
+   },
+   {
+    "term": "Nominal",
+    "def": "Measured in current prices, including inflation."
+   },
+   {
+    "term": "Real",
+    "def": "Adjusted for inflation; shows volume or purchasing power."
+   },
+   {
+    "term": "Headline inflation",
+    "def": "Year-on-year change in the full consumer price index."
+   },
+   {
+    "term": "Core inflation",
+    "def": "Inflation excluding volatile items such as farm produce and energy."
+   },
+   {
+    "term": "Rebasing",
+    "def": "Updating the base year and basket of an index; breaks comparisons."
+   },
+   {
+    "term": "FX premium",
+    "def": "Gap between the parallel and official exchange rates."
+   },
+   {
+    "term": "Real interest rate",
+    "def": "Nominal interest rate minus inflation."
+   },
+   {
+    "term": "Nowcasting",
+    "def": "Estimating current activity from fast, timely signals."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Build the Board's Macro Page",
+   "time": "15 minutes",
+   "data": "data/ng_macro_monthly.csv",
+   "r": "sessions/s01/R/s01_lab.R",
+   "py": "sessions/s01/python/s01_lab.py",
+   "steps": [
+    "Load the data and look at the latest three months before calculating anything.",
+    "Build a table of six indicators: latest value, value a year ago, and the change.",
+    "Add two derived numbers: the real policy rate and the FX premium.",
+    "Compare inflation before and after the CPI rebasing.",
+    "Write one 'so what' line for your own company under each number."
+   ],
+   "deliver": "a one-page dashboard with six numbers and six 'so what' lines for your board."
+  },
+  "hook": {
+   "title": "Five Numbers Before Breakfast",
+   "quote": "“Our sales are up 30% this year. The board is delighted.”"
+  },
+  "concepts": [
+   {
+    "title": "Taking Inflation Out of the Numbers",
+    "plain": "A nominal number is measured in today's naira. A real number strips out inflation so you can see whether volumes or purchasing power really changed.",
+    "formula": "real growth ≈ nominal growth − inflation",
+    "example": "Sales up 30% while prices rose 28% → real growth of roughly 2%. The business barely grew.",
+    "why": "Bonuses, targets and investment cases set in nominal naira reward inflation, not performance. Always ask for the real number."
+   },
+   {
+    "title": "Seeing the Economy Before GDP Is Published",
+    "plain": "GDP arrives months late. Nowcasting uses faster signals — surveys, payments, fuel sales, electricity use — to estimate what is happening now.",
+    "formula": "PMI > 50 → activity expanding;  PMI < 50 → contracting",
+    "example": "The PMI fell below 50 in 2016, during COVID-19 and again in the 2024 reform squeeze — each time before GDP data confirmed the slowdown.",
+    "why": "Your own data are nowcasting signals too: daily sales, distributor orders and collections often tell you about the economy weeks before the statistics office does."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Your division's naira revenue grew 30% last year while inflation averaged 28% and the naira lost half its dollar value. What is the best summary?",
+    "options": [
+     "Strong growth — 30% beats most competitors",
+     "Revenue roughly flat in real terms, and down sharply in dollars",
+     "Revenue fell 28% in real terms",
+     "We cannot say anything without profit data"
+    ],
+    "answer": 1,
+    "explain": "B. Real growth ≈ 30% − 28% ≈ 2%, so volumes barely moved. In dollars, 1.30 × 0.5 = 0.65, a 35% fall. A ignores inflation; C misapplies the formula; D is too cautious — revenue alone tells us a lot."
+   },
+   {
+    "q": "Inflation on the dashboard fell from 34.5% to 16.4% in a year, but the CPI was rebased in January 2025. What should the CFO tell the board?",
+    "options": [
+     "Inflation has halved — we can cut prices",
+     "Part of the fall reflects the new base and basket, so we should watch month-on-month changes and core inflation before acting",
+     "The rebasing makes all inflation data useless",
+     "Ignore inflation and watch the exchange rate only"
+    ],
+    "answer": 1,
+    "explain": "B. A change of base year and basket changes the measured rate. Month-on-month changes and core inflation on the new basis give a cleaner read. A over-reacts; C and D throw away useful information."
+   }
+  ],
+  "case": {
+   "title": "The Board's Macro Page",
+   "context": "A Lagos FMCG company imports a third of its inputs and sells only in naira. Its board meets monthly and receives forty pages of numbers.",
+   "question": "Which five or six macro numbers should the directors see every month — and how should they be shown?",
+   "data": "ng_macro_monthly.csv — 132 months (2015–2025) of inflation, policy rate, exchange rates, oil price, reserves, money, credit and PMI. *Stylised teaching data.*",
+   "decision": "A one-page dashboard: each number with its latest value, change on a year ago and a one-line 'so what' for the business."
+  }
+ },
+ "s02": {
+  "objectives": [
+   {
+    "title": "Read a Market",
+    "body": "Use demand and supply to explain why a price moved, and predict who bears a cost increase."
+   },
+   {
+    "title": "Measure Elasticity",
+    "body": "Estimate own-price, cross-price and income elasticities from sales data — holding other things constant."
+   },
+   {
+    "title": "Price Under Uncertainty",
+    "body": "Decide how much of a cost shock to pass on, using elasticity, rivals' behaviour and customers' reference prices."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s02/figures/python/s02_f01.png",
+    "id": "S02-F01",
+    "title": "Who Pays When Flour Gets Dearer?",
+    "kicker": "A COST SHOCK",
+    "points": [
+     "Higher flour costs shift the supply curve up: firms need a higher price to supply the same quantity.",
+     "The new equilibrium has a higher price (+10%) and a lower quantity (−13%) in this example.",
+     "The price rises by less than the cost: part of the shock is paid by customers, part by producers.",
+     "How it splits depends on elasticity: the less sensitive the buyers, the more they pay."
+    ]
+   },
+   {
+    "img": "sessions/s02/figures/python/s02_f02.png",
+    "id": "S02-F02",
+    "title": "Prices Tripled — Volumes Did Not Collapse",
+    "kicker": "THE DATA",
+    "points": [
+     "Lagos shelf price went from about ₦162 to ₦518 a pack between 2022 and 2025.",
+     "Volumes rose in the North and Lagos, and fell in the South-East.",
+     "Looks like customers do not care about price. Do not believe it yet.",
+     "Incomes, competitors' prices and the general price level all moved at the same time."
+    ]
+   },
+   {
+    "img": "sessions/s02/figures/python/s02_f03.png",
+    "id": "S02-F03",
+    "title": "Inflation Hides the Elasticity",
+    "kicker": "THE TRAP",
+    "points": [
+     "Plotting units against shelf price gives an elasticity of just −0.09 — 'price barely matters'.",
+     "But every price was rising: competitors' prices, wages, the whole price level.",
+     "What matters to a shopper is our price relative to the alternatives and to their income.",
+     "To see the true response we must hold the other drivers constant."
+    ]
+   },
+   {
+    "img": "sessions/s02/figures/python/s02_f04.png",
+    "id": "S02-F04",
+    "title": "What Customers Really Respond To",
+    "kicker": "HOLDING OTHER THINGS CONSTANT",
+    "points": [
+     "Own price −1.47: a 1% rise in our price, all else equal, cuts volume by about 1.5%.",
+     "Cross price +0.73: when a rival raises its price by 1%, we gain about 0.7% volume — they are close substitutes.",
+     "Income +1.11: as customers' incomes rise, they buy more.",
+     "Method: one regression of log(units) on log(own price), log(rival price), log(income), a time trend and region."
+    ]
+   },
+   {
+    "img": "sessions/s02/figures/python/s02_f05.png",
+    "id": "S02-F05",
+    "title": "When Does a Price Rise Pay?",
+    "kicker": "PRICE, VOLUME AND REVENUE",
+    "points": [
+     "With elasticity −0.5, a 20% price rise raises revenue.",
+     "At our estimate (−1.47), a 20% rise cuts revenue by about 8%.",
+     "But revenue is not profit: if the price rise covers higher costs, it can still protect margin.",
+     "Elasticity is lower when all firms raise prices together — the market is less elastic than a single brand."
+    ]
+   },
+   {
+    "img": "sessions/s02/figures/python/s02_f06.png",
+    "id": "S02-F06",
+    "title": "Big Jumps Hurt More Than the Arithmetic Says",
+    "kicker": "THE EVIDENCE",
+    "points": [
+     "We compared actual sales with what the elasticity model predicts.",
+     "Promotion weeks (price below usual) sold about 4% more than predicted.",
+     "Prices up to 5% above usual: no extra penalty. More than 10% above: −7.7%.",
+     "The penalty fades as the new price becomes the new 'normal' — reference prices adapt over weeks."
+    ]
+   },
+   {
+    "img": "sessions/s02/figures/python/s02_f07.png",
+    "id": "S02-F07",
+    "title": "What a 15% Discount Buys",
+    "kicker": "PROMOTIONS",
+    "points": [
+     "Promotion weeks (15% off) sold 32–36% more packs than normal weeks.",
+     "Part of that is genuinely new demand; part is pantry loading — customers buying earlier, not more.",
+     "Measure the weeks after a promotion too: a dip means you borrowed sales from the future.",
+     "Promotions also reset reference prices downward if they run too often."
+    ]
+   },
+   {
+    "img": "sessions/s02/figures/python/s02_f08.png",
+    "id": "S02-F08",
+    "title": "How Much of the Flour Shock to Pass On?",
+    "kicker": "THE DECISION",
+    "points": [
+     "The shock adds ₦63 to a pack that sells for ₦500 and costs ₦350 to make.",
+     "Absorb it all: volume holds, but profit falls to 58% of what it was.",
+     "Pass it all on, rivals holding: volume −16%, profit back to 84%. If rivals follow: volume −8%, profit 92%.",
+     "Since all millers face the same flour price, rivals are likely to follow — so passing on most of it, in steps, is the stronger option."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Prices come from demand and supply; a cost shock shifts supply and is shared between buyers and sellers.",
+    "Separate a move along a curve from a shift of the curve.",
+    "Measure elasticity holding other things constant — inflation hides it.",
+    "Own, cross and income elasticities tell you how volume reacts to you, rivals and the economy.",
+    "Customers judge prices against a reference price: stagger, explain and time increases."
+   ],
+   "prework": "Read Sahay, Time Series Analysis and Forecasting (BEP8370), the chapters on trend and seasonality. Bring one demand number your company forecasts every year and how far off last year's forecast was.",
+   "next": "Session 3: Forecasting & Market Sizing"
+  },
+  "glossary": [
+   {
+    "term": "Demand curve",
+    "def": "How much buyers want at each price, all else equal."
+   },
+   {
+    "term": "Supply curve",
+    "def": "How much sellers offer at each price, all else equal."
+   },
+   {
+    "term": "Equilibrium",
+    "def": "The price at which quantity demanded equals quantity supplied."
+   },
+   {
+    "term": "Shift vs move",
+    "def": "Price changes move along a curve; other drivers shift it."
+   },
+   {
+    "term": "Own-price elasticity",
+    "def": "% change in quantity for a 1% change in own price."
+   },
+   {
+    "term": "Cross-price elasticity",
+    "def": "% change in our quantity for a 1% change in a rival's price."
+   },
+   {
+    "term": "Income elasticity",
+    "def": "% change in quantity for a 1% change in income."
+   },
+   {
+    "term": "Reference price",
+    "def": "The price a shopper expects, based on recent experience."
+   },
+   {
+    "term": "Loss aversion",
+    "def": "Losses feel worse than equal-sized gains feel good."
+   },
+   {
+    "term": "Pass-through",
+    "def": "Share of a cost change that ends up in the selling price."
+   }
+  ],
+  "lab": {
+   "title": "Lab: How Price-Sensitive Are Our Customers?",
+   "time": "20 minutes",
+   "data": "data/fmcg_price_volume.csv",
+   "r": "sessions/s02/R/s02_lab.R",
+   "py": "sessions/s02/python/s02_lab.py",
+   "steps": [
+    "Look at prices and volumes by region from 2022 to 2025.",
+    "Estimate the naive elasticity (units on price only) and explain why it misleads.",
+    "Estimate own-price, cross-price and income elasticities holding other things constant.",
+    "Compute the volume and revenue effect of 5%, 10% and 20% price rises.",
+    "Test pass-through of 0%, 50% and 100% of the flour shock — with rivals holding and following."
+   ],
+   "deliver": "a 3-sentence pricing recommendation to the MD: how much to pass on, how fast, and what to watch."
+  },
+  "hook": {
+   "title": "Flour Is Up 40%. What Do We Charge?",
+   "quote": "“Our flour bill has jumped 40%. Just add it to the price — customers have no choice, everybody eats noodles.”"
+  },
+  "concepts": [
+   {
+    "title": "Own-Price Elasticity of Demand",
+    "plain": "Elasticity tells you by what percentage volume changes when price changes by 1%. If the number is bigger than 1 (ignoring the minus sign), demand is elastic: customers react strongly. Smaller than 1 is inelastic.",
+    "formula": "elasticity = % change in quantity ÷ % change in price",
+    "example": "Our noodles: elasticity ≈ −1.47. A 10% price rise loses about 13% of volume when rivals hold their prices.",
+    "why": "Elastic demand means a price rise reduces revenue; inelastic demand means it raises revenue. Knowing which one you face is the start of every pricing decision."
+   },
+   {
+    "title": "Reference Prices and Loss Aversion",
+    "plain": "Shoppers judge a price against the price they are used to — their reference price. Paying more than usual feels like a loss, and people weigh losses about twice as heavily as equal gains.",
+    "formula": "pain of a ₦50 rise  >  pleasure of a ₦50 cut",
+    "example": "Weeks priced more than 10% above the usual price sold about 7.7% fewer packs than the elasticity alone predicts.",
+    "why": "Several small, explained increases usually cost less volume than one big jump. Pack-size changes ('shrinkflation'), clear communication and timing all manage the reference price."
+   },
+   {
+    "title": "Dynamic Pricing — Power and Limits",
+    "plain": "Dynamic pricing changes prices often, using data on demand, stock, time and competitors. Ride-hailing surge pricing and airline fares are examples. AI makes it cheap to estimate elasticities by product, store and hour.",
+    "formula": "price ↑ when demand is high or capacity is scarce",
+    "example": "A ride-hailing app raises fares in Lagos rush hour and during heavy rain, when many riders compete for few drivers.",
+    "why": "It can raise revenue and balance supply and demand, but it can also feel unfair and invite regulators. Rules of thumb: be transparent, cap surges on essentials, and never personalise prices in ways customers would object to."
+   }
+  ],
+  "checks": [
+   {
+    "q": "A competitor cuts its noodle price by 10%. Our cross-price elasticity is +0.73. Holding our price, what happens to our volume?",
+    "options": [
+     "Rises about 7%",
+     "Falls about 7%",
+     "Falls about 15%",
+     "No change — cross-price only matters for complements"
+    ],
+    "answer": 1,
+    "explain": "B. Cross-price elasticity +0.73 means a 1% change in the rival's price moves our volume 0.73% in the **same** direction. A 10% cut by them → about 7% fewer packs for us. C uses the own-price elasticity; D has substitutes and complements the wrong way round."
+   },
+   {
+    "q": "Flour costs rise 40% for every noodles maker in Nigeria. Which statement is most accurate?",
+    "options": [
+     "We should absorb the cost; any price rise loses customers to rivals",
+     "Rivals face the same shock, so the relevant elasticity is closer to the market's (less elastic) — passing on most of the cost in steps is likely to protect profit",
+     "Pass on exactly 40% because flour rose 40%",
+     "Price does not matter; the naive elasticity is close to zero"
+    ],
+    "answer": 1,
+    "explain": "B. When all firms face the same cost, they tend to move together and the volume loss is smaller (own + cross ≈ −0.74). A ignores rivals' costs; C confuses the flour rise with the unit-cost rise (only 45% of cost is flour); D is the inflation trap."
+   }
+  ],
+  "case": {
+   "title": "Pricing Noodles Through a Flour Shock",
+   "context": "A Nigerian noodles maker sells a single-serve pack in three regions — Lagos, the North and the South-East. Shelf prices have more than tripled since 2022 as costs and the exchange rate moved.",
+   "question": "Flour, about 45% of unit cost, has just risen 40%. How much of the extra cost should be passed into price, and how fast?",
+   "data": "fmcg_price_volume.csv — 209 weeks × 3 regions: shelf price, competitor price, promotion weeks, an income index and packs sold. *Stylised teaching data.*",
+   "decision": "A pricing recommendation that uses measured elasticities, a view on rivals' response and the risk of breaking customers' reference price."
+  }
+ },
+ "s03": {
+  "objectives": [
+   {
+    "title": "Read a Demand Series",
+    "body": "Separate trend, seasonality and one-off shocks in monthly sales data."
+   },
+   {
+    "title": "Forecast and Test",
+    "body": "Build a simple trend-plus-season forecast, backtest it against rules of thumb, and express it as a range."
+   },
+   {
+    "title": "Size a Market",
+    "body": "Estimate a Nigerian market top-down and bottom-up, and reconcile the two."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s03/figures/python/s03_f01.png",
+    "id": "S03-F01",
+    "title": "Ten Years of Cement Demand",
+    "kicker": "THE DATA",
+    "points": [
+     "National consumption grew from 18.7 million tonnes in 2012 to 32.2 million in 2025 — about 4.3% a year.",
+     "The 12-month moving average smooths out the seasons and shows the trend.",
+     "Three shocks: the 2016 recession, the 2020 lockdown and the 2024 price spike.",
+     "Each time, demand recovered to the trend within about a year."
+    ]
+   },
+   {
+    "img": "sessions/s03/figures/python/s03_f02.png",
+    "id": "S03-F02",
+    "title": "The Rainy Season Rhythm",
+    "kicker": "SEASONALITY",
+    "points": [
+     "February is about 14% above an average month; July and August about 18% below.",
+     "Rain stops site work, so demand dips from June to September.",
+     "Plan capacity, stock and cash for the peak months, not the annual average.",
+     "Schedule maintenance shutdowns for the rainy season, when demand is lowest."
+    ]
+   },
+   {
+    "img": "sessions/s03/figures/python/s03_f03.png",
+    "id": "S03-F03",
+    "title": "Pretend It Is January 2024",
+    "kicker": "THE BACKTEST",
+    "points": [
+     "We fitted each method on 2012–2023 only and asked it to forecast 2024–2025.",
+     "Then we compared the forecasts with what actually happened.",
+     "This is a backtest: the only honest way to judge a forecasting method.",
+     "The model followed both the season and the trend; 'same month last year' missed the growth."
+    ]
+   },
+   {
+    "img": "sessions/s03/figures/python/s03_f04.png",
+    "id": "S03-F04",
+    "title": "Which Method Forecast Best?",
+    "kicker": "THE SCOREBOARD",
+    "points": [
+     "Trend + seasonal model: 4.1% average error — the best.",
+     "'Same month last year': 5.8%. The common budget rule 'last year + 5%': 6.6%.",
+     "A flat average ignores the seasons: 10.9% error.",
+     "MAPE = mean absolute percentage error: on average, how far off were we?"
+    ]
+   },
+   {
+    "img": "sessions/s03/figures/python/s03_f05.png",
+    "id": "S03-F05",
+    "title": "2026: A Number and a Range",
+    "kicker": "THE FORECAST",
+    "points": [
+     "Base forecast for 2026: about 32.9 million tonnes.",
+     "Monthly bands show where each month will probably fall (90% range).",
+     "For the year: roughly 31.0–34.9 million tonnes, based on how far past years strayed from the model.",
+     "Say it as a range: 'about 33, very likely between 31 and 35'."
+    ]
+   },
+   {
+    "img": "sessions/s03/figures/python/s03_f06.png",
+    "id": "S03-F06",
+    "title": "Plan for More Than One Future",
+    "kicker": "SCENARIOS",
+    "points": [
+     "Downside (−8%): another cement price spike and weak real incomes → 30.3 mt.",
+     "Base: trend and season continue → 32.9 mt.",
+     "Upside (+6%): a large housing and road programme → 34.9 mt.",
+     "Ask: what capacity is safe in the downside and expandable in the upside?"
+    ]
+   },
+   {
+    "img": "sessions/s03/figures/python/s03_f08.png",
+    "id": "S03-F08",
+    "title": "More Complex Is Not More Accurate",
+    "kicker": "MACHINE LEARNING, RESPONSIBLY",
+    "points": [
+     "We made the trend curve more and more flexible.",
+     "Fit to the past barely changed (about 4% error).",
+     "Forecasts of the future got much worse: from 4% to over 90% error at the most flexible.",
+     "This is overfitting: the model memorises the past instead of learning its pattern."
+    ]
+   },
+   {
+    "img": "sessions/s03/figures/python/s03_f07.png",
+    "id": "S03-F07",
+    "title": "Do the Two Routes Agree?",
+    "kicker": "RECONCILE",
+    "points": [
+     "Top-down: 32.2 mt. Bottom-up: 33.8 mt. Within about 5% — reassuring.",
+     "If they disagree badly, one of the assumptions is wrong. Find it before you build.",
+     "New homes are the biggest segment: watch mortgage rates, real incomes and land policy.",
+     "Both estimates sit close to the time-series forecast — three independent views pointing the same way."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Demand = trend × season × shocks; read each part separately.",
+    "A transparent trend-plus-season model beats most budget rules — backtest to prove it.",
+    "Always give a range and scenarios, not a single number.",
+    "More complex is not more accurate: judge models on unseen data.",
+    "Size markets top-down and bottom-up, and reconcile the two."
+   ],
+   "prework": "Read the Ant Financial case (917-0029-1). Come ready to say: is Ant a bank, a technology company or a marketplace — and why does the answer matter for regulators?",
+   "next": "Session 4: Market Structure & Platforms"
+  },
+  "glossary": [
+   {
+    "term": "Trend",
+    "def": "The long-run direction of a series."
+   },
+   {
+    "term": "Seasonality",
+    "def": "A pattern that repeats at the same time every year."
+   },
+   {
+    "term": "Seasonal index",
+    "def": "A month's typical level relative to an average month (100)."
+   },
+   {
+    "term": "Moving average",
+    "def": "An average of the last N periods; smooths out noise and seasons."
+   },
+   {
+    "term": "Backtest",
+    "def": "Testing a forecasting method on past data it was not built on."
+   },
+   {
+    "term": "MAPE",
+    "def": "Mean absolute percentage error: the average size of forecast misses."
+   },
+   {
+    "term": "Forecast range",
+    "def": "The band within which the outcome will probably fall."
+   },
+   {
+    "term": "Scenario",
+    "def": "A coherent story of the future with its own numbers."
+   },
+   {
+    "term": "Overfitting",
+    "def": "A model that memorises past noise and forecasts badly."
+   },
+   {
+    "term": "Top-down / bottom-up",
+    "def": "Sizing from the whole economy vs adding up the uses."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Cement Demand in 2026",
+   "time": "20 minutes",
+   "data": "data/cement_demand_monthly.csv",
+   "r": "sessions/s03/R/s03_lab.R",
+   "py": "sessions/s03/python/s03_lab.py",
+   "steps": [
+    "Compute annual totals and the average growth rate since 2012.",
+    "Compute the seasonal index: each month versus its year's average.",
+    "Fit a trend + seasonal model on 2012–2023.",
+    "Backtest it on 2024–2025 against 'same month last year' and 'last year + 5%'.",
+    "Forecast 2026, and compare with the top-down and bottom-up market sizes."
+   ],
+   "deliver": "a two-sentence 2026 capacity recommendation: how many tonnes, and what flexibility you keep."
+  },
+  "hook": {
+   "title": "A ₦100 Billion Bet on One Number",
+   "quote": "“Demand grows 5% every year. Build the new line — we'll sell everything we make.”"
+  },
+  "concepts": [
+   {
+    "title": "Trend × Season: A Forecast in One Line",
+    "plain": "Our forecast says: next month's demand = the trend level for that month × the seasonal index for that calendar month. We fit both from history with one regression.",
+    "formula": "forecast = trend(t) × season(month)",
+    "example": "Trend level for August 2026 ≈ 2.76 mt; August index ≈ 0.82 → forecast ≈ 2.26 mt.",
+    "why": "Simple models are transparent: a manager can see and challenge every assumption. That matters more than an extra decimal of accuracy."
+   },
+   {
+    "title": "Start From the Whole Economy",
+    "plain": "Top-down sizing starts from a big, known number — population, GDP, households — and multiplies by a rate of use per person or per naira.",
+    "formula": "market = population × use per person",
+    "example": "230 million people × about 140 kg of cement each per year ≈ 32.2 million tonnes.",
+    "why": "Quick and easy to sanity-check against other countries. But the 'use per person' assumption carries all the weight — and it differs widely between countries at similar income levels."
+   },
+   {
+    "title": "Add Up the Uses",
+    "plain": "Bottom-up sizing builds the market from its parts: how many homes, roads, factories and repairs, times the cement each one needs.",
+    "formula": "market = Σ (units of activity × cement per unit)",
+    "example": "About 450,000 new homes × ~32 tonnes = 14.4 mt, plus repairs (6.5), public works (6.0), commercial (4.5), precast (2.4) = 33.8 mt.",
+    "why": "Slower, but it shows which segments drive demand — and which ones a new government programme or a price shock would hit."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Your sales team forecasts next year as 'this year + 10%'. A trend-plus-seasonal model forecasts +4%, with a range of −2% to +10%. What should you do?",
+    "options": [
+     "Use +10% — the sales team knows the market",
+     "Use +4% and ignore the sales team",
+     "Start from the model's +4% and ask the sales team for named, specific reasons for any upward adjustment; plan capacity for the range",
+     "Average the two: +7%"
+    ],
+    "answer": 2,
+    "explain": "C. The model is the disciplined baseline; judgement should adjust it only for specific, recorded reasons (a new contract, a new region). D splits the difference without evidence. And capacity should be planned against the range, not a point."
+   },
+   {
+    "q": "Top-down sizing gives 32 million tonnes; bottom-up gives 45 million tonnes. What is the best next step?",
+    "options": [
+     "Average them: 38.5 mt",
+     "Trust the bottom-up figure because it is more detailed",
+     "Find which assumption explains the gap (e.g. tonnes per house or homes built) and check it against independent data",
+     "Use whichever supports the investment case"
+    ],
+    "answer": 2,
+    "explain": "C. A large gap is information: one of the inputs is wrong. Detail does not make bottom-up right — 13 extra million tonnes usually means an inflated activity count or usage rate. D is how bad investments get approved."
+   }
+  ],
+  "case": {
+   "title": "How Much Cement Will Nigeria Buy?",
+   "context": "A Nigerian cement company is deciding whether to add a new production line for 2026. Demand has grown for a decade, but it dipped in the 2016 recession, during COVID-19 and in the 2024 price spike.",
+   "question": "How many tonnes of cement will Nigeria consume in 2026 — and how confident can we be?",
+   "data": "cement_demand_monthly.csv — 168 months (2012–2025) of national cement consumption, price per bag, a rainy-season flag and a building-permits index. *Stylised teaching data.*",
+   "decision": "A 2026 forecast with a range and scenarios, checked against an independent market-sizing estimate."
+  }
+ },
+ "s04": {
+  "objectives": [
+   {
+    "title": "Classify a Market",
+    "body": "Place an industry on the spectrum from perfect competition to monopoly, and say what that means for prices and profits."
+   },
+   {
+    "title": "Understand Platforms",
+    "body": "Explain two-sided markets, network effects, switching costs and data as sources of market power."
+   },
+   {
+    "title": "Think Like a Regulator",
+    "body": "Measure concentration (CR and HHI), and judge when a dominant firm or a merger becomes a competition problem."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s04/figures/python/s04_f06.png",
+    "id": "S04-F06",
+    "title": "What Market Power Costs Society",
+    "kicker": "WHY IT MATTERS",
+    "points": [
+     "Under competition, price falls to the cost of the last unit, and output is high.",
+     "A monopolist restricts output to push the price up.",
+     "Gold area: value transferred from customers to the monopolist.",
+     "Red area: deadweight loss — purchases worth more than they cost that simply never happen."
+    ]
+   },
+   {
+    "img": "sessions/s04/figures/python/s04_f01.png",
+    "id": "S04-F01",
+    "title": "From Banks to Platforms",
+    "kicker": "THE DATA",
+    "points": [
+     "In 2016 banks' apps and USSD handled 78% of mobile-payment value.",
+     "By 2025: banks 28%, KoboLink 30%, SwiftNaira 19%, AgentPay 11%.",
+     "Fintechs won by going where banks were weak: agents in markets, cheap POS, simple apps.",
+     "The market became more competitive between banks and fintechs — and more concentrated among fintechs."
+    ]
+   },
+   {
+    "img": "sessions/s04/figures/python/s04_f02.png",
+    "id": "S04-F02",
+    "title": "Concentration Depends on How You Define the Market",
+    "kicker": "MARKET DEFINITION",
+    "points": [
+     "Treat 'banks' as one block: HHI falls from 6,222 to 2,238 — the market looks ever more competitive.",
+     "Treat them as ~10 separate banks: HHI rises from 746 to 1,532 — concentration is growing.",
+     "Same data, opposite stories. Defining the market is the first and most contested step in any competition case.",
+     "Ask: who do customers actually switch to when one provider raises its price?"
+    ]
+   },
+   {
+    "img": "sessions/s04/figures/python/s04_f03.png",
+    "id": "S04-F03",
+    "title": "Users and Merchants Grew Together",
+    "kicker": "NETWORK EFFECTS IN THE DATA",
+    "points": [
+     "Active users rose from 12 million to 97 million; merchants from 0.3 million to 7.3 million.",
+     "Each 1% more users came with about 1.6% more merchants.",
+     "The two sides reinforce each other: more users attract merchants, who attract more users.",
+     "This feedback loop is why platform markets can grow very fast — and tip towards a leader."
+    ]
+   },
+   {
+    "img": "sessions/s04/figures/python/s04_f04.png",
+    "id": "S04-F04",
+    "title": "Winner-Takes-Most Among the Fintechs",
+    "kicker": "TIPPING",
+    "points": [
+     "Within the fintech segment, KoboLink went from 15% to 45% of payment value.",
+     "PayFast, the early leader, fell from 46% to 9%.",
+     "Being first is not enough: the platform that builds the network fastest wins.",
+     "Once a network tips, rivals need a big advantage — or regulation — to catch up."
+    ]
+   },
+   {
+    "img": "sessions/s04/figures/python/s04_f05.png",
+    "id": "S04-F05",
+    "title": "Fees After Dominance",
+    "kicker": "THE WARNING SIGN",
+    "points": [
+     "KoboLink entered cheaper than rivals: about 0.50% of value, against roughly 0.69% for others.",
+     "As its share passed a quarter of the market, its fee rose to about 0.54%.",
+     "Still below rivals — so customers are not obviously harmed yet.",
+     "A regulator would watch the trend, merchant complaints, and whether rivals can still win business."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Market structure runs from perfect competition to monopoly; most markets sit in between.",
+    "Market power raises prices, cuts output and creates deadweight loss.",
+    "Measure concentration with CR and HHI — but define the market first.",
+    "Platforms grow through network effects, switching costs and data — and can tip.",
+    "Regulators judge conduct, not size; interoperability keeps markets open."
+   ],
+   "prework": "Read 'Externalities: Justification for Public Goods?' (210-023-1) and the UVA note on pollution taxes and cap-and-trade. Think about one cost your industry imposes on others that it does not pay for.",
+   "next": "Session 5: Market Failures"
+  },
+  "glossary": [
+   {
+    "term": "Market power",
+    "def": "Ability to raise price above cost without losing most customers."
+   },
+   {
+    "term": "Oligopoly",
+    "def": "A market dominated by a few large, interdependent sellers."
+   },
+   {
+    "term": "Deadweight loss",
+    "def": "Value lost because worthwhile trades do not happen."
+   },
+   {
+    "term": "Concentration ratio (CR)",
+    "def": "Combined share of the largest firms, e.g. CR2."
+   },
+   {
+    "term": "HHI",
+    "def": "Sum of squared market shares; 0 to 10,000."
+   },
+   {
+    "term": "Two-sided market",
+    "def": "A platform serving two groups who value each other."
+   },
+   {
+    "term": "Network effect",
+    "def": "A product becomes more valuable as more people use it."
+   },
+   {
+    "term": "Switching cost",
+    "def": "The cost or hassle of moving to a rival."
+   },
+   {
+    "term": "Tipping",
+    "def": "When a network market swings decisively to one leader."
+   },
+   {
+    "term": "Interoperability",
+    "def": "Rules that let rival networks connect and exchange."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Is the Payments Market Competitive?",
+   "time": "20 minutes",
+   "data": "data/payments_market_shares.csv",
+   "r": "sessions/s04/R/s04_lab.R",
+   "py": "sessions/s04/python/s04_lab.py",
+   "steps": [
+    "Tabulate market shares by provider and year.",
+    "Compute CR2 and the HHI for each year.",
+    "Recompute the HHI treating 'Banks' as ten separate banks — compare the two stories.",
+    "Measure two-sided growth: % more merchants per 1% more users.",
+    "Check whether the leader's fee rises with its share; test the SwiftNaira–AgentPay merger."
+   ],
+   "deliver": "a 3-sentence note to the competition regulator on the proposed merger."
+  },
+  "hook": {
+   "title": "Is the Biggest App Too Big?",
+   "quote": "“Five years ago nobody had heard of them. Now every market woman in Lagos has their POS — and their fees just went up.”"
+  },
+  "concepts": [
+   {
+    "title": "The Herfindahl–Hirschman Index (HHI)",
+    "plain": "The HHI adds up the squared market shares of every firm. Squaring gives big firms more weight. A pure monopoly scores 10,000; many tiny firms score close to 0.",
+    "formula": "HHI = s₁² + s₂² + … + sₙ²   (shares in %)",
+    "example": "Four firms with 40%, 30%, 20%, 10%: 1,600 + 900 + 400 + 100 = 3,000 — highly concentrated.",
+    "why": "Competition authorities use the HHI to screen mergers. A merger's effect on the index is roughly 2 × s₁ × s₂ — two firms of 15% and 10% add 300 points."
+   },
+   {
+    "title": "A Platform Serves Two Groups at Once",
+    "plain": "A platform connects two groups who need each other: payers and merchants, riders and drivers, buyers and sellers. Each side values the platform more when the other side is bigger.",
+    "formula": "value to a user ↑ as merchants ↑   and   value to a merchant ↑ as users ↑",
+    "example": "A trader accepts KoboLink because many customers pay with it; customers download it because many traders accept it.",
+    "why": "Platforms often subsidise one side (free app for users, free POS for agents) to win the other. Low prices today can be a strategy, not a gift."
+   },
+   {
+    "title": "When a Platform Becomes a Bank",
+    "plain": "Ant Financial (now Ant Group) grew from Alipay, a payments tool, into lending, wealth management and insurance for hundreds of millions of Chinese users — using payments data to score credit.",
+    "formula": "payments → data → credit → more payments",
+    "example": "In 2020 Chinese regulators halted Ant's planned stock-market listing and required it to restructure under bank-style rules.",
+    "why": "Nigerian fintechs follow a similar path from payments to lending. The case asks: should a platform that behaves like a bank be regulated like a bank?"
+   }
+  ],
+  "checks": [
+   {
+    "q": "A market has five firms with shares 30%, 25%, 20%, 15% and 10%. What is the HHI?",
+    "options": [
+     "100",
+     "2,250",
+     "1,000",
+     "10,000"
+    ],
+    "answer": 1,
+    "explain": "B. 900 + 625 + 400 + 225 + 100 = 2,250. A sums the shares; C is a guess; D would need a single firm with 100%. 2,250 sits in the 'moderately concentrated' band of the US 2010 guidelines."
+   },
+   {
+    "q": "SwiftNaira (19%) and AgentPay (11%) want to merge. Using HHI ≈ 1,532 before the deal, what does the merger do?",
+    "options": [
+     "Raises the HHI by about 30 points — no concern",
+     "Raises the HHI by about 418 points, taking it to about 1,950 — the deal deserves close review",
+     "Lowers the HHI because the merged firm can compete with KoboLink",
+     "Has no effect: HHI only changes when firms enter or exit"
+    ],
+    "answer": 1,
+    "explain": "B. ΔHHI = 2 × 19 × 11 = 418, moving the market into the moderately concentrated band. The merged firm *might* challenge KoboLink (C's argument) — that is a defence the parties would make, but the index itself goes up."
+   }
+  ],
+  "case": {
+   "title": "Nigeria's Mobile-Payments Market",
+   "context": "Between 2016 and 2025, the share of payment value handled by banks' own apps and USSD fell from 78% to 28%. Fintech platforms — agents, POS terminals and apps — took the rest. One platform, 'KoboLink', now handles 30%.",
+   "question": "Is a dominant payments platform good for customers (scale, convenience, low cost) or a competition problem (lock-in, higher fees, blocked rivals)?",
+   "data": "payments_market_shares.csv — 10 years × 6 providers: share of payment value, active users, merchants and average fee. *Stylised; providers other than the banks are fictional.*",
+   "decision": "A reasoned view for the regulator: how concentrated the market is, whether fees signal market power, and what — if anything — should be done."
+  }
+ },
+ "s05": {
+  "objectives": [
+   {
+    "title": "Diagnose a Market Failure",
+    "body": "Recognise externalities, public goods, asymmetric information and market power in your own industry."
+   },
+   {
+    "title": "Choose the Right Fix",
+    "body": "Compare Pigouvian taxes, cap-and-trade, regulation, nudges and market design — and when each works."
+   },
+   {
+    "title": "Analyse a Subsidy",
+    "body": "Work out who really gains from a subsidy, who loses when it goes, and what compensation should look like."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s05/figures/python/s05_f01.png",
+    "id": "S05-F01",
+    "title": "The Generator Next Door",
+    "kicker": "EXTERNALITIES",
+    "points": [
+     "The generator owner pays for fuel and maintenance — the private cost.",
+     "Neighbours pay too, in noise, fumes and health — the external cost.",
+     "The market uses generators up to where private cost meets benefit: too much.",
+     "A tax equal to the external cost moves use to what is best for society — the idea behind a Pigouvian tax."
+    ]
+   },
+   {
+    "img": "sessions/s05/figures/python/s05_f02.png",
+    "id": "S05-F02",
+    "title": "Most of the Money Went to the Better-Off",
+    "kicker": "THE INCIDENCE",
+    "points": [
+     "The richest 10% of households received about 37% of the household petrol subsidy.",
+     "The poorest 40% received only about 9%.",
+     "In naira, the richest households got about 38 times as much as the poorest.",
+     "This pattern — subsidies captured by the better-off — is found in fuel subsidies across many countries."
+    ]
+   },
+   {
+    "img": "sessions/s05/figures/python/s05_f03.png",
+    "id": "S05-F03",
+    "title": "Naira Received vs Share of Budget",
+    "kicker": "TWO LENSES",
+    "points": [
+     "Bars: the subsidy in naira rose steeply with income.",
+     "Line: as a % of the budget, it also rose — from about 3% for the poorest to 12% for the richest.",
+     "Poor households mostly use petrol indirectly: through bus fares and the cost of moving food.",
+     "That indirect channel is why removal still hurt the poor badly."
+    ]
+   },
+   {
+    "img": "sessions/s05/figures/python/s05_f04.png",
+    "id": "S05-F04",
+    "title": "The Cost of Removal",
+    "kicker": "THE SHOCK",
+    "points": [
+     "Direct cost: petrol rose from ₦185 to ₦617 a litre.",
+     "Indirect cost (our assumptions): bus fares +50%, food +10%.",
+     "Extra cost: about 14% of the budget for the poorest decile, 23% for the richest.",
+     "For the poor, most of the hit is indirect — and they have the least room to cut back."
+    ]
+   },
+   {
+    "img": "sessions/s05/figures/python/s05_f05.png",
+    "id": "S05-F05",
+    "title": "Targeted vs Universal Support",
+    "kicker": "COMPENSATION",
+    "points": [
+     "A ₦10,000 a month transfer to the poorest 40% leaves the poorest two deciles better off than before removal.",
+     "The same budget spread over everyone gives just ₦4,000 each — too little to protect the poor.",
+     "Better-off households still bear the full cost — but they also gained most from the subsidy.",
+     "Targeting needs a reliable social register, digital IDs and payment channels."
+    ]
+   },
+   {
+    "img": "sessions/s05/figures/python/s05_f06.png",
+    "id": "S05-F06",
+    "title": "What the Savings Can Buy",
+    "kicker": "THE FISCAL ARITHMETIC",
+    "points": [
+     "The household petrol subsidy cost about ₦6.7 trillion a year (stylised).",
+     "The targeted transfer costs about ₦2.1 trillion — roughly 31% of that.",
+     "The rest can fund transport (e.g. CNG buses), health and education — or cut borrowing.",
+     "Credibility matters: people accept reform more readily when they can see where the savings go."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Markets fail through externalities, public goods, information gaps and market power.",
+    "Fix them by pricing the harm (taxes, permits), rules, nudges or market design.",
+    "Governments fail too: compare imperfect alternatives.",
+    "A per-litre subsidy goes to whoever uses the most — usually the better-off.",
+    "Protect the poor with targeted transfers, and show where the savings go."
+   ],
+   "prework": "Read the chapters on aggregate demand and aggregate supply in Blanchard, Macroeconomics. Bring one price your company raised in 2024 and say whether the cause was demand (customers buying more) or supply (your costs rising).",
+   "next": "Session 6: AD–AS & Inflation"
+  },
+  "glossary": [
+   {
+    "term": "Market failure",
+    "def": "When a free market produces the wrong amount of something."
+   },
+   {
+    "term": "Externality",
+    "def": "A cost or benefit that falls on people outside the transaction."
+   },
+   {
+    "term": "Public good",
+    "def": "Non-excludable and non-rival, so markets under-supply it."
+   },
+   {
+    "term": "Free riding",
+    "def": "Enjoying a benefit without paying towards it."
+   },
+   {
+    "term": "Asymmetric information",
+    "def": "One side of a deal knows more than the other."
+   },
+   {
+    "term": "Pigouvian tax",
+    "def": "A tax equal to the external cost of an activity."
+   },
+   {
+    "term": "Cap-and-trade",
+    "def": "A fixed total of pollution permits that firms can trade."
+   },
+   {
+    "term": "Nudge",
+    "def": "A change in defaults or framing that steers choices."
+   },
+   {
+    "term": "Incidence",
+    "def": "Who actually bears a tax or receives a subsidy."
+   },
+   {
+    "term": "Government failure",
+    "def": "When intervention makes outcomes worse."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Subsidy Incidence and Compensation",
+   "time": "20 minutes",
+   "data": "data/fuel_subsidy_incidence.csv",
+   "r": "sessions/s05/R/s05_lab.R",
+   "py": "sessions/s05/python/s05_lab.py",
+   "steps": [
+    "Compute the subsidy each decile received, in naira and as a % of budget.",
+    "Find the shares of the richest 10% and the poorest 40%.",
+    "Estimate the direct and indirect cost of removal; change the fare and food assumptions.",
+    "Cost a targeted cash transfer and compare it with the old subsidy bill.",
+    "Find the transfer that leaves deciles 3 and 4 no worse off."
+   ],
+   "deliver": "a two-sentence recommendation on how the savings should be used."
+  },
+  "hook": {
+   "title": "Who Really Got Cheap Petrol?",
+   "quote": "“The petrol subsidy was the one benefit ordinary Nigerians got from the oil wealth.”"
+  },
+  "concepts": [
+   {
+    "title": "The Lemons Problem",
+    "plain": "When buyers cannot tell good from bad, they pay an average price. Owners of good products then refuse to sell, the average quality falls, and the market can unravel.",
+    "formula": "hidden quality → average price → good sellers leave",
+    "example": "Lenders cannot tell safe from risky small businesses, so they charge everyone high rates — which drives away the safest borrowers first. Credit bureaus and collateral registries exist to fix this.",
+    "why": "Your business can profit from solving information problems: warranties, ratings, certification, track records, and data-based credit scoring all build trust."
+   },
+   {
+    "title": "Pigouvian Taxes vs Cap-and-Trade",
+    "plain": "A tax fixes the price of pollution and lets the quantity adjust. Cap-and-trade fixes the quantity and lets the price adjust. Both make polluting costly, so firms that can cut cheaply do the most cutting.",
+    "formula": "tax: price fixed, quantity varies  ·  cap: quantity fixed, price varies",
+    "example": "A gas-flaring penalty per thousand cubic feet is a tax-style tool; a carbon market with a national emissions cap is the permit approach. Session 13 returns to carbon pricing.",
+    "why": "For your business: either tool turns pollution into a cost line. Firms that cut emissions early gain a cost advantage — or permits to sell."
+   },
+   {
+    "title": "Interventions Can Fail Too",
+    "plain": "Governments face their own problems: poor information, lobbying by those who benefit, leakage and corruption, and policies that are easy to start but hard to stop.",
+    "formula": "market failure ≠ automatic case for intervention",
+    "example": "The petrol subsidy was meant to share oil wealth, but it favoured car and generator owners, encouraged smuggling across borders, and became one of the largest items in the federal budget.",
+    "why": "The right question is not 'market or government?' but 'which imperfect arrangement does least harm here?'"
+   },
+   {
+    "title": "Who Really Benefits From a Subsidy?",
+    "plain": "A per-litre subsidy goes to whoever buys the most litres. Rich households use far more petrol — for cars and generators — so they receive far more in naira, even if the subsidy is a bigger share of a poor family's budget.",
+    "formula": "benefit = litres used × subsidy per litre",
+    "example": "Before removal (stylised): ₦315 of subsidy per litre. A household in the richest 10% using 150 litres a month got ₦47,250; one in the poorest 10% using 4 litres got ₦1,260.",
+    "why": "Universal price subsidies are an expensive way to help the poor. Most of the money goes to people who do not need it."
+   }
+  ],
+  "checks": [
+   {
+    "q": "A Lagos estate's residents all run diesel generators, and everyone complains about the noise and fumes. Which policy best fits the economics of externalities?",
+    "options": [
+     "Ban generators outright",
+     "Charge a fee per generator-hour that reflects the harm, and use the money to co-fund a shared, cleaner power supply",
+     "Do nothing — residents chose to live there",
+     "Subsidise diesel so generators are cheaper to run"
+    ],
+    "answer": 1,
+    "explain": "B prices the externality (a Pigouvian charge) and funds an alternative. A is costly when there is no grid power; C ignores a real cost imposed on others; D makes the over-use worse."
+   },
+   {
+    "q": "Our data show the richest 10% got 37% of the subsidy but face the largest % cost from removal (23% of budget vs 14% for the poorest). What follows?",
+    "options": [
+     "Removal was regressive because the rich lost more",
+     "The rich lose more in % terms, but they gained most from the subsidy and can absorb it; protecting the poorest — who have little margin — is the priority for compensation",
+     "Compensation should go mainly to the richest decile",
+     "The subsidy should be restored"
+    ],
+    "answer": 1,
+    "explain": "B. The burden as a % of budget is only part of the story: the poorest are closest to subsistence, and they received least from the subsidy. A misuses 'regressive'; C and D ignore who benefited and the fiscal cost."
+   }
+  ],
+  "case": {
+   "title": "Petrol Subsidy Removal",
+   "context": "For decades Nigeria held the pump price of petrol below its cost, paying the difference from public funds. In mid-2023 the subsidy was removed and the pump price rose from about ₦185 to ₦617 per litre.",
+   "question": "Who gained from the subsidy, who loses from its removal, and what should replace it?",
+   "data": "fuel_subsidy_incidence.csv — household spending, petrol use, food and transport shares, vehicle and generator ownership, by consumption decile. *Stylised teaching data.*",
+   "decision": "A policy recommendation: how the savings should be used, and how to protect poor households at a sensible fiscal cost."
+  }
+ },
+ "s06": {
+  "objectives": [
+   {
+    "title": "Use the AD–AS Model",
+    "body": "Tell a demand shock from a supply shock, and predict what each does to prices and output."
+   },
+   {
+    "title": "Read Inflation Measures",
+    "body": "Explain headline, food, core and trimmed-mean inflation, and why each answers a different question."
+   },
+   {
+    "title": "Respect Expectations",
+    "body": "Explain why inflation is sticky, and why central banks care so much about what people expect."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s06/figures/python/s06_f01.png",
+    "id": "S06-F01",
+    "title": "Demand Shock vs Supply Shock",
+    "kicker": "THE KEY DISTINCTION",
+    "points": [
+     "Demand shock: spending jumps → prices and output rise together. Overheating.",
+     "Supply shock: costs jump → prices rise but output falls. Stagflation.",
+     "Both raise inflation, so inflation alone cannot tell you which happened.",
+     "Look at output and activity too: are firms selling more, or less?"
+    ]
+   },
+   {
+    "img": "sessions/s06/figures/python/s06_f02.png",
+    "id": "S06-F02",
+    "title": "Food Running Ahead of Core",
+    "kicker": "EVIDENCE 1",
+    "points": [
+     "Food inflation exceeded core inflation almost every month.",
+     "The gap averaged +5.3 points over 2015–2024 and widened to about +12 points in 2024.",
+     "Food prices react to fuel, transport, insecurity and the exchange rate — mostly supply forces.",
+     "A wide food–core gap is a warning that interest rates alone will not fix the problem."
+    ]
+   },
+   {
+    "img": "sessions/s06/figures/python/s06_f03.png",
+    "id": "S06-F03",
+    "title": "Exchange-Rate Pass-Through",
+    "kicker": "EVIDENCE 2",
+    "points": [
+     "When the naira weakens, imported goods and inputs cost more in naira.",
+     "In this data the link is strongest about 2 months later (correlation 0.84).",
+     "The naira's fall after mid-2023 was the single largest cost shock for many firms.",
+     "Pass-through is a supply shock to importers — but a weaker naira also helps exporters."
+    ]
+   },
+   {
+    "img": "sessions/s06/figures/python/s06_f04.png",
+    "id": "S06-F04",
+    "title": "Prices Up, Activity Stalled",
+    "kicker": "EVIDENCE 3",
+    "points": [
+     "Each dot is one month: PMI (activity) against inflation.",
+     "In 2015–19 inflation averaged 13.3% with the PMI around 50.7.",
+     "In 2023–24 inflation averaged 28.7% while the PMI averaged only 50.0.",
+     "Inflation more than doubled without a boom in activity — consistent with a supply shock."
+    ]
+   },
+   {
+    "img": "sessions/s06/figures/python/s06_f05.png",
+    "id": "S06-F05",
+    "title": "Taking Out the Extremes",
+    "kicker": "THE TRIMMED MEAN",
+    "points": [
+     "This illustrative month: petrol and vegetables jumped; data and electricity barely moved.",
+     "The weighted mean (headline) is 3.2% — pulled up by two big movers.",
+     "Drop the top and bottom 15% of the basket by weight: the trimmed mean is 2.6%.",
+     "When the two diverge, a few items are driving headline inflation — often a supply story."
+    ]
+   },
+   {
+    "img": "sessions/s06/figures/python/s06_f06.png",
+    "id": "S06-F06",
+    "title": "Inflation Is Sticky",
+    "kicker": "PERSISTENCE",
+    "points": [
+     "Each dot compares inflation now with inflation 12 months earlier.",
+     "The fitted line: inflation now ≈ 0.74 + 1.13 × last year's rate.",
+     "A slope near or above 1 means high inflation tends to stay high — or rise further.",
+     "Why? Contracts, rents, wages and prices are set looking backward and forward."
+    ]
+   },
+   {
+    "img": "sessions/s06/figures/python/s06_f07.png",
+    "id": "S06-F07",
+    "title": "Expectations Shift the Curve",
+    "kicker": "THE PHILLIPS CURVE",
+    "points": [
+     "The Phillips curve links inflation to slack: less spare capacity, more pressure on prices.",
+     "But each curve is drawn for a given level of expected inflation.",
+     "If people come to expect 30%, the curve shifts up: the same slack now comes with 30%-type inflation.",
+     "So central banks fight hard to keep expectations anchored — even at the cost of growth."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "AD–AS: demand shocks move prices and output together; supply shocks move them apart.",
+    "Diagnose before you prescribe: rates cure demand inflation far better than supply inflation.",
+    "Use headline for the cost of living; core and trimmed mean for the underlying trend.",
+    "Watch for rebasing — a new ruler is not a new reality.",
+    "Inflation is sticky because of expectations; credibility is worth fighting for."
+   ],
+   "prework": "Read the Mankiw chapters on measuring national income (GDP). Find your company's revenue for the last three years and ask: how much of the growth was real?",
+   "next": "Session 7: National Accounts"
+  },
+  "glossary": [
+   {
+    "term": "Aggregate demand",
+    "def": "Total spending on an economy's goods and services."
+   },
+   {
+    "term": "Aggregate supply",
+    "def": "Total output firms will produce at each price level."
+   },
+   {
+    "term": "Demand shock",
+    "def": "A change in spending that moves prices and output the same way."
+   },
+   {
+    "term": "Supply shock",
+    "def": "A change in costs that moves prices and output in opposite ways."
+   },
+   {
+    "term": "Stagflation",
+    "def": "High inflation combined with weak or falling output."
+   },
+   {
+    "term": "Core inflation",
+    "def": "Inflation excluding volatile items such as farm produce and energy."
+   },
+   {
+    "term": "Trimmed mean",
+    "def": "Average price change after dropping the most extreme movers."
+   },
+   {
+    "term": "Pass-through",
+    "def": "How much of an exchange-rate change shows up in local prices."
+   },
+   {
+    "term": "Phillips curve",
+    "def": "The link between economic slack and inflation."
+   },
+   {
+    "term": "Anchored expectations",
+    "def": "People's belief that inflation will return to target."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Diagnose the 2023–24 Inflation Surge",
+   "time": "20 minutes",
+   "data": "data/ng_macro_monthly.csv",
+   "r": "sessions/s06/R/s06_lab.R",
+   "py": "sessions/s06/python/s06_lab.py",
+   "steps": [
+    "Compare headline, food, core and PMI before and after mid-2023.",
+    "Compute the food minus core gap by year.",
+    "Correlate inflation with naira depreciation at different lags — where is the link strongest?",
+    "Fit inflation now against inflation a year ago to measure persistence.",
+    "Check the real policy rate: were rates above or below inflation?"
+   ],
+   "deliver": "a three-sentence diagnosis — demand, supply or both — citing at least two numbers, and one implication for your pricing."
+  },
+  "hook": {
+   "title": "From 22% to 34% in Eighteen Months",
+   "quote": "“Prices are rising because people have too much money. Raise interest rates and it will stop.”"
+  },
+  "concepts": [
+   {
+    "title": "The Same Medicine Does Not Cure Both",
+    "plain": "Higher interest rates work on demand: they make borrowing dearer and cool spending. Against a supply shock they cannot bring fuel or dollars back — they mainly reduce output further, while stopping the shock from spreading into wages and expectations.",
+    "formula": "demand shock: P↑ Y↑   ·   supply shock: P↑ Y↓",
+    "example": "Mid-2023 to end-2024, average inflation was 30.5% against 19.6% in the eighteen months before, while the PMI slipped from 52.7 to 49.4. Prices up, activity down: the supply-shock signature.",
+    "why": "If you misdiagnose a supply shock as demand, you expect rate rises to fix prices quickly. They won't — so plan for costs that stay high and customers who spend less."
+   },
+   {
+    "title": "Rebasing Changes the Ruler",
+    "plain": "A price index compares today's basket with a base year. When statisticians rebase, they update the base year and the basket weights. Year-on-year rates before and after are not directly comparable.",
+    "formula": "inflation = (CPIₜ ÷ CPIₜ₋₁₂ − 1) × 100",
+    "example": "Nigeria's CPI was rebased in January 2025. In this dataset headline inflation drops from about 34% in December 2024 to about 24% in January 2025 — much of that is the new ruler, not a sudden collapse in price pressure.",
+    "why": "Before you change prices, wage offers or contract indexation clauses, check which index and which base year the number uses."
+   }
+  ],
+  "checks": [
+   {
+    "q": "A sudden rise in diesel and imported-input costs pushes Nigerian prices up while factories cut output. In AD–AS terms this is:",
+    "options": [
+     "A rightward shift of aggregate demand",
+     "An upward (leftward) shift of aggregate supply",
+     "A movement along aggregate demand caused by higher incomes",
+     "A fall in aggregate demand caused by lower prices"
+    ],
+    "answer": 1,
+    "explain": "B. Higher production costs shift AS up and to the left: prices rise and output falls. A would raise output, not cut it. C and D describe demand, which is not where this shock started."
+   },
+   {
+    "q": "Headline inflation is 30%, core is 22% and the trimmed mean is 23%. What is the best reading?",
+    "options": [
+     "Underlying inflation is about 30%, so plan for 30% every year",
+     "A few items (likely food and energy) are pushing headline above the underlying trend of about 22–23%",
+     "Core inflation is wrong because it leaves out food",
+     "Inflation is under control because core is lower"
+    ],
+    "answer": 1,
+    "explain": "B. When core and trimmed mean agree and sit well below headline, a small group of volatile items is driving headline. Those items still hurt households (so C is a fair complaint, but not the best reading), and 22% is far from 'under control' (D)."
+   }
+  ],
+  "case": {
+   "title": "Demand Problem, Supply Problem — or Both?",
+   "context": "After the May–June 2023 reforms, Nigerian inflation climbed from about 22% to the mid-30s by 2024. The CBN raised its policy rate sharply. Firms faced rising costs and weakening customers at the same time.",
+   "question": "Was the surge mainly a demand shock (too much spending) or a supply shock (costs pushed up)? The answer decides whether higher interest rates are the right medicine.",
+   "data": "ng_macro_monthly.csv — headline, food and core inflation, exchange rates, policy rate and PMI, 2015–2025. *Stylised teaching data.* We use 2015–2024 for like-for-like comparisons because the CPI was rebased in 2025.",
+   "decision": "A short diagnosis with evidence (food vs core, exchange-rate pass-through, activity), and what it implies for policy and for your pricing."
+  }
+ },
+ "s07": {
+  "objectives": [
+   {
+    "title": "Read the National Accounts",
+    "body": "Explain GDP, GDI and GNI, nominal versus real, and what a rebasing does — and does not — change."
+   },
+   {
+    "title": "Find the Growth Drivers",
+    "body": "Separate oil from non-oil growth and spot which sectors are gaining share."
+   },
+   {
+    "title": "Judge Living Standards",
+    "body": "Use per-person, PPP and 'beyond GDP' measures to size a market honestly."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s07/figures/python/s07_f04.png",
+    "id": "S07-F04",
+    "title": "Nominal vs Real GDP",
+    "kicker": "THE GAP IS INFLATION",
+    "points": [
+     "The gold line is GDP in current naira; the navy line removes inflation.",
+     "From 2010 to 2025 nominal GDP rose 6.8×; real GDP rose 1.51×.",
+     "The widening gap after 2022 reflects the inflation surge you saw in Session 6.",
+     "Plan capacity on real growth; plan cash and prices on nominal."
+    ]
+   },
+   {
+    "img": "sessions/s07/figures/python/s07_f05.png",
+    "id": "S07-F05",
+    "title": "Same Economy, Bigger Measured GDP",
+    "kicker": "REBASING",
+    "points": [
+     "Rebasing updates the base year, the sector weights and the coverage of new activities.",
+     "Here the rebased series is about 36% higher in every year — an illustrative uplift.",
+     "Growth rates change much less than levels.",
+     "Ratios to GDP (debt, tax, credit) all fall at once — read them with care."
+    ]
+   },
+   {
+    "img": "sessions/s07/figures/python/s07_f01.png",
+    "id": "S07-F01",
+    "title": "Who Contributes to Growth?",
+    "kicker": "OIL VS NON-OIL",
+    "points": [
+     "Bars split each year's growth into non-oil (teal) and oil & gas (gold).",
+     "Non-oil activity provided almost all the growth; oil subtracted in most years from 2012 to 2023.",
+     "In 2022 oil output fell about 19% in this data while non-oil grew 4.8%.",
+     "Oil is small in GDP but huge for dollars and government revenue — that is why it still moves the naira."
+    ]
+   },
+   {
+    "img": "sessions/s07/figures/python/s07_f02.png",
+    "id": "S07-F02",
+    "title": "The Changing Shape of the Economy",
+    "kicker": "STRUCTURE",
+    "points": [
+     "ICT & telecom roughly doubled its share, from 7.5% to 15.8% of real GDP.",
+     "Oil & gas fell from 15.8% to 5.7%.",
+     "Agriculture and trade remain the largest sectors, at about a quarter and a sixth of output.",
+     "Manufacturing stayed near 6.5% — little sign of industrialisation."
+    ]
+   },
+   {
+    "img": "sessions/s07/figures/python/s07_f03.png",
+    "id": "S07-F03",
+    "title": "Bigger Economy, Same Average Income",
+    "kicker": "PER PERSON",
+    "points": [
+     "Real GDP rose to 151 (2010 = 100); population rose to 147.",
+     "Real GDP per person ended at only 103 — almost no gain in fifteen years.",
+     "Population grows about 2.6% a year; GDP must beat that just to stand still.",
+     "For consumer businesses: more customers, but not richer ones. Volume and value strategies differ."
+    ]
+   },
+   {
+    "img": "sessions/s07/figures/python/s07_f08.png",
+    "id": "S07-F08",
+    "title": "How Long to Double Living Standards?",
+    "kicker": "THE RULE OF 70",
+    "points": [
+     "Years to double ≈ 70 ÷ growth rate.",
+     "At 3% per person, income doubles in about 23 years; at 7%, about 10.",
+     "At this data's 0.2% per person, it takes about 376 years.",
+     "Small differences in growth, compounded, decide whether a generation gets richer."
+    ]
+   },
+   {
+    "img": "sessions/s07/figures/python/s07_f06.png",
+    "id": "S07-F06",
+    "title": "Market Rates vs PPP",
+    "kicker": "PURCHASING POWER PARITY",
+    "points": [
+     "At market exchange rates, GDP per person here is about $1,100; at PPP about $6,300.",
+     "PPP adjusts for the fact that haircuts, food and rent cost less in Lagos than in London.",
+     "Nigeria's PPP-to-market ratio (5.7×) is the highest in this group — partly because the naira fell so far.",
+     "Use PPP to compare living standards; use market rates to price imports or report in dollars."
+    ]
+   },
+   {
+    "img": "sessions/s07/figures/python/s07_f07.png",
+    "id": "S07-F07",
+    "title": "The Economy the Statistics Struggle to See",
+    "kicker": "INFORMALITY",
+    "points": [
+     "Informal firms are unregistered and often unseen by surveys and tax.",
+     "In this data Nigeria's informal share is about 57% of GDP — the highest of the group.",
+     "Across countries, richer economies are less informal: about 1.5 points less per $1k of PPP income.",
+     "For managers: much of your market is cash-based, informal and hard to size — triangulate with your own sales data."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "GDP can be measured by output, spending or income; Nigeria's GNI is below its GDP.",
+    "Always separate nominal from real; the deflator tells you how much was inflation.",
+    "Rebasing changes levels and ratios, not what the economy did.",
+    "Non-oil sectors drive growth, but oil still drives dollars and revenue.",
+    "What matters for customers is income per person — and here it has barely moved."
+   ],
+   "prework": "Read the HBS Note on Money and Monetary Policy (9-797-076) and the CBN brief on liquidity management. Note how your company's borrowing rate changed between 2023 and 2025.",
+   "next": "Session 8: Monetary Policy"
+  },
+  "glossary": [
+   {
+    "term": "GDP",
+    "def": "Value of all final goods and services produced in a country in a period."
+   },
+   {
+    "term": "Value added",
+    "def": "Output minus the inputs bought from other firms."
+   },
+   {
+    "term": "GNI",
+    "def": "GDP plus net income received from abroad."
+   },
+   {
+    "term": "Real GDP",
+    "def": "GDP at constant prices: shows changes in volume."
+   },
+   {
+    "term": "GDP deflator",
+    "def": "Nominal ÷ real GDP × 100: the broadest price index."
+   },
+   {
+    "term": "Rebasing",
+    "def": "Updating the base year, weights and coverage of the accounts."
+   },
+   {
+    "term": "PPP",
+    "def": "Exchange rate that equalises what money can buy across countries."
+   },
+   {
+    "term": "Informal economy",
+    "def": "Activity that is unregistered and largely unmeasured."
+   },
+   {
+    "term": "Productivity",
+    "def": "Output per worker or per hour; the root of living standards."
+   },
+   {
+    "term": "Rule of 70",
+    "def": "Years to double ≈ 70 ÷ the annual growth rate."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Is Nigeria Getting Richer?",
+   "time": "20 minutes",
+   "data": "data/ng_gdp_sectors.csv\ndata/peer_income.csv",
+   "r": "sessions/s07/R/s07_lab.R",
+   "py": "sessions/s07/python/s07_lab.py",
+   "steps": [
+    "Compute real GDP growth year by year.",
+    "Split growth into oil and non-oil.",
+    "Rank sectors by average annual growth, 2010–2025.",
+    "Compute real GDP per person and the years it would take to double.",
+    "Compare market-rate and PPP income across peers."
+   ],
+   "deliver": "a short paragraph for the board: real growth, growth per person, and the two sectors that matter most for your demand."
+  },
+  "hook": {
+   "title": "Bigger Overnight — Richer Overnight?",
+   "quote": "“Nigeria is now Africa's largest economy.” — headlines, April 2014"
+  },
+  "concepts": [
+   {
+    "title": "Taking Prices Out of GDP",
+    "plain": "Nominal GDP values output at today's prices; real GDP values it at a fixed base year's prices, so it moves only when quantities move. The ratio of the two is the GDP deflator — the broadest price index we have.",
+    "formula": "deflator = nominal GDP ÷ real GDP × 100",
+    "example": "In this data nominal GDP rose 6.8× from 2010 to 2025, real GDP only 1.51×. Most of the 'growth' in naira was inflation; the deflator rose about 30% in 2024 alone.",
+    "why": "A market that grows 25% in naira while prices rise 30% is shrinking in volume. Always ask for real growth before celebrating."
+   }
+  ],
+  "checks": [
+   {
+    "q": "After a rebasing, Nigeria's measured GDP rises 36% while the debt stock is unchanged. Which statement is right?",
+    "options": [
+     "The government can now borrow 36% more safely",
+     "Debt-to-GDP falls, but the government's ability to pay — its revenue — has not changed",
+     "Living standards rose 36%",
+     "Real growth last year was 36%"
+    ],
+    "answer": 1,
+    "explain": "B. The denominator grew, so the ratio falls, but debt is paid from revenue, not from GDP. Nothing about incomes (C) or last year's growth rate (D) changed; borrowing capacity (A) depends on revenue and interest costs."
+   },
+   {
+    "q": "Real GDP grows 3.4% and population grows 2.6%. Roughly how fast is real income per person growing, and how long until it doubles?",
+    "options": [
+     "3.4% a year; about 20 years",
+     "About 0.8% a year; about 90 years",
+     "6.0% a year; about 12 years",
+     "It cannot be calculated without PPP data"
+    ],
+    "answer": 1,
+    "explain": "B. Per-person growth ≈ 3.4% − 2.6% = 0.8%. Using the rule of 70: 70 ÷ 0.8 ≈ 88 years. A ignores population; C adds instead of subtracts; D is wrong — PPP is not needed for a growth rate."
+   }
+  ],
+  "case": {
+   "title": "Is Nigeria Getting Richer?",
+   "context": "A consumer-goods company plans its five-year strategy. The CEO's slide says 'Nigeria's economy has grown 50% since 2010'. The CFO is less sure the average customer is better off.",
+   "question": "How much has the economy really grown, which sectors are driving it, and has income per person risen enough to grow our market?",
+   "data": "ng_gdp_sectors.csv — real GDP by ten sectors (₦ tn, 2010 prices), nominal GDP on old and new bases, population, 2010–2025; peer_income.csv — ten countries. *Stylised teaching data.*",
+   "decision": "A one-paragraph view for the board on real growth, growth per person, and the sectors that matter for our demand."
+  }
+ },
+ "s08": {
+  "objectives": [
+   {
+    "title": "Explain the Toolkit",
+    "body": "Describe what a central bank targets and how it uses the policy rate, reserves, open-market operations and its balance sheet (QE and QT)."
+   },
+   {
+    "title": "Trace Transmission",
+    "body": "Follow a rate decision through banks, markets, the exchange rate and expectations to prices and output — and explain the lags."
+   },
+   {
+    "title": "Judge the Stance",
+    "body": "Use real rates, liquidity conditions and a simple rule to judge whether policy is tight or loose."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s08/figures/python/s08_f01.png",
+    "id": "S08-F01",
+    "title": "A Worldwide Tightening Cycle",
+    "kicker": "THE GLOBAL BACKDROP",
+    "points": [
+     "Most central banks cut to near zero in 2020 and kept rates there through 2021.",
+     "In 2022–23 the US Fed, ECB and Bank of England raised rates at the fastest pace in decades.",
+     "Higher US rates pulled dollars out of frontier markets like Nigeria and Ghana.",
+     "From 2024–25 the rich-country banks began to cut; Nigeria stayed high."
+    ]
+   },
+   {
+    "img": "sessions/s08/figures/python/s08_f02.png",
+    "id": "S08-F02",
+    "title": "Size of the Hiking Cycles",
+    "kicker": "HOW MUCH THEY TIGHTENED",
+    "points": [
+     "From their post-COVID lows to their peaks: Ghana +16.5, Nigeria +16.0, Kenya +6.0 points.",
+     "The US Fed raised by 5.25 points, from 0.25% to 5.5%.",
+     "African banks hiked more because inflation and currency pressure were far higher.",
+     "Bigger hikes also had to compensate investors for currency risk."
+    ]
+   },
+   {
+    "img": "sessions/s08/figures/python/s08_f03.png",
+    "id": "S08-F03",
+    "title": "Rates, Inflation and the Interbank Market",
+    "kicker": "NIGERIA'S POLICY PATH",
+    "points": [
+     "For most of 2020–2023 the MPR stayed below inflation — a negative real rate.",
+     "The 2024 hikes closed much of the gap; in 2025 the real rate turned clearly positive (helped by the CPI rebasing).",
+     "The interbank rate (teal) is what banks actually pay each other — it does not always follow the MPR.",
+     "Judge policy by the real rate and the interbank rate, not the headline MPR alone."
+    ]
+   },
+   {
+    "img": "sessions/s08/figures/python/s08_f04.png",
+    "id": "S08-F04",
+    "title": "When the Policy Rate Does Not Bind",
+    "kicker": "LIQUIDITY",
+    "points": [
+     "When banks are flush with naira, interbank rates fall far below the MPR — down to −9.5 points in late 2020.",
+     "Then a 'high' MPR does little: money is cheap anyway.",
+     "In 2024 the CBN drained liquidity and interbank rates rose above the MPR (up to about +5.4 points).",
+     "That is when tightening really started to bite."
+    ]
+   },
+   {
+    "img": "sessions/s08/figures/python/s08_f05.png",
+    "id": "S08-F05",
+    "title": "Did Tight Policy Slow Money and Credit?",
+    "kicker": "MONEY AND CREDIT",
+    "points": [
+     "Credit growth peaked at about 61% (Dec 2023) and broad money at about 63% (Jun 2024).",
+     "Much of that was revaluation: dollar loans and deposits were worth more naira after devaluation.",
+     "As revaluation faded and policy tightened, growth fell to about 9% (credit) and 19% (M2) by end-2025.",
+     "Lesson: in a devaluation, naira money and credit numbers overstate real expansion."
+    ]
+   },
+   {
+    "img": "sessions/s08/figures/python/s08_f07.png",
+    "id": "S08-F07",
+    "title": "The Rate Gap and the Naira",
+    "kicker": "THE FOREIGN-INVESTOR VIEW",
+    "points": [
+     "The teal line is the gap between the CBN rate and the US Fed rate — what a dollar investor earns for holding naira.",
+     "The dashed line is how much the naira then fell over the next 12 months.",
+     "In 2022–23 the naira fell far more than the gap — investors lost money, so they stayed away.",
+     "Once the gap exceeded expected depreciation in 2024–25, portfolio inflows returned."
+    ]
+   },
+   {
+    "img": "sessions/s08/figures/python/s08_f06.png",
+    "id": "S08-F06",
+    "title": "Was Policy Tight Enough?",
+    "kicker": "THE RULE VS REALITY",
+    "points": [
+     "The gold line is the illustrative rule; navy is the actual MPR.",
+     "The MPR sat below the rule in about 85% of months, 2015–2024.",
+     "The gap was widest in 2023–24, at the height of the inflation surge.",
+     "Use the rule to ask 'how tight?', not to forecast the next MPC decision."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Central banks control the price of money; they use rates, reserves, OMO and their balance sheet.",
+    "QE and QT abroad change the cost of dollars for Nigeria.",
+    "Policy works through banks, markets, the naira and expectations — with long lags.",
+    "Judge the stance by real and interbank rates, not the headline MPR alone.",
+    "Fiscal dominance undermines credibility and raises everyone's borrowing costs."
+   ],
+   "prework": "Read 'Net Fiscal Operations' and the CBN brief on the Fiscal Responsibility Law. Find what share of federal revenue went on interest in the latest budget.",
+   "next": "Session 9: Fiscal Policy & Debt"
+  },
+  "glossary": [
+   {
+    "term": "Monetary policy rate",
+    "def": "The CBN's benchmark rate signalling the price of money."
+   },
+   {
+    "term": "Interbank rate",
+    "def": "The rate banks charge each other for overnight naira."
+   },
+   {
+    "term": "Cash reserve requirement",
+    "def": "Share of deposits banks must hold at the CBN."
+   },
+   {
+    "term": "Open-market operations",
+    "def": "Central-bank sales or purchases of securities to manage liquidity."
+   },
+   {
+    "term": "Quantitative easing",
+    "def": "Central-bank asset purchases with newly created money."
+   },
+   {
+    "term": "Quantitative tightening",
+    "def": "Shrinking the central bank's balance sheet."
+   },
+   {
+    "term": "Transmission",
+    "def": "The chain from a policy decision to prices and output."
+   },
+   {
+    "term": "Real policy rate",
+    "def": "Policy rate minus inflation."
+   },
+   {
+    "term": "Taylor rule",
+    "def": "A formula for where the policy rate 'should' be."
+   },
+   {
+    "term": "Fiscal dominance",
+    "def": "When government finance needs override inflation control."
+   }
+  ],
+  "lab": {
+   "title": "Lab: How Fast Does the Rate Reach Your Firm?",
+   "time": "15 minutes",
+   "data": "data/ng_macro_monthly.csv\ndata/global_policy_rates.csv",
+   "r": "sessions/s08/R/s08_lab.R",
+   "py": "sessions/s08/python/s08_lab.py",
+   "steps": [
+    "List every CBN policy-rate decision and its size.",
+    "Compute the real policy rate by year.",
+    "Compare the interbank rate with the MPR to judge liquidity.",
+    "Correlate rate changes with credit growth at different lags — and ask why correlation misleads here.",
+    "Compute an illustrative Taylor-rule rate and compare it with the MPR."
+   ],
+   "deliver": "a short note for your CFO on funding costs, customer demand and the naira over the next 12–18 months."
+  },
+  "hook": {
+   "title": "Nearly Nine Points in Ten Months",
+   "quote": "“The MPC voted to raise the Monetary Policy Rate by 400 basis points to 22.75%.” — CBN, February 2024"
+  },
+  "concepts": [
+   {
+    "title": "When the Rate Hits Zero: The Balance Sheet",
+    "plain": "Quantitative easing (QE): the central bank creates money to buy government bonds and other assets, pushing long-term rates down. Quantitative tightening (QT) is the reverse: it lets those bonds mature or sells them, draining money and pushing long rates up.",
+    "formula": "QE: CB buys bonds → reserves ↑, long yields ↓   ·   QT: reverse",
+    "example": "The US Fed's balance sheet grew to almost $9 trillion by 2022, then began shrinking under QT from mid-2022. Global dollar liquidity tightened just as Nigeria needed dollars most.",
+    "why": "QE and QT in Washington change the cost and availability of dollars for Nigerian firms, banks and the government — through Eurobond yields and portfolio flows."
+   },
+   {
+    "title": "The Taylor Rule",
+    "plain": "John Taylor proposed that a central bank should set its rate at a neutral level plus inflation, then add more when inflation is above target or the economy is running hot. It is a yardstick, not a law.",
+    "formula": "rate = r* + π + 0.5(π − target) + 0.5 × output gap",
+    "example": "With inflation at 34.5%, a 9% target, a 2% neutral real rate and a flat PMI, the rule gives about 49% in December 2024 — far above the actual 27.5%.",
+    "why": "The rule shows policy was loose by textbook standards. But against a supply shock, following it mechanically would crush output; the CBN chose to tighten hard but not that hard."
+   }
+  ],
+  "checks": [
+   {
+    "q": "The CBN raises the cash reserve requirement while leaving the MPR unchanged. What is the most likely immediate effect?",
+    "options": [
+     "Banks have more money to lend, so loan rates fall",
+     "Banks have less naira to lend or place in the interbank market, so liquidity tightens and short-term rates rise",
+     "The naira weakens because the CBN is printing money",
+     "Nothing — only the MPR matters"
+    ],
+    "answer": 1,
+    "explain": "B. A higher CRR locks more deposits at the CBN, so banks have less to lend — a tightening even with an unchanged MPR. A is the opposite; C confuses tightening with easing; D ignores the other tools."
+   },
+   {
+    "q": "Inflation is 30%, the MPR is 27.5% and the interbank rate is 31%. Which statement best describes the stance?",
+    "options": [
+     "Very loose: the MPR is below inflation",
+     "Roughly neutral to tight in practice: the rate banks actually pay is above inflation, though the MPR itself is slightly below",
+     "Very tight: the MPR is above 25%",
+     "Impossible to judge without the Taylor rule"
+    ],
+    "answer": 1,
+    "explain": "B. The interbank rate — the marginal cost of money — is above inflation, so conditions are tighter than the MPR alone suggests. A and C each look at one number only; D overstates the role of the rule."
+   }
+  ],
+  "case": {
+   "title": "How Fast Does the CBN Reach Your Firm?",
+   "context": "In 2024 the CBN raised its policy rate sharply to fight inflation of over 30%, tightened bank reserves and mopped up liquidity. Inflation stayed high for months. Firms asked whether the medicine was working.",
+   "question": "Through which channels does a rate rise reach a Nigerian firm, how long does it take, and was policy actually tight?",
+   "data": "ng_macro_monthly.csv — policy rate, interbank rate, inflation, money, credit, exchange rate and PMI, 2015–2025; global_policy_rates.csv — seven central banks, 2019–2025. *Stylised teaching data.*",
+   "decision": "A short note for your CFO: what the 2024–25 rate path means for funding costs, customer demand and the naira over the next 12–18 months."
+  }
+ },
+ "s09": {
+  "objectives": [
+   {
+    "title": "Read a Budget Like an Analyst",
+    "body": "Separate revenue, primary spending and interest, and judge the burden against revenue as well as GDP."
+   },
+   {
+    "title": "Use the Debt-Dynamics Equation",
+    "body": "Explain why debt/GDP rises or falls using r, g and the primary balance — and spot the 'other' items."
+   },
+   {
+    "title": "Turn Fiscal Risk Into Business Risk",
+    "body": "Link subsidy reform, tax reform, borrowing and sovereign risk to rates, the naira and demand in your market."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s09/figures/python/s09_f01.png",
+    "id": "S09-F01",
+    "title": "Moderate Debt, Very Low Revenue",
+    "kicker": "DEBT AGAINST GDP",
+    "points": [
+     "Public debt rose from 14% of GDP in 2010 to 42% in 2025 in our stylised data.",
+     "FGN revenue stayed around 3–5% of GDP — among the lowest ratios in the world for a large economy.",
+     "A debt ratio that is comfortable for a country collecting 20–30% of GDP is heavy for one collecting 5%.",
+     "So judge the debt against what the state can collect, not only against the size of the economy."
+    ]
+   },
+   {
+    "img": "sessions/s09/figures/python/s09_f02.png",
+    "id": "S09-F02",
+    "title": "How Much Revenue Goes on Interest?",
+    "kicker": "THE INTEREST BILL",
+    "points": [
+     "In 2010 interest took about 16 kobo of every naira of federal revenue.",
+     "By 2021 it took 93 kobo, leaving almost nothing for salaries, roads or schools without more borrowing.",
+     "Higher oil receipts and reforms lowered the ratio to about 67% in 2025 — still very high.",
+     "Published reports showed a similar pattern; our numbers are stylised."
+    ]
+   },
+   {
+    "img": "sessions/s09/figures/python/s09_f03.png",
+    "id": "S09-F03",
+    "title": "Years of Revenue Needed to Repay the Debt",
+    "kicker": "DEBT AGAINST REVENUE",
+    "points": [
+     "Debt ÷ revenue: how many years of all federal revenue would repay the stock of debt.",
+     "It rose from about 2.5 years in 2010 to a peak of 10.6 years in 2024.",
+     "By 2025 it eased to 8.6 years as naira revenue rose faster than debt.",
+     "This is the number that explains why investors demand high yields on FGN debt."
+    ]
+   },
+   {
+    "img": "sessions/s09/figures/python/s09_f07.png",
+    "id": "S09-F07",
+    "title": "Revenue: Bigger in Naira, Still Oil-Heavy",
+    "kicker": "THE OIL DEPENDENCE",
+    "points": [
+     "Oil supplied about 70% of federal revenue in the early 2010s; under 40% in recent years.",
+     "Naira revenue jumped after 2022 — partly because a weaker naira raises the naira value of oil sales.",
+     "Oil prices and output still swing the budget, so fiscal risk is also commodity risk.",
+     "The 2025 tax reform laws aim to raise non-oil revenue; firms should expect tighter tax administration."
+    ]
+   },
+   {
+    "img": "sessions/s09/figures/python/s09_f04.png",
+    "id": "S09-F04",
+    "title": "Inflation Has Been the Debt Ratio's Friend",
+    "kicker": "r VERSUS g",
+    "points": [
+     "g (nominal growth) includes inflation; r is the average interest rate the state pays.",
+     "In most years in our data g exceeded r, so the interest–growth term pulled the ratio down.",
+     "When inflation falls, g falls quickly; r falls only as old debt is refinanced.",
+     "Lesson: disinflation without fiscal reform can make the debt arithmetic worse."
+    ]
+   },
+   {
+    "img": "sessions/s09/figures/python/s09_f05.png",
+    "id": "S09-F05",
+    "title": "Why Did Debt/GDP Jump in 2023–24?",
+    "kicker": "THE DECOMPOSITION",
+    "points": [
+     "2023: debt/GDP rose 18.7 points — almost all of it (17.9) in 'other'.",
+     "That reflects the CBN overdraft ('Ways and Means') converted into bonds and the naira revaluation of dollar debt.",
+     "2024: 'other' added 12.2 points while fast nominal growth subtracted 6.1.",
+     "Deficits matter, but the big jumps came from off-budget items and the exchange rate."
+    ]
+   },
+   {
+    "img": "sessions/s09/figures/python/s09_f06.png",
+    "id": "S09-F06",
+    "title": "A Ten-Year Projection",
+    "kicker": "THREE FUTURES",
+    "points": [
+     "Reform (g 20%, r 13%, surplus 0.5%): debt falls to about 19% of GDP by 2035.",
+     "Baseline (g 17%, r 15%, deficit 1%): roughly flat at 45%.",
+     "Adverse (g 14%, r 17%, deficit 2%, an FX shock in 2027): debt more than doubles to 87%.",
+     "The difference comes from assumptions a CFO can watch: inflation, yields, the deficit and the naira."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Judge debt against revenue and interest, not only GDP.",
+    "Debt dynamics: r − g and the primary balance drive the ratio; 'other' items cause the jumps.",
+    "Inflation and devaluation cut both ways: they raise naira revenue and naira-valued dollar debt.",
+    "Fiscal stress reaches firms through banks, yields, the naira and demand.",
+    "Watch the few numbers that decide the path: yields, inflation, the deficit and the exchange rate."
+   ],
+   "prework": "Read the Silicon Valley Bank case (F-0997-E). Ask your treasury team how much of your bank's or company's investments are in long-dated FGN bonds, and at what yield they were bought.",
+   "next": "Session 10: Financial Stability"
+  },
+  "glossary": [
+   {
+    "term": "Primary balance",
+    "def": "Revenue minus all spending except interest."
+   },
+   {
+    "term": "Fiscal deficit",
+    "def": "Total spending (including interest) minus revenue."
+   },
+   {
+    "term": "Debt-to-GDP",
+    "def": "Public debt as a share of the economy's annual output."
+   },
+   {
+    "term": "Interest-to-revenue",
+    "def": "Share of government revenue spent on interest."
+   },
+   {
+    "term": "r − g",
+    "def": "Interest rate on debt minus nominal growth; drives the debt ratio."
+   },
+   {
+    "term": "Stock-flow adjustment",
+    "def": "Changes in debt not explained by the deficit (FX, bailouts, conversions)."
+   },
+   {
+    "term": "Fiscal multiplier",
+    "def": "Change in GDP per naira of extra government spending."
+   },
+   {
+    "term": "Fiscal dominance",
+    "def": "Monetary policy constrained by the need to finance the government."
+   },
+   {
+    "term": "Ways and Means",
+    "def": "Central-bank overdraft to the government."
+   },
+   {
+    "term": "Sovereign spread",
+    "def": "Extra yield investors demand on a country's debt over a safe benchmark."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Is the Debt the Problem — or the Revenue?",
+   "time": "15 minutes",
+   "data": "data/fgn_fiscal_annual.csv",
+   "r": "sessions/s09/R/s09_lab.R",
+   "py": "sessions/s09/python/s09_lab.py",
+   "steps": [
+    "Compute debt/GDP, debt/revenue and interest/revenue for every year.",
+    "Compute r (interest ÷ last year's debt) and g (nominal GDP growth). In which years was g > r?",
+    "Decompose each year's change in debt/GDP into r − g, primary balance and 'other'.",
+    "Project debt/GDP to 2035 under a baseline and a reform scenario.",
+    "Find the debt-stabilising primary balance for three combinations of r and g."
+   ],
+   "deliver": "a 150-word note to your board: is the problem debt or revenue, and what should we watch?"
+  },
+  "hook": {
+   "title": "Low Debt, Heavy Burden",
+   "quote": "“Nigeria's debt is only about 40% of GDP — Japan's is over 200%. What is the fuss about?”"
+  },
+  "concepts": [
+   {
+    "title": "What Moves the Debt Ratio?",
+    "plain": "The debt ratio rises when the interest rate (r) on debt is higher than the economy's nominal growth (g), and when the government runs a primary deficit. Anything else — a devaluation, a bailout, an old overdraft turned into bonds — shows up as 'other'.",
+    "formula": "Δd = (r − g) ÷ (1 + g) × d  −  pb  +  other",
+    "example": "In 2025 in our data: r = 8.3%, g = 23.3%. With g far above r, the interest–growth term cut the debt ratio by about 6 points on its own.",
+    "why": "High inflation raises g and quietly erodes the debt ratio — but it also raises future interest rates. The relief lasts only while r stays below g."
+   },
+   {
+    "title": "Does Government Spending Grow the Economy?",
+    "plain": "A fiscal multiplier tells you how much GDP changes when government spending changes by ₦1. It is larger when the economy has idle capacity and smaller when spending leaks into imports or pushes up interest rates.",
+    "formula": "multiplier = ΔGDP ÷ ΔG",
+    "example": "If ₦1 trillion of road spending raises GDP by ₦0.6 trillion, the multiplier is 0.6. Open, import-dependent economies with high interest rates tend to have multipliers below 1.",
+    "why": "When government cuts spending, your demand falls by more in sectors that sell to the state (construction, contractors) and less in export or consumer-staples sectors. Know where your revenue sits."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Country A has debt of 40% of GDP and revenue of 5% of GDP. Country B has debt of 80% of GDP and revenue of 35% of GDP. Which is more stretched, and why?",
+    "options": [
+     "Country B — its debt ratio is twice as high",
+     "Country A — its debt equals 8 years of revenue versus about 2.3 years in B",
+     "They are equally stretched",
+     "Neither — debt ratios below 100% are always safe"
+    ],
+    "answer": 1,
+    "explain": "B. Debt is repaid from revenue. A's debt is 40 ÷ 5 = 8 years of revenue; B's is 80 ÷ 35 ≈ 2.3 years. Debt/GDP alone (A) misleads; there is no universally safe threshold (D)."
+   },
+   {
+    "q": "Inflation falls sharply, so nominal GDP growth drops from 23% to 13%, while the average interest rate on government debt stays at 15%. Holding the primary balance constant, what happens to the debt ratio?",
+    "options": [
+     "It falls, because lower inflation is good news",
+     "It starts rising, because r is now above g",
+     "Nothing — inflation does not affect debt",
+     "It falls, because interest rates will fall immediately"
+    ],
+    "answer": 1,
+    "explain": "B. With r (15%) above g (13%), the interest–growth term turns positive and the ratio drifts up unless the primary balance improves. Rates on existing debt adjust only slowly as bonds are refinanced (D)."
+   }
+  ],
+  "case": {
+   "title": "Is the Debt the Problem — or the Revenue?",
+   "context": "Federal debt rose sharply after 2022 as the CBN overdraft was converted into bonds and the naira fell. Interest payments now take most of federal revenue, and banks hold large amounts of FGN bonds.",
+   "question": "Is Nigeria's fiscal problem too much debt, or too little revenue — and what does each answer imply for interest rates, the naira and your company's plans?",
+   "data": "fgn_fiscal_annual.csv — 2010–2025: nominal GDP, FGN revenue (and oil share), spending, interest, total public debt. *Stylised teaching data.*",
+   "decision": "A short diagnosis using three ratios (debt/GDP, debt/revenue, interest/revenue), a debt-dynamics decomposition and a ten-year projection under three scenarios."
+  }
+ },
+ "s10": {
+  "objectives": [
+   {
+    "title": "Read the Yield Curve",
+    "body": "Explain what the level and slope of the FGN yield curve say about inflation, policy and the cost of long-term money."
+   },
+   {
+    "title": "Spot Interest-Rate Risk",
+    "body": "Use duration to estimate how much a bond or a bank loses when rates rise."
+   },
+   {
+    "title": "Link Stability to Your Firm",
+    "body": "Explain how bank fragility and macroprudential rules change credit availability, spreads and investment."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s10/figures/python/s10_f01.png",
+    "id": "S10-F01",
+    "title": "From Steep and Low to High and Inverted",
+    "kicker": "THE FGN YIELD CURVE",
+    "points": [
+     "2021: cheap short-term money, long rates well above short — a normal, steep curve.",
+     "Mid-2024: the CBN's tightening pushed short rates above long rates — an inverted curve.",
+     "End-2025: lower and flatter as inflation eased and rate-cut expectations built.",
+     "For a CFO the level is the cost of funds; the slope hints at whether to lock in long or stay short."
+    ]
+   },
+   {
+    "img": "sessions/s10/figures/python/s10_f02.png",
+    "id": "S10-F02",
+    "title": "Long Bonds Fall Most",
+    "kicker": "PRICE AND MATURITY",
+    "points": [
+     "All four bonds pay a 13% coupon and are priced at 100 when the yield is 13%.",
+     "At an 18.8% yield the 1-year bond barely moves; the 10-year bond falls to about 74.",
+     "The 20-year bond falls further still.",
+     "Rule of thumb: more duration = more interest-rate risk."
+    ]
+   },
+   {
+    "img": "sessions/s10/figures/python/s10_f03.png",
+    "id": "S10-F03",
+    "title": "What Happened to Bonds Bought in January 2023",
+    "kicker": "MARK-TO-MARKET",
+    "points": [
+     "Take bonds bought at par in January 2023 and value them in June 2024.",
+     "Short bonds lost about 5%; 10- and 15-year bonds lost about 20%.",
+     "No default, no missed coupon — the loss comes purely from higher market yields.",
+     "If you must sell before maturity, that loss becomes real."
+    ]
+   },
+   {
+    "img": "sessions/s10/figures/python/s10_f04.png",
+    "id": "S10-F04",
+    "title": "Long Bonds Funded by Short Deposits",
+    "kicker": "THE CASE BANK",
+    "points": [
+     "Assets ₦7,500bn; liabilities ₦7,000bn; equity only ₦500bn — leverage of 15×.",
+     "The FGN bond book (₦1,850bn) has a duration of 7.5 years.",
+     "Most funding is current and savings deposits with a duration of a few months.",
+     "Banks earn money by this mismatch — and take risk because of it."
+    ]
+   },
+   {
+    "img": "sessions/s10/figures/python/s10_f05.png",
+    "id": "S10-F05",
+    "title": "How Big a Rate Shock Can the Bank Survive?",
+    "kicker": "STRESS TEST",
+    "points": [
+     "Each point of higher rates removes roughly ₦124bn of economic equity.",
+     "+2 points leaves about ₦251bn; +3 points about ₦127bn.",
+     "A rise of about 4 points wipes out equity entirely.",
+     "Nigerian 10-year yields rose by almost 5 points between early 2023 and mid-2024."
+    ]
+   },
+   {
+    "img": "sessions/s10/figures/python/s10_f06.png",
+    "id": "S10-F06",
+    "title": "The Hidden Loss Can Exceed Equity",
+    "kicker": "THE SVB TRAP",
+    "points": [
+     "Using the 2024 yield curve, the bond book's unrealised loss is about ₦712bn.",
+     "That is larger than the bank's ₦500bn equity.",
+     "Accounting rules for 'held-to-maturity' bonds can keep this loss off the income statement.",
+     "It becomes real only if the bank must sell — for example, in a deposit run."
+    ]
+   },
+   {
+    "img": "sessions/s10/figures/python/s10_f07.png",
+    "id": "S10-F07",
+    "title": "Were Lenders Paid for Inflation?",
+    "kicker": "REAL YIELDS",
+    "points": [
+     "Real 10-year yield = nominal yield − inflation.",
+     "It was deeply negative in 2024 (about −16 points).",
+     "By end-2025 it was close to zero (about −0.5).",
+     "Negative real yields push savers to dollars and real assets; positive ones bring them back to naira bonds."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "The yield curve's level is the price of money; its slope is the market's view of what comes next.",
+    "When yields rise, bond prices fall — long bonds most. Government bonds carry interest-rate risk.",
+    "Banks are fragile because they borrow short and lend long with thin equity.",
+    "The duration gap turns a rate shock into a naira loss of capital.",
+    "Financial conditions reach your firm through the price and quantity of credit."
+   ],
+   "prework": "Read the Thailand: An Imbalance of Payments case. Note the exchange-rate regime, the size of short-term foreign borrowing, and what happened to reserves in 1997.",
+   "next": "Session 11: Exchange Rates & Capital Flows"
+  },
+  "glossary": [
+   {
+    "term": "Yield",
+    "def": "The annual return on a bond if bought at today's price and held to maturity."
+   },
+   {
+    "term": "Yield curve",
+    "def": "Yields on government debt plotted against maturity."
+   },
+   {
+    "term": "Inverted curve",
+    "def": "Short-term yields above long-term yields."
+   },
+   {
+    "term": "Term premium",
+    "def": "Extra yield investors demand for lending long."
+   },
+   {
+    "term": "Duration",
+    "def": "Weighted average time to a bond's cash flows; its rate sensitivity."
+   },
+   {
+    "term": "Duration gap",
+    "def": "Asset duration minus leverage-adjusted liability duration."
+   },
+   {
+    "term": "Mark-to-market",
+    "def": "Valuing an asset at today's market price."
+   },
+   {
+    "term": "Held to maturity",
+    "def": "Accounting label that keeps bond losses off the income statement."
+   },
+   {
+    "term": "Credit spread",
+    "def": "Extra interest a borrower pays above the government yield."
+   },
+   {
+    "term": "Macroprudential",
+    "def": "Rules that protect the financial system as a whole."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Could Our Bank Be the Next SVB?",
+   "time": "20 minutes",
+   "data": "data/bank_balance_sheet.csv\ndata/ng_yield_curves.csv",
+   "r": "sessions/s10/R/s10_lab.R",
+   "py": "sessions/s10/python/s10_lab.py",
+   "steps": [
+    "Tabulate the five yield curves: which are normal and which inverted?",
+    "Price a 10-year, 13% bond at yields of 13%, 15%, 18% and 20%.",
+    "Compute the bank's equity and leverage.",
+    "Compute asset duration, liability duration and the duration gap.",
+    "Stress-test equity for +1, +2, +3 and +5 point rate shocks."
+   ],
+   "deliver": "two sentences for the board on the bank's interest-rate risk and one action you would take."
+  },
+  "hook": {
+   "title": "The Bank That Bought Safe Bonds",
+   "quote": "“We hold government bonds. They never default. What could go wrong?”"
+  },
+  "concepts": [
+   {
+    "title": "What a Yield Curve Shows",
+    "plain": "The yield curve plots the interest rate the government pays to borrow for 3 months, 1 year, 10 years and longer. Its level tells you how expensive money is; its slope tells you what markets expect next.",
+    "formula": "long yield ≈ average expected short rate + term premium",
+    "example": "In 2021 the curve was low and steep (2.5% for 3 months, 12.8% for 10 years). By mid-2024 it was high and inverted (17.5% for 3 months, 21% for 1 year, 18.8% for 10 years).",
+    "why": "An inverted curve says markets expect rates to fall later — often because tight policy will slow the economy. It also tells you when to borrow long and when to wait."
+   },
+   {
+    "title": "When Yields Rise, Bond Prices Fall",
+    "plain": "A bond pays fixed coupons. If new bonds pay more, nobody will pay full price for your old, lower-coupon bond — so its price falls until its yield matches the market.",
+    "formula": "% price change ≈ − modified duration × change in yield",
+    "example": "A 10-year FGN bond with a 13% coupon is worth 100 at a 13% yield, 89.8 at 15%, 77.2 at 18% and 70.2 at 20%.",
+    "why": "Duration — roughly the average time until you get your money back — measures sensitivity. The longer the bond, the bigger the fall when rates rise."
+   },
+   {
+    "title": "The Duration Gap",
+    "plain": "The duration gap compares how long the bank's assets are with how long its liabilities are. A positive gap means asset values fall more than liability values when rates rise — so equity shrinks.",
+    "formula": "gap = D(assets) − (liabilities ÷ assets) × D(liabilities)",
+    "example": "Asset duration 2.38 years, liability duration 0.45 years → gap 1.96 years. A +1 point rise in rates cuts economic equity by about ₦124bn.",
+    "why": "The gap turns a rate forecast into a naira number the board understands: how much of our capital a rate shock would destroy."
+   }
+  ],
+  "checks": [
+   {
+    "q": "Your pension fund holds a 20-year FGN bond. The CBN signals more rate hikes. What is the most likely effect on the bond's market value?",
+    "options": [
+     "It rises, because higher rates mean higher coupons on the bond you already hold",
+     "It falls, and by more than a 2-year bond would",
+     "It is unchanged until the bond matures",
+     "It falls by the same percentage as a 2-year bond"
+    ],
+    "answer": 1,
+    "explain": "B. The coupon on an existing bond is fixed, so higher market yields push its price down, and the long duration of a 20-year bond magnifies the fall. C confuses accounting value (if held to maturity) with market value."
+   },
+   {
+    "q": "The case bank's duration gap is 1.96 years and its equity is ₦500bn. A colleague says: 'A 2-point rise in yields is nothing for us.' What is the best reply?",
+    "options": [
+     "Correct — the bonds will pay back at maturity, so there is no loss",
+     "A 2-point rise would cut economic equity by about ₦250bn, half our capital",
+     "A 2-point rise would wipe out all our equity",
+     "We cannot say without the bank's profit figures"
+    ],
+    "answer": 1,
+    "explain": "B. Change in equity ≈ −1.96 × ₦7,500bn × 0.02 ÷ 1.18 ≈ −₦249bn, about half the ₦500bn. A ignores economic value and liquidity risk. C overstates — that needs about 4 points."
+   }
+  ],
+  "case": {
+   "title": "Could a Nigerian Bank Fall Into the SVB Trap?",
+   "context": "A mid-sized Nigerian bank holds ₦1,850bn of FGN bonds bought around 13%, funded mostly by current and savings deposits. Yields jumped in 2024 as the CBN tightened.",
+   "question": "How much economic value has the bank lost, how big a rate shock could wipe out its equity, and what should the board do?",
+   "data": "bank_balance_sheet.csv — a fictional bank's assets and liabilities with durations and rates. ng_yield_curves.csv — five stylised FGN yield curves (2021–2025). *Stylised teaching data.*",
+   "decision": "A stress test in naira: equity left after +1 to +5 point shocks, and one or two concrete actions (shorten the bond book, hedge, raise capital, lengthen funding)."
+  }
+ },
+ "s11": {
+  "objectives": [
+   {
+    "title": "Explain FX Regimes",
+    "body": "Compare pegs, managed floats and free floats, and explain the impossible trinity in plain language."
+   },
+   {
+    "title": "Read the Balance of Payments",
+    "body": "Trace where Nigeria's dollars come from and go to, and spot the warning signs of a sudden stop."
+   },
+   {
+    "title": "Manage Currency Risk",
+    "body": "Identify currency mismatch in a business and explain how a weaker naira hits costs, debt and competitiveness."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s11/figures/python/s11_f01.png",
+    "id": "S11-F01",
+    "title": "A Decade of Naira Policy",
+    "kicker": "THREE REGIMES",
+    "points": [
+     "2015–mid-2016: a near-fixed rate around ₦197–199 per dollar.",
+     "2016–2023: a managed rate with several official windows, and a wide parallel market.",
+     "From June 2023: windows unified; the rate became much more market-determined.",
+     "Each switch came after the old regime ran short of dollars."
+    ]
+   },
+   {
+    "img": "sessions/s11/figures/python/s11_f02.png",
+    "id": "S11-F02",
+    "title": "The Premium Measures Rationing",
+    "kicker": "THE SIGNAL",
+    "points": [
+     "The parallel premium averaged about 35% before unification and peaked above 100% in 2016.",
+     "Since mid-2024 it has averaged under 3%.",
+     "A high premium tells you official dollars are being rationed.",
+     "Falling reserves alongside a rising premium is the classic warning of a coming devaluation."
+    ]
+   },
+   {
+    "img": "sessions/s11/figures/python/s11_f05.png",
+    "id": "S11-F05",
+    "title": "Pick Any Two Corners",
+    "kicker": "THE TRIANGLE",
+    "points": [
+     "Currency board / monetary union: fixed rate and open capital, but no independent rates (e.g. the euro area, the CFA franc zone).",
+     "Capital controls: fixed or managed rate with own policy — at the cost of rationing and parallel markets.",
+     "Floating rate: open capital and own policy — the exchange rate does the adjusting.",
+     "Nigeria moved from the controls side towards the floating side in 2023–24."
+    ]
+   },
+   {
+    "img": "sessions/s11/figures/python/s11_f03.png",
+    "id": "S11-F03",
+    "title": "Remittances Keep the Account Afloat",
+    "kicker": "THE CURRENT ACCOUNT",
+    "points": [
+     "Remittances (gold) average about US$5.1bn a quarter — a stable dollar source.",
+     "Services and income (grey) are a steady drain.",
+     "The current account turns negative when oil weakens: about −US$4.6bn in 2020Q2.",
+     "Higher oil and a weaker naira restored surpluses in 2023–24."
+    ]
+   },
+   {
+    "img": "sessions/s11/figures/python/s11_f04.png",
+    "id": "S11-F04",
+    "title": "Portfolio Flows Chase the Real Return",
+    "kicker": "HOT MONEY",
+    "points": [
+     "Foreign portfolio investors come when the real return — interest minus inflation, adjusted for expected depreciation — is attractive.",
+     "In our data the correlation between inflows and the real policy rate is 0.45.",
+     "These flows can reverse within weeks: a sudden stop.",
+     "A central bank that relies on hot money to fund the peg is building a trap."
+    ]
+   },
+   {
+    "img": "sessions/s11/figures/python/s11_f06.png",
+    "id": "S11-F06",
+    "title": "The Dollar Loan That Tripled",
+    "kicker": "CURRENCY MISMATCH",
+    "points": [
+     "A firm borrows US$10m in January 2023 to fund naira-earning operations: ₦4.5bn.",
+     "By January 2025 the same debt is worth ₦15.4bn.",
+     "Nothing changed in the business — only the exchange rate.",
+     "Mismatch, not the dollar itself, is the danger: borrow in the currency you earn."
+    ]
+   },
+   {
+    "img": "sessions/s11/figures/python/s11_f07.png",
+    "id": "S11-F07",
+    "title": "Did the Naira Really Get Cheaper?",
+    "kicker": "THE REAL EXCHANGE RATE",
+    "points": [
+     "The real rate adjusts the nominal rate for inflation at home and abroad.",
+     "From 2016 to 2023 the real index drifted from about 159 to 110: high inflation made the naira overvalued at a fixed rate.",
+     "Unification produced a sharp real depreciation (peak about 306 in Feb 2024).",
+     "Since then inflation has eroded part of the gain (about 201 by end-2025)."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "The exchange rate is a price set by dollar inflows and outflows.",
+    "The impossible trinity: a country must give up one of a fixed rate, free capital or its own policy.",
+    "A wide parallel premium means rationing; it usually ends in devaluation.",
+    "Hot money can leave fast; remittances are Nigeria's steadiest dollar source.",
+    "For firms, the killer is currency mismatch — borrow in the currency you earn."
+   ],
+   "prework": "Read Sáenz & Revilla, 'Creating More Resilient Supply Chains' (MIT Sloan Management Review). List your company's three most important imported inputs and where they come from.",
+   "next": "Session 12: Trade & Industrial Policy"
+  },
+  "glossary": [
+   {
+    "term": "Exchange-rate regime",
+    "def": "The rules for how a currency's value is set: fixed, managed or floating."
+   },
+   {
+    "term": "Peg",
+    "def": "A currency held at a fixed rate against another."
+   },
+   {
+    "term": "Parallel premium",
+    "def": "How much weaker the parallel rate is than the official rate."
+   },
+   {
+    "term": "Impossible trinity",
+    "def": "A fixed rate, free capital and own monetary policy cannot coexist."
+   },
+   {
+    "term": "Current account",
+    "def": "Trade, services, income and transfers with the rest of the world."
+   },
+   {
+    "term": "Remittances",
+    "def": "Money sent home by citizens working abroad."
+   },
+   {
+    "term": "Hot money",
+    "def": "Short-term portfolio flows that move quickly in and out."
+   },
+   {
+    "term": "Sudden stop",
+    "def": "An abrupt halt or reversal of capital inflows."
+   },
+   {
+    "term": "Carry trade",
+    "def": "Borrowing in a low-rate currency to invest in a high-rate one."
+   },
+   {
+    "term": "Currency mismatch",
+    "def": "Debts in one currency, revenues in another."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Reading the Naira",
+   "time": "20 minutes",
+   "data": "data/ng_macro_monthly.csv\ndata/ng_bop_quarterly.csv",
+   "r": "sessions/s11/R/s11_lab.R",
+   "py": "sessions/s11/python/s11_lab.py",
+   "steps": [
+    "Compute the parallel premium by year and compare it with reserves.",
+    "Rebuild the current account from its parts, by year.",
+    "Correlate portfolio inflows with the real policy rate.",
+    "Track a US$10m loan in naira from 2023 to 2025.",
+    "Place Nigeria's pre- and post-2023 regimes on the impossible trinity."
+   ],
+   "deliver": "a one-paragraph note to your CFO: three signals that the naira is under pressure, and where to find them."
+  },
+  "hook": {
+   "title": "One Dollar, Two Prices",
+   "quote": "“We buy dollars at the official rate. Our competitor pays the parallel rate. We have a cost advantage — until we don't get any dollars at all.”"
+  },
+  "concepts": [
+   {
+    "title": "What Sets the Exchange Rate?",
+    "plain": "An exchange rate is a price: naira per dollar. It is set by who wants dollars (importers, students abroad, investors leaving, people saving in dollars) and who supplies them (oil exporters, remittances, foreign investors coming in, the CBN).",
+    "formula": "dollar demand > dollar supply → naira weakens (or reserves fall)",
+    "example": "When oil earnings fell in 2015–16 and again in 2020, dollar supply dropped. The CBN either let the naira fall or spent reserves and rationed dollars.",
+    "why": "Every forecast of the naira is really a forecast of dollar inflows and outflows. Learn to read those flows and you will rarely be surprised."
+   },
+   {
+    "title": "The Impossible Trinity",
+    "plain": "A country would like three things: a stable exchange rate, free movement of capital, and its own interest-rate policy. It can only have two at a time.",
+    "formula": "fixed rate + free capital + own monetary policy = impossible",
+    "example": "If the CBN fixes the naira and lets capital move freely, it must set interest rates to defend the peg — it loses control of domestic policy. Nigeria before 2023 kept the peg and its own rates by rationing dollars — a form of capital control.",
+    "why": "When a government promises all three, one promise will break. For a business, the question is which one, and when."
+   },
+   {
+    "title": "Borrow Cheap, Lend Dear — Until the Currency Moves",
+    "plain": "In a carry trade, investors borrow in a low-interest currency (dollars) and buy high-yield naira bills. They earn the interest gap — as long as the naira does not fall by more than that gap.",
+    "formula": "carry return ≈ naira yield − dollar yield − naira depreciation",
+    "example": "A 20% naira bill against a 5% dollar cost earns about 15% — but a 40% devaluation turns that into a large loss.",
+    "why": "When carry investors all head for the exit at once, the naira falls fast and reserves drain. Watch their positioning, not just the interest rate."
+   }
+  ],
+  "checks": [
+   {
+    "q": "A country fixes its currency, allows investors to move money freely, and wants to cut interest rates to boost growth. What is most likely to happen?",
+    "options": [
+     "Growth rises and the peg holds",
+     "Investors move money out to earn higher returns abroad, reserves fall, and the peg comes under pressure",
+     "Inflation falls automatically",
+     "Nothing changes because the rate is fixed"
+    ],
+    "answer": 1,
+    "explain": "B. With open capital, lower domestic rates push money out. To hold the peg the central bank must sell reserves — which cannot last. This is exactly the impossible trinity at work."
+   },
+   {
+    "q": "Your company borrowed US$10m in January 2023 at 8% a year instead of ₦4.5bn at 18%. Using the stylised rates, what is the main lesson two years later?",
+    "options": [
+     "The dollar loan was cheaper because 8% < 18%",
+     "The naira value of the dollar debt rose from about ₦4.5bn to ₦15.4bn, wiping out the interest saving many times over",
+     "The two loans cost the same",
+     "Exchange rates don't matter for debt"
+    ],
+    "answer": 1,
+    "explain": "B. The interest gap saved about 10 points a year, but the naira fell by roughly 70% against the dollar, more than tripling the naira value of the principal. Always include expected depreciation."
+   }
+  ],
+  "case": {
+   "title": "From ₦460 to ₦1,500: Lessons from the Naira's Unification",
+   "context": "Until mid-2023 Nigeria kept an official rate near ₦460/$ while the parallel market traded far weaker. In June 2023 the CBN unified its FX windows; by 2024 the naira traded around ₦1,500/$.",
+   "question": "Why did the old system break, who gained and lost from unification, and what should a Nigerian firm do differently now?",
+   "data": "ng_macro_monthly.csv — official and parallel rates, reserves, policy rate, inflation. ng_bop_quarterly.csv — trade, remittances, services, FDI and portfolio flows, 2015–2025. *Stylised teaching data.*",
+   "decision": "A clear account of the regime choice using the impossible trinity, plus a currency-risk checklist for a firm."
+  }
+ },
+ "s12": {
+  "objectives": [
+   {
+    "title": "Explain Why Trade Pays",
+    "body": "Use comparative advantage to show why both sides gain — and who inside each country loses."
+   },
+   {
+    "title": "Size Export Markets",
+    "body": "Use the gravity model to estimate expected trade and spot under-served African markets for AfCFTA."
+   },
+   {
+    "title": "Build Resilient Supply Chains",
+    "body": "Measure supplier concentration and choose between diversifying, stockpiling and localising."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s12/figures/python/s12_f01.png",
+    "id": "S12-F01",
+    "title": "Who Nigeria Trades With",
+    "kicker": "THE PATTERN",
+    "points": [
+     "Exports go mainly to oil buyers: the United States, India and European refiners.",
+     "Imports come overwhelmingly from China: machinery, phones, textiles, inputs.",
+     "Total trade in this stylised year is about $31bn; trade with African partners is only 7.6% of it.",
+     "That low African share is the gap AfCFTA is meant to close."
+    ]
+   },
+   {
+    "img": "sessions/s12/figures/python/s12_f05.png",
+    "id": "S12-F05",
+    "title": "Export Concentration: Oil Still Dominates",
+    "kicker": "ONE COMMODITY",
+    "points": [
+     "Oil and gas make up about 74% of exports in these data.",
+     "When oil prices or output fall, export earnings — and dollars for importers — fall with them.",
+     "Non-oil exports are about $3.5bn; Africa already takes $849m of them, second only to Asia.",
+     "Manufactured and processed goods are more likely to sell in Africa than in Europe."
+    ]
+   },
+   {
+    "img": "sessions/s12/figures/python/s12_f02.png",
+    "id": "S12-F02",
+    "title": "Size Pulls, Distance Pushes",
+    "kicker": "GRAVITY IN ONE PICTURE",
+    "points": [
+     "Each bubble is a partner; bigger bubble = bigger economy.",
+     "Distant giants (China, the US) still trade heavily with Nigeria because of their size.",
+     "Neighbours like Benin and Ghana trade a lot for their size — they are very close.",
+     "Small, landlocked and distant partners such as Chad trade very little."
+    ]
+   },
+   {
+    "img": "sessions/s12/figures/python/s12_f03.png",
+    "id": "S12-F03",
+    "title": "What Drives Nigeria's Trade?",
+    "kicker": "THE REGRESSION",
+    "points": [
+     "GDP elasticity ≈ 0.98; distance elasticity ≈ −1.08.",
+     "A shared language goes with about 73% more trade.",
+     "Landlocked partners trade about 52% less — every border and truck adds cost.",
+     "Four variables explain 89% of the variation (R² = 0.89)."
+    ]
+   },
+   {
+    "img": "sessions/s12/figures/python/s12_f04.png",
+    "id": "S12-F04",
+    "title": "Where Is Trade Below What Gravity Predicts?",
+    "kicker": "MISSING TRADE",
+    "points": [
+     "A ratio below 1 means Nigeria trades less than size and distance suggest.",
+     "Côte d'Ivoire (0.72×), Egypt and Ghana sit below the line — potential room to grow.",
+     "South Africa (1.84×) and Cameroon (1.66×) already trade more than predicted.",
+     "Missing trade is a clue, not a verdict: check non-tariff barriers, payments and competition first."
+    ]
+   },
+   {
+    "img": "sessions/s12/figures/python/s12_f07.png",
+    "id": "S12-F07",
+    "title": "What Removing Tariffs Could Do",
+    "kicker": "AN ILLUSTRATIVE SCENARIO",
+    "points": [
+     "Trade with African partners: about $2.4bn today in these data.",
+     "If average tariffs fell from 9% to zero and trade responds with an elasticity of 4, trade rises about 41% to $3.4bn.",
+     "The elasticity is uncertain — estimates often range from 3 to 6 — so treat this as a range, not a forecast.",
+     "Poor roads, slow borders, checkpoints and payment frictions can cost more than the tariff itself."
+    ]
+   },
+   {
+    "img": "sessions/s12/figures/python/s12_f06.png",
+    "id": "S12-F06",
+    "title": "One Supplier Country, One Point of Failure",
+    "kicker": "CONCENTRATION RISK",
+    "points": [
+     "China supplies about 64% of Nigeria's imports in these data.",
+     "The Herfindahl–Hirschman Index (sum of squared shares) is 4,178 — above 2,500 is commonly treated as highly concentrated.",
+     "The top three sources supply 76% of imports.",
+     "A port closure, export ban or freight spike in one place can stop Nigerian factories."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Countries — and firms — gain by specialising in their comparative advantage.",
+    "Trade follows gravity: big and close partners matter most; use it to spot missing trade.",
+    "AfCFTA cuts tariffs, but logistics, rules of origin, payments and FX decide whether you can compete.",
+    "Measure supplier concentration; diversify, stock, localise and map deeper tiers.",
+    "Industrial policy works best with discipline, competition and an exit date."
+   ],
+   "prework": "Read Stern, The Economics of Climate Change (summary chapters) and skim the KPMG / IFRS Foundation guide on ISSB and TCFD. List your company's three largest sources of emissions.",
+   "next": "Session 13: Climate & Energy Transition"
+  },
+  "glossary": [
+   {
+    "term": "Comparative advantage",
+    "def": "Producing what you give up least to make, relative to others."
+   },
+   {
+    "term": "Opportunity cost",
+    "def": "What you give up to produce or buy something."
+   },
+   {
+    "term": "Gravity model",
+    "def": "Trade rises with partner size and falls with distance."
+   },
+   {
+    "term": "Elasticity",
+    "def": "% change in one thing for a 1% change in another."
+   },
+   {
+    "term": "AfCFTA",
+    "def": "The African Continental Free Trade Area."
+   },
+   {
+    "term": "Rules of origin",
+    "def": "Rules on how much of a good must be made locally to qualify."
+   },
+   {
+    "term": "Non-tariff barrier",
+    "def": "Any cost of trading other than a tariff: delays, permits, quotas."
+   },
+   {
+    "term": "HHI",
+    "def": "Sum of squared shares; measures concentration."
+   },
+   {
+    "term": "Friend-shoring",
+    "def": "Moving supply chains to politically aligned countries."
+   },
+   {
+    "term": "Industrial policy",
+    "def": "Government support to build particular industries."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Where Should We Export First?",
+   "time": "20 minutes",
+   "data": "data/ng_trade_partners.csv",
+   "r": "sessions/s12/R/s12_lab.R",
+   "py": "sessions/s12/python/s12_lab.py",
+   "steps": [
+    "Rank partners by total trade and compute Africa's share.",
+    "Fit the gravity model: log trade on log GDP, log distance, language and landlocked.",
+    "Compare actual vs predicted trade for each African partner.",
+    "Run the AfCFTA tariff scenario with elasticities of 3, 4 and 6.",
+    "Compute the HHI of import sources and propose two de-risking actions."
+   ],
+   "deliver": "a ranked shortlist of three export markets and two supply-chain actions, one line of reasoning each."
+  },
+  "hook": {
+   "title": "A Market of 1.3 Billion People Next Door",
+   "quote": "“AfCFTA opens a continent. Let's export everywhere next year.”"
+  },
+  "concepts": [
+   {
+    "title": "Everyone Gains From Doing What They Do Relatively Best",
+    "plain": "A country gains from trade by producing what it gives up least to make — its comparative advantage — and buying the rest. Even a country that is better at everything gains by specialising.",
+    "formula": "opportunity cost of X = output of Y given up ÷ extra output of X",
+    "example": "If a Nigerian worker can make 10 bags of cement or 2 phones a day, and a Chinese worker 12 bags or 6 phones, Nigeria gives up 0.2 phones per bag; China gives up 0.5. Nigeria has the comparative advantage in cement, China in phones — even though China is better at both.",
+    "why": "Comparative advantage is not fixed. Nigeria moved from importing most of its cement to producing almost all of it once investment, gas and scale came together. Your firm's export opportunity lies where your cost relative to rivals is lowest."
+   },
+   {
+    "title": "Trade Behaves Like Gravity",
+    "plain": "Countries trade more with partners that are big and close, and less with those that are small and far — just as gravity pulls more strongly between heavy, nearby objects. Shared language, borders and history add to the pull; being landlocked subtracts.",
+    "formula": "log(trade) = a + b₁·log(GDP) + b₂·log(distance) + extras",
+    "example": "In our data b₁ = 0.98 and b₂ = −1.08: a partner 10% bigger trades about 10% more with Nigeria; one 10% further away trades about 11% less.",
+    "why": "Gravity is the most reliable model in international economics. It tells you what trade should be with each market — so you can spot where trade is missing and where the opportunity is real."
+   },
+   {
+    "title": "The Herfindahl–Hirschman Index",
+    "plain": "Square each supplier's percentage share and add them up. One supplier = 10,000. Many small suppliers = close to zero. The higher the number, the more your supply depends on a few sources.",
+    "formula": "HHI = s₁² + s₂² + … + sₙ²   (shares in %)",
+    "example": "64% from China, 7% from Germany, 5% from the US and many small sources → HHI ≈ 4,178. Splitting China's share across two countries of 32% each would roughly halve that contribution.",
+    "why": "Run this on your own purchase ledger by country and by supplier. An HHI above 2,500 on a critical input is a board-level risk."
+   }
+  ],
+  "checks": [
+   {
+    "q": "The gravity model says Nigeria trades only 0.72 times the predicted amount with Côte d'Ivoire. What is the best interpretation for an exporter?",
+    "options": [
+     "Ivorians do not like Nigerian products",
+     "There may be unexploited potential — investigate the barriers (language, logistics, payments, rules) before investing",
+     "The model is wrong and should be ignored",
+     "Côte d'Ivoire is too far away to matter"
+    ],
+    "answer": 1,
+    "explain": "B. 'Missing trade' signals possible potential relative to size and distance. The reason could be language (French), currency (CFA franc), logistics or rules — each is fixable at a cost. A and D are not supported; C throws away a useful benchmark."
+   },
+   {
+    "q": "Your firm imports 70% of a critical packaging input from one country. Interest rates are 27%. Which response is most sensible first?",
+    "options": [
+     "Triple inventory immediately",
+     "Qualify a second supplier in another country and map who your current supplier depends on",
+     "Stop importing and wait for local supply to appear",
+     "Do nothing — diversification is too expensive"
+    ],
+    "answer": 1,
+    "explain": "B. Qualifying a second source and mapping the deeper tiers reduce concentration without the large cash cost of tripling stock at 27% interest (A). C risks stopping production; D ignores a board-level risk."
+   }
+  ],
+  "case": {
+   "title": "AfCFTA and a Nigerian Manufacturer",
+   "context": "A Lagos packaged-food manufacturer sells only in Nigeria. AfCFTA lowers tariffs on most goods traded between member states, and the board wants an export plan. Most of its packaging and machinery are imported.",
+   "question": "Which African markets should it enter first — and how should it make its supply chain shock-proof before it grows?",
+   "data": "ng_trade_partners.csv — Nigeria's exports and imports with 30 partners, plus partner GDP, distance, language, AfCFTA membership and tariffs. *Stylised teaching data.*",
+   "decision": "A ranked shortlist of three export markets with reasons, and two actions to reduce supply-chain concentration."
+  }
+ },
+ "s13": {
+  "objectives": [
+   {
+    "title": "Explain Carbon Pricing",
+    "body": "Explain why emissions are an externality, and how carbon taxes, trading schemes and border adjustments put a price on them."
+   },
+   {
+    "title": "Size the Exposure",
+    "body": "Turn emissions and a carbon price into a naira cost, and compare it with EBITDA by sector and by firm."
+   },
+   {
+    "title": "Plan the Response",
+    "body": "Use pass-through, abatement and disclosure to build a credible transition plan for a Nigerian business."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s13/figures/python/s13_f01.png",
+    "id": "S13-F01",
+    "title": "Carbon Intensity Differs Enormously by Sector",
+    "kicker": "WHERE THE CARBON IS",
+    "points": [
+     "Power generation (0.98) and cement (0.81) emit most per ₦1 million of revenue.",
+     "Steel (0.77) and upstream oil & gas (0.57) follow.",
+     "Banking (0.01) and telecoms (0.08) emit very little directly — but they lend to and serve the heavy emitters.",
+     "Intensity, not total emissions, tells you how a carbon price hits margins."
+    ]
+   },
+   {
+    "img": "sessions/s13/figures/python/s13_f02.png",
+    "id": "S13-F02",
+    "title": "The Carbon Bill as a Share of EBITDA",
+    "kicker": "THE STRESS TEST",
+    "points": [
+     "At US$50/t: steel loses about 33% of EBITDA, power 25%, cement 16%.",
+     "At US$100/t: steel 66%, power 50%, cement 32%.",
+     "Banking, telecoms and solar lose under 3% even at US$100.",
+     "These are worst cases: no pass-through and no abatement."
+    ]
+   },
+   {
+    "img": "sessions/s13/figures/python/s13_f03.png",
+    "id": "S13-F03",
+    "title": "Who Is Really Exposed?",
+    "kicker": "FIRM BY FIRM",
+    "points": [
+     "High intensity and a thin margin is the danger zone.",
+     "9 of 40 firms would lose more than a fifth of EBITDA at US$50/t.",
+     "Firms within one sector differ — the best cement plant is far cleaner than the worst.",
+     "Investors will reward the clean firms within dirty sectors."
+    ]
+   },
+   {
+    "img": "sessions/s13/figures/python/s13_f04.png",
+    "id": "S13-F04",
+    "title": "Cement vs Solar as the Carbon Price Rises",
+    "kicker": "THE CASE",
+    "points": [
+     "Cement EBITDA falls steadily as the price rises — about 16% lower at US$50.",
+     "Solar is almost unaffected — and may gain if it sells power to emitters.",
+     "The same policy moves value from high-carbon to low-carbon businesses.",
+     "This is what investors mean by transition risk."
+    ]
+   },
+   {
+    "img": "sessions/s13/figures/python/s13_f05.png",
+    "id": "S13-F05",
+    "title": "Big Slice of EU Sales, Small Slice of Profit",
+    "kicker": "CBAM",
+    "points": [
+     "Cement and steel are the Nigerian sectors most directly covered.",
+     "The charge equals 8–14% of EU export revenue for these firms.",
+     "Because EU sales are a small share of total sales, the hit to group EBITDA is smaller.",
+     "But the EU price is the benchmark other markets may follow."
+    ]
+   },
+   {
+    "img": "sessions/s13/figures/python/s13_f07.png",
+    "id": "S13-F07",
+    "title": "Can Cement Pass the Cost On?",
+    "kicker": "PASS-THROUGH",
+    "points": [
+     "Passing the bill on in prices protects margin — if customers stay.",
+     "With few substitutes (elasticity −0.3), full pass-through leaves EBITDA only about 2% lower.",
+     "If imports compete (elasticity −1.5), lost volume still costs about 12% of EBITDA.",
+     "Session 2's elasticity is the key to any carbon strategy."
+    ]
+   },
+   {
+    "img": "sessions/s13/figures/python/s13_f08.png",
+    "id": "S13-F08",
+    "title": "Cut the Cheap Tonnes First",
+    "kicker": "ABATEMENT",
+    "points": [
+     "A marginal abatement cost curve ranks options by cost per tonne saved.",
+     "Waste-heat recovery and clinker substitution save money even with no carbon price.",
+     "Below a US$50 price, about 295 of 495 thousand tonnes can be cut profitably.",
+     "Carbon capture is the expensive last resort."
+    ]
+   },
+   {
+    "img": "sessions/s13/figures/python/s13_f06.png",
+    "id": "S13-F06",
+    "title": "Only a Minority Report Today",
+    "kicker": "WHO DISCLOSES?",
+    "points": [
+     "About 30% of the stylised firms publish TCFD-style reports.",
+     "Disclosure is highest in telecoms, solar and steel (2 of 3 firms each).",
+     "None of the upstream oil & gas firms disclose — exactly where investors most need data.",
+     "Early movers gain credibility with lenders and DFIs."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Emissions are an externality; a carbon price makes the emitter pay.",
+    "Exposure depends on intensity and margins, not on total emissions alone.",
+    "CBAM brings EU carbon prices to Nigerian cement and steel exports.",
+    "Pass-through depends on elasticity; abatement should start with the cheapest tonnes.",
+    "Disclosure under TCFD/ISSB is becoming the price of access to capital."
+   ],
+   "prework": "Read India: Liberalise in the Face of Crisis? Note the warning signs before 1991 and how policymakers responded. Bring one indicator you would watch to judge a country's risk.",
+   "next": "Session 14: Country Risk & Scenarios"
+  },
+  "glossary": [
+   {
+    "term": "Externality",
+    "def": "A cost or benefit that falls on people outside the transaction."
+   },
+   {
+    "term": "Carbon price",
+    "def": "A charge per tonne of CO₂ emitted, via a tax or permits."
+   },
+   {
+    "term": "ETS",
+    "def": "Emissions trading system: a cap on emissions with tradable permits."
+   },
+   {
+    "term": "CBAM",
+    "def": "The EU's charge on embedded carbon in certain imports."
+   },
+   {
+    "term": "Scope 1 / 2",
+    "def": "Direct emissions / emissions from purchased electricity."
+   },
+   {
+    "term": "Carbon intensity",
+    "def": "Emissions per unit of output or revenue."
+   },
+   {
+    "term": "Transition risk",
+    "def": "Losses from policy, technology and market shifts to low carbon."
+   },
+   {
+    "term": "Physical risk",
+    "def": "Losses from floods, heat, drought and storms."
+   },
+   {
+    "term": "Stranded asset",
+    "def": "An asset that loses value early because of the transition."
+   },
+   {
+    "term": "MACC",
+    "def": "Marginal abatement cost curve: emission cuts ranked by cost per tonne."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Carbon Stress Test for Your Sector",
+   "time": "20 minutes",
+   "data": "data/firm_carbon_exposure.csv",
+   "r": "sessions/s13/R/s13_lab.R",
+   "py": "sessions/s13/python/s13_lab.py",
+   "steps": [
+    "Compute each firm's total emissions (scope 1 + 2) and intensity per ₦1 million of revenue.",
+    "Compute the carbon bill at US$25, 50 and 100 a tonne (₦1,500/US$).",
+    "Express it as a % of EBITDA by sector and rank the sectors.",
+    "List the ten most exposed firms and check whether they disclose.",
+    "Rerun with a different exchange rate and with a 30% abatement."
+   ],
+   "deliver": "three sentences for a cement board: our exposure, what customers will bear, and our first two actions."
+  },
+  "hook": {
+   "title": "Same Price, Different Fates",
+   "quote": "“Carbon pricing is a European problem. We sell in Nigeria.”"
+  },
+  "concepts": [
+   {
+    "title": "Emissions Are an Externality",
+    "plain": "When a kiln or generator emits CO₂, the damage — floods, heat, crop losses — falls on other people, mostly in the future. The emitter does not pay, so the market produces too much pollution.",
+    "formula": "social cost = private cost + damage to others",
+    "example": "Nigeria's 2022 floods displaced over a million people. No cement plant, power station or car owner paid for its share of the emissions that make such events more likely.",
+    "why": "When governments correct an externality, costs that were hidden on someone else's books move on to yours. Planning for that is risk management, not politics."
+   },
+   {
+    "title": "The EU's Carbon Border Adjustment Mechanism",
+    "plain": "CBAM makes EU importers pay for the carbon embedded in certain goods — cement, iron and steel, aluminium, fertilisers, electricity and hydrogen — at roughly the EU carbon price, minus any carbon price already paid where the goods were made.",
+    "formula": "CBAM charge ≈ embedded tonnes × (EU price − carbon price paid at home)",
+    "example": "For the stylised cement and steel exporters, an EU price of US$80/t costs about 8–14% of EU export revenue — but only 2–11% of total EBITDA, because most sales are domestic.",
+    "why": "Reporting started in October 2023; payment obligations begin for imports from 2026. Exporters that measure and cut their emissions keep their EU customers."
+   }
+  ],
+  "checks": [
+   {
+    "q": "At US$50 a tonne, the stylised cement sector's carbon bill is about ₦252bn, or 16% of its EBITDA. A director says: 'That is only 6% of revenue — not a big deal.' What is the best reply?",
+    "options": [
+     "Agreed — what matters is revenue",
+     "The relevant comparison is profit: losing a sixth of EBITDA, before any pass-through, is material for valuation and debt covenants",
+     "The bill is zero because Nigeria has no carbon price",
+     "Carbon costs are always passed on fully to customers"
+    ],
+    "answer": 1,
+    "explain": "B. A cost of 6% of revenue is 16% of EBITDA, and more of net profit. C ignores the scenario purpose and CBAM on exports. D depends on competition and demand elasticity — see the next part."
+   },
+   {
+    "q": "A cement firm can cut 110 thousand tonnes of CO₂ by substituting clinker, at a cost of –US$10 a tonne (it saves money). Why might it not have done so already?",
+    "options": [
+     "Because the option saves money, it must already have been done",
+     "Upfront capital, management attention, technical risk or customer acceptance can block profitable cuts — a carbon price or disclosure pressure tips the balance",
+     "Abatement only makes sense when the carbon price is above US$100",
+     "Clinker substitution increases emissions"
+    ],
+    "answer": 1,
+    "explain": "B. Negative-cost options often stay undone because of financing constraints, habit or perceived risk. A carbon price raises their payoff further; disclosure makes inaction visible. C misreads the curve."
+   }
+  ],
+  "case": {
+   "title": "Cement vs Solar Under a Carbon Price",
+   "context": "A board is comparing two holdings: a cement producer with coal- and gas-fired kilns and a solar installer. Both are profitable today.",
+   "question": "If a carbon price of US$25, US$50 or US$100 a tonne applied, how much EBITDA would each lose — and what can management do about it?",
+   "data": "firm_carbon_exposure.csv — 40 fictional Nigerian listed firms in 9 sectors: revenue, EBITDA, scope 1 and 2 emissions, EU export share, TCFD disclosure. *Stylised teaching data.* We assume ₦1,500 per US$.",
+   "decision": "A carbon stress test by sector and firm, plus a response plan: pass-through, abatement and disclosure."
+  }
+ },
+ "s14": {
+  "objectives": [
+   {
+    "title": "Score Country Risk",
+    "body": "Build a transparent country-risk score from political, policy, external, fiscal and banking indicators."
+   },
+   {
+    "title": "Plan with Scenarios",
+    "body": "Replace a single forecast with a few plausible scenarios, probabilities and signposts."
+   },
+   {
+    "title": "Stress-Test a Plan",
+    "body": "Find the shocks that hurt a business plan most, and decide what to do about them in advance."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s14/figures/python/s14_f01.png",
+    "id": "S14-F01",
+    "title": "Eight Markets at a Glance",
+    "kicker": "THE RISK HEATMAP",
+    "points": [
+     "Rows are markets, columns indicators; the number is the raw value, the colour its relative risk.",
+     "Morocco and Côte d'Ivoire are green across most columns.",
+     "Nigeria is red on governance and inflation, but green on reserves and debt.",
+     "Egypt and Ethiopia are red on debt, spreads and FX."
+    ]
+   },
+   {
+    "img": "sessions/s14/figures/python/s14_f02.png",
+    "id": "S14-F02",
+    "title": "Equal Weights: Who Is Riskiest?",
+    "kicker": "THE COMPOSITE SCORE",
+    "points": [
+     "Averaging the four pillars equally and rescaling to 0–100.",
+     "Morocco (0) and Côte d'Ivoire (8) are the safest in this group.",
+     "Nigeria scores 66, behind Ethiopia (71) and Egypt (100).",
+     "A score is relative to this group, not an absolute probability of default."
+    ]
+   },
+   {
+    "img": "sessions/s14/figures/python/s14_f03.png",
+    "id": "S14-F03",
+    "title": "Change the Weights, Change the Answer",
+    "kicker": "SENSITIVITY",
+    "points": [
+     "A lender cares most about external and fiscal risk: Nigeria rises to 3rd safest thanks to reserves and moderate debt.",
+     "An investor cares most about macro and policy: Nigeria becomes the riskiest of the eight.",
+     "The ends of the table are stable; the middle is fragile.",
+     "Always report the weights — and test whether your decision changes if they change."
+    ]
+   },
+   {
+    "img": "sessions/s14/figures/python/s14_f04.png",
+    "id": "S14-F04",
+    "title": "Big Markets Are Not Always Safe Markets",
+    "kicker": "RISK AND RETURN",
+    "points": [
+     "Vertical axis: market size in five years (population grown at the real growth rate).",
+     "Nigeria, Ethiopia and Egypt are the big prizes — and among the riskiest.",
+     "Morocco and Côte d'Ivoire are safer but smaller.",
+     "Strategy is choosing where on this map your firm can earn a premium for the risk it takes."
+    ]
+   },
+   {
+    "img": "sessions/s14/figures/python/s14_f05.png",
+    "id": "S14-F05",
+    "title": "The Plan's EBITDA Under Three Worlds",
+    "kicker": "SCENARIO OUTCOMES",
+    "points": [
+     "Today's EBITDA: ₦18bn.",
+     "Reform: ₦18.4bn. Muddle through: ₦11.2bn. Relapse: a loss of ₦5.9bn.",
+     "Probability-weighted EBITDA: ₦10.3bn — well below today.",
+     "The relapse case decides how much debt and fixed cost the plan can carry."
+    ]
+   },
+   {
+    "img": "sessions/s14/figures/python/s14_f06.png",
+    "id": "S14-F06",
+    "title": "Which Shock Hurts Most?",
+    "kicker": "STRESS TEST",
+    "points": [
+     "Starting from 'muddle through' (₦11.2bn), apply one shock at a time.",
+     "Losing 30 points of pricing power costs about ₦6.3bn — the biggest hit.",
+     "A further 30% naira fall costs about ₦4.2bn.",
+     "Rates and demand matter less for this firm — so focus hedging and pricing strategy there."
+    ]
+   },
+   {
+    "img": "sessions/s14/figures/python/s14_f07.png",
+    "id": "S14-F07",
+    "title": "Nigeria Today: Green, Amber or Red?",
+    "kicker": "THE SIGNPOST BOARD",
+    "points": [
+     "Reserves at 7 months of imports: green.",
+     "Inflation (24%), Eurobond spread (5.5%), FX depreciation (24%) and debt (52% of GDP): amber.",
+     "No indicator is red — consistent with 'muddle through'.",
+     "Review monthly with the dashboard from Session 1."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Country risk has several families: macro, external, fiscal, political and banking.",
+    "Put indicators on one scale (z-scores) and make the weights explicit.",
+    "Rankings can flip with the weights — test before you decide.",
+    "Plan with three scenarios and a probability-weighted outcome, not one forecast.",
+    "Agree signposts and triggers in advance so action is fast."
+   ],
+   "prework": "Read Acharya, Almeida, Amihud & Liu, 'Corporate Resiliency and the Choice Between Financial and Operational Hedging' (NBER). Note one example of an operational hedge in your own company.",
+   "next": "Session 15: Hedging & Resilience"
+  },
+  "glossary": [
+   {
+    "term": "Country risk",
+    "def": "The chance that conditions in a country hurt an investment or business."
+   },
+   {
+    "term": "Transfer risk",
+    "def": "The risk of not being able to convert or move money out."
+   },
+   {
+    "term": "z-score",
+    "def": "Distance from the group average, in standard deviations."
+   },
+   {
+    "term": "Pillar",
+    "def": "A group of related indicators combined into one sub-score."
+   },
+   {
+    "term": "Weighting",
+    "def": "How much each pillar counts in the final score."
+   },
+   {
+    "term": "Scenario",
+    "def": "A coherent, plausible story about the future."
+   },
+   {
+    "term": "Scenario tree",
+    "def": "Scenarios with probabilities and outcomes laid out together."
+   },
+   {
+    "term": "Signpost",
+    "def": "An indicator showing which scenario is unfolding."
+   },
+   {
+    "term": "Trigger",
+    "def": "A pre-agreed level at which management acts."
+   },
+   {
+    "term": "Stress test",
+    "def": "Measuring the impact of a severe but plausible shock."
+   }
+  ],
+  "lab": {
+   "title": "Lab: Rank Eight Markets, Stress-Test Nigeria",
+   "time": "20 minutes",
+   "data": "data/country_risk_panel.csv",
+   "r": "sessions/s14/R/s14_lab.R",
+   "py": "sessions/s14/python/s14_lab.py",
+   "steps": [
+    "Convert the nine indicators into risk z-scores (flip the sign where high is good).",
+    "Average them into four pillars.",
+    "Rank the markets under equal, lender and investor weights.",
+    "Compute the plan's probability-weighted EBITDA across three scenarios.",
+    "Choose three signposts and the trigger levels that would change your plan."
+   ],
+   "deliver": "a ranked shortlist with your weights stated, and a one-paragraph scenario note for the Nigeria plan."
+  },
+  "hook": {
+   "title": "Where Should We Expand Next?",
+   "quote": "“Nigeria is our biggest market, so it must be our best market.”"
+  },
+  "concepts": [
+   {
+    "title": "Turning Different Indicators into One Score",
+    "plain": "Inflation is in %, reserves in months and governance on a −2.5 to +2.5 scale. To combine them, express each as a z-score: how far a country is from the group average, in standard deviations. Flip the sign where high is good, so higher always means riskier.",
+    "formula": "z = (value − group average) ÷ standard deviation",
+    "example": "Nigeria's political-stability score (−1.9) is well below the group average, giving a high risk z-score. Its reserves (7 months) are above average, giving a low one.",
+    "why": "Writing the method down makes your judgement auditable. Colleagues can argue about the weights instead of arguing about gut feel."
+   },
+   {
+    "title": "Signposts and Triggers",
+    "plain": "A signpost is an indicator that tells you which scenario is unfolding. A trigger is the level at which you act — agreed in advance, so the decision is not made in panic.",
+    "formula": "signpost crosses trigger → pre-agreed action",
+    "example": "If 12-month naira depreciation passes 30% (red), switch to the relapse playbook: raise prices faster, cut dollar inventory, delay capex.",
+    "why": "Most firms see the warning signs and still react late. Pre-agreed triggers turn foresight into action."
+   }
+  ],
+  "checks": [
+   {
+    "q": "A colleague's spreadsheet ranks Nigeria 3rd safest of eight markets; yours ranks it 8th. Both use the same data. What is the most likely explanation?",
+    "options": [
+     "One of you made an arithmetic error",
+     "You used different weights: hers stresses reserves and debt, yours stresses inflation and governance",
+     "Nigeria's data are unreliable",
+     "Country risk cannot be measured"
+    ],
+    "answer": 1,
+    "explain": "B. With these data, a lender-style weighting puts Nigeria 3rd and an investor-style weighting puts it 8th. The disagreement is about priorities — which is a useful conversation once it is made explicit."
+   },
+   {
+    "q": "The stress test shows that losing pricing power hurts the Nigeria plan more than a further 30% naira fall. Which action follows most directly?",
+    "options": [
+     "Buy more dollar forwards",
+     "Invest in brand strength, product mix and pricing processes so price increases stick",
+     "Exit Nigeria",
+     "Ignore the result because the naira is the bigger headline risk"
+    ],
+    "answer": 1,
+    "explain": "B. The tornado shows where the plan is most fragile. Protecting pricing power (brand, mix, route to market) addresses the largest exposure; hedging (Session 15) addresses the second."
+   }
+  ],
+  "case": {
+   "title": "Eight Markets, One Expansion Budget",
+   "context": "A Lagos-based consumer-goods group will expand into one more African market and must also defend its Nigerian business, which earns ₦18bn EBITDA on ₦120bn revenue with 45% of costs imported.",
+   "question": "How do the eight candidate markets rank on risk, does the ranking survive different weightings, and how badly could the Nigeria plan be hit next year?",
+   "data": "country_risk_panel.csv — eight African markets × ten indicators: growth, inflation, debt, reserves, current account, governance, FX depreciation, Eurobond spreads. *Stylised teaching data.* Plan model assumptions are stated on each chart.",
+   "decision": "A ranked shortlist with the weighting stated openly, a three-scenario plan for Nigeria, and a signpost board that tells management when to switch plans."
+  }
+ },
+ "s15": {
+  "objectives": [
+   {
+    "title": "Measure Macro Exposure",
+    "body": "Trace how the exchange rate, commodity prices and interest rates flow into revenue, costs and margin."
+   },
+   {
+    "title": "Choose the Right Hedge",
+    "body": "Compare natural, operational and financial hedges, and pick a sensible hedge ratio — not automatically 100%."
+   },
+   {
+    "title": "Build Resilience",
+    "body": "Use a risk heatmap, real options and leading indicators to prepare before the shock arrives."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s15/figures/python/s15_f01.png",
+    "id": "S15-F01",
+    "title": "Wheat in Dollars, Dollars in Naira",
+    "kicker": "TWO SOURCES OF RISK",
+    "points": [
+     "By December 2025 the naira cost of a tonne of wheat was about five times its 2019 level (index 505).",
+     "The dollar price of wheat ended only 6% above 2019, after a spike in 2022.",
+     "The exchange rate index reached 474: the naira did most of the damage.",
+     "Lesson: the miller's real exposure is to the naira, not to wheat."
+    ]
+   },
+   {
+    "img": "sessions/s15/figures/python/s15_f02.png",
+    "id": "S15-F02",
+    "title": "The Exchange Rate Did the Damage",
+    "kicker": "THE DECOMPOSITION",
+    "points": [
+     "Wheat price in US$: +9 log-points.",
+     "Naira per US$: +160 log-points.",
+     "Together: naira wheat cost up 438% between the 2019 and 2025 averages.",
+     "The currency explains 95% of the increase."
+    ]
+   },
+   {
+    "img": "sessions/s15/figures/python/s15_f03.png",
+    "id": "S15-F03",
+    "title": "Costs Move First, Prices Follow",
+    "kicker": "THE MARGIN SQUEEZE",
+    "points": [
+     "Average gross margin 2019–2025: 21.3%.",
+     "Each devaluation hit the margin before flour prices could follow.",
+     "Worst months: −0.1% in February 2024, 8.4% in July 2023 and 10.0% in January 2024.",
+     "Margins recovered as prices caught up — a natural hedge, but a slow one."
+    ]
+   },
+   {
+    "img": "sessions/s15/figures/python/s15_f06.png",
+    "id": "S15-F06",
+    "title": "A Sensitivity 'Tornado'",
+    "kicker": "WHAT MOVES THE MARGIN MOST?",
+    "points": [
+     "Starting point: 2025 average margin of 25.2%.",
+     "A 20% weaker naira, or 20% dearer wheat, each cuts the margin by 15 points.",
+     "Both together: −32.9 points — the miller would make a loss.",
+     "Other costs matter far less (±2 points). Spend management time where the tornado is widest."
+    ]
+   },
+   {
+    "img": "sessions/s15/figures/python/s15_f04.png",
+    "id": "S15-F04",
+    "title": "Hedging 0%, 50% or 100% of Next Quarter's Dollars",
+    "kicker": "THE SIMULATION",
+    "points": [
+     "Each month the miller can lock in the rate for wheat it will pay for in three months.",
+     "Unhedged, the margin fell to −0.1% in the 2024 devaluation.",
+     "Fully hedged, the margin jumped in the same months — prices rose while costs were locked.",
+     "In calm years hedging cost margin: average 21.8% unhedged vs 20.4% fully hedged."
+    ]
+   },
+   {
+    "img": "sessions/s15/figures/python/s15_f05.png",
+    "id": "S15-F05",
+    "title": "Why 100% Is Not the Safest Hedge",
+    "kicker": "THE RESULT",
+    "points": [
+     "50% hedged had the lowest volatility: 3.5 points vs 4.9 unhedged and 6.5 fully hedged.",
+     "Its worst month was 12.7%, against −0.1% unhedged.",
+     "100% over-hedged: flour prices already follow the naira, so a full hedge creates a new mismatch.",
+     "The right hedge ratio covers the exposure that your prices cannot pass on."
+    ]
+   },
+   {
+    "img": "sessions/s15/figures/python/s15_f07.png",
+    "id": "S15-F07",
+    "title": "The Macro-Risk Heatmap",
+    "kicker": "PRIORITISE",
+    "points": [
+     "Score each risk for likelihood and impact (1–5); the product ranks them.",
+     "Naira devaluation (4 × 5 = 20) and wheat spikes (3 × 4 = 12) lead.",
+     "Impact scores come from the sensitivity tornado, not gut feel.",
+     "Review the map every quarter — scores change as signposts move."
+    ]
+   },
+   {
+    "img": "sessions/s15/figures/python/s15_f08.png",
+    "id": "S15-F08",
+    "title": "Signals That Warn Before the Shock",
+    "kicker": "LEADING INDICATORS",
+    "points": [
+     "When the parallel premium was above 30%, the naira fell on average 23.4% over the next six months.",
+     "When it was below 30%, the average was 7.0%.",
+     "The correlation is moderate (r = 0.43): a warning light, not a forecast.",
+     "Raise the hedge ratio, or stock up, when several warning lights turn on together."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Measure exposure first: decompose costs into commodity and currency parts.",
+    "For Nigerian importers, the exchange rate usually dominates.",
+    "Hedge the exposure your prices cannot pass on — 100% can over-hedge.",
+    "Forward cover costs roughly the interest-rate gap; know when it is worth paying.",
+    "Build operational resilience and watch leading indicators with pre-agreed triggers."
+   ],
+   "prework": "Prepare for the capstone: choose your industry, draft the one-page macro memo to your board using the template on the course site, and bring three charts as evidence.",
+   "next": "Session 16: Capstone & Review"
+  },
+  "glossary": [
+   {
+    "term": "Transaction exposure",
+    "def": "A known foreign-currency payment or receipt on a future date."
+   },
+   {
+    "term": "Translation exposure",
+    "def": "Revaluation of foreign-currency assets and debts on the balance sheet."
+   },
+   {
+    "term": "Economic exposure",
+    "def": "Long-run effect of macro changes on competitiveness and demand."
+   },
+   {
+    "term": "Natural hedge",
+    "def": "An offsetting exposure inside the business, e.g. dollar revenue against dollar costs."
+   },
+   {
+    "term": "Forward contract",
+    "def": "An agreement today on the rate for a future currency exchange."
+   },
+   {
+    "term": "Forward premium",
+    "def": "How much weaker the forward rate is than spot; set by the rate gap."
+   },
+   {
+    "term": "Hedge ratio",
+    "def": "Share of an exposure covered by a hedge."
+   },
+   {
+    "term": "Real option",
+    "def": "The right to change course later: delay, expand, switch or exit."
+   },
+   {
+    "term": "Sensitivity analysis",
+    "def": "How much an outcome moves when one input changes."
+   },
+   {
+    "term": "Leading indicator",
+    "def": "A signal that tends to move before the outcome you care about."
+   }
+  ],
+  "lab": {
+   "title": "Lab: A Hedging Plan for the Miller",
+   "time": "15 minutes",
+   "data": "data/miller_exposure_monthly.csv\ndata/ng_macro_monthly.csv\ndata/global_policy_rates.csv",
+   "r": "sessions/s15/R/s15_lab.R",
+   "py": "sessions/s15/python/s15_lab.py",
+   "steps": [
+    "Map the exposure: which costs are in dollars, and how did the margin behave?",
+    "Decompose the rise in naira wheat cost into wheat and exchange-rate parts.",
+    "Build a 3-month forward price from the interest-rate gap.",
+    "Simulate hedge ratios of 0, 25, 50, 75 and 100% and compare average, volatility and worst month.",
+    "Run the sensitivity test and score your own company's top five risks."
+   ],
+   "deliver": "a one-page hedging plan: heatmap, hedge ratio with its cost, two operational hedges, five indicators."
+  },
+  "hook": {
+   "title": "Profitable — Until the Naira Moved",
+   "quote": "“We buy wheat in dollars and sell bread flour in naira. In February 2024 our gross margin was zero.”"
+  },
+  "concepts": [
+   {
+    "title": "How Much Came From Each Source?",
+    "plain": "A naira cost of an imported input is dollar price × exchange rate. In logs, the two parts simply add up, so you can split any rise into a 'commodity' part and a 'currency' part.",
+    "formula": "Δln(₦ cost) = Δln(US$ price) + Δln(₦ per US$)",
+    "example": "2019 → 2025 averages: wheat +9 log-points, naira +160 log-points. Total rise 438%, of which the exchange rate explains 95%.",
+    "why": "It tells you which hedge matters. Buying wheat futures in Chicago would have done little; managing the naira exposure was everything."
+   },
+   {
+    "title": "What a Naira Forward Should Cost",
+    "plain": "A forward fixes today the rate at which you will buy dollars later. Banks price it so nobody can earn a free profit: the naira forward is weaker than spot by roughly the interest-rate gap between naira and dollars.",
+    "formula": "Forward ≈ Spot × (1 + (i₦ − i$) × months ÷ 12)",
+    "example": "December 2025: spot ₦1,454, MPR 27%, US rate about 3.75% → 3-month forward ≈ ₦1,539, a premium of 5.8% a quarter.",
+    "why": "Hedging is not free: at a 27% naira rate, rolling three-month cover costs over 20% a year in calm times. It pays off only when the naira falls by more than the premium."
+   },
+   {
+    "title": "Flexibility Is a Hedge Too",
+    "plain": "A real option is the right, but not the obligation, to change course later — like having a second supplier ready, or a plant that can switch inputs. It costs something today and pays off when the world turns against you.",
+    "formula": "Value of flexibility = value with the option − value without it",
+    "example": "Testing a cassava-wheat blend costs ₦ today. If the naira falls 20%, switching 10% of wheat to local cassava cuts the dollar bill exactly when it hurts most.",
+    "why": "Options to delay, expand, switch or exit are often cheaper and longer-lasting than financial contracts, which may not exist for long tenors in naira."
+   }
+  ],
+  "checks": [
+   {
+    "q": "The miller's naira wheat cost rose 438% between 2019 and 2025. Wheat in dollars rose about 9%. Which hedge would have helped most?",
+    "options": [
+     "Buying wheat futures to fix the dollar price",
+     "Fixing the naira cost of dollars in advance (FX forwards) and passing costs on faster",
+     "Borrowing more in dollars at low rates",
+     "Holding larger stocks of flour"
+    ],
+    "answer": 1,
+    "explain": "B. The currency explained 95% of the rise, so FX hedging and faster price pass-through matter most. A addresses the small part. C adds currency risk. D protects supply but not cost."
+   },
+   {
+    "q": "The miller's prices follow the naira with a lag of a few months. The board asks to hedge 100% of FX for the next year. What is the best response?",
+    "options": [
+     "Agree — full hedging removes all risk",
+     "Hedge only the part of the exposure that prices cannot pass on, over the lag period — roughly half for a few months — and review quarterly",
+     "Refuse all hedging — the naira forward premium is too high",
+     "Hedge 100% but for five years to save on fees"
+    ],
+    "answer": 1,
+    "explain": "B. Because prices already pass on costs with a lag, a full hedge over-hedges and adds a new mismatch, as the simulation showed. C ignores real devaluation risk; D locks in a long, costly and probably unavailable contract."
+   }
+  ],
+  "case": {
+   "title": "The Flour Miller's Hedging Plan",
+   "context": "A Lagos flour miller imports all its wheat, paid in US dollars about three months after ordering. It sells flour to bakers and noodle makers in naira, and can raise prices only gradually.",
+   "question": "Which macro risks matter most, how much of its dollar cost should it hedge, and what else should it do to protect its margin?",
+   "data": "miller_exposure_monthly.csv — 84 months (2019–2025): wheat price, exchange rate, volumes, costs, flour price, revenue and margin. Plus ng_macro_monthly.csv for rates and FX. *Stylised teaching data.*",
+   "decision": "A one-page hedging plan: a risk heatmap, a recommended hedge ratio with its cost, the operational hedges, and five leading indicators to watch."
+  }
+ },
+ "s16": {
+  "objectives": [
+   {
+    "title": "Write a Board Memo",
+    "body": "Turn macro evidence into a one-page recommendation a board can act on."
+   },
+   {
+    "title": "Connect the Course",
+    "body": "Trace how a single policy or global shock flows through markets, prices, rates and the exchange rate to your P&L."
+   },
+   {
+    "title": "Prepare for the Exam",
+    "body": "Know the format, practise the core reasoning, and avoid the common traps."
+   }
+  ],
+  "figures": [
+   {
+    "img": "sessions/s16/figures/python/s16_f04.png",
+    "id": "S16-F04",
+    "title": "Worked Example: The Cement Industry",
+    "kicker": "AN EVIDENCE PACK",
+    "points": [
+     "Volumes: +10.3% over the last 12 months.",
+     "Price per bag: about ₦9,079.",
+     "Real policy rate: +10.6 points — expensive mortgages and developer credit.",
+     "PMI 52.9: activity expanding. Evidence for a cautious 'grow, but protect margin' memo."
+    ]
+   },
+   {
+    "img": "sessions/s16/figures/python/s16_f05.png",
+    "id": "S16-F05",
+    "title": "Don't Be Fooled by Naira Prices",
+    "kicker": "NOMINAL VS REAL",
+    "points": [
+     "The price of a bag of cement rose +345% in naira since 2015.",
+     "Adjusted for inflation, it fell about 24%.",
+     "A memo that celebrates naira price growth without deflating it misleads the board.",
+     "Session 1's first lesson is still the most important one."
+    ]
+   },
+   {
+    "img": "sessions/s16/figures/python/s16_f02.png",
+    "id": "S16-F02",
+    "title": "Sixteen Sessions, One Logic",
+    "kicker": "INTEGRATIVE MAP",
+    "points": [
+     "Part I: how markets set prices and quantities, and where they fail.",
+     "Part II: how the whole economy moves — inflation, output, money, budgets, banks.",
+     "Part III: how Nigeria connects to the world — currency, capital and trade.",
+     "Part IV: how a firm turns all of it into strategy — climate, country risk, hedging, the board memo."
+    ]
+   },
+   {
+    "img": "sessions/s16/figures/python/s16_f01.png",
+    "id": "S16-F01",
+    "title": "One Shock, Four Panels",
+    "kicker": "POLICY TO PROFITS",
+    "points": [
+     "June 2023: FX unification and petrol subsidy removal.",
+     "The naira moved from about ₦463 to a peak near ₦1,657 per dollar.",
+     "Inflation peaked near 34.5%; the CBN raised its rate from 11.5% (early 2022) to 27.5%.",
+     "A flour miller's gross margin fell to about zero at the worst point — policy reaches the P&L within months."
+    ]
+   },
+   {
+    "img": "sessions/s16/figures/python/s16_f06.png",
+    "id": "S16-F06",
+    "title": "The Global Tide and Nigeria's Rate",
+    "kicker": "DOMESTIC MEETS GLOBAL",
+    "points": [
+     "The US Fed's rate moves capital worldwide; emerging markets must pay a premium to keep it.",
+     "In late 2025 the CBN's rate was about 23 points above the Fed's.",
+     "Part of that gap is Nigerian inflation; part is the risk premium investors demand.",
+     "When the Fed cuts, pressure on the naira usually eases — one signpost for your memo."
+    ]
+   },
+   {
+    "img": "sessions/s16/figures/python/s16_f03.png",
+    "id": "S16-F03",
+    "title": "Three Scenarios for 2026",
+    "kicker": "LOOKING AHEAD",
+    "points": [
+     "Upside (reforms stick, oil firm): naira about ₦1,386, inflation about 13% by end-2026.",
+     "Base (gradual disinflation): about ₦1,600 and 15%.",
+     "Downside (oil slump, renewed FX pressure): about ₦2,073 and 24%.",
+     "These are teaching scenarios, not forecasts — build your own for the memo."
+    ]
+   }
+  ],
+  "recap": {
+   "items": [
+    "Think in incentives, margins and opportunity cost — and always separate real from nominal.",
+    "Prices, inflation, rates and the naira are linked: one shock travels through all of them.",
+    "Nigeria is an open economy: oil, the Fed and capital flows shape what the CBN can do.",
+    "Plan with scenarios, signposts and hedges, not a single forecast.",
+    "Tell the board what to do, why, and what would change your mind."
+   ],
+   "prework": "Submit your one-page memo before your presentation slot. Revise the practice questions and the five transmission chains for the closed-book final exam.",
+   "next": "Final exam"
+  },
+  "glossary": [
+   {
+    "term": "Real vs nominal",
+    "def": "Adjusted vs not adjusted for inflation (S1)."
+   },
+   {
+    "term": "Elasticity",
+    "def": "% change in quantity for a 1% change in price or income (S2)."
+   },
+   {
+    "term": "Externality",
+    "def": "A cost or benefit falling on others (S5, S13)."
+   },
+   {
+    "term": "Supply shock",
+    "def": "A cost shock that raises prices and cuts output (S6)."
+   },
+   {
+    "term": "Transmission",
+    "def": "How policy reaches firms and households (S8)."
+   },
+   {
+    "term": "r − g",
+    "def": "Interest rate minus growth: drives the debt ratio (S9)."
+   },
+   {
+    "term": "Duration gap",
+    "def": "How a rate rise hits a balance sheet (S10)."
+   },
+   {
+    "term": "Impossible trinity",
+    "def": "Fixed rate, free capital, own policy: pick two (S11)."
+   },
+   {
+    "term": "Scenario & signpost",
+    "def": "Plausible futures and the indicators that reveal them (S14)."
+   },
+   {
+    "term": "Natural hedge",
+    "def": "Matching costs and revenues in the same currency (S15)."
+   }
+  ],
+  "lab": {
+   "title": "Capstone Starter: Your Evidence Pack",
+   "time": "Before your presentation",
+   "data": "data/ng_macro_monthly.csv\n+ one industry file",
+   "r": "sessions/s16/R/s16_capstone_starter.R",
+   "py": "sessions/s16/python/s16_capstone_starter.py",
+   "steps": [
+    "Set INDUSTRY and choose the four macro drivers that matter most to it.",
+    "Run the script: it prints an evidence table (latest, a year ago, change).",
+    "It saves a four-panel chart for your memo.",
+    "Add one industry dataset or official series.",
+    "Fill in the six-paragraph memo template it prints — then rewrite in your own words."
+   ],
+   "deliver": "a one-page memo and an 8-minute presentation to the board."
+  },
+  "hook": {
+   "title": "The Board Has Ten Minutes",
+   "quote": "“Don't give me forty slides on the economy. Tell me what to do, why, and what would change your mind.”"
+  },
+  "concepts": [],
+  "checks": [
+   {
+    "q": "Practice: the Fed cuts rates by 1 point while Nigerian inflation is stable. Which chain is most likely for a Lagos importer?",
+    "options": [
+     "Higher naira borrowing costs immediately",
+     "Capital flows toward emerging markets, easing pressure on the naira and the cost of imported inputs",
+     "No effect, because the Fed only affects the US",
+     "Higher Nigerian inflation"
+    ],
+    "answer": 1,
+    "explain": "B. Lower US rates make naira assets relatively more attractive (carry), supporting the naira. The importer's dollar costs in naira fall or stabilise. The effect is not guaranteed — oil and domestic policy matter too."
+   },
+   {
+    "q": "Practice: a board member says 'our dollar loan at 7% is cheaper than a naira loan at 22%'. What do you check first?",
+    "options": [
+     "Nothing — 7% is lower",
+     "The expected depreciation of the naira and whether our revenues are in naira (currency mismatch)",
+     "The Fed's balance sheet",
+     "The CPI rebasing"
+    ],
+    "answer": 1,
+    "explain": "B. The true cost of the dollar loan is roughly 7% plus expected naira depreciation. With naira revenues, a large devaluation can make it far dearer (Session 11)."
+   }
+  ],
+  "case": {
+   "title": "Your Capstone: A Macro Memo to the Board",
+   "context": "Each team chooses an industry (cement, flour milling, banking, consumer goods, telecoms, power…) and acts as its strategy team.",
+   "question": "Given the economy today and the plausible paths for the next 12 months, what should the board do — on pricing, investment, financing and risk?",
+   "data": "Any course dataset plus official sources (CBN, NBS, IMF, World Bank, FRED). The capstone starter script builds a four-panel evidence pack. *Course data are stylised.*",
+   "decision": "A one-page memo and an 8-minute presentation: recommendation, evidence, scenarios with probabilities, signposts and triggers, and owned actions."
+  }
+ }
+}
