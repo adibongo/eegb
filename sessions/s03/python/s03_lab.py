@@ -16,7 +16,11 @@ print(f"Average growth per year (CAGR): {cagr:.1%}")
 
 # ---- STEP 2 · Seasonality: how each month compares with the year's average ---------------------
 c["vs_year_avg"] = c.cement_mt / c.groupby("year").cement_mt.transform("mean")
-print((c.groupby("m").vs_year_avg.mean() * 100).round(0))
+idx = c.groupby("m").vs_year_avg.mean()
+print((idx * 100).round(0))
+# Seasonally adjust the latest month and read it as an annual rate
+last = c.iloc[-1]
+print(f"{last.month:%b %Y}: actual {last.cement_mt:.2f} Mt; seasonally adjusted x12 = {last.cement_mt / idx[last.m] * 12:.1f} Mt a year")
 
 # ---- STEP 3 · A trend + seasonal model (one regression) --------------------------------------------
 def X(df):
@@ -33,16 +37,31 @@ rules = {"same month last year": np.r_[last12, last12],
          "last year + 5%": np.r_[last12 * 1.05, last12 * 1.05 ** 2],
          "trend + seasonal model": f_model}
 for name, f in rules.items():
-    print(f"{name:25s} MAPE = {np.mean(np.abs(test.cement_mt - f) / test.cement_mt):.1%}")
+    err = f - test.cement_mt.values
+    print(f"{name:25s} MAPE = {np.mean(np.abs(err) / test.cement_mt):.1%}   bias = {np.mean(err / test.cement_mt):+.1%}")
 
 # ---- STEP 5 · Forecast 2026 with the model fitted on all the data ------------------------------------------
 b_all, *_ = np.linalg.lstsq(X(c), np.log(c.cement_mt), rcond=None)
 fut = pd.DataFrame({"t": np.arange(len(c), len(c) + 12), "m": range(1, 13)})
 f26 = np.exp(X(fut) @ b_all)
 print(f"2026 forecast: {f26.sum():.1f} million tonnes")
+# 90% range from the spread of past annual misses: how far each year's total sat from the model's fitted total
+fit_all = np.exp(X(c) @ b_all)
+ann = c.assign(fit=fit_all).groupby("year")[["cement_mt", "fit"]].sum()
+annual_sd = np.log(ann.cement_mt / ann.fit).std(ddof=1)
+print(f"Typical annual miss: {annual_sd:.1%}")
+print(f"90% range: {f26.sum() * np.exp(-1.645 * annual_sd):.1f} - {f26.sum() * np.exp(1.645 * annual_sd):.1f} Mt")
+
+# ---- STEP 5b · The capacity decision: critical ratio -----------------------------------------------------------
+from statistics import NormalDist
+cost_short, cost_idle = 20, 8                       # ₦ thousand per tonne (illustrative)
+cr = cost_short / (cost_short + cost_idle)
+z = NormalDist().inv_cdf(cr)
+print(f"Critical ratio {cr:.2f} -> plan capacity for {f26.sum() * np.exp(z * annual_sd):.1f} Mt")
 
 # ---- STEP 6 · Size the market two ways -------------------------------------------------------------------------
-print("Top-down: 230m people × 140 kg =", 230 * 140 / 1000, "million tonnes")
+print("Top-down: 237.5m people (World Bank 2025) × 129 kg =", round(237.5 * 0.129, 1), "Mt; industry report: 33.9 Mt")
+print("Implied kg per person in the industry figure:", round(33.9e9 / 237.5e6), "kg — the source's own numbers disagree. Why might that be?")
 print("Bottom-up: homes 14.4 + repairs 6.5 + public works 6.0 + commercial 4.5 + precast 2.4 =",
       14.4 + 6.5 + 6.0 + 4.5 + 2.4, "million tonnes")
 

@@ -86,11 +86,11 @@ save_fig(p6, "s03", "f06", height = 4.8)
 # --- F07 · Market sizing ----------------------------------------------------------------------------------
 parts <- tibble(route = "Bottom-up", part = c("New homes", "Repairs & extensions", "Roads, bridges & public works", "Commercial & industrial", "Blocks, pipes & precast"),
                 v = c(0.45 * 32, 6.5, 6.0, 4.5, 2.4))
-td <- tibble(route = "Top-down", part = "230m people × 140 kg", v = 230 * 140 / 1000)
+td <- tibble(route = "Top-down", part = "237.5m people × 129 kg", v = 237.5 * 129 / 1000)
 p7 <- ggplot(bind_rows(parts, td), aes(v, route, fill = part)) + geom_col(width = .6) +
   geom_text(aes(label = sprintf("%.1f", v)), position = position_stack(vjust = .5), colour = "white", fontface = "bold") +
   scale_fill_manual(values = c(`New homes` = eegb[["teal"]], `Repairs & extensions` = eegb[["teal2"]], `Roads, bridges & public works` = eegb[["gold"]],
-                               `Commercial & industrial` = eegb[["olive"]], `Blocks, pipes & precast` = eegb[["sky"]], `230m people × 140 kg` = eegb[["navy"]]), name = NULL) +
+                               `Commercial & industrial` = eegb[["olive"]], `Blocks, pipes & precast` = eegb[["sky"]], `237.5m people × 129 kg` = eegb[["navy"]]), name = NULL) +
   labs(title = sprintf("Two routes to market size: top-down %.1f mt vs bottom-up %.1f mt", td$v, sum(parts$v)),
        x = "Million tonnes per year", y = NULL) + theme_eegb()
 save_fig(p7, "s03", "f07")

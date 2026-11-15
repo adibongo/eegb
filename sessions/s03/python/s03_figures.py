@@ -116,7 +116,7 @@ save(fig, "s03", "f06")
 print("scenarios:", {k.split(':')[0]: round(v, 1) for k, v in scen.items()})
 
 # --- F07 · Market sizing: top-down vs bottom-up -------------------------------------------------------------------
-pop, kg_pc = 230, 140                                    # million people; kg per person per year (stylised)
+pop, kg_pc = 237.5, 129                                  # million people (World Bank 2025); kg per person (CemNet estimate)
 top_down = pop * kg_pc / 1000                             # million tonnes
 houses, t_house = 0.45, 32                                # million new homes a year; tonnes each (stylised)
 parts = {"New homes": houses * t_house, "Repairs &\nextensions": 6.5, "Roads, bridges\n& public works": 6.0,
