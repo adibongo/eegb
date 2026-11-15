@@ -15,7 +15,9 @@ d = pd.read_csv("data/fmcg_price_volume.csv", parse_dates=["week"])
 d["t"] = d.groupby("region").cumcount()                       # weeks since start (soaks up general inflation)
 REG = {"Lagos": TEAL, "North": GOLD, "South-East": RUST}
 
-# The demand model: log(units) on log(own price), log(competitor price), log(income), trend, region
+# The demand model: log(units) on log(own price), log(competitor price), log(real income), trend, region.
+# No separate promotion dummy: in these data promotions work through the price cut itself, so a dummy would
+# soak up the price variation and bias the elasticity towards zero (try it: it gives about -1.15).
 def design(df):
     return np.column_stack([np.ones(len(df)), np.log(df.price_naira), np.log(df.competitor_price_naira),
                             np.log(df.income_index), df.t] + [(df.region == r).astype(float) for r in ["North", "South-East"]])
@@ -142,3 +144,24 @@ ax.xaxis.set_major_formatter(FuncFormatter(pct)); ax.yaxis.set_major_formatter(F
 ax.set(title=f"Flour up 40% adds ₦{dc:.0f} a pack: absorbing it is the costliest choice",
        xlabel="Share of the cost increase passed into price", ylabel="Profit, % of pre-shock level")
 save(fig, "s02", "f08")
+
+# --- F09 · The real shock: naira cost of a tonne of imported wheat (official data) -------------------
+o = pd.read_csv("data/official/ng_official_monthly.csv", parse_dates=["date"]).set_index("date").loc["2015-01-01":]
+w = o[["wheat_usd_t", "usd_official_avg"]].dropna()
+w["ngn_t"] = w.wheat_usd_t * w.usd_official_avg / 1000          # ₦ thousand per tonne
+fig, ax = plt.subplots(); ax2 = ax.twinx()
+ax.plot(w.index, w.ngn_t, color=NAVY, lw=3, label="Naira cost per tonne (₦ '000, left)")
+ax2.plot(w.index, w.wheat_usd_t, color=GOLD, lw=2, label="World price (US$ per tonne, right)")
+ax2.grid(False); ax2.spines["right"].set_visible(True)
+pk = w.ngn_t.idxmax()
+ax.annotate(f"Peak ₦{w.ngn_t[pk]:,.0f}k ({pk:%b %Y})", xy=(pk, w.ngn_t[pk]), xytext=(pd.Timestamp("2016-06-01"), w.ngn_t[pk] * 0.92),
+            arrowprops=dict(arrowstyle="->", color=NAVY), fontsize=11.5, color=NAVY)
+ax.annotate("2022: world price spike", xy=(pd.Timestamp("2022-05-01"), w.ngn_t["2022-05-01"]), xytext=(pd.Timestamp("2018-01-01"), 230),
+            arrowprops=dict(arrowstyle="->", color=SLATE), fontsize=10.5, color=SLATE)
+ax.yaxis.set_major_formatter(FuncFormatter(lambda x, p: f"₦{x:,.0f}k")); ax2.yaxis.set_major_formatter(FuncFormatter(lambda x, p: f"${x:,.0f}"))
+h1, l1 = ax.get_legend_handles_labels(); h2, l2 = ax2.get_legend_handles_labels(); ax.legend(h1 + h2, l1 + l2, loc="center left", fontsize=11)
+first, last = w.ngn_t.iloc[0], w.ngn_t.iloc[-1]
+ax.set(title=f"A tonne of wheat cost ₦{first:,.0f}k in {w.index[0]:%b %Y} and ₦{last:,.0f}k in {w.index[-1]:%b %Y} — ×{last/first:.1f}")
+note(fig, "Sources: FRED PWHEAMTUSDM (IMF global wheat price) × CBN official N/$ (monthly average). World benchmark, not landed cost.")
+save(fig, "s02", "f09")
+print(f"F09: {w.index[0]:%b %Y} {first:.1f}k -> {w.index[-1]:%b %Y} {last:.1f}k (x{last/first:.2f}); peak {pk:%b %Y} {w.ngn_t[pk]:.1f}k; usd {w.wheat_usd_t.iloc[0]:.0f}->{w.wheat_usd_t.iloc[-1]:.0f}")

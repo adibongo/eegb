@@ -10,7 +10,26 @@ Nigeria monthly (CPI, MPR, T-bill, N/$, reserves) comes from the CBN statistics 
 """
 import io, os
 import pandas as pd
-import requests
+import requests, time
+_get = requests.get
+def _retry_get(*a, **k):
+    k["timeout"] = max(k.get("timeout", 60), 180)
+    for i in range(4):
+        try:
+            return _get(*a, **k)
+        except requests.exceptions.RequestException:
+            if i == 3: raise
+            time.sleep(10 * (i + 1))
+requests.get = _retry_get
+
+def getjson(url):
+    """World Bank API sometimes returns an HTML error page: retry until it sends JSON."""
+    for i in range(5):
+        try:
+            return requests.get(url, timeout=120).json()
+        except ValueError:
+            if i == 4: raise
+            time.sleep(15 * (i + 1))
 
 OUT = "data/official"; os.makedirs(OUT, exist_ok=True)
 COUNTRIES = "NGA;GHA;KEN;ZAF;EGY;CIV;MAR;ETH"
@@ -22,19 +41,22 @@ WDI = {"NY.GDP.MKTP.KD.ZG": "real_gdp_growth_pct", "FP.CPI.TOTL.ZG": "inflation_
 
 def wdi(code, name):
     url = f"https://api.worldbank.org/v2/country/{COUNTRIES}/indicator/{code}?format=json&per_page=2000&date=2000:2025"
-    js = requests.get(url, timeout=60).json()
+    js = getjson(url)
     rows = [{"country": r["country"]["value"], "iso3": r["countryiso3code"], "year": int(r["date"]), name: r["value"]}
             for r in js[1] if r["value"] is not None]
     return pd.DataFrame(rows)
 
 
-frames = []
-for code, name in WDI.items():
-    print("World Bank:", name)
-    frames.append(wdi(code, name).set_index(["country", "iso3", "year"]))
-wdi_df = pd.concat(frames, axis=1).reset_index().sort_values(["iso3", "year"])
-wdi_df.to_csv(f"{OUT}/wdi_annual.csv", index=False)
-print("saved", f"{OUT}/wdi_annual.csv", wdi_df.shape)
+try:
+    frames = []
+    for code, name in WDI.items():
+        print("World Bank:", name, flush=True)
+        frames.append(wdi(code, name).set_index(["country", "iso3", "year"]))
+    wdi_df = pd.concat(frames, axis=1).reset_index().sort_values(["iso3", "year"])
+    wdi_df.to_csv(f"{OUT}/wdi_annual.csv", index=False)
+    print("saved", f"{OUT}/wdi_annual.csv", wdi_df.shape)
+except Exception as e:                     # keep the previous file rather than stop the whole refresh
+    print("WARNING: World Bank cross-country download failed; kept the existing wdi_annual.csv:", e)
 
 FRED = {"FEDFUNDS": "us_fed_funds_rate", "CPIAUCSL": "us_cpi_index", "DCOILBRENTEU": "brent_usd"}
 fr = []
@@ -86,6 +108,8 @@ rs = cbn("GetAllReserves"); rs["d"] = pd.to_datetime(rs.moveDate, format="%d/%m/
 R = (num(rs.set_index("d").sort_index().gross) / 1e9).resample("MS").last().rename("reserves_gross_usdbn").to_frame()
 br = pd.read_csv(io.StringIO(requests.get("https://fred.stlouisfed.org/graph/fredgraph.csv?id=MCOILBRENTEU", timeout=60).text))
 br.columns = ["date", "brent"]; br["date"] = pd.to_datetime(br.date); br = br.set_index("date")
+wh = pd.read_csv(io.StringIO(requests.get("https://fred.stlouisfed.org/graph/fredgraph.csv?id=PWHEAMTUSDM", timeout=60).text))
+wh.columns = ["date", "wheat_usd_t"]; wh["date"] = pd.to_datetime(wh.date); br = br.join(wh.set_index("date"), how="outer")
 ng = I.join(M, how="outer").join(E, how="outer").join(R, how="outer").join(br, how="left").loc["2006":]
 ng.index.name = "date"
 ng.to_csv(f"{OUT}/ng_official_monthly.csv", float_format="%.2f")
@@ -94,11 +118,14 @@ print("saved", f"{OUT}/ng_official_monthly.csv", ng.shape)
 print("World Bank: Nigeria annual")
 WB = {"NY.GDP.PCAP.KD": "gdp_pc_const2015_usd", "NY.GDP.PCAP.CD": "gdp_pc_current_usd",
       "NY.GDP.MKTP.KD.ZG": "gdp_growth", "SP.POP.GROW": "pop_growth", "PA.NUS.FCRF": "ngn_usd_avg"}
-rows = {}
-for code, name in WB.items():
-    js = requests.get(f"https://api.worldbank.org/v2/country/NGA/indicator/{code}?format=json&per_page=100", timeout=60).json()
-    for r in js[1]:
-        rows.setdefault(int(r["date"]), {})[name] = r["value"]
-wb = pd.DataFrame(rows).T.sort_index(); wb.index.name = "year"
-wb.to_csv(f"{OUT}/ng_worldbank_annual.csv", float_format="%.3f")
-print("saved", f"{OUT}/ng_worldbank_annual.csv", wb.shape)
+try:
+    rows = {}
+    for code, name in WB.items():
+        js = getjson(f"https://api.worldbank.org/v2/country/NGA/indicator/{code}?format=json&per_page=100")
+        for r in js[1]:
+            rows.setdefault(int(r["date"]), {})[name] = r["value"]
+    wb = pd.DataFrame(rows).T.sort_index(); wb.index.name = "year"
+    wb.to_csv(f"{OUT}/ng_worldbank_annual.csv", float_format="%.3f")
+    print("saved", f"{OUT}/ng_worldbank_annual.csv", wb.shape)
+except Exception as e:
+    print("WARNING: World Bank Nigeria download failed; kept the existing ng_worldbank_annual.csv:", e)

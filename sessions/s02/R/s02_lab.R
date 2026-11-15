@@ -27,6 +27,12 @@ for (rise in c(.05, .10, .20)) {
   cat(sprintf("Price +%.0f%%: volume %+.1f%%, revenue %+.1f%%\n", 100 * rise, 100 * q_change, 100 * ((1 + rise) * (1 + q_change) - 1)))
 }
 
+# ---- STEP 4b · The Lerner check: which elasticity does today's margin imply? ----------------------
+price <- 500; unit_cost <- 350                    # stylised case figures
+margin <- (price - unit_cost) / price
+cat(sprintf("Gross margin %.0f%% is profit-maximising only if |elasticity| = %.1f\n", margin * 100, 1 / margin))
+cat(sprintf("Measured own-price elasticity %.2f implies an optimal margin of %.0f%% — which do you believe, and why?\n", own, 100 / abs(own)))
+
 # ---- STEP 5 · Promotions -----------------------------------------------------------------------
 d |> group_by(region, promo) |> summarise(units = mean(units), .groups = "drop") |>
   tidyr::pivot_wider(names_from = promo, values_from = units) |> mutate(lift = `1` / `0` - 1)

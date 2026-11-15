@@ -102,3 +102,18 @@ p8 <- ggplot(pt, aes(100 * share, profit, colour = scen)) + geom_line(linewidth 
   labs(title = sprintf("Flour up 40%% adds ₦%.0f a pack: absorbing it is the costliest choice", dc),
        x = "Share of the cost increase passed into price", y = "Profit, % of pre-shock level") + theme_eegb()
 save_fig(p8, "s02", "f08")
+
+# --- F09 · The real shock: naira cost of a tonne of imported wheat (official data) -------------------
+o <- readr::read_csv("data/official/ng_official_monthly.csv", show_col_types = FALSE) |>
+  dplyr::filter(date >= as.Date("2015-01-01"), !is.na(wheat_usd_t), !is.na(usd_official_avg)) |>
+  dplyr::mutate(ngn_t = wheat_usd_t * usd_official_avg / 1000)
+k9 <- max(o$ngn_t) / max(o$wheat_usd_t)
+p9 <- ggplot(o, aes(date)) +
+  geom_line(aes(y = ngn_t, colour = "Naira cost per tonne (₦ '000, left)"), linewidth = 1.3) +
+  geom_line(aes(y = wheat_usd_t * k9, colour = "World price (US$ per tonne, right)"), linewidth = 0.9) +
+  scale_y_continuous(labels = function(x) paste0("₦", x, "k"), sec.axis = sec_axis(~ . / k9, labels = function(x) paste0("$", x))) +
+  scale_colour_manual(values = c(eegb[["navy"]], eegb[["gold"]]), name = NULL) +
+  labs(title = sprintf("A tonne of wheat: ₦%.0fk (%s) to ₦%.0fk (%s)", o$ngn_t[1], format(o$date[1], "%b %Y"),
+                       tail(o$ngn_t, 1), format(tail(o$date, 1), "%b %Y")), x = NULL, y = NULL,
+       caption = "Sources: FRED PWHEAMTUSDM × CBN official N/$ (monthly average). World benchmark, not landed cost.") + theme_eegb()
+save_fig(p9, "s02", "f09")

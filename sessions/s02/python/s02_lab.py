@@ -29,11 +29,20 @@ print(f"Own-price elasticity:   {b[1]:.2f}")
 print(f"Cross-price elasticity: {b[2]:.2f}")
 print(f"Income elasticity:      {b[3]:.2f}")
 
+# Discussion: should we add a promotion-week dummy? Try it. In these data promotions work through the price
+# cut itself, so the dummy soaks up price variation and pulls the own-price elasticity towards zero.
+
 # ---- STEP 4 · What a price rise does to revenue -----------------------------------------------
 for rise in (0.05, 0.10, 0.20):
     q_change = (1 + rise) ** b[1] - 1
     r_change = (1 + rise) * (1 + q_change) - 1
     print(f"Price +{rise:.0%}: volume {q_change:+.1%}, revenue {r_change:+.1%}")
+
+# ---- STEP 4b · The Lerner check: which elasticity does today's margin imply? ----------------------
+price, unit_cost = 500, 350                       # stylised case figures
+margin = (price - unit_cost) / price
+print(f"Gross margin {margin:.0%} is profit-maximising only if |elasticity| = {1/margin:.1f}")
+print(f"Measured own-price elasticity {b[1]:.2f} implies an optimal margin of {1/abs(b[1]):.0%} — which do you believe, and why?")
 
 # ---- STEP 5 · Promotions -----------------------------------------------------------------------
 lift = d.groupby(["region", "promo"]).units.mean().unstack()
