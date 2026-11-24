@@ -1,239 +1,1813 @@
 {
  "s01": {
-  "objectives": [
-   {
-    "title": "Think Like an Economist",
-    "body": "Use incentives, opportunity cost and marginal thinking to frame a business decision."
-   },
-   {
-    "title": "Read Official Data",
-    "body": "Find, read and question CBN, NBS, IMF and FRED data — levels, rates of change, breaks and revisions."
-   },
-   {
-    "title": "Build a Macro Dashboard",
-    "body": "Choose the few numbers your board should watch and present them clearly every month."
-   }
-  ],
+  "objectives": [],
   "figures": [
+   {
+    "img": "sessions/s01/figures/python/s01_f05.png",
+    "id": "S01-F05",
+    "title": "Living Standards Depend on What a Country Produces",
+    "kicker": "PRINCIPLE 8 · PRODUCTIVITY",
+    "points": [
+     "Real output per person (constant 2015 US$) was $2,584 in 2014, near its 2015 peak, and $2,325 in 2024: about 10% lower.",
+     "Population grew about 2–2.6% a year; output barely kept up — echoing 1992–2002, when the LBS case IB-90 reports GDP growth of 2.25% against population growth of 2.8% (older data).",
+     "The current-dollar line falls by two-thirds — mostly the naira's collapse, not lost production. It also jumps in 2019 where the rebased GDP series begins.",
+     "Wages rise sustainably only with output per worker: power, skills, technology, institutions (Session 7)."
+    ]
+   },
    {
     "img": "sessions/s01/figures/python/s01_f01.png",
     "id": "S01-F01",
-    "title": "Headline, Food and Core Inflation",
-    "kicker": "INFLATION",
+    "title": "Inflation: Food Led, Core Followed — Then the Yardstick Changed",
+    "kicker": "TRAP 1 · REBASING AND REVISIONS",
     "points": [
-     "Headline inflation covers everything in the basket; food is about half of a Nigerian household budget.",
-     "Core removes volatile farm produce and energy — a better guide to underlying pressure.",
-     "Inflation climbed from about 22% to 34% after the mid-2023 reforms.",
-     "In January 2025 the CPI was rebased: the sudden drop is partly a change of yardstick, not only a change in prices."
+     "Dec 2024: 34.8% on the old CPI (2009 base, food 51.8% of the basket).",
+     "Jan 2025: new CPI (2024 = 100, food weight 40%). First published as 24.48%…",
+     "…then revised to 27.61% when NBS reviewed its method in Dec 2025. Even 'latest data' changes.",
+     "Sep 2026: headline 14.6%, food 19.6%, core 13.0% — a genuine fall, on the new yardstick.",
+     "Never compare across a rebasing without the statistics office's linked series."
+    ]
+   },
+   {
+    "img": "sessions/s01/figures/python/s01_f07.png",
+    "id": "S01-F07",
+    "title": "Real vs Nominal: One Revenue Figure, Three Answers",
+    "kicker": "BACK TO THE 30% QUESTION",
+    "points": [
+     "Real growth: (1 + nominal) ÷ (1 + inflation) − 1 = 1.30 ÷ 1.332 − 1 ≈ −2.4%. Volume fell.",
+     "The shortcut 'nominal − inflation' gives −3.2%: fine for small rates, off at Nigerian rates.",
+     "In dollars: ₦40bn ÷ 645 = $62.0m → ₦52bn ÷ 1,479 = $35.2m: down 43%.",
+     "The board was celebrating a business that shrank. Report real, naira and dollar figures side by side.",
+     "Targets and bonuses set in nominal naira reward inflation, not performance."
     ]
    },
    {
     "img": "sessions/s01/figures/python/s01_f02.png",
     "id": "S01-F02",
-    "title": "Two Prices for One Dollar",
+    "title": "Naira per Dollar: Rationing, Then a Reset",
     "kicker": "THE EXCHANGE RATE",
     "points": [
-     "For years the official rate and the parallel market rate differed — at times by more than 100%.",
-     "A big premium is a signal of rationing: dollars are scarce at the official price.",
-     "Firms that could not access official dollars paid the parallel price — and priced their goods off it.",
-     "After the 2023–24 unification the gap almost closed, at a much weaker naira."
+     "Until 2023 the CBN held an official rate; the bureau-de-change rate shows the market's price. The gap peaked at 71% (May 2016).",
+     "A premium signals rationing — Principle 6 at work — and an incentive to arbitrage (Principle 4).",
+     "June 2023 unification: the naira moved from about ₦460 to ₦750/$ within weeks, then past ₦1,500.",
+     "Today: ₦1,347/$ (CBN, 4 Nov 2026). Use the rate you actually transact at."
     ]
    },
    {
     "img": "sessions/s01/figures/python/s01_f03.png",
     "id": "S01-F03",
-    "title": "Strong Correlations Can Mislead",
-    "kicker": "CORRELATION IS NOT CAUSATION",
+    "title": "Did Savers Beat Inflation? The Real Policy Rate",
+    "kicker": "REAL INTEREST RATES",
     "points": [
-     "Credit growth and inflation move closely together (r = 0.82) — but both jumped after the 2023 devaluation, which revalued dollar loans and raised prices.",
-     "The oil price and reserves have a weak correlation (r = 0.31), yet the causal channel is clear: oil earnings supply most of Nigeria's dollars.",
-     "Correlation strength tells you how tightly two series move, not whether one causes the other.",
-     "Ask: is there a third factor, a time lag, or reverse causation?"
-    ]
-   },
-   {
-    "img": "sessions/s01/figures/python/s01_f05.png",
-    "id": "S01-F05",
-    "title": "Did Savers Beat Inflation?",
-    "kicker": "THE REAL INTEREST RATE",
-    "points": [
-     "Real rate = policy rate − inflation.",
-     "For most of 2015–2024 it was negative: money in the bank lost purchasing power.",
-     "Negative real rates push savers into dollars, property and stocks — and weaken the naira.",
-     "In 2025 the real rate turned clearly positive, helped by rate hikes — and by the CPI rebasing."
-    ]
-   },
-   {
-    "img": "sessions/s01/figures/python/s01_f06.png",
-    "id": "S01-F06",
-    "title": "The PMI as a Nowcast",
-    "kicker": "AN EARLY SIGNAL",
-    "points": [
-     "The Purchasing Managers' Index asks firms whether output, orders and employment are up or down.",
-     "It is published within days of the month's end.",
-     "Shaded periods: the PMI dropped below 50 in every downturn.",
-     "Use it alongside your own sales data, not instead of it."
+     "Real rate = (1 + policy rate) ÷ (1 + inflation) − 1 — the same arithmetic as real revenue.",
+     "For most of 2016–2024 it was negative, falling below −8% in 2024: naira savings lost value, pushing savers into dollars, land and stock.",
+     "Today: MPR 23%, inflation 14.6% → real rate +7.3%. Holding naira now pays.",
+     "Part of the jump in January 2025 is the new CPI — measurement, not just policy."
     ]
    },
    {
     "img": "sessions/s01/figures/python/s01_f04.png",
     "id": "S01-F04",
-    "title": "Six Numbers on One Page",
-    "kicker": "THE DASHBOARD",
+    "title": "Oil Earns Nigeria's Dollars — Yet Reserves Don't Simply Track It",
+    "kicker": "SEE IT IN THE DATA",
     "points": [
-     "Each panel: latest value, the trend over three years and the change on a year ago.",
-     "Inflation, policy rate, exchange rate, oil price, reserves and PMI cover prices, money, the currency and activity.",
+     "The causal channel is clear: oil and gas earn most of the FX (Trap 3).",
+     "Yet the correlation is only 0.54 in the same month — and 0.17 a year later.",
+     "Why? Oil-backed loans and forward sales, CBN intervention, Eurobond and loan inflows, and 2026's reserve build despite a volatile oil price.",
+     "A causal link can hide inside a weak correlation, and a strong correlation can hide no link at all."
+    ]
+   },
+   {
+    "img": "sessions/s01/figures/python/s01_f06.png",
+    "id": "S01-F06",
+    "title": "Six Official Series on One Page",
+    "kicker": "THE DASHBOARD · CHART VERSION",
+    "points": [
+     "Each panel: latest value and date, a three-year trend and the change on a year ago.",
+     "Covers prices, money, the currency, external buffers and the oil price.",
      "Same layout every month, so directors see change at a glance.",
-     "Add one line of 'so what' under each number for your business."
+     "Inflation panels cross the January 2025 CPI break — label it."
     ]
    }
   ],
   "recap": {
    "items": [
-    "Economics is a management tool: incentives, opportunity cost and marginal thinking frame every decision.",
-    "Always separate nominal from real and naira from dollars.",
-    "Know your sources, and check for rebasing, revisions and multiple rates.",
-    "Correlation is not causation: look for third factors, lags and reverse causation.",
-    "A good board dashboard is short, consistent and tied to a 'so what'."
+    "Economics is a management tool: trade-offs, opportunity cost, the margin and incentives frame every decision.",
+    "Use the macro-to-P&L map: every economic force lands in a specific line of your accounts.",
+    "Every statistic has a supply chain: check base year, basket, coverage and revisions.",
+    "Report real, naira and dollar values side by side — '30% growth' was a 2% real fall and a 43% dollar fall.",
+    "Correlation is not cause — ask 'compared with what?' — and show the board one page of fast, dated signals."
    ],
-   "prework": "Re-read the Note on Microeconomics for Managers, sections on demand, supply and elasticity. Bring one price your company changed in the last year and what happened to volumes.",
+   "prework": "Read Mankiw ch. 4–5 and the Note on Microeconomics for Managers (demand, supply, elasticity). Bring one price your company changed in the last year and what happened to volumes — and a comparison group.",
    "next": "Session 2: Demand, Supply & Elasticity"
   },
   "glossary": [
    {
     "term": "Opportunity cost",
-    "def": "The value of the best alternative you give up."
+    "def": "The value of the best alternative given up."
    },
    {
     "term": "Marginal",
-    "def": "The extra benefit or cost of one more unit."
+    "def": "The extra benefit or cost of one more unit or decision."
    },
    {
-    "term": "Nominal",
-    "def": "Measured in current prices, including inflation."
+    "term": "Comparative advantage",
+    "def": "Producing at a lower opportunity cost than others."
    },
    {
-    "term": "Real",
-    "def": "Adjusted for inflation; shows volume or purchasing power."
+    "term": "Positive / normative",
+    "def": "Claims about what is (testable) vs what should be (values)."
    },
    {
-    "term": "Headline inflation",
-    "def": "Year-on-year change in the full consumer price index."
+    "term": "GDP / GDP deflator",
+    "def": "Market value of final output; nominal ÷ real GDP."
    },
    {
-    "term": "Core inflation",
-    "def": "Inflation excluding volatile items such as farm produce and energy."
+    "term": "CPI",
+    "def": "Cost of a fixed basket relative to a base period."
    },
    {
-    "term": "Rebasing",
-    "def": "Updating the base year and basket of an index; breaks comparisons."
+    "term": "Rebasing / revision",
+    "def": "New base and weights / corrected past figures; both break comparisons."
    },
    {
-    "term": "FX premium",
-    "def": "Gap between the parallel and official exchange rates."
+    "term": "Real vs nominal",
+    "def": "Adjusted for price changes vs in current naira."
    },
    {
-    "term": "Real interest rate",
-    "def": "Nominal interest rate minus inflation."
+    "term": "Percentage point",
+    "def": "Simple difference between two rates (1 pp = 100 bp)."
    },
    {
-    "term": "Nowcasting",
-    "def": "Estimating current activity from fast, timely signals."
+    "term": "Difference-in-differences",
+    "def": "Effect = change in treated group − change in comparison group."
    }
   ],
   "lab": {
-   "title": "Lab: Build the Board's Macro Page",
+   "title": "Lab 1: Build the Board's Macro Page",
    "time": "15 minutes",
-   "data": "data/ng_macro_monthly.csv",
+   "data": "data/official/ng_official_monthly.csv",
    "r": "sessions/s01/R/s01_lab.R",
    "py": "sessions/s01/python/s01_lab.py",
    "steps": [
-    "Load the data and look at the latest three months before calculating anything.",
-    "Build a table of six indicators: latest value, value a year ago, and the change.",
-    "Add two derived numbers: the real policy rate and the FX premium.",
-    "Compare inflation before and after the CPI rebasing.",
-    "Write one 'so what' line for your own company under each number."
+    "Load the official data and look at the latest three months — note the date of each series.",
+    "Build a table of six indicators: latest value, value a year ago, change (in pp for rates).",
+    "Add two derived numbers: the real policy rate (exact formula) and your firm's real revenue growth.",
+    "Mark the January 2025 CPI break and say how you would compare inflation across it.",
+    "Write one 'so what' for your company under each number, using the macro-to-P&L map."
    ],
-   "deliver": "a one-page dashboard with six numbers and six 'so what' lines for your board."
+   "deliver": "a one-page dashboard: six dated numbers, two derived indicators, six 'so what' lines."
   },
   "hook": {
-   "title": "Five Numbers Before Breakfast",
-   "quote": "“Our sales are up 30% this year. The board is delighted.”"
+   "title": "“Sales Are Up 30%. The Board Is Delighted.”",
+   "quote": "FY2024: a Lagos FMCG firm reports naira revenue of ₦52bn, up from ₦40bn. Did the business grow?"
   },
   "concepts": [
    {
-    "title": "Taking Inflation Out of the Numbers",
-    "plain": "A nominal number is measured in today's naira. A real number strips out inflation so you can see whether volumes or purchasing power really changed.",
-    "formula": "real growth ≈ nominal growth − inflation",
-    "example": "Sales up 30% while prices rose 28% → real growth of roughly 2%. The business barely grew.",
-    "why": "Bonuses, targets and investment cases set in nominal naira reward inflation, not performance. Always ask for the real number."
-   },
-   {
     "title": "Seeing the Economy Before GDP Is Published",
-    "plain": "GDP arrives months late. Nowcasting uses faster signals — surveys, payments, fuel sales, electricity use — to estimate what is happening now.",
-    "formula": "PMI > 50 → activity expanding;  PMI < 50 → contracting",
-    "example": "The PMI fell below 50 in 2016, during COVID-19 and again in the 2024 reform squeeze — each time before GDP data confirmed the slowdown.",
-    "why": "Your own data are nowcasting signals too: daily sales, distributor orders and collections often tell you about the economy weeks before the statistics office does."
+    "plain": "GDP for a quarter arrives about two months after it ends. Nowcasting estimates what is happening now from faster signals: business surveys (PMI), payments, fuel and power use, port traffic — and your own orders.",
+    "formula": "PMI > 50 expanding · < 50 contracting",
+    "example": "The Stanbic IBTC PMI was 55.7 in October 2026 (56.4 in September): a ninth month of growth, but input prices hit a four-month high on fuel costs — an early warning for margins.",
+    "why": "Your own data are nowcasting signals: daily sales, distributor orders, collections and stock levels often tell you about the economy weeks before NBS does. Combine them with the PMI and the price data on one page."
    }
   ],
   "checks": [
    {
-    "q": "Your division's naira revenue grew 30% last year while inflation averaged 28% and the naira lost half its dollar value. What is the best summary?",
+    "q": "Your CFO wants to run the night shift because 'it lowers our average cost per carton'. Which reply best applies today's principles?",
     "options": [
-     "Strong growth — 30% beats most competitors",
-     "Revenue roughly flat in real terms, and down sharply in dollars",
-     "Revenue fell 28% in real terms",
-     "We cannot say anything without profit data"
+     "Agree — a lower average cost means each carton is now more profitable",
+     "Reject it — fixed costs make night shifts unprofitable in Nigeria",
+     "Ask whether the shift's extra revenue covers its extra cost, ignoring fixed costs we pay anyway",
+     "Postpone until next quarter's GDP data show whether demand is growing"
     ],
-    "answer": 1,
-    "explain": "B. Real growth ≈ 30% − 28% ≈ 2%, so volumes barely moved. In dollars, 1.30 × 0.5 = 0.65, a 35% fall. A ignores inflation; C misapplies the formula; D is too cautious — revenue alone tells us a lot."
+    "answer": 2,
+    "explain": "C. Marginal thinking: only costs that change with the decision matter. A lower average cost can coexist with a loss on the extra output (−₦0.7m a night in our example). A confuses average with marginal; B blames the fixed costs, which are irrelevant to the decision; D waits for slow data on a question your own numbers answer."
    },
    {
-    "q": "Inflation on the dashboard fell from 34.5% to 16.4% in a year, but the CPI was rebased in January 2025. What should the CFO tell the board?",
+    "q": "A director says: 'Inflation fell from 34.8% in December 2024 to 24.5% in January 2025 — down 10% in a month. We can cut prices.' What is the best response?",
     "options": [
-     "Inflation has halved — we can cut prices",
-     "Part of the fall reflects the new base and basket, so we should watch month-on-month changes and core inflation before acting",
-     "The rebasing makes all inflation data useless",
-     "Ignore inflation and watch the exchange rate only"
+     "The fall partly reflects the new CPI base and basket; January has since been revised to 27.6%, and it is a 10-point fall, not 10% — compare like with like before repricing",
+     "He is right: a 10-point fall in one month is strong evidence that price pressures have ended",
+     "He is right on the direction but wrong on size: it fell about 30%, so cut prices even more",
+     "Ignore inflation data altogether; watch only the exchange rate"
     ],
-    "answer": 1,
-    "explain": "B. A change of base year and basket changes the measured rate. Month-on-month changes and core inflation on the new basis give a cleaner read. A over-reacts; C and D throw away useful information."
+    "answer": 0,
+    "explain": "A. Three corrections in one: a rebasing break, a later revision, and points vs percent. B ignores the measurement break; C computes the percent change correctly (−30%) but draws the wrong conclusion from a broken comparison; D throws away useful information."
+   },
+   {
+    "q": "Which pair of signals would best tell an FMCG board, **this month**, that demand is weakening?",
+    "options": [
+     "Last quarter's GDP release and the IMF's annual forecast",
+     "The CPI base year and the GDP base year",
+     "The 10-year bond yield and the oil price",
+     "The PMI new-orders index and the firm's own distributor orders and collections"
+    ],
+    "answer": 3,
+    "explain": "D. Fast, demand-side signals: the PMI arrives within days and the firm's own orders and collections are real-time. A is slow; B is about measurement, not demand; C matters for financing and FX, not this month's demand."
    }
   ],
-  "case": {
-   "title": "The Board's Macro Page",
-   "context": "A Lagos FMCG company imports a third of its inputs and sells only in naira. Its board meets monthly and receives forty pages of numbers.",
-   "question": "Which five or six macro numbers should the directors see every month — and how should they be shown?",
-   "data": "ng_macro_monthly.csv — 132 months (2015–2025) of inflation, policy rate, exchange rates, oil price, reserves, money, credit and PMI. *Stylised teaching data.*",
-   "decision": "A one-page dashboard: each number with its latest value, change on a year ago and a one-line 'so what' for the business."
-  }
+  "v3": true,
+  "flow": [
+   {
+    "type": "hook",
+    "kicker": "THE QUESTION FOR TODAY",
+    "title": "“Sales Are Up 30%. The Board Is Delighted.”",
+    "quote": "FY2024: a Lagos FMCG firm reports naira revenue of ₦52bn, up from ₦40bn. Did the business grow?",
+    "intro": "Before anyone celebrates, an economist runs three checks. By the end of today you will run all three:",
+    "points": [
+     {
+      "icon": "FaPercent",
+      "title": "1 · Real or nominal?",
+      "body": "Consumer prices rose about 33% on average in 2024. If prices rose faster than sales, volume fell."
+     },
+     {
+      "icon": "FaExchangeAlt",
+      "title": "2 · In which currency?",
+      "body": "The naira averaged about ₦645/$ in 2023 and ₦1,479/$ in 2024. Imported inputs are priced in dollars."
+     },
+     {
+      "icon": "FaUsers",
+      "title": "3 · Compared with whom?",
+      "body": "If the category grew faster than 30% in naira, we lost market share."
+     }
+    ],
+    "notes": "Cold-call two or three participants: 'What was your company's revenue growth last year? And inflation?' Most have never deflated their own sales.\n\nLeave the question open. We answer it in Part 2 (slide 'Back to the 30% question').\n\nSources: World Bank WDI — inflation, consumer prices, Nigeria 2024 = 33.24% (FP.CPI.TOTL.ZG); official exchange rate, period average, 2023 = ₦645.19, 2024 = ₦1,478.97 (PA.NUS.FCRF), last updated Oct 2026. The firm itself is illustrative.",
+    "_slide": 2
+   },
+   {
+    "type": "pnlmap",
+    "kicker": "THE MENTAL MODEL FOR THIS COURSE",
+    "title": "The Macro-to-P&L Map: Where the Economy Hits Your Numbers",
+    "cols": [
+     "Revenue (volume × price)",
+     "Cost of sales",
+     "Operating costs",
+     "Finance costs",
+     "FX gains & balance sheet"
+    ],
+    "corner": "When this moves… it hits…",
+    "rows": [
+     {
+      "driver": "Naira weakens",
+      "cells": [
+       [
+        2,
+        "Imported rivals dearer; exports more competitive"
+       ],
+       [
+        3,
+        "Imported inputs and packaging cost more"
+       ],
+       [
+        2,
+        "Diesel, spares, software licences"
+       ],
+       [
+        2,
+        "Dollar loans cost more in naira"
+       ],
+       [
+        3,
+        "Revaluation losses on dollar liabilities"
+       ]
+      ]
+     },
+     {
+      "driver": "Inflation rises",
+      "cells": [
+       [
+        3,
+        "Real incomes fall; customers trade down"
+       ],
+       [
+        2,
+        "Local inputs and freight rise"
+       ],
+       [
+        2,
+        "Wage pressure, rent reviews"
+       ],
+       [
+        2,
+        "Rates rise to fight it"
+       ],
+       [
+        1,
+        "Inventory gains; idle cash loses value"
+       ]
+      ]
+     },
+     {
+      "driver": "Interest rates rise",
+      "cells": [
+       [
+        2,
+        "Less consumer and distributor credit"
+       ],
+       [
+        1,
+        "Supplier credit dearer"
+       ],
+       [
+        0,
+        ""
+       ],
+       [
+        3,
+        "Overdrafts and loans reprice"
+       ],
+       [
+        2,
+        "Naira assets attract inflows; FX steadier"
+       ]
+      ]
+     },
+     {
+      "driver": "Growth and incomes rise",
+      "cells": [
+       [
+        3,
+        "Volumes up; premium mix sells"
+       ],
+       [
+        1,
+        "Tighter input markets"
+       ],
+       [
+        1,
+        "Competition for skilled staff"
+       ],
+       [
+        1,
+        "Banks lend on better terms"
+       ],
+       [
+        0,
+        ""
+       ]
+      ]
+     },
+     {
+      "driver": "Policy shifts (subsidy, tax, tariffs)",
+      "cells": [
+       [
+        2,
+        "Tariffs shield or expose you"
+       ],
+       [
+        2,
+        "Duties, fuel price"
+       ],
+       [
+        2,
+        "Transport, levies"
+       ],
+       [
+        1,
+        "Government borrowing crowds out credit"
+       ],
+       [
+        2,
+        "Tax treatment of FX gains"
+       ]
+      ]
+     }
+    ],
+    "note": "We will fill in this map session by session. **Every economic idea in EEGB ends with the question: which cell does it move — and by how much?**",
+    "notes": "This is the course's organising picture. Ask participants to mark the two cells that hurt their firm most in 2023–24 (most will choose naira → cost of sales and naira → FX losses). Shading is a judgement for a typical import-dependent Nigerian FMCG firm, not a measurement; a bank or an exporter would shade it differently — ask them how.",
+    "_slide": 3
+   },
+   {
+    "type": "plan",
+    "title": "Session 1: Three Parts, One Deliverable",
+    "sub": "75 minutes. The appendix holds the self-study depth.",
+    "blocks": [
+     {
+      "min": 10,
+      "label": "Opening"
+     },
+     {
+      "min": 22,
+      "label": "1 · Think like an economist"
+     },
+     {
+      "min": 25,
+      "label": "2 · Read the numbers"
+     },
+     {
+      "min": 18,
+      "label": "3 · Nowcast and dashboard"
+     }
+    ],
+    "items": [
+     {
+      "icon": "FaBrain",
+      "title": "Frame decisions like an economist",
+      "body": "Use **opportunity cost, the margin and incentives** on a real decision, and apply Mankiw's ten principles."
+     },
+     {
+      "icon": "FaCalculator",
+      "title": "Read official data correctly",
+      "body": "Convert **nominal to real**; handle **rebasing, revisions** and percentage points; tell **correlation from causation**."
+     },
+     {
+      "icon": "FaTachometerAlt",
+      "title": "Build a board macro page",
+      "body": "Pick six indicators, read them with **fast signals**, and write a **'so what'** for your business."
+     }
+    ],
+    "_slide": 4
+   },
+   {
+    "type": "table",
+    "kicker": "HOW YOU WILL BE ASSESSED",
+    "title": "Assessment — and How Today Prepares You",
+    "head": [
+     "Component",
+     "Weight",
+     "What it involves",
+     "Today's link"
+    ],
+    "colW": [
+     3,
+     1,
+     4.6,
+     3.3
+    ],
+    "rows": [
+     [
+      "Class participation (in-person + online)",
+      "30%",
+      "Cold calls, in-class problem-solving, polls and short reaction notes",
+      "Every check slide is a cold-call rehearsal"
+     ],
+     [
+      "Short quizzes / polls",
+      "10%",
+      "Pre-class checks on the readings",
+      "Mankiw ch. 1, 2, 22, 23 underpin today"
+     ],
+     [
+      "Practice-based assignment",
+      "20%",
+      "Data labs (FRED / IMF / CBN / NBS / World Bank), case brief, macro policy memo",
+      "Today's lab is Data Lab 1"
+     ],
+     [
+      "Final exam",
+      "40%",
+      "On-site, closed-book examination",
+      "Expect: real growth, CPI, real rates, pp vs %"
+     ]
+    ],
+    "note": "Participation is a third of the grade. Read before class, bring one number from your own business, and be ready to defend a recommendation. The course roadmap is in the appendix.",
+    "_slide": 5
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 1,
+    "title": "Think Like an Economist",
+    "sub": "Mankiw's ten principles, applied to decisions a Nigerian board actually takes.",
+    "question": "How should a manager frame a decision before reaching for the numbers?",
+    "_slide": 6
+   },
+   {
+    "type": "table",
+    "kicker": "THE TOOLKIT · MANKIW CH. 1",
+    "title": "Ten Principles — Translated for a Lagos Boardroom",
+    "fontSize": 11.5,
+    "head": [
+     "#",
+     "Principle",
+     "In a Nigerian boardroom",
+     "Where"
+    ],
+    "colW": [
+     0.45,
+     3.9,
+     6.25,
+     1.3
+    ],
+    "rows": [
+     [
+      "1",
+      "People face trade-offs",
+      "More FX for raw materials means less for debt service.",
+      "Today"
+     ],
+     [
+      "2",
+      "The cost of something is what you give up to get it",
+      "Idle cash costs what it could have earned — and what inflation eats.",
+      "Today"
+     ],
+     [
+      "3",
+      "Rational people think at the margin",
+      "Run the night shift only if its **extra** revenue beats its **extra** cost.",
+      "Today · S4"
+     ],
+     [
+      "4",
+      "People respond to incentives",
+      "A cheap subsidised price invites smuggling; an FX gap invites round-tripping.",
+      "Today · S5"
+     ],
+     [
+      "5",
+      "Trade can make everyone better off",
+      "Gains come from comparative advantage, not from being best at everything.",
+      "Today · S12"
+     ],
+     [
+      "6",
+      "Markets are usually a good way to organise activity",
+      "Prices carry information; rationing replaces them with queues.",
+      "Today · S2"
+     ],
+     [
+      "7",
+      "Governments can sometimes improve market outcomes",
+      "Property rights, externalities, market power — if the state has capacity.",
+      "S4 · S5"
+     ],
+     [
+      "8",
+      "Living standards depend on productivity",
+      "Real output per person has fallen about 10% since 2014.",
+      "Today · S7"
+     ],
+     [
+      "9",
+      "Prices rise when the government prints too much money",
+      "Ways & Means financing preceded the 2023–24 inflation surge.",
+      "S8 · S9"
+     ],
+     [
+      "10",
+      "Short-run trade-off between inflation and unemployment",
+      "Rate hikes cool prices but squeeze sales and jobs first.",
+      "S6"
+     ]
+    ],
+    "notes": "Mankiw groups the principles: 1–4 how people make decisions; 5–7 how people interact; 8–10 how the economy as a whole works. Today we work through 2, 3, 4, 5, 6–7 and 8 with examples; 9 and 10 are previewed here and in the appendix, and taught fully in Sessions 6, 8 and 9.\n\nPrinciple 8 figure: World Bank NY.GDP.PCAP.KD, Nigeria 2014 = $2,584, 2024 = $2,325 (constant 2015 US$), −10.0%. Ways & Means: CBN overdrafts to the FGN of about ₦22.7trn were securitised in May 2023.",
+    "_slide": 7
+   },
+   {
+    "type": "worked",
+    "kicker": "PRINCIPLE 2 · OPPORTUNITY COST",
+    "title": "What Did ₦1bn of Idle Cash Really Cost in 2024?",
+    "tableW": 5.9,
+    "table": {
+     "head": [
+      "₦1bn, end-2023 → end-2024",
+      "Naira, end-2024",
+      "Real (Dec-23 ₦)"
+     ],
+     "rows": [
+      [
+       "Leave it in a current account (0%)",
+       "₦1.00bn",
+       "₦0.74bn"
+      ],
+      [
+       "364-day T-bill, Jan 2024 (11.5%)",
+       "₦1.12bn",
+       "₦0.83bn"
+      ],
+      [
+       "Pre-buy $-priced inputs at ₦899/$",
+       "worth ≈ ₦1.71bn",
+       "≈ ₦1.27bn"
+      ]
+     ]
+    },
+    "steps": [
+     "Inflation in the year to Dec 2024 was **34.8%**: ₦1 at end-2024 bought what ₦0.74 bought a year earlier (1 ÷ 1.348).",
+     "Idle cash therefore **lost about ₦258m** of purchasing power — a real cost that no invoice ever shows.",
+     "A one-year T-bill bought in **January 2024** yielded about **11.5%**; yields near 20% came only after the February–March hikes. Real return: 1.115 ÷ 1.348 − 1 ≈ **−17%**.",
+     "Pre-buying hedged the naira's fall from **₦899 to ₦1,535/$** (+71%) — but tied up cash and warehouse space, and stock can spoil. That is **its** opportunity cost."
+    ],
+    "aside": "In 2024 the 'safe' choice — idle naira — was the most expensive one, and even T-bills lost in real terms. Only the **dollar-linked** option kept its value. With the real policy rate now about **+7%** (Part 2), that ranking has reversed.",
+    "asideTitle": "So what for your treasury",
+    "asideY": 4.2,
+    "result": "The cost of a decision is the **best alternative given up** — measured in real terms, not just in naira.",
+    "notes": "Sources: NBS CPI Dec 2024 = 34.80% y/y (CBN statistics). 364-day NTB auction yields: 8.40% (10 Jan 2024), 11.54% (24 Jan 2024) — Nairametrics, 26 Jan 2024; 19% (late Feb) and 21.49% (6 Mar 2024) — Nairametrics/ThisDay. CBN official central rate: ₦899.39/$ (29 Dec 2023), ₦1,535.32/$ (31 Dec 2024) → ×1.707; real 1.707 ÷ 1.348 = 1.27.\n\nHindsight point: a treasurer who waited until March got 21% — still roughly −10% real measured against 2024 inflation (1.21 ÷ 1.348 − 1). (A bill bought on 24 January matures in January 2025; close enough for the lesson.) Ask: what would you do with ₦1bn today, when the real rate is positive?",
+    "_slide": 8
+   },
+   {
+    "type": "worked",
+    "kicker": "PRINCIPLE 3 · THINK AT THE MARGIN",
+    "title": "Should the Factory Run a Third (Night) Shift?",
+    "tableW": 5.9,
+    "illus": true,
+    "table": {
+     "head": [
+      "Per night of the third shift",
+      "₦ million"
+     ],
+     "rows": [
+      [
+       "Extra output: 6,000 cartons × ₦4,500 net price",
+       "+27.0"
+      ],
+      [
+       "Materials: 6,000 × ₦3,000",
+       "−18.0"
+      ],
+      [
+       "Night-shift labour and supervision",
+       "−3.2"
+      ],
+      [
+       "Diesel — the grid is unreliable at night",
+       "−6.5"
+      ]
+     ],
+     "total": [
+      "Marginal profit per night",
+      "−0.7"
+     ]
+    },
+    "steps": [
+     "Finance says: 'average cost per carton falls from ₦5,000 to ₦4,900 because fixed costs are spread' — **true but irrelevant**.",
+     "Fixed costs (rent, depreciation, head office) are paid whether or not the shift runs. They are **not marginal**.",
+     "Ask only: does the **extra** revenue exceed the **extra** cost? Here it falls short by ₦0.7m a night.",
+     "The decision flips if diesel falls, the grid improves or the price rises — so those are the numbers to watch."
+    ],
+    "aside": "Find the break-even. At what diesel cost does the shift pay? (₦5.8m a night.) At what net price per carton? (₦4,617.) Good managers know the **two or three numbers that flip the decision**.",
+    "asideTitle": "Try it",
+    "asideY": 4.6,
+    "result": "Decide at the **margin**: compare extra benefit with extra cost. Averages and sunk costs mislead.",
+    "notes": "Illustrative figures. Day and evening shifts make 17,000 cartons at ₦85m a night (average ₦5,000); adding 6,000 cartons at ₦27.7m gives ₦112.7m ÷ 23,000 = ₦4,900. Break-evens: diesel 27.0 − 18.0 − 3.2 = 5.8; price (18.0 + 3.2 + 6.5) / 6,000 = ₦4,617. Sunk-cost example to add verbally: an ERP licence already paid for should not decide whether to keep using the system. Links to Session 2 (pricing) and Session 4 (cost structure).",
+    "_slide": 9
+   },
+   {
+    "type": "cards",
+    "kicker": "PRINCIPLE 4 · INCENTIVES",
+    "title": "People Respond to Incentives — Often Unexpectedly",
+    "perRow": 3,
+    "cards": [
+     {
+      "icon": "FaGasPump",
+      "title": "Petrol subsidy",
+      "body": "Pump price held near **₦185/litre** until May 2023 while neighbours paid far more. Result: cross-border smuggling and a subsidy bill above **₦4trn** in 2022.",
+      "foot": "Incentives change behaviour at the margin."
+     },
+     {
+      "icon": "FaExchangeAlt",
+      "title": "Multiple exchange rates",
+      "body": "In May 2016 the street rate was **71% above** the official rate. Anyone with official access could buy cheap and sell dear; **round-tripping** grew while genuine importers queued.",
+      "foot": "A price gap is an incentive."
+     },
+     {
+      "icon": "FaBan",
+      "title": "FX restrictions on imports",
+      "body": "Barring 41 items from the official FX window (2015) aimed to boost local production. It also **raised prices and rewarded smuggling** through porous borders.",
+      "foot": "Watch what people do, not what the rule says."
+     }
+    ],
+    "note": "Before backing a policy — or a sales commission scheme — ask: **who gains, who loses, and how will each change behaviour?**",
+    "notes": "Sources: NNPC 'under-recovery' (petrol subsidy) ≈ ₦4.39trn in 2022; pump price ₦185/l before 29 May 2023. FX premium: CBN monthly averages, May 2016 — BDC vs official (see the exchange-rate chart in Part 2). CBN circular of June 2015 excluded 41 items from the official FX market. Company example to ask for: a commission plan that paid on volume and destroyed margin.",
+    "_slide": 10
+   },
+   {
+    "type": "worked",
+    "kicker": "PRINCIPLE 5 · TRADE CAN MAKE EVERYONE BETTER OFF",
+    "title": "Comparative Advantage: Why the 'Better' Producer Still Gains",
+    "tableW": 5.9,
+    "illus": true,
+    "table": {
+     "head": [
+      "120 hours of labour each",
+      "Hours per tonne of cement",
+      "Hours per bag of cocoa",
+      "Cost of 1 bag of cocoa"
+     ],
+     "rows": [
+      [
+       "Nigeria",
+       "2",
+       "4",
+       "2 t of cement"
+      ],
+      [
+       "Ghana",
+       "6",
+       "6",
+       "1 t of cement"
+      ],
+      [
+       "No trade (split time evenly)",
+       "N 30 + G 10 = 40 t",
+       "N 15 + G 10 = 25",
+       ""
+      ],
+      [
+       "Specialise by comparative advantage",
+       "N 50 + G 0 = 50 t",
+       "N 5 + G 20 = 25",
+       "+10 t of cement"
+      ]
+     ]
+    },
+    "steps": [
+     "Nigeria is faster at **both** goods: it has the **absolute advantage** in each.",
+     "But a bag of cocoa costs Nigeria **2 tonnes** of cement forgone, and Ghana only **1 tonne**. Ghana has the **comparative advantage** in cocoa; Nigeria has it in cement.",
+     "If each leans towards what it gives up least to make, total output rises: the same 25 bags of cocoa plus **10 extra tonnes** of cement.",
+     "Trade at 1.5 t per bag: Ghana swaps 10 bags for 15 t and ends with **10 bags + 15 t** (was 10 + 10); Nigeria ends with **35 t + 15 bags** (was 30 + 15). **Both gain.**"
+    ],
+    "result": "Gains from trade come from **comparative** advantage — differences in opportunity cost — not from being best at everything.",
+    "notes": "Mankiw ch. 3 ('Interdependence and the Gains from Trade') uses a farmer and a rancher; the logic is identical. Numbers are illustrative, not real productivities. Firm-level version: should your best salesperson also do the invoicing because she is faster at it? No — her opportunity cost is lost sales. Who loses from trade (import-competing workers and firms) is part of Session 12.",
+    "_slide": 11
+   },
+   {
+    "type": "compare",
+    "kicker": "PRINCIPLES 6 & 7 · MARKETS AND GOVERNMENT",
+    "title": "Markets Usually Work — Governments Can Sometimes Help",
+    "left": {
+     "icon": "FaChartLine",
+     "title": "6 · Markets usually work well",
+     "tag": "Prices carry information and incentives",
+     "items": [
+      "A price summarises scarcity: when it rises, buyers economise and sellers supply more — with no one coordinating them.",
+      "When the official naira rate was held below the market, dollars **were rationed**: queues and a parallel market replaced the price signal.",
+      "Price controls create shortages, queues or black markets — the price is still paid, just in another form.",
+      "Adam Smith's 'invisible hand': self-interest, guided by prices, can serve the common good."
+     ]
+    },
+    "right": {
+     "icon": "FaLandmark",
+     "title": "7 · Governments can sometimes help",
+     "tag": "When markets fail — and when the state has capacity",
+     "items": [
+      "**Property rights and contracts**: markets work only if courts enforce them.",
+      "**Externalities**: pollution, gas flaring and congestion impose costs that prices ignore (Session 5).",
+      "**Market power**: a dominant firm or platform can price above the efficient level (Session 4).",
+      "'Sometimes' is the key word: policy can also fail — through poor design, weak capacity or capture."
+     ]
+    },
+    "note": "The manager's question is never 'market or state?' but **'what is failing here, and will the proposed fix work better than the failure?'**",
+    "notes": "Mankiw ch. 1, principles 6–7 and the invisible-hand passage. Use FX rationing (2015–2023) as the bridge: the control did not remove the cost of dollars; it moved it into queues, premiums and lost production.",
+    "_slide": 12
+   },
+   {
+    "type": "figure",
+    "kicker": "PRINCIPLE 8 · PRODUCTIVITY",
+    "title": "Living Standards Depend on What a Country Produces",
+    "img": "sessions/s01/figures/python/s01_f05.png",
+    "fig": "S01-F05",
+    "script": "s01_figures.py / .R",
+    "points": [
+     "**Real** output per person (constant 2015 US$) was **$2,584 in 2014**, near its 2015 peak, and **$2,325 in 2024**: about **10% lower**.",
+     "Population grew about **2–2.6% a year**; output barely kept up — echoing **1992–2002**, when the LBS case IB-90 reports GDP growth of 2.25% against population growth of 2.8% (older data).",
+     "The **current-dollar** line falls by two-thirds — mostly the **naira's collapse**, not lost production. It also jumps in 2019 where the rebased GDP series begins.",
+     "Wages rise sustainably only with **output per worker**: power, skills, technology, institutions (Session 7)."
+    ],
+    "notes": "Sources: World Bank WDI NY.GDP.PCAP.KD and NY.GDP.PCAP.CD (updated Oct 2026): 2014 $2,583.6 real (2015 peak $2,585.7) / $3,088.7 current; 2024 $2,324.6 / $1,084.2. SP.POP.GROW: 2.6% (2014) to 2.1% (2024). 'The Business Environment of Nigeria' (IB-90), p. 6, for 1992–2002.\n\nThis slide is also a data-literacy lesson: the same 'GDP per head' tells opposite stories in current and constant dollars.",
+    "_slide": 13
+   },
+   {
+    "type": "lead",
+    "kicker": "PRINCIPLES 9 & 10 · THE ECONOMY AS A WHOLE — PREVIEW",
+    "title": "Money, Prices and the Short-Run Trade-Off",
+    "leadLabel": "What Sessions 6, 8 and 9 will build",
+    "leadSize": 16,
+    "lead": "**9.** Prices rise when the government finances itself by creating money.\n\n**10.** In the short run, lowering inflation usually costs output and jobs.",
+    "leadFoot": "Full treatment and Nigerian data in the appendix and in Part II.",
+    "points": [
+     {
+      "h": "Inflation is a transfer (Ferguson)",
+      "t": "_The Ascent of Money_ shows inflation moving wealth from savers and bondholders to debtors. Argentina pegged, slashed inflation — and still defaulted in 2001 because **fiscal** discipline never followed."
+     },
+     {
+      "h": "Nigeria: money financing, then the bill",
+      "t": "CBN 'Ways & Means' lending to the government reached about **₦22.7trn** before being securitised in 2023. Inflation peaked at **34.8%** in December 2024."
+     },
+     {
+      "h": "The trade-off in practice",
+      "t": "The CBN raised its policy rate from **18.75% to 27.5%** during 2024, began cutting only in **September 2025** as inflation fell, and is now at **23%** (September 2026). Volumes and jobs feel tightening **before** prices do."
+     },
+     {
+      "h": "Manager's use",
+      "t": "When the MPC tightens, plan for **slower demand and tighter working capital** over the next year; when it eases, the reverse.",
+      "accent": true
+     }
+    ],
+    "notes": "Sources: Ferguson, The Ascent of Money (2008), Introduction and ch. 2. Ways & Means: Senate approved securitisation of ₦22.7trn on 3–4 May 2023 (ThisDay); a further ₦7.3trn was securitised later, taking the total near ₦30trn. MPR path: CBN money-market indicators (18.75% Dec 2023; 27.50% Nov 2024; 27.0% from 23 Sep 2025; 26.5% from Feb 2026; 23.00% from 22 Sep 2026). Inflation: CBN/NBS CPI. Unemployment-measurement caveat (33.3% → 4.1% after NBS's 2023 methodology change) is in the appendix.",
+    "_slide": 14
+   },
+   {
+    "type": "check",
+    "q": "Your CFO wants to run the night shift because 'it lowers our average cost per carton'. Which reply best applies today's principles?",
+    "options": [
+     "Agree — a lower average cost means each carton is now more profitable",
+     "Reject it — fixed costs make night shifts unprofitable in Nigeria",
+     "Ask whether the shift's extra revenue covers its extra cost, ignoring fixed costs we pay anyway",
+     "Postpone until next quarter's GDP data show whether demand is growing"
+    ],
+    "answer": 2,
+    "explain": "C. Marginal thinking: only costs that change with the decision matter. A lower average cost can coexist with a loss on the extra output (−₦0.7m a night in our example). A confuses average with marginal; B blames the fixed costs, which are irrelevant to the decision; D waits for slow data on a question your own numbers answer.",
+    "_slide": 15
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 2,
+    "title": "Read the Numbers",
+    "sub": "How official statistics are built — and the traps that catch managers.",
+    "question": "Did our firm actually grow — and what is the economy really doing?",
+    "_slide": 16
+   },
+   {
+    "type": "chain",
+    "kicker": "EVERY STATISTIC HAS A SUPPLY CHAIN",
+    "title": "From Concept to Headline: Where Errors Creep In",
+    "steps": [
+     {
+      "icon": "FaLightbulb",
+      "label": "Concept",
+      "desc": "What do we want to know? e.g. the cost of living."
+     },
+     {
+      "icon": "FaRulerHorizontal",
+      "label": "Definition",
+      "desc": "Which basket, households, prices, base year?"
+     },
+     {
+      "icon": "FaClipboardList",
+      "label": "Collection",
+      "desc": "Surveys, admin and tax records. Is the informal sector covered?"
+     },
+     {
+      "icon": "FaCalculator",
+      "label": "Aggregation",
+      "desc": "Weights and index formulas turn thousands of prices into one number."
+     },
+     {
+      "icon": "FaBullhorn",
+      "label": "Release",
+      "desc": "Headline first, detail later. Lags matter."
+     },
+     {
+      "icon": "FaSync",
+      "label": "Revision",
+      "desc": "Rebasing and new data change history — even recent history.",
+      "accent": true
+     }
+    ],
+    "note": "Piketty's warning applies to every board paper: without precise sources, methods and concepts, **you can see everything and its opposite.**",
+    "notes": "Piketty, Capital in the Twenty-First Century (2014), Introduction, 'A Debate without Data?'. Each link maps onto a trap in this part: definition (rebasing), coverage (share of what?), aggregation (CPI weights), revision (the 2025 inflation revision).",
+    "_slide": 17
+   },
+   {
+    "type": "worked",
+    "kicker": "MEASURING PRICES · MANKIW CH. 23",
+    "title": "How the CPI Is Built — a Five-Step Worked Example",
+    "tableW": 6.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "Monthly basket",
+      "Qty",
+      "2024 price",
+      "2025 price",
+      "2024 cost",
+      "2025 cost"
+     ],
+     "rows": [
+      [
+       "Rice (50 kg bag)",
+       "1",
+       "₦80,000",
+       "₦72,000",
+       "₦80,000",
+       "₦72,000"
+      ],
+      [
+       "Garri (bucket)",
+       "4",
+       "₦4,000",
+       "₦4,800",
+       "₦16,000",
+       "₦19,200"
+      ],
+      [
+       "Petrol (litres)",
+       "60",
+       "₦700",
+       "₦900",
+       "₦42,000",
+       "₦54,000"
+      ],
+      [
+       "Transport (trips)",
+       "40",
+       "₦500",
+       "₦600",
+       "₦20,000",
+       "₦24,000"
+      ],
+      [
+       "Rent (monthly)",
+       "1",
+       "₦100,000",
+       "₦120,000",
+       "₦100,000",
+       "₦120,000"
+      ]
+     ],
+     "total": [
+      "Cost of basket",
+      "",
+      "",
+      "",
+      "₦258,000",
+      "₦289,200"
+     ]
+    },
+    "steps": [
+     "**Fix the basket**: what a typical household buys (quantities held constant).",
+     "**Collect prices** for each item in each period.",
+     "**Cost the basket** each year at that year's prices.",
+     "**Pick a base year** and index: 289,200 ÷ 258,000 × 100 = **112.1**.",
+     "**Inflation** = 112.1 ÷ 100 − 1 = **12.1%**, even though rice got cheaper."
+    ],
+    "result": "The CPI tracks a **fixed basket**. Your firm's own input basket may inflate much faster or slower.",
+    "notes": "Mankiw ch. 23 uses hot dogs and hamburgers; this is a Lagos basket with illustrative prices. Ask: what is your company's 'basket' of inputs and how did its cost change? That is your firm's own inflation rate. Biases of the CPI (substitution, new goods, quality) are in the appendix.",
+    "_slide": 18
+   },
+   {
+    "type": "figure",
+    "kicker": "TRAP 1 · REBASING AND REVISIONS",
+    "title": "Inflation: Food Led, Core Followed — Then the Yardstick Changed",
+    "img": "sessions/s01/figures/python/s01_f01.png",
+    "fig": "S01-F01",
+    "script": "s01_figures.py / .R",
+    "points": [
+     "Dec 2024: **34.8%** on the old CPI (2009 base, food **51.8%** of the basket).",
+     "Jan 2025: new CPI (**2024 = 100**, food weight **40%**). First published as **24.48%**…",
+     "…then **revised to 27.61%** when NBS reviewed its method in Dec 2025. Even 'latest data' changes.",
+     "Sep 2026: headline **14.6%**, food 19.6%, core 13.0% — a genuine fall, on the new yardstick.",
+     "**Never compare across a rebasing** without the statistics office's linked series."
+    ],
+    "notes": "Sources: CBN statistics (inflation API) reproducing NBS CPI; NBS rebasing (Feb 2025: base 2009 → 2024, food weight 51.8% → 40%, The Guardian); NBS methodology review, Dec 2025 (Jan 2025 revised 24.48% → 27.61%, Nairametrics, 16 Jan 2026). Ask: what would you tell a union negotiating wages off 'inflation has halved'?",
+    "_slide": 19
+   },
+   {
+    "type": "stats",
+    "kicker": "TRAP 2 · REBASING GDP",
+    "title": "The Day Nigeria's Economy 'Grew' 35%",
+    "stats": [
+     {
+      "value": "₦372.8trn",
+      "size": 34,
+      "label": "2024 nominal GDP, rebased",
+      "desc": "New base year **2019** (was 2010), published by NBS in July 2025."
+     },
+     {
+      "value": "+35.4%",
+      "label": "vs the old estimate",
+      "desc": "Same economy, better measurement: fintech, creative industries, telecoms and more informal activity captured."
+     },
+     {
+      "value": "0",
+      "label": "Extra naira in anyone's pocket",
+      "desc": "Rebasing changes the **level**. Ratios drop overnight: debt-to-GDP, tax-to-GDP, credit-to-GDP."
+     }
+    ],
+    "note": "Before comparing GDP ratios across years or countries, ask: **which base year?** A covenant of 'debt below 40% of GDP' can be met overnight by a rebasing.",
+    "notes": "Source: NBS rebased GDP release, July 2025 (2024 nominal GDP ₦372.8trn; +35.4% vs old series) — TechEconomy factsheet. Nigeria's previous rebasing (April 2014, base 1990 → 2010) raised 2013 GDP by about 89%.",
+    "_slide": 20
+   },
+   {
+    "type": "chart",
+    "kicker": "TRAP 3 · 'SHARE OF WHAT?'",
+    "title": "Oil Is 4% of GDP — and Still Most of Nigeria's Exports",
+    "data": [
+     {
+      "name": "Share",
+      "labels": [
+       "Oil's share of real GDP",
+       "Crude oil's share of export value",
+       "Oil and gas share of export value"
+      ],
+      "values": [
+       4.2,
+       47.8,
+       86.2
+      ]
+     }
+    ],
+    "colors": [
+     "0088C7"
+    ],
+    "source": "Q2 2026. Sources: NBS GDP report; NBS Foreign Trade in Goods (crude ₦12.91trn, other ₦14.11trn incl. non-oil ₦3.72trn, of ₦27.0trn).",
+    "points": [
+     "Oil adds little **value added** in real GDP — it is capital-intensive and measured at constant prices.",
+     "But oil earns most of the **dollars**: crude alone was about 48% of exports; oil and gas about 86%.",
+     "So the oil price still drives the **naira, reserves and government revenue**.",
+     "Always ask: share of **GDP, exports, revenue or FX supply**?"
+    ],
+    "notes": "Sources: NBS GDP Q2 2026 (oil 4.16% of real GDP); NBS Foreign Trade in Goods Q2 2026 via Intelpoint (crude ₦12.91trn; non-crude ₦14.11trn; non-oil ₦3.72trn = 13.8% of total). Oil and gas share = (27.02 − 3.72) / 27.02 = 86.2%. In the 2000s oil supplied about 95% of FX earnings (LBS case IB-90).",
+    "_slide": 21
+   },
+   {
+    "type": "worked",
+    "kicker": "TRAP 4 · PERCENT VS PERCENTAGE POINTS",
+    "title": "Small Words, Big Mistakes",
+    "tableW": 5.6,
+    "table": {
+     "head": [
+      "Change",
+      "Percentage points",
+      "Percent"
+     ],
+     "rows": [
+      [
+       "Inflation 34.8% → 14.6%",
+       "−20.2 pp",
+       "−58%"
+      ],
+      [
+       "MPR 26.5% → 23.0%",
+       "−3.5 pp (350 bp)",
+       "−13.2%"
+      ],
+      [
+       "CPI food weight 51.8% → 40%",
+       "−11.8 pp",
+       "−22.8%"
+      ]
+     ]
+    },
+    "steps": [
+     "A **percentage point (pp)** is the simple difference between two rates.",
+     "A **percent change** is the change relative to the starting level.",
+     "Markets speak in **basis points**: 1 pp = 100 bp. The September 2026 MPC cut was **350 bp**.",
+     "'Food weight cut by over 22 per cent' (Feb 2025 headline) is right as a percent — the weight fell **11.8 points**."
+    ],
+    "aside": "A loan priced at 'MPR + 4%' fell from 30.5% to 27.0% after the September 2026 cut: a **3.5 pp** fall in the rate, which cuts the interest bill by **11.5%**. Both numbers are right; they answer different questions.",
+    "asideTitle": "Worked example",
+    "asideY": 3.6,
+    "result": "Say **pp** for changes in rates. Mixing the two misstates a change by a factor of two to four.",
+    "notes": "Sources: CBN/NBS CPI (Dec 2024 34.80%, Sep 2026 14.63%); CBN MPC (MPR 26.5% → 23%, Sep 2026); The Guardian, Feb 2025, 'NBS unveils new inflation template, reduces food weight to 40%' (guardian.ng/news/nbs-unveils-new-inflation-template-reduces-food-weight-to-40/). Year-on-year vs month-on-month and base effects are in the appendix.",
+    "_slide": 22
+   },
+   {
+    "type": "figure",
+    "kicker": "BACK TO THE 30% QUESTION",
+    "title": "Real vs Nominal: One Revenue Figure, Three Answers",
+    "img": "sessions/s01/figures/python/s01_f07.png",
+    "fig": "S01-F07",
+    "script": "s01_figures.py / .R",
+    "points": [
+     "**Real growth**: (1 + nominal) ÷ (1 + inflation) − 1 = 1.30 ÷ 1.332 − 1 ≈ **−2.4%**. Volume fell.",
+     "The shortcut 'nominal − inflation' gives −3.2%: fine for small rates, off at Nigerian rates.",
+     "**In dollars**: ₦40bn ÷ 645 = **$62.0m** → ₦52bn ÷ 1,479 = **$35.2m**: down **43%**.",
+     "The board was celebrating a business that shrank. Report **real, naira and dollar** figures side by side.",
+     "Targets and bonuses set in nominal naira **reward inflation, not performance**."
+    ],
+    "notes": "Uses 2024 average inflation (33.24%) and annual-average exchange rates (₦645.19, ₦1,478.97), World Bank WDI. Which deflator? The firm's own price index gives volume growth; the CPI gives the customers' purchasing-power view. Ask participants to redo this for their own firm before Session 2.",
+    "_slide": 23
+   },
+   {
+    "type": "figure",
+    "kicker": "THE EXCHANGE RATE",
+    "title": "Naira per Dollar: Rationing, Then a Reset",
+    "img": "sessions/s01/figures/python/s01_f02.png",
+    "fig": "S01-F02",
+    "script": "s01_figures.py / .R",
+    "points": [
+     "Until 2023 the CBN held an official rate; the **bureau-de-change** rate shows the market's price. The gap peaked at **71% (May 2016)**.",
+     "A premium signals **rationing** — Principle 6 at work — and an incentive to arbitrage (Principle 4).",
+     "June 2023 unification: the naira moved from about **₦460 to ₦750/$** within weeks, then past **₦1,500**.",
+     "Today: **₦1,347/$** (CBN, 4 Nov 2026). **Use the rate you actually transact at.**"
+    ],
+    "notes": "Source: CBN statistics — official central rate (daily, averaged monthly) and BDC monthly average (CBN series ends April 2021). Latest: CBN central rate ₦1,347.30/$, 4 Nov 2026. Session 11 covers regimes, unification and the trilemma.",
+    "_slide": 24
+   },
+   {
+    "type": "figure",
+    "kicker": "REAL INTEREST RATES",
+    "title": "Did Savers Beat Inflation? The Real Policy Rate",
+    "img": "sessions/s01/figures/python/s01_f03.png",
+    "fig": "S01-F03",
+    "script": "s01_figures.py / .R",
+    "points": [
+     "Real rate = (1 + policy rate) ÷ (1 + inflation) − 1 — the same arithmetic as real revenue.",
+     "For most of 2016–2024 it was **negative**, falling below **−8%** in 2024: naira savings lost value, pushing savers into dollars, land and stock.",
+     "Today: MPR **23%**, inflation **14.6%** → real rate **+7.3%**. Holding naira now **pays**.",
+     "Part of the jump in January 2025 is the **new CPI** — measurement, not just policy."
+    ],
+    "notes": "Source: CBN statistics (MPR and headline CPI, monthly). Exact Fisher formula. Sep 2026: 1.23 / 1.1463 − 1 = 7.3%. Ask: which cash and inventory habits did your firm learn when real rates were negative — and which should change now?",
+    "_slide": 25
+   },
+   {
+    "type": "lead",
+    "kicker": "TRAP 5 · CORRELATION IS NOT CAUSATION",
+    "title": "Four Reasons Two Series Move Together",
+    "leadLabel": "The rule",
+    "leadSize": 18,
+    "lead": "Correlation tells you that two series **move together**. It does not tell you **why** — or which way the arrow points.",
+    "leadFoot": "Before acting on 'X drives Y', rule out all four.",
+    "points": [
+     {
+      "h": "A third factor drives both",
+      "t": "Bank credit and inflation both jumped after the 2023 devaluation: the weaker naira **revalued dollar loans** and **raised import prices**."
+     },
+     {
+      "h": "Reverse causality",
+      "t": "Branches that spend more on marketing sell more — partly because budgets are **set as a share of last year's sales**."
+     },
+     {
+      "h": "Time lags",
+      "t": "Policy and price shocks work with lags. A same-month correlation can show **no link, or the wrong sign**."
+     },
+     {
+      "h": "Coincidence and small samples",
+      "t": "Two trending series always look related. Short windows and data-mining produce **spurious** patterns — the Kuznets curve story in the appendix is the classic.",
+      "accent": true
+     }
+    ],
+    "notes": "Then show the oil–reserves chart: an obvious causal channel with a modest and unstable correlation. Then the method slide: how to get at cause.",
+    "_slide": 26
+   },
+   {
+    "type": "figure",
+    "kicker": "SEE IT IN THE DATA",
+    "title": "Oil Earns Nigeria's Dollars — Yet Reserves Don't Simply Track It",
+    "img": "sessions/s01/figures/python/s01_f04.png",
+    "fig": "S01-F04",
+    "script": "s01_figures.py / .R",
+    "points": [
+     "The causal channel is clear: oil and gas earn most of the FX (Trap 3).",
+     "Yet the correlation is only **0.54** in the same month — and **0.17** a year later.",
+     "Why? Oil-backed loans and forward sales, CBN intervention, Eurobond and loan inflows, and **2026's reserve build despite** a volatile oil price.",
+     "A causal link can hide inside a weak correlation, and a strong correlation can hide no link at all."
+    ],
+    "notes": "Sources: CBN gross external reserves (month-end), FRED MCOILBRENTEU; correlations computed in s01_figures.py over Jan 2015 – Oct 2026. Brent averaged $123.9 in Oct 2026 (FRED) — a live issue for the dashboard in Part 3.",
+    "_slide": 27
+   },
+   {
+    "type": "worked",
+    "kicker": "FROM CORRELATION TO CAUSE",
+    "title": "Did Our Price Rise Cut Volumes? Use a Comparison Group",
+    "tableW": 5.9,
+    "illus": true,
+    "table": {
+     "head": [
+      "Volume change, Feb → Mar",
+      "Lagos (price +10%)",
+      "Abuja (no change)"
+     ],
+     "rows": [
+      [
+       "Cartons sold",
+       "−8%",
+       "−5%"
+      ],
+      [
+       "What else happened",
+       "Fuel-price rise",
+       "Fuel-price rise"
+      ]
+     ],
+     "total": [
+      "Effect of the price rise",
+      "−8% − (−5%) = −3%",
+      ""
+     ]
+    },
+    "steps": [
+     "**Naïve reading**: volumes fell 8% after a 10% price rise, so elasticity ≈ −0.8. Cut the price back?",
+     "But a fuel-price shock hit **both** cities. Abuja, with **no** price change, fell 5% anyway.",
+     "**Difference-in-differences**: the price rise explains only −8% − (−5%) = **−3%** → elasticity ≈ **−0.3**. Demand is fairly inelastic; keep the price.",
+     "Stronger designs: **randomised tests** (price a random half of outlets), and **natural experiments** (a policy that hits some regions or products and not others)."
+    ],
+    "aside": "Ask of any 'X caused Y' claim: **compared with what?** Without a comparison group that faced the same shocks, you are measuring the shock, not your decision.",
+    "asideTitle": "The one question",
+    "asideY": 3.65,
+    "result": "Cause needs a **counterfactual**: what would have happened without the decision?",
+    "notes": "Illustrative numbers. The comparison works only if Lagos and Abuja would have moved alike without the price change ('parallel trends'). Link to Session 2 (elasticity) and Session 3 (forecasting). Mention that the economics of randomised experiments (Banerjee–Duflo–Kremer, Nobel 2019) and natural experiments (Card–Angrist–Imbens, Nobel 2021) are this same idea.",
+    "_slide": 28
+   },
+   {
+    "type": "check",
+    "q": "A director says: 'Inflation fell from 34.8% in December 2024 to 24.5% in January 2025 — down 10% in a month. We can cut prices.' What is the best response?",
+    "options": [
+     "The fall partly reflects the new CPI base and basket; January has since been revised to 27.6%, and it is a 10-point fall, not 10% — compare like with like before repricing",
+     "He is right: a 10-point fall in one month is strong evidence that price pressures have ended",
+     "He is right on the direction but wrong on size: it fell about 30%, so cut prices even more",
+     "Ignore inflation data altogether; watch only the exchange rate"
+    ],
+    "answer": 0,
+    "explain": "A. Three corrections in one: a rebasing break, a later revision, and points vs percent. B ignores the measurement break; C computes the percent change correctly (−30%) but draws the wrong conclusion from a broken comparison; D throws away useful information.",
+    "_slide": 29
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 3,
+    "title": "Nowcast and Build the Board's Page",
+    "sub": "See the economy before the statistics office does — and put it on one page.",
+    "question": "Which six numbers should the directors see every month, and what do they mean for us?",
+    "_slide": 30
+   },
+   {
+    "type": "concept",
+    "kicker": "NOWCASTING",
+    "title": "Seeing the Economy Before GDP Is Published",
+    "icon": "FaTachometerAlt",
+    "plain": "GDP for a quarter arrives about **two months after** it ends. **Nowcasting** estimates what is happening **now** from faster signals: business surveys (PMI), payments, fuel and power use, port traffic — and your own orders.",
+    "formula": "PMI > 50 expanding · < 50 contracting",
+    "formulaSize": 18,
+    "formulaNote": "A diffusion index: the balance of firms reporting improvement, centred on 50",
+    "example": "The Stanbic IBTC PMI was **55.7 in October 2026** (56.4 in September): a ninth month of growth, but input prices hit a four-month high on fuel costs — an early warning for margins.",
+    "why": "Your own data are nowcasting signals: **daily sales, distributor orders, collections and stock levels** often tell you about the economy weeks before NBS does. Combine them with the PMI and the price data on one page.",
+    "notes": "Source: S&P Global / Stanbic IBTC Bank Nigeria PMI, October 2026 release. NBS publishes quarterly GDP roughly eight weeks after quarter-end (Q2 2026 GDP was released in late August/September 2026).",
+    "_slide": 31
+   },
+   {
+    "type": "table",
+    "kicker": "NIGERIA NOW · LATEST OFFICIAL DATA",
+    "title": "The Board's Macro Page — November 2026",
+    "fontSize": 11.5,
+    "head": [
+     "Indicator",
+     "Latest (date)",
+     "Direction",
+     "So what for an import-dependent FMCG firm"
+    ],
+    "colW": [
+     2.4,
+     2.6,
+     1.5,
+     5.4
+    ],
+    "rows": [
+     [
+      "Headline / core inflation",
+      "14.6% / 13.0% (Sep 26)",
+      "Falling",
+      "Real incomes recovering; core still double-digit — price rises must stay selective"
+     ],
+     [
+      "Monetary policy rate",
+      "23.0% (Sep 26)",
+      "Cut 350 bp",
+      "Working-capital costs easing; real rate ≈ +7% makes hoarding stock expensive"
+     ],
+     [
+      "Naira (CBN official)",
+      "₦1,347/$ (4 Nov 26)",
+      "Stable",
+      "Imported-input costs steady; review hedges and dollar pricing assumptions"
+     ],
+     [
+      "Gross reserves",
+      "$55.1bn (3 Nov 26)",
+      "Rising",
+      "Better FX liquidity; lower risk of a disorderly devaluation"
+     ],
+     [
+      "Brent crude",
+      "$123.9 (Oct 26 avg)",
+      "Up sharply",
+      "More FX and revenue for Nigeria — but costlier diesel, freight and petrochemical inputs"
+     ],
+     [
+      "Real GDP / PMI",
+      "4.43% (Q2 26) / 55.7 (Oct 26)",
+      "Growing",
+      "Volume growth possible; PMI flags rising input prices — protect margins"
+     ]
+    ],
+    "note": "Each row = **latest value with its date + direction + one 'so what'**. Same layout every month; the chart version is in the appendix.",
+    "notes": "Sources: CBN statistics (CPI Sep 2026; MPR Sep 2026; official central rate 4 Nov 2026 ₦1,347.30; gross reserves 3 Nov 2026 $55.15bn); FRED MCOILBRENTEU (Oct 2026 $123.93); NBS GDP Q2 2026 (4.43%); S&P Global/Stanbic IBTC PMI Oct 2026 (55.7). Refresh with tools/fetch_official_data.py before each delivery.",
+    "_slide": 32
+   },
+   {
+    "type": "lab",
+    "title": "Lab 1: Build the Board's Macro Page",
+    "time": "15 minutes",
+    "data": "data/official/ng_official_monthly.csv",
+    "r": "sessions/s01/R/s01_lab.R",
+    "py": "sessions/s01/python/s01_lab.py",
+    "steps": [
+     "Load the official data and **look at the latest three months** — note the date of each series.",
+     "Build a table of **six indicators**: latest value, value a year ago, change (in **pp** for rates).",
+     "Add two derived numbers: the **real policy rate** (exact formula) and your firm's **real revenue growth**.",
+     "Mark the **January 2025 CPI break** and say how you would compare inflation across it.",
+     "Write one **'so what'** for your company under each number, using the macro-to-P&L map."
+    ],
+    "deliver": "a one-page dashboard: six dated numbers, two derived indicators, six 'so what' lines.",
+    "_slide": 33
+   },
+   {
+    "type": "check",
+    "q": "Which pair of signals would best tell an FMCG board, **this month**, that demand is weakening?",
+    "options": [
+     "Last quarter's GDP release and the IMF's annual forecast",
+     "The CPI base year and the GDP base year",
+     "The 10-year bond yield and the oil price",
+     "The PMI new-orders index and the firm's own distributor orders and collections"
+    ],
+    "answer": 3,
+    "explain": "D. Fast, demand-side signals: the PMI arrives within days and the firm's own orders and collections are real-time. A is slow; B is about measurement, not demand; C matters for financing and FX, not this month's demand.",
+    "_slide": 34
+   },
+   {
+    "type": "recap",
+    "items": [
+     "Economics is a **management tool**: trade-offs, opportunity cost, the margin and incentives frame every decision.",
+     "Use the **macro-to-P&L map**: every economic force lands in a specific line of your accounts.",
+     "Every statistic has a supply chain: check **base year, basket, coverage and revisions**.",
+     "Report **real, naira and dollar** values side by side — '30% growth' was a 2% real fall and a 43% dollar fall.",
+     "Correlation is not cause — ask **'compared with what?'** — and show the board **one page** of fast, dated signals."
+    ],
+    "prework": "Read Mankiw ch. 4–5 and the Note on Microeconomics for Managers (demand, supply, elasticity). Bring one price your company changed in the last year and what happened to volumes — and a comparison group.",
+    "next": "Session 2: Demand, Supply & Elasticity",
+    "_slide": 35
+   },
+   {
+    "type": "section",
+    "label": "APPENDIX",
+    "num": 0,
+    "title": "Self-Study: Going Deeper",
+    "sub": "Read these before the quiz. They are not presented in class.",
+    "question": "What else do I need to master Session 1 on my own?",
+    "_slide": 36
+   },
+   {
+    "type": "roadmap",
+    "study": true,
+    "_slide": 37
+   },
+   {
+    "type": "lead",
+    "kicker": "WHAT ECONOMICS IS · MANKIW CH. 1",
+    "title": "Economics Is the Study of Choice Under Scarcity",
+    "study": true,
+    "leadLabel": "Definition",
+    "lead": "**Scarcity**: society has limited resources and cannot produce everything people want. **Economics** studies how society manages those scarce resources.",
+    "leadFoot": "A firm is a small society: limited cash, capacity, FX, management attention.",
+    "points": [
+     {
+      "h": "Every decision is an allocation",
+      "t": "Scarce dollars to raw materials or to a dollar loan? More 50 cl or 1 litre packs? Economic questions before they are finance questions."
+     },
+     {
+      "h": "Everyone chooses",
+      "t": "Customers trade off food against transport; competitors trade off price against margin; government trades off subsidies against capital spending."
+     },
+     {
+      "h": "Two zoom levels",
+      "t": "**Microeconomics**: households and firms in markets (Sessions 2–5). **Macroeconomics**: economy-wide inflation, growth, interest and exchange rates (Sessions 6–12)."
+     }
+    ],
+    "_slide": 38
+   },
+   {
+    "type": "flow",
+    "kicker": "ECONOMISTS USE MODELS · MANKIW CH. 2",
+    "title": "The Circular-Flow Diagram: The Simplest Model of the Economy",
+    "study": true,
+    "points": [
+     "A **model** is a simplified map: it leaves out detail on purpose so we can see how parts connect.",
+     "**Households** own labour, land and capital; **firms** hire them to produce goods and services.",
+     "Every naira one person spends is a naira of **income** for someone else: total spending = total income = **GDP**.",
+     "Left out on purpose: government, banks and the rest of the world (Sessions 7–11).",
+     "When households' real incomes fall, the flow into your goods market shrinks."
+    ],
+    "_slide": 39
+   },
+   {
+    "type": "compare",
+    "kicker": "TWO KINDS OF STATEMENT · MANKIW CH. 2",
+    "title": "Positive vs Normative: Scientist or Policy Adviser?",
+    "study": true,
+    "left": {
+     "icon": "FaMicroscope",
+     "title": "Positive statements",
+     "tag": "Describe how the world is — testable",
+     "items": [
+      "'Removing the petrol subsidy raised transport fares.'",
+      "'A 10% depreciation raises the CPI by x% within a year.'",
+      "Settled with **evidence**."
+     ]
+    },
+    "right": {
+     "icon": "FaBalanceScale",
+     "title": "Normative statements",
+     "tag": "Prescribe how it should be — values",
+     "items": [
+      "'The CBN should cut rates to help manufacturers.'",
+      "'Nigeria ought to ban textile imports.'",
+      "Involve **values and priorities**, not only facts."
+     ]
+    },
+    "note": "Why economists disagree: different **scientific judgements**, different **values** — and less often than headlines suggest.",
+    "_slide": 40
+   },
+   {
+    "type": "exercise",
+    "kicker": "TRY IT · POSITIVE OR NORMATIVE?",
+    "title": "Classify Each Statement",
+    "study": true,
+    "items": [
+     "Inflation fell from 34.8% in December 2024 to 14.6% in September 2026.",
+     "Inflation of 15% is still far too high for Nigeria.",
+     "Higher minimum wages reduce formal-sector hiring of young workers.",
+     "The government should use oil windfalls to pay down debt rather than raise salaries.",
+     "Banks that raised capital in the recapitalisation have grown lending faster.",
+     "A strong naira is good for the country."
+    ],
+    "note": "Tip: **should, ought, too high, good, fair** usually signal a normative claim. A positive claim can be **false** and still be positive.",
+    "notes": "ANSWERS: 1 positive (true, but note the CPI break). 2 normative. 3 positive (testable; evidence is mixed). 4 normative. 5 positive (testable). 6 normative — good for whom? Importers and consumers gain; exporters and naira oil revenue lose.",
+    "_slide": 41
+   },
+   {
+    "type": "lead",
+    "kicker": "MEASURING OUTPUT · MANKIW CH. 22",
+    "title": "GDP: What Is Counted, and What Is Not",
+    "study": true,
+    "leadLabel": "Y = C + I + G + NX",
+    "leadSize": 16,
+    "lead": "GDP is the **market value** of all **final** goods and services **produced in a country** in a period.\n\n**C** consumption · **I** investment · **G** government purchases (not transfers) · **NX** exports − imports",
+    "leadFoot": "Because spending = income, GDP also measures total income.",
+    "points": [
+     {
+      "h": "'Market value'",
+      "t": "Valued at market prices so we can add rice and phone calls. Unpriced work — home care, subsistence — is largely left out."
+     },
+     {
+      "h": "'Final' goods only",
+      "t": "Count the loaf, not the flour in it, or you double-count."
+     },
+     {
+      "h": "'Produced in a country'",
+      "t": "GDP counts output inside Nigeria, whoever owns the factory; GNI counts income of Nigerians wherever earned."
+     },
+     {
+      "h": "Nominal vs real GDP",
+      "t": "Q2 2026: nominal GDP **+18.4%**, real **+4.4%**. The gap (≈13.4%) is price change — the **GDP deflator**.",
+      "accent": true
+     }
+    ],
+    "notes": "NBS GDP Q2 2026: nominal ₦119.29trn (basic prices), +18.43%; real +4.43%. Implied deflator 1.1843 / 1.0443 − 1 = 13.4%.",
+    "_slide": 42
+   },
+   {
+    "type": "cards",
+    "kicker": "WHY THE CPI IS IMPERFECT · MANKIW CH. 23",
+    "title": "Three Biases Every Price Index Carries",
+    "perRow": 3,
+    "study": true,
+    "cards": [
+     {
+      "icon": "FaRandom",
+      "title": "Substitution bias",
+      "body": "When rice gets dearer, families switch to garri or yam. A fixed basket ignores the switch, so it **overstates** the rise in the cost of living."
+     },
+     {
+      "icon": "FaMobileAlt",
+      "title": "New goods",
+      "body": "Mobile money and ride-hailing widened choice and cut costs. A basket fixed in an old base year **misses them** until it is rebased."
+     },
+     {
+      "icon": "FaStar",
+      "title": "Unmeasured quality",
+      "body": "If a phone costs 20% more but does twice as much, part of the 'price rise' is really **more quality**."
+     }
+    ],
+    "note": "These biases are why statistics offices **rebase**. Rebasing reduces the bias — but breaks the series.",
+    "_slide": 43
+   },
+   {
+    "type": "worked",
+    "kicker": "READING RATES · YEAR-ON-YEAR VS MONTH-ON-MONTH",
+    "title": "Which Change Are You Looking At?",
+    "tableW": 5.6,
+    "study": true,
+    "table": {
+     "head": [
+      "September 2026",
+      "Year on year",
+      "Month on month",
+      "m/m annualised"
+     ],
+     "rows": [
+      [
+       "Headline",
+       "14.63%",
+       "0.06%",
+       "≈ 0.7%"
+      ],
+      [
+       "Food",
+       "19.59%",
+       "−1.55%",
+       "≈ −17%"
+      ],
+      [
+       "Core",
+       "12.95%",
+       "1.11%",
+       "≈ 14.2%"
+      ]
+     ]
+    },
+    "steps": [
+     "**Year on year** compares with the same month last year: smooth, but it carries **twelve months of history**.",
+     "**Month on month** shows the latest momentum — noisy and seasonal (harvests, festive demand).",
+     "**Annualise** a monthly rate: (1 + m)¹² − 1. Core: 1.0111¹² − 1 ≈ **14.2%**.",
+     "Reading: headline momentum looks near zero because **food fell after the harvest**; underlying (core) pressure still runs at about 14% a year."
+    ],
+    "aside": "**Base effects**: if prices jumped in a month last year, the y/y rate falls mechanically when that month drops out — even if nothing improves today. The mid-2023 petrol-price jump did exactly this to mid-2024 readings.",
+    "asideTitle": "Watch for base effects",
+    "asideY": 3.6,
+    "result": "Ask: **compared with when? seasonally adjusted? headline or core?**",
+    "notes": "Source: NBS CPI September 2026 (headline 14.63% y/y, 0.06% m/m; food 19.59%, −1.55%; core 12.95%, 1.11%), as reported by the Gazette, 16 Oct 2026.",
+    "_slide": 44
+   },
+   {
+    "type": "lead",
+    "kicker": "A CAUTIONARY TALE · PIKETTY",
+    "title": "The Kuznets Curve: A Big Theory Built on a Special Period",
+    "study": true,
+    "leadLabel": "Capital in the 21st Century, Introduction",
+    "leadSize": 17,
+    "lead": "In 1955 Simon Kuznets suggested inequality **naturally falls** as economies develop. The idea spread worldwide.",
+    "leadFoot": "Kuznets himself warned the data were special; the warning was forgotten.",
+    "points": [
+     {
+      "h": "Careful data",
+      "t": "Kuznets built the first US income-distribution series from tax returns, **1913–1948**, and documented every method."
+     },
+     {
+      "h": "One country, 35 years, two shocks",
+      "t": "The fall in US inequality came largely from the **Great Depression and World War II**, not an automatic law."
+     },
+     {
+      "h": "The pattern reversed",
+      "t": "Longer, wider data show inequality **rising again** in many countries from the 1980s."
+     },
+     {
+      "h": "Manager's lesson",
+      "t": "A trend from a short or unusual window — say 2016–2020, or the post-2023 reform period — is a **hypothesis**, not a law.",
+      "accent": true
+     }
+    ],
+    "notes": "Piketty (2014), Introduction: 'A Debate without Data?' and 'The Kuznets Curve: Good News in the Midst of the Cold War'.",
+    "_slide": 45
+   },
+   {
+    "type": "lead",
+    "kicker": "PRINCIPLE 10 · A DATA TRAP",
+    "title": "Nigeria's Unemployment Rate: 33% to 4% — by Definition",
+    "study": true,
+    "leadLabel": "NBS methodology change, 2023",
+    "leadSize": 17,
+    "lead": "The headline unemployment rate went from **33.3% (Q4 2020)** to **4.1% (Q1 2023)**. Most of the fall is a **change of definition**, not of jobs.",
+    "leadFoot": "The two numbers are not comparable.",
+    "points": [
+     {
+      "h": "What changed",
+      "t": "Under the new method, anyone who worked **at least one hour** for pay or profit in the past week counts as employed (the ILO standard)."
+     },
+     {
+      "h": "Watch underemployment",
+      "t": "Time-related underemployment — working under 40 hours and wanting more — was **12.2%** in Q1 2023."
+     },
+     {
+      "h": "Why it matters for the trade-off",
+      "t": "With most jobs informal, tightening shows up first in **hours, incomes and informal sales**, not in the headline rate."
+     },
+     {
+      "h": "Manager's use",
+      "t": "Track your own **footfall, basket size and distributor orders** as the real-time labour-income signal.",
+      "accent": true
+     }
+    ],
+    "notes": "Source: NBS Labour Force Survey, new methodology (Q1 2023, 4.1%; underemployment 12.2%); old-methodology Q4 2020 rate 33.3% — TheCable, Aug 2023.",
+    "_slide": 46
+   },
+   {
+    "type": "figure",
+    "kicker": "THE DASHBOARD · CHART VERSION",
+    "title": "Six Official Series on One Page",
+    "img": "sessions/s01/figures/python/s01_f06.png",
+    "fig": "S01-F06",
+    "script": "s01_figures.py / .R",
+    "study": true,
+    "points": [
+     "Each panel: **latest value and date**, a three-year trend and the **change on a year ago**.",
+     "Covers prices, money, the currency, external buffers and the oil price.",
+     "Same layout every month, so directors see change at a glance.",
+     "Inflation panels cross the **January 2025 CPI break** — label it."
+    ],
+    "notes": "Generated from official CBN data and FRED by s01_figures.py. The lab rebuilds it.",
+    "_slide": 47
+   },
+   {
+    "type": "table",
+    "kicker": "WHERE TO LOOK",
+    "title": "The Sources Every Nigerian Manager Should Bookmark",
+    "fontSize": 11.5,
+    "study": true,
+    "head": [
+     "Source",
+     "What you get",
+     "How often",
+     "Watch out for"
+    ],
+    "colW": [
+     2.6,
+     4.3,
+     1.7,
+     3.3
+    ],
+    "rows": [
+     [
+      "NBS (nigerianstat.gov.ng)",
+      "CPI, GDP, labour force, foreign trade",
+      "Monthly / quarterly",
+      "Rebasing (CPI 2025, GDP 2025); revisions"
+     ],
+     [
+      "CBN (cbn.gov.ng/rates)",
+      "MPR, exchange rates, reserves, money and credit; downloadable series",
+      "Daily to monthly",
+      "Series start/stop; BDC data end 2021"
+     ],
+     [
+      "DMO · NUPRC · FMDQ",
+      "Public debt; oil output; FX and bond prices",
+      "Monthly / daily",
+      "Different coverage of 'debt' and 'output'"
+     ],
+     [
+      "S&P Global – Stanbic IBTC PMI",
+      "Private-sector survey: output, orders, prices, jobs",
+      "Monthly (days 1–3)",
+      ">50 = more firms improving"
+     ],
+     [
+      "IMF (WEO, data.imf.org)",
+      "Comparable cross-country data and forecasts",
+      "April / October",
+      "Forecasts revised often"
+     ],
+     [
+      "World Bank WDI · FRED",
+      "Long annual series; global prices (Brent)",
+      "Annual / monthly",
+      "Lags; current vs constant dollars"
+     ]
+    ],
+    "notes": "tools/fetch_official_data.py downloads the CBN, World Bank and FRED series used in this deck.",
+    "_slide": 48
+   },
+   {
+    "type": "mistakes",
+    "title": "The Traps — and the Habit That Beats Each One",
+    "study": true,
+    "items": [
+     {
+      "bad": "Comparing inflation or GDP across a **rebasing** or before a **revision**.",
+      "good": "Check the **base year and vintage**; use the linked series."
+     },
+     {
+      "bad": "'Oil is only 4% of GDP, so the oil price doesn't matter to us.'",
+      "good": "Ask **share of what** — exports, revenue, FX supply."
+     },
+     {
+      "bad": "'Rates fell 3.5 percent.'",
+      "good": "Say **3.5 percentage points** (350 bp)."
+     },
+     {
+      "bad": "Reading only year-on-year rates.",
+      "good": "Add **m/m annualised** and core to see momentum; watch base effects."
+     },
+     {
+      "bad": "Celebrating nominal naira growth.",
+      "good": "Report **real, naira and dollar** values side by side."
+     },
+     {
+      "bad": "'Sales fell after the price rise, so the price rise caused it.'",
+      "good": "Ask **compared with what?** — use a comparison group."
+     }
+    ],
+    "_slide": 49
+   },
+   {
+    "type": "glossary",
+    "study": true,
+    "terms": [
+     {
+      "term": "Opportunity cost",
+      "def": "The value of the best alternative given up."
+     },
+     {
+      "term": "Marginal",
+      "def": "The extra benefit or cost of one more unit or decision."
+     },
+     {
+      "term": "Comparative advantage",
+      "def": "Producing at a lower opportunity cost than others."
+     },
+     {
+      "term": "Positive / normative",
+      "def": "Claims about what is (testable) vs what should be (values)."
+     },
+     {
+      "term": "GDP / GDP deflator",
+      "def": "Market value of final output; nominal ÷ real GDP."
+     },
+     {
+      "term": "CPI",
+      "def": "Cost of a fixed basket relative to a base period."
+     },
+     {
+      "term": "Rebasing / revision",
+      "def": "New base and weights / corrected past figures; both break comparisons."
+     },
+     {
+      "term": "Real vs nominal",
+      "def": "Adjusted for price changes vs in current naira."
+     },
+     {
+      "term": "Percentage point",
+      "def": "Simple difference between two rates (1 pp = 100 bp)."
+     },
+     {
+      "term": "Difference-in-differences",
+      "def": "Effect = change in treated group − change in comparison group."
+     }
+    ],
+    "_slide": 50
+   },
+   {
+    "type": "readings",
+    "study": true,
+    "items": [
+     {
+      "core": true,
+      "ref": "Mankiw, Principles of Economics — ch. 1–3",
+      "why": "Ten principles; economists as scientists and advisers; the circular flow; comparative advantage."
+     },
+     {
+      "core": true,
+      "ref": "Mankiw — ch. 22 & 23 (course copy)",
+      "why": "Measuring income (GDP, real vs nominal, the deflator) and the cost of living (CPI and its biases). In the 7th–9th editions these are ch. 23–24."
+     },
+     {
+      "ref": "Ferguson, The Ascent of Money — Intro & ch. 2",
+      "why": "Money, inflation as a transfer, bonds, and Argentina's long decline."
+     },
+     {
+      "ref": "Piketty, Capital in the 21st Century — Introduction",
+      "why": "'A Debate without Data?' and the Kuznets curve: how data and periods shape big conclusions."
+     },
+     {
+      "ref": "LBS case: The Business Environment of Nigeria (IB-90)",
+      "why": "Oil dependence, macro volatility and the 2000s reforms (excess crude account; reserves $7.5bn → $60.8bn)."
+     },
+     {
+      "ref": "Note on Microeconomics for Managers",
+      "why": "Demand, supply and elasticity — the reading for Session 2."
+     }
+    ],
+    "_slide": 51
+   }
+  ]
  },
  "s02": {
-  "objectives": [
-   {
-    "title": "Read a Market",
-    "body": "Use demand and supply to explain why a price moved, and predict who bears a cost increase."
-   },
-   {
-    "title": "Measure Elasticity",
-    "body": "Estimate own-price, cross-price and income elasticities from sales data — holding other things constant."
-   },
-   {
-    "title": "Price Under Uncertainty",
-    "body": "Decide how much of a cost shock to pass on, using elasticity, rivals' behaviour and customers' reference prices."
-   }
-  ],
+  "objectives": [],
   "figures": [
+   {
+    "img": "sessions/s02/figures/python/s02_f09.png",
+    "id": "S02-F09",
+    "title": "What a Tonne of Imported Wheat Costs in Naira",
+    "kicker": "THE SHOCK IS REAL",
+    "points": [
+     "Nigeria imports almost all its milling wheat: USDA puts imports at about 6.7 million tonnes in 2025/26 and forecasts 7.2 mt for 2026/27; under 1% of major millers' flour uses local grain.",
+     "So the naira cost of wheat = world price × exchange rate. Either can move it.",
+     "2022: the world price spiked (Russia–Ukraine). 2023–24: the naira did the damage. 2026: the world price is up about 46% since January — naira cost is back near its Feb 2024 peak.",
+     "Every flour-based business — bread, noodles, pasta, biscuits — faced this same shock."
+    ]
+   },
    {
     "img": "sessions/s02/figures/python/s02_f01.png",
     "id": "S02-F01",
-    "title": "Who Pays When Flour Gets Dearer?",
-    "kicker": "A COST SHOCK",
+    "title": "A Cost Shock Shifts Supply Up — the Price Rises by Less",
+    "kicker": "THE PICTURE",
     "points": [
-     "Higher flour costs shift the supply curve up: firms need a higher price to supply the same quantity.",
-     "The new equilibrium has a higher price (+10%) and a lower quantity (−13%) in this example.",
-     "The price rises by less than the cost: part of the shock is paid by customers, part by producers.",
-     "How it splits depends on elasticity: the less sensitive the buyers, the more they pay."
+     "Higher flour costs shift supply up: firms need more to supply the same quantity.",
+     "New equilibrium: price +10%, quantity −13% in this example.",
+     "The price rises by less than the cost: customers pay part, producers absorb part.",
+     "Steeper (less elastic) demand → more of the shock lands on customers."
     ]
    },
    {
@@ -243,9 +1817,9 @@
     "kicker": "THE DATA",
     "points": [
      "Lagos shelf price went from about ₦162 to ₦518 a pack between 2022 and 2025.",
-     "Volumes rose in the North and Lagos, and fell in the South-East.",
+     "Average weekly volumes 2022 → 2025: North +12%, Lagos −5%, South-East −9% — far smaller moves than prices.",
      "Looks like customers do not care about price. Do not believe it yet.",
-     "Incomes, competitors' prices and the general price level all moved at the same time."
+     "Incomes, rivals' prices and the general price level all moved at the same time."
     ]
    },
    {
@@ -254,10 +1828,10 @@
     "title": "Inflation Hides the Elasticity",
     "kicker": "THE TRAP",
     "points": [
-     "Plotting units against shelf price gives an elasticity of just −0.09 — 'price barely matters'.",
-     "But every price was rising: competitors' prices, wages, the whole price level.",
-     "What matters to a shopper is our price relative to the alternatives and to their income.",
-     "To see the true response we must hold the other drivers constant."
+     "Units against shelf price gives an elasticity of just −0.09 — 'price barely matters'.",
+     "But every price was rising: rivals' prices, wages, the whole price level.",
+     "Shoppers respond to our price relative to alternatives and to their income.",
+     "To see the true response, hold the other drivers constant — the Session 1 lesson on correlation."
     ]
    },
    {
@@ -267,21 +1841,21 @@
     "kicker": "HOLDING OTHER THINGS CONSTANT",
     "points": [
      "Own price −1.47: a 1% rise in our price, all else equal, cuts volume by about 1.5%.",
-     "Cross price +0.73: when a rival raises its price by 1%, we gain about 0.7% volume — they are close substitutes.",
-     "Income +1.11: as customers' incomes rise, they buy more.",
-     "Method: one regression of log(units) on log(own price), log(rival price), log(income), a time trend and region."
+     "Cross price +0.73: a 1% rise in a rival's price lifts our volume by about 0.7% — close substitutes.",
+     "Income +1.11: as incomes rise, customers buy more.",
+     "Method: regress log(units) on log(own price), log(rival price), log(real income), a trend and region."
     ]
    },
    {
     "img": "sessions/s02/figures/python/s02_f05.png",
     "id": "S02-F05",
-    "title": "When Does a Price Rise Pay?",
+    "title": "When Does a Price Rise Raise Revenue?",
     "kicker": "PRICE, VOLUME AND REVENUE",
     "points": [
-     "With elasticity −0.5, a 20% price rise raises revenue.",
-     "At our estimate (−1.47), a 20% rise cuts revenue by about 8%.",
-     "But revenue is not profit: if the price rise covers higher costs, it can still protect margin.",
-     "Elasticity is lower when all firms raise prices together — the market is less elastic than a single brand."
+     "Elasticity −0.5: a 20% price rise raises revenue.",
+     "At our −1.47, a 20% rise cuts revenue by about 8%.",
+     "Revenue is not profit: a rise that covers higher costs can still protect margin.",
+     "When all firms raise prices together, the relevant elasticity is smaller than one brand's."
     ]
    },
    {
@@ -290,10 +1864,10 @@
     "title": "Big Jumps Hurt More Than the Arithmetic Says",
     "kicker": "THE EVIDENCE",
     "points": [
-     "We compared actual sales with what the elasticity model predicts.",
+     "Actual sales compared with the elasticity model's prediction.",
      "Promotion weeks (price below usual) sold about 4% more than predicted.",
-     "Prices up to 5% above usual: no extra penalty. More than 10% above: −7.7%.",
-     "The penalty fades as the new price becomes the new 'normal' — reference prices adapt over weeks."
+     "Up to 5% above usual: no extra penalty. More than about 10% above: −7.7% (13 weeks — a small sample).",
+     "The penalty fades as the new price becomes the new normal."
     ]
    },
    {
@@ -303,9 +1877,9 @@
     "kicker": "PROMOTIONS",
     "points": [
      "Promotion weeks (15% off) sold 32–36% more packs than normal weeks.",
-     "Part of that is genuinely new demand; part is pantry loading — customers buying earlier, not more.",
-     "Measure the weeks after a promotion too: a dip means you borrowed sales from the future.",
-     "Promotions also reset reference prices downward if they run too often."
+     "Part is new demand; part is pantry loading — buying earlier, not more.",
+     "Measure the weeks after a promotion: a dip means you borrowed from the future.",
+     "Frequent promotions reset reference prices downward."
     ]
    },
    {
@@ -314,33 +1888,25 @@
     "title": "How Much of the Flour Shock to Pass On?",
     "kicker": "THE DECISION",
     "points": [
-     "The shock adds ₦63 to a pack that sells for ₦500 and costs ₦350 to make.",
-     "Absorb it all: volume holds, but profit falls to 58% of what it was.",
-     "Pass it all on, rivals holding: volume −16%, profit back to 84%. If rivals follow: volume −8%, profit 92%.",
-     "Since all millers face the same flour price, rivals are likely to follow — so passing on most of it, in steps, is the stronger option."
+     "The shock adds ₦63 to a pack that sells for ₦500 and costs ₦350.",
+     "Absorb it all: volume holds; profit falls to 58% of its old level.",
+     "Pass it all on, rivals holding: volume −16%, profit 84%. If rivals follow: volume −8%, profit 92%.",
+     "Every miller pays the same world price × naira — rivals are likely to follow."
     ]
    }
   ],
   "recap": {
    "items": [
-    "Prices come from demand and supply; a cost shock shifts supply and is shared between buyers and sellers.",
-    "Separate a move along a curve from a shift of the curve.",
-    "Measure elasticity holding other things constant — inflation hides it.",
+    "A cost shock is shared: the side that can least escape it bears more.",
+    "Separate a move along a curve from a shift of it — inflation hides the true elasticity.",
     "Own, cross and income elasticities tell you how volume reacts to you, rivals and the economy.",
-    "Customers judge prices against a reference price: stagger, explain and time increases."
+    "Check revenue, profit and margin together; your margin implies an elasticity.",
+    "Customers judge prices against a reference price and by fairness: stagger, explain, resize."
    ],
-   "prework": "Read Sahay, Time Series Analysis and Forecasting (BEP8370), the chapters on trend and seasonality. Bring one demand number your company forecasts every year and how far off last year's forecast was.",
-   "next": "Session 3: Forecasting & Market Sizing"
+   "prework": "Read Sahay, Time Series Analysis and Forecasting (BEP8370), chapters on trend and seasonality. Bring one demand number your company forecasts every year and how far off last year's forecast was.",
+   "next": "Session 3: Demand Forecasting & Market Sizing"
   },
   "glossary": [
-   {
-    "term": "Demand curve",
-    "def": "How much buyers want at each price, all else equal."
-   },
-   {
-    "term": "Supply curve",
-    "def": "How much sellers offer at each price, all else equal."
-   },
    {
     "term": "Equilibrium",
     "def": "The price at which quantity demanded equals quantity supplied."
@@ -348,6 +1914,10 @@
    {
     "term": "Shift vs move",
     "def": "Price changes move along a curve; other drivers shift it."
+   },
+   {
+    "term": "Incidence",
+    "def": "Who actually bears a tax or cost, regardless of who pays it."
    },
    {
     "term": "Own-price elasticity",
@@ -360,6 +1930,10 @@
    {
     "term": "Income elasticity",
     "def": "% change in quantity for a 1% change in income."
+   },
+   {
+    "term": "Lerner rule",
+    "def": "Optimal margin = 1 ÷ |elasticity|."
    },
    {
     "term": "Reference price",
@@ -375,69 +1949,62 @@
    }
   ],
   "lab": {
-   "title": "Lab: How Price-Sensitive Are Our Customers?",
+   "title": "Lab 2: How Price-Sensitive Are Our Customers?",
    "time": "20 minutes",
    "data": "data/fmcg_price_volume.csv",
    "r": "sessions/s02/R/s02_lab.R",
    "py": "sessions/s02/python/s02_lab.py",
    "steps": [
-    "Look at prices and volumes by region from 2022 to 2025.",
+    "Plot prices and volumes by region, 2022–2025.",
     "Estimate the naive elasticity (units on price only) and explain why it misleads.",
     "Estimate own-price, cross-price and income elasticities holding other things constant.",
-    "Compute the volume and revenue effect of 5%, 10% and 20% price rises.",
+    "Check the Lerner rule: which elasticity does today's margin imply?",
     "Test pass-through of 0%, 50% and 100% of the flour shock — with rivals holding and following."
    ],
-   "deliver": "a 3-sentence pricing recommendation to the MD: how much to pass on, how fast, and what to watch."
+   "deliver": "a three-sentence pricing recommendation to the MD: how much to pass on, how fast, and what to watch."
   },
   "hook": {
    "title": "Flour Is Up 40%. What Do We Charge?",
-   "quote": "“Our flour bill has jumped 40%. Just add it to the price — customers have no choice, everybody eats noodles.”"
+   "quote": "“Our flour bill has jumped 40%. Just add it to the price — everybody eats noodles.”"
   },
   "concepts": [
    {
     "title": "Own-Price Elasticity of Demand",
-    "plain": "Elasticity tells you by what percentage volume changes when price changes by 1%. If the number is bigger than 1 (ignoring the minus sign), demand is elastic: customers react strongly. Smaller than 1 is inelastic.",
+    "plain": "Elasticity is the % change in quantity for a 1% change in price. Bigger than 1 (ignoring the sign) = elastic: customers react strongly. Smaller than 1 = inelastic.",
     "formula": "elasticity = % change in quantity ÷ % change in price",
-    "example": "Our noodles: elasticity ≈ −1.47. A 10% price rise loses about 13% of volume when rivals hold their prices.",
-    "why": "Elastic demand means a price rise reduces revenue; inelastic demand means it raises revenue. Knowing which one you face is the start of every pricing decision."
+    "example": "Our noodles (stylised data): −1.47. A 10% price rise, rivals holding, loses about 13% of volume.",
+    "why": "Elastic demand: a price rise cuts revenue. Inelastic demand: a price rise raises revenue. Knowing which you face is the start of every pricing decision."
    },
    {
     "title": "Reference Prices and Loss Aversion",
-    "plain": "Shoppers judge a price against the price they are used to — their reference price. Paying more than usual feels like a loss, and people weigh losses about twice as heavily as equal gains.",
+    "plain": "Shoppers judge a price against the price they are used to — their reference price. Paying more than usual feels like a loss, and people weigh losses about twice as heavily as equal gains (Kahneman & Tversky).",
     "formula": "pain of a ₦50 rise  >  pleasure of a ₦50 cut",
-    "example": "Weeks priced more than 10% above the usual price sold about 7.7% fewer packs than the elasticity alone predicts.",
-    "why": "Several small, explained increases usually cost less volume than one big jump. Pack-size changes ('shrinkflation'), clear communication and timing all manage the reference price."
-   },
-   {
-    "title": "Dynamic Pricing — Power and Limits",
-    "plain": "Dynamic pricing changes prices often, using data on demand, stock, time and competitors. Ride-hailing surge pricing and airline fares are examples. AI makes it cheap to estimate elasticities by product, store and hour.",
-    "formula": "price ↑ when demand is high or capacity is scarce",
-    "example": "A ride-hailing app raises fares in Lagos rush hour and during heavy rain, when many riders compete for few drivers.",
-    "why": "It can raise revenue and balance supply and demand, but it can also feel unfair and invite regulators. Rules of thumb: be transparent, cap surges on essentials, and never personalise prices in ways customers would object to."
+    "example": "In our data, weeks priced more than 10% above the usual price sold about 7.7% fewer packs than the elasticity alone predicts.",
+    "why": "Several small, explained increases usually cost less volume than one big jump. Pack-size changes, clear communication and timing all manage the reference price."
    }
   ],
   "checks": [
    {
     "q": "A competitor cuts its noodle price by 10%. Our cross-price elasticity is +0.73. Holding our price, what happens to our volume?",
     "options": [
-     "Rises about 7%",
-     "Falls about 7%",
-     "Falls about 15%",
-     "No change — cross-price only matters for complements"
+     "Rises about 7% — their cut expands the whole market",
+     "Falls about 15% — use the own-price elasticity",
+     "Falls about 7% — some of our customers switch to them",
+     "No change — cross-price elasticity applies only to complements"
     ],
-    "answer": 1,
-    "explain": "B. Cross-price elasticity +0.73 means a 1% change in the rival's price moves our volume 0.73% in the **same** direction. A 10% cut by them → about 7% fewer packs for us. C uses the own-price elasticity; D has substitutes and complements the wrong way round."
+    "answer": 2,
+    "explain": "C. A cross-price elasticity of +0.73 means our volume moves 0.73% in the **same** direction as the rival's price. A 10% cut by them → about 7% fewer packs for us. A gets the sign wrong; B uses the wrong elasticity; D has substitutes and complements reversed."
    },
    {
-    "q": "Flour costs rise 40% for every noodles maker in Nigeria. Which statement is most accurate?",
+    "q": "Flour costs rise 40% for every noodles maker in Nigeria. Which recommendation is best supported by today's analysis?",
     "options": [
-     "We should absorb the cost; any price rise loses customers to rivals",
-     "Rivals face the same shock, so the relevant elasticity is closer to the market's (less elastic) — passing on most of the cost in steps is likely to protect profit",
-     "Pass on exactly 40% because flour rose 40%",
-     "Price does not matter; the naive elasticity is close to zero"
+     "Rivals face the same shock and will likely follow, so pass on most of the cost — in steps, explained by the cost reason",
+     "Absorb the cost: any price rise hands customers to rivals",
+     "Raise prices by exactly 40%, since flour rose 40%",
+     "Price barely matters — our data show an elasticity near zero"
     ],
-    "answer": 1,
-    "explain": "B. When all firms face the same cost, they tend to move together and the volume loss is smaller (own + cross ≈ −0.74). A ignores rivals' costs; C confuses the flour rise with the unit-cost rise (only 45% of cost is flour); D is the inflation trap."
+    "answer": 0,
+    "explain": "A. When all firms face the same cost they tend to move together, so the volume loss is smaller (own + cross ≈ −0.74), and cost-based increases are judged fair. B ignores rivals' costs; C confuses the flour rise with the unit-cost rise (flour is 45% of cost); D is the inflation trap."
    }
   ],
   "case": {
@@ -445,47 +2012,963 @@
    "context": "A Nigerian noodles maker sells a single-serve pack in three regions — Lagos, the North and the South-East. Shelf prices have more than tripled since 2022 as costs and the exchange rate moved.",
    "question": "Flour, about 45% of unit cost, has just risen 40%. How much of the extra cost should be passed into price, and how fast?",
    "data": "fmcg_price_volume.csv — 209 weeks × 3 regions: shelf price, competitor price, promotion weeks, an income index and packs sold. *Stylised teaching data.*",
-   "decision": "A pricing recommendation that uses measured elasticities, a view on rivals' response and the risk of breaking customers' reference price."
-  }
+   "decision": "A pricing recommendation built on measured elasticities, a view on rivals' response and the risk of breaking customers' reference price."
+  },
+  "v3": true,
+  "flow": [
+   {
+    "type": "hook",
+    "kicker": "THE QUESTION FOR TODAY",
+    "title": "Flour Is Up 40%. What Do We Charge?",
+    "quote": "“Our flour bill has jumped 40%. Just add it to the price — everybody eats noodles.”",
+    "intro": "Before signing the new price list, a good manager asks three questions — the three parts of today:",
+    "points": [
+     {
+      "icon": "FaBalanceScale",
+      "title": "1 · Who bears the cost?",
+      "body": "A cost shock is shared between buyers and sellers. The split depends on how each side responds."
+     },
+     {
+      "icon": "FaChartLine",
+      "title": "2 · How sensitive are buyers?",
+      "body": "If a 10% price rise loses 15% of volume, 'just pass it on' shrinks revenue."
+     },
+     {
+      "icon": "FaBrain",
+      "title": "3 · What price feels fair?",
+      "body": "Shoppers compare with the price they are used to. Big jumps hurt more than the arithmetic says."
+     }
+    ],
+    "notes": "Ask three or four participants to commit to a pass-through percentage now (0%, 50%, 100%?). Write the numbers on the board and revisit them at the end.\n\nThe noodles maker is a teaching case built on stylised data; the wheat-cost chart on the next slide is real.",
+    "_slide": 2
+   },
+   {
+    "type": "figure",
+    "kicker": "THE SHOCK IS REAL",
+    "title": "What a Tonne of Imported Wheat Costs in Naira",
+    "img": "sessions/s02/figures/python/s02_f09.png",
+    "fig": "S02-F09",
+    "script": "s02_figures.py / .R",
+    "points": [
+     "Nigeria imports almost all its milling wheat: USDA puts imports at about **6.7 million tonnes** in 2025/26 and forecasts **7.2 mt** for 2026/27; under **1%** of major millers' flour uses local grain.",
+     "So the naira cost of wheat = **world price × exchange rate**. Either can move it.",
+     "2022: the **world price** spiked (Russia–Ukraine). 2023–24: the **naira** did the damage. 2026: the world price is up about **46%** since January — naira cost is back near its Feb 2024 peak.",
+     "Every flour-based business — bread, noodles, pasta, biscuits — faced this same shock."
+    ],
+    "notes": "Sources: FRED PWHEAMTUSDM (IMF global price of wheat, US$/tonne, monthly) × CBN official central rate (monthly average); computed in s02_figures.py: ₦35.7k/t (Jan 2015) → ₦330.1k (Feb 2024 peak) → ₦327.5k (Sep 2026); world price $169/t (Jan 2026) → $247/t (Sep 2026). USDA FAS via Milling Middle East & Africa, 29 Sep 2025 (2025/26 imports 6.7 mt, up from 6.25 mt; less than one percent of major millers' flour contains domestic wheat) and 6 Mar 2026 (USDA Grain & Feed Annual: 2026/27 imports forecast at 7.2 mt). This is a world benchmark price, not the landed cost in Lagos (add freight, insurance, duties and port charges).",
+    "_slide": 3
+   },
+   {
+    "type": "plan",
+    "title": "Session 2: Three Parts, One Pricing Decision",
+    "sub": "75 minutes. The appendix holds the self-study depth.",
+    "blocks": [
+     {
+      "min": 10,
+      "label": "Opening"
+     },
+     {
+      "min": 20,
+      "label": "1 · Who bears a cost shock"
+     },
+     {
+      "min": 25,
+      "label": "2 · Elasticity"
+     },
+     {
+      "min": 20,
+      "label": "3 · Behaviour and the decision"
+     }
+    ],
+    "items": [
+     {
+      "icon": "FaBalanceScale",
+      "title": "Read a market",
+      "body": "Use demand and supply to explain a price change and predict **who bears a cost or tax** — buyers or sellers."
+     },
+     {
+      "icon": "FaChartLine",
+      "title": "Measure and use elasticity",
+      "body": "Compute own, cross and income elasticities, **hold other things constant**, and link elasticity to revenue and margin."
+     },
+     {
+      "icon": "FaBrain",
+      "title": "Price like a behavioural economist",
+      "body": "Use reference prices, loss aversion and fairness to decide **how much, how fast and how** to pass on a cost shock."
+     }
+    ],
+    "_slide": 4
+   },
+   {
+    "type": "caseSlide",
+    "title": "Pricing Noodles Through a Flour Shock",
+    "illus": true,
+    "context": "A Nigerian noodles maker sells a single-serve pack in three regions — Lagos, the North and the South-East. Shelf prices have more than tripled since 2022 as costs and the exchange rate moved.",
+    "question": "Flour, about **45% of unit cost**, has just risen **40%**. How much of the extra cost should be **passed into price**, and how fast?",
+    "data": "fmcg_price_volume.csv — 209 weeks × 3 regions: shelf price, competitor price, promotion weeks, an income index and packs sold. *Stylised teaching data.*",
+    "decision": "A pricing recommendation built on **measured elasticities**, a view on **rivals' response** and the risk of breaking customers' **reference price**.",
+    "notes": "Unit economics: ₦500 shelf price, ₦350 unit cost before the shock. Flour = 45% × ₦350 = ₦157.50; +40% = ₦63 extra per pack. On the macro-to-P&L map from Session 1, today sits where 'naira weakens' meets 'cost of sales' and 'inflation rises' meets 'revenue'.",
+    "_slide": 5
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 1,
+    "title": "Who Bears a Cost Shock?",
+    "sub": "Demand, supply and the split of a price rise.",
+    "question": "When costs rise, how much ends up in the price — and how much in our margin?",
+    "_slide": 6
+   },
+   {
+    "type": "compare",
+    "kicker": "THE TWO SIDES OF A MARKET · MANKIW CH. 4",
+    "title": "What Moves Demand, and What Moves Supply",
+    "left": {
+     "icon": "FaShoppingCart",
+     "title": "Demand: willingness to buy",
+     "tag": "Slopes down — higher price, fewer packs",
+     "items": [
+      "Own price: a move **along** the curve",
+      "Income, prices of substitutes and complements",
+      "Tastes, population, expectations of future prices",
+      "These **shift** the whole curve"
+     ]
+    },
+    "right": {
+     "icon": "FaIndustry",
+     "title": "Supply: willingness to sell",
+     "tag": "Slopes up — higher price, more packs",
+     "items": [
+      "Own price: a move **along** the curve",
+      "Input costs: wheat, diesel, packaging, the naira",
+      "Technology, number of sellers, taxes and levies",
+      "These **shift** the whole curve"
+     ]
+    },
+    "note": "A change in **price** moves you **along** a curve. A change in **anything else** **shifts** the curve. Most pricing mistakes come from mixing the two.",
+    "_slide": 7
+   },
+   {
+    "type": "worked",
+    "kicker": "EQUILIBRIUM, WORKED",
+    "title": "Solve the Market Before and After the Shock",
+    "tableW": 5.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "",
+      "Demand",
+      "Supply",
+      "Price",
+      "Quantity"
+     ],
+     "rows": [
+      [
+       "Before",
+       "Q = 1,000 − 2P",
+       "Q = −200 + 2P",
+       "₦300",
+       "400"
+      ],
+      [
+       "Cost +₦60 per unit",
+       "unchanged",
+       "Q = −200 + 2(P − 60)",
+       "₦330",
+       "340"
+      ]
+     ],
+     "total": [
+      "Change",
+      "",
+      "",
+      "+₦30",
+      "−60 (−15%)"
+     ]
+    },
+    "steps": [
+     "**Equilibrium**: set demand = supply. 1,000 − 2P = −200 + 2P → P = **₦300**, Q = **400**.",
+     "A ₦60 cost rise means firms need ₦60 more to supply each quantity: supply shifts **up by ₦60**.",
+     "New equilibrium: 1,000 − 2P = −320 + 2P → P = **₦330**, Q = **340**.",
+     "Buyers pay **₦30** of the ₦60; sellers' net price falls by the other **₦30** (from ₦300 to ₦270). Lost volume is an extra cost on top."
+    ],
+    "aside": "**Pass-through rule** for straight-line curves: share passed to price = supply responsiveness ÷ (supply + demand responsiveness) = 2 ÷ (2 + 2) = **50%**. The **less** price-sensitive the buyers, the **more** they pay.",
+    "asideTitle": "The general rule",
+    "asideY": 3.75,
+    "result": "A cost shock is **shared**. Who pays more depends on who can **walk away** more easily.",
+    "notes": "Mankiw ch. 4 (equilibrium) and ch. 6 (tax incidence) use the same logic: a per-unit cost or tax is split by relative elasticities, not by who writes the cheque. With demand Q = 1,000 − 2P the slope term is 2 for both curves, hence 50%.",
+    "_slide": 8
+   },
+   {
+    "type": "figure",
+    "kicker": "THE PICTURE",
+    "title": "A Cost Shock Shifts Supply Up — the Price Rises by Less",
+    "img": "sessions/s02/figures/python/s02_f01.png",
+    "fig": "S02-F01",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Higher flour costs shift supply **up**: firms need more to supply the same quantity.",
+     "New equilibrium: price **+10%**, quantity **−13%** in this example.",
+     "The price rises by **less than the cost**: customers pay part, producers absorb part.",
+     "Steeper (less elastic) demand → more of the shock lands on customers."
+    ],
+    "notes": "In the diagram the cost shift is 90 and the price rises by about 50: roughly 56% pass-through.",
+    "_slide": 9
+   },
+   {
+    "type": "cards",
+    "kicker": "SHIFTS YOU HAVE LIVED THROUGH",
+    "title": "Nigerian Shocks, Read as Demand and Supply",
+    "perRow": 2,
+    "cards": [
+     {
+      "icon": "FaGasPump",
+      "title": "Petrol subsidy removal (2023)",
+      "body": "A supply shock to everything that moves. NBS: average intra-city bus fare rose from **₦650 to ₦1,285** — **+98% in one month** (May → June 2023)."
+     },
+     {
+      "icon": "FaExchangeAlt",
+      "title": "Naira depreciation (2023–24)",
+      "body": "Imported wheat, packaging and machinery cost more naira: supply shifts **up** across manufacturing — see the wheat chart."
+     },
+     {
+      "icon": "FaUsers",
+      "title": "Falling real incomes",
+      "body": "When wages lag inflation, demand for non-essentials shifts **down**; shoppers **trade down** to smaller packs and cheaper brands."
+     },
+     {
+      "icon": "FaMobileAlt",
+      "title": "New sellers online",
+      "body": "Social-media and e-commerce sellers add supply and make prices easier to compare: each seller's demand becomes **more elastic**.",
+      "accent": true
+     }
+    ],
+    "notes": "Source: NBS Transport Fare Watch, June 2023 (intra-city bus fare per drop ₦649.59 → ₦1,285.41, +97.88% m/m; inter-city ₦4,002.16 → ₦5,686.49, +42.09%), reported by Nairametrics, 14 Aug 2023. Inference for discussion (not measured by NBS): fares could nearly double because commuters had few short-run alternatives — inelastic demand allows high pass-through.",
+    "_slide": 10
+   },
+   {
+    "type": "lead",
+    "kicker": "GOVERNMENT IN THE MARKET · MANKIW CH. 6",
+    "title": "Taxes, Ceilings and Floors: Who Really Pays?",
+    "leadLabel": "The incidence rule",
+    "leadSize": 17,
+    "lead": "The burden of a tax or a cost falls on whichever side **can least escape it** — regardless of who hands the money to the government.",
+    "leadFoot": "Policy names the payer; elasticity decides the bearer.",
+    "points": [
+     {
+      "h": "VAT and the 2026 food zero-rating",
+      "t": "Nigeria kept VAT at **7.5%** in the 2025 reforms. From **1 January 2026** basic food moved from **exempt** to **zero-rated**: sellers can now reclaim the VAT on their inputs. Shoppers gain only if that cost saving is passed on — likelier where competition is strong."
+     },
+     {
+      "h": "Price ceilings create shortages",
+      "t": "Holding petrol at about **₦185–₦199/litre** (NNPC pump prices) until end-May 2023 and the naira below its market rate produced **queues, rationing and parallel markets** — the price was paid another way."
+     },
+     {
+      "h": "Price floors create surpluses",
+      "t": "A minimum price above equilibrium leaves sellers with **unsold supply** — the logic behind debates on minimum wages and guaranteed farm prices."
+     },
+     {
+      "h": "Manager's use",
+      "t": "When a tax, levy or subsidy changes, estimate **your** share using elasticities — not the headline rate.",
+      "accent": true
+     }
+    ],
+    "notes": "Sources: Forvis Mazars, 'VAT & Nigeria 2025 Tax Reforms' (7.5% retained; basic food zero-rated; effective 1 January 2026). Basic food was already VAT-exempt under the old VAT Act, so the change is about input VAT, not a 7.5% cut at the till; check whether a product such as noodles counts as basic food. Mankiw ch. 6 ('Supply, Demand and Government Policies'). Zero-rating, unlike exemption, lets suppliers reclaim input VAT. Petrol: NNPC pump prices were about ₦184–₦199 by region before 31 May 2023, raised to ₦488–₦557 (ThisDay, 31 May 2023).",
+    "_slide": 11
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 2,
+    "title": "Elasticity: How Much Do Customers React?",
+    "sub": "One number that should sit beside every price decision.",
+    "question": "If we raise the price, how many customers do we lose — and does revenue rise or fall?",
+    "_slide": 12
+   },
+   {
+    "type": "concept",
+    "kicker": "THE KEY NUMBER · MANKIW CH. 5",
+    "title": "Own-Price Elasticity of Demand",
+    "icon": "FaChartLine",
+    "plain": "Elasticity is the **% change in quantity for a 1% change in price**. Bigger than 1 (ignoring the sign) = **elastic**: customers react strongly. Smaller than 1 = **inelastic**.",
+    "formula": "elasticity = % change in quantity ÷ % change in price",
+    "formulaSize": 19,
+    "example": "Our noodles (stylised data): **−1.47**. A 10% price rise, rivals holding, loses about **13%** of volume.",
+    "why": "Elastic demand: a price rise **cuts revenue**. Inelastic demand: a price rise **raises revenue**. Knowing which you face is the start of every pricing decision.",
+    "_slide": 13
+   },
+   {
+    "type": "worked",
+    "kicker": "COMPUTING IT",
+    "title": "Elasticity and the Revenue Test, Step by Step",
+    "tableW": 5.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "",
+      "Before",
+      "After",
+      "Change",
+      "Midpoint %"
+     ],
+     "rows": [
+      [
+       "Price per pack",
+       "₦500",
+       "₦550",
+       "+₦50",
+       "+9.5%"
+      ],
+      [
+       "Packs per week",
+       "100,000",
+       "87,000",
+       "−13,000",
+       "−13.9%"
+      ],
+      [
+       "Revenue per week",
+       "₦50.0m",
+       "₦47.85m",
+       "−₦2.15m",
+       "−4.4%"
+      ]
+     ]
+    },
+    "steps": [
+     "Use the **midpoint** method so the answer is the same up or down: %ΔP = 50 ÷ 525 = **9.5%**; %ΔQ = −13,000 ÷ 93,500 = **−13.9%**.",
+     "Elasticity = −13.9 ÷ 9.5 = **−1.46**: elastic.",
+     "**Revenue test**: price up, revenue down (₦50.0m → ₦47.85m) — the signature of elastic demand.",
+     "But **profit** is a different question: with a ₦350 unit cost, margin per week goes from ₦15.0m to **₦17.4m**. Fewer packs, more profit."
+    ],
+    "result": "Elasticity tells you what happens to **revenue**; add costs to see what happens to **profit**.",
+    "notes": "Profit: (500 − 350) × 100,000 = ₦15.0m; (550 − 350) × 87,000 = ₦17.4m. This is why 'we'll lose volume' is not by itself an argument against a price rise.",
+    "_slide": 14
+   },
+   {
+    "type": "lead",
+    "kicker": "WHAT DRIVES ELASTICITY",
+    "title": "Why Some Customers Shrug and Others Walk Away",
+    "leadLabel": "The determinants",
+    "leadSize": 17,
+    "lead": "Demand is more elastic when customers have **close substitutes**, the item is a **luxury** or a **big share of the budget**, and they have **time** to adjust.",
+    "leadFoot": "And the narrower the market you define, the more elastic it is.",
+    "points": [
+     {
+      "h": "Substitutes",
+      "t": "One noodle brand among many → elastic. All noodles together → much less so."
+     },
+     {
+      "h": "Necessity vs luxury",
+      "t": "Commuters in June 2023 still had to get to work: intra-city fares nearly **doubled** in a month, yet transport operators could make them stick."
+     },
+     {
+      "h": "Share of budget",
+      "t": "A ₦50 rise on a ₦500 pack matters more to a low-income family spending most of its income on food."
+     },
+     {
+      "h": "Time horizon",
+      "t": "Short run: few options. Long run: households switch fuel, car-pool, buy in bulk, change brands — elasticity **rises**.",
+      "accent": true
+     }
+    ],
+    "notes": "Mankiw ch. 5. The brand-versus-market distinction drives the pass-through decision at the end of the session.",
+    "_slide": 15
+   },
+   {
+    "type": "figure",
+    "kicker": "THE DATA",
+    "title": "Prices Tripled — Volumes Did Not Collapse",
+    "img": "sessions/s02/figures/python/s02_f02.png",
+    "fig": "S02-F02",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Lagos shelf price went from about **₦162 to ₦518** a pack between 2022 and 2025.",
+     "Average weekly volumes 2022 → 2025: North **+12%**, Lagos **−5%**, South-East **−9%** — far smaller moves than prices.",
+     "Looks like customers do not care about price. **Do not believe it yet.**",
+     "Incomes, rivals' prices and the general price level all moved at the same time."
+    ],
+    "_slide": 16
+   },
+   {
+    "type": "figure",
+    "kicker": "THE TRAP",
+    "title": "Inflation Hides the Elasticity",
+    "img": "sessions/s02/figures/python/s02_f03.png",
+    "fig": "S02-F03",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Units against shelf price gives an elasticity of just **−0.09** — 'price barely matters'.",
+     "But **every** price was rising: rivals' prices, wages, the whole price level.",
+     "Shoppers respond to our price **relative** to alternatives and to their income.",
+     "To see the true response, **hold the other drivers constant** — the Session 1 lesson on correlation."
+    ],
+    "notes": "Same confusion as moving along a curve versus shifting it: over 2022–2025 demand was shifting while we moved along it.",
+    "_slide": 17
+   },
+   {
+    "type": "figure",
+    "kicker": "HOLDING OTHER THINGS CONSTANT",
+    "title": "What Customers Really Respond To",
+    "img": "sessions/s02/figures/python/s02_f04.png",
+    "fig": "S02-F04",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "**Own price −1.47**: a 1% rise in our price, all else equal, cuts volume by about 1.5%.",
+     "**Cross price +0.73**: a 1% rise in a rival's price lifts our volume by about 0.7% — close substitutes.",
+     "**Income +1.11**: as incomes rise, customers buy more.",
+     "Method: regress log(units) on log(own price), log(rival price), log(real income), a trend and region."
+    ],
+    "notes": "Income and the time trend move together, so the income elasticity is less precise. Treat it as 'about one'. No separate promotion dummy: in these data promotions work through the price cut, so a dummy would soak up price variation and bias the elasticity towards zero (it gives about −1.15; the data were generated with a true own-price elasticity of −1.4). The lab lets participants try both.",
+    "_slide": 18
+   },
+   {
+    "type": "table",
+    "kicker": "THE ELASTICITY FAMILY",
+    "title": "Three Elasticities Every Manager Should Know",
+    "head": [
+     "Elasticity",
+     "Question it answers",
+     "Our estimate",
+     "Business use"
+    ],
+    "colW": [
+     2.4,
+     4,
+     1.6,
+     3.9
+    ],
+    "rows": [
+     [
+      "Own-price",
+      "If we raise our price 1%, what happens to our volume?",
+      "−1.47",
+      "Price setting, revenue forecasts"
+     ],
+     [
+      "Cross-price",
+      "If a rival raises its price 1%, what happens to our volume?",
+      "+0.73",
+      "Is the rival a close substitute? Will they follow?"
+     ],
+     [
+      "Income",
+      "If customers' real income rises 1%, what happens to our volume?",
+      "+1.11",
+      "Planning through recessions; trading down"
+     ],
+     [
+      "Price elasticity of supply",
+      "If the market price rises 1%, how much more will sellers offer?",
+      "—",
+      "Who bears a cost shock; capacity planning"
+     ]
+    ],
+    "note": "Cross-price **positive** = substitutes (rival noodles). **Negative** = complements (noodles and seasoning). Income elasticity **negative** = an inferior good that people buy less of as they get richer.",
+    "_slide": 19
+   },
+   {
+    "type": "figure",
+    "kicker": "PRICE, VOLUME AND REVENUE",
+    "title": "When Does a Price Rise Raise Revenue?",
+    "img": "sessions/s02/figures/python/s02_f05.png",
+    "fig": "S02-F05",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Elasticity −0.5: a 20% price rise **raises** revenue.",
+     "At our −1.47, a 20% rise **cuts** revenue by about **8%**.",
+     "Revenue is not profit: a rise that covers higher costs can still protect margin.",
+     "When **all** firms raise prices together, the relevant elasticity is smaller than one brand's."
+    ],
+    "_slide": 20
+   },
+   {
+    "type": "worked",
+    "kicker": "ELASTICITY AND MARGIN",
+    "title": "Your Gross Margin Reveals the Elasticity You Assume",
+    "tableW": 5.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "Elasticity (|e|)",
+      "Profit-maximising margin = 1 ÷ |e|",
+      "Price if unit cost = ₦350"
+     ],
+     "rows": [
+      [
+       "1.5",
+       "67%",
+       "₦1,050"
+      ],
+      [
+       "2.0",
+       "50%",
+       "₦700"
+      ],
+      [
+       "3.0",
+       "33%",
+       "₦525"
+      ],
+      [
+       "3.3",
+       "30%",
+       "₦500 — our price today"
+      ],
+      [
+       "5.0",
+       "20%",
+       "₦438"
+      ]
+     ]
+    },
+    "steps": [
+     "The **markup rule** (Lerner): at the profit-maximising price, (price − marginal cost) ÷ price = 1 ÷ |elasticity|.",
+     "Our margin is (500 − 350) ÷ 500 = **30%**, which is optimal only if |e| ≈ **3.3**.",
+     "Our measured short-run brand elasticity is **1.47**. Either we are **under-pricing**, or the true long-run elasticity is higher (rivals react, entry, trading down).",
+     "Useful test before any repricing: **which elasticity are we implicitly assuming?**"
+    ],
+    "result": "Margins and elasticities must be **consistent**. If they are not, one of them is wrong.",
+    "notes": "Lerner index; derivation in any managerial-economics text (e.g. Baye & Prince, course reading list). The rule assumes the firm sets price with demand of constant elasticity and holds rivals' prices fixed. Strictly the rule needs **marginal** cost; the ₦350 average unit cost stands in for it here. Use it as a consistency check, not a pricing formula.",
+    "_slide": 21
+   },
+   {
+    "type": "check",
+    "q": "A competitor cuts its noodle price by 10%. Our cross-price elasticity is +0.73. Holding our price, what happens to our volume?",
+    "options": [
+     "Rises about 7% — their cut expands the whole market",
+     "Falls about 15% — use the own-price elasticity",
+     "Falls about 7% — some of our customers switch to them",
+     "No change — cross-price elasticity applies only to complements"
+    ],
+    "answer": 2,
+    "explain": "C. A cross-price elasticity of +0.73 means our volume moves 0.73% in the **same** direction as the rival's price. A 10% cut by them → about 7% fewer packs for us. A gets the sign wrong; B uses the wrong elasticity; D has substitutes and complements reversed.",
+    "_slide": 22
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 3,
+    "title": "Behaviour, Promotions and the Decision",
+    "sub": "Customers are not calculators.",
+    "question": "How much of the flour shock should we pass on — how fast, and in what form?",
+    "_slide": 23
+   },
+   {
+    "type": "concept",
+    "kicker": "BEHAVIOURAL ECONOMICS",
+    "title": "Reference Prices and Loss Aversion",
+    "icon": "FaBrain",
+    "plain": "Shoppers judge a price against the price they are **used to** — their **reference price**. Paying more than usual feels like a **loss**, and people weigh losses about **twice** as heavily as equal gains (Kahneman & Tversky).",
+    "formula": "pain of a ₦50 rise  >  pleasure of a ₦50 cut",
+    "formulaSize": 19,
+    "example": "In our data, weeks priced **more than 10% above** the usual price sold about **7.7%** fewer packs than the elasticity alone predicts.",
+    "why": "Several small, explained increases usually cost less volume than one big jump. Pack-size changes, clear communication and timing all manage the reference price.",
+    "notes": "Kahneman & Tversky, 'Prospect Theory' (Econometrica, 1979); Tversky & Kahneman (1992) estimate a loss-aversion coefficient of about 2.25. The 7.7% penalty is from the stylised dataset.",
+    "_slide": 24
+   },
+   {
+    "type": "figure",
+    "kicker": "THE EVIDENCE",
+    "title": "Big Jumps Hurt More Than the Arithmetic Says",
+    "img": "sessions/s02/figures/python/s02_f06.png",
+    "fig": "S02-F06",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Actual sales compared with the elasticity model's prediction.",
+     "Promotion weeks (price **below** usual) sold about **4%** more than predicted.",
+     "Up to 5% above usual: no extra penalty. **More than about 10% above: −7.7%** (13 weeks — a small sample).",
+     "The penalty fades as the new price becomes the new normal."
+    ],
+    "notes": "Reference price modelled as a moving average of past shelf prices (each week: 80% of the previous reference plus 20% of last week's shelf price): a teaching approximation of how shoppers' memories adjust.",
+    "_slide": 25
+   },
+   {
+    "type": "lead",
+    "kicker": "FAIRNESS AND DYNAMIC PRICING",
+    "title": "Customers Punish Prices That Feel Unfair",
+    "leadLabel": "Kahneman, Knetsch & Thaler (1986)",
+    "leadSize": 16,
+    "lead": "A hardware store raises the price of snow shovels from **$15 to $20** the morning after a snowstorm. **82%** of respondents called it **unfair**.",
+    "leadFoot": "Raising prices because **costs** rose is accepted far more readily than raising them because **demand** rose.",
+    "points": [
+     {
+      "h": "Cost-based increases are 'fair'",
+      "t": "Explaining a rise by a visible cost (wheat, diesel, the naira) protects goodwill. That is today's case."
+     },
+     {
+      "h": "Demand-based increases are 'gouging'",
+      "t": "Surge pricing on ride-hailing apps in rain or rush hour balances riders and drivers — but customers resent it."
+     },
+     {
+      "h": "AI makes dynamic pricing cheap",
+      "t": "Algorithms can price by product, store, hour and customer. Personalised prices that customers would object to invite **backlash and regulators**."
+     },
+     {
+      "h": "Rules of thumb",
+      "t": "Be transparent about costs; cap surges on essentials; never personalise in ways you could not defend in public.",
+      "accent": true
+     }
+    ],
+    "notes": "Kahneman, Knetsch & Thaler, 'Fairness as a Constraint on Profit Seeking: Entitlements in the Market', American Economic Review 76(4), 1986. Thaler's 'Misbehaving' (2015) retells the study. Session 4 returns to data, platforms and pricing power.",
+    "_slide": 26
+   },
+   {
+    "type": "figure",
+    "kicker": "PROMOTIONS",
+    "title": "What a 15% Discount Buys",
+    "img": "sessions/s02/figures/python/s02_f07.png",
+    "fig": "S02-F07",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Promotion weeks (15% off) sold **32–36%** more packs than normal weeks.",
+     "Part is new demand; part is **pantry loading** — buying earlier, not more.",
+     "Measure the weeks **after** a promotion: a dip means you borrowed from the future.",
+     "Frequent promotions reset reference prices **downward**."
+    ],
+    "_slide": 27
+   },
+   {
+    "type": "worked",
+    "kicker": "PROMOTION ARITHMETIC",
+    "title": "A 15% Discount Needs Volume to Double — We Got +34%",
+    "tableW": 5.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "Per week",
+      "Normal week",
+      "Promotion week"
+     ],
+     "rows": [
+      [
+       "Price per pack",
+       "₦500",
+       "₦425"
+      ],
+      [
+       "Margin per pack (cost ₦350)",
+       "₦150",
+       "₦75"
+      ],
+      [
+       "Packs sold",
+       "100,000",
+       "134,000"
+      ]
+     ],
+     "total": [
+      "Gross margin",
+      "₦15.0m",
+      "₦10.1m (−33%)"
+     ]
+    },
+    "steps": [
+     "A 15% discount (₦75) **halves** the margin per pack, from ₦150 to ₦75.",
+     "To earn the same margin, volume must rise by 150 ÷ 75 − 1 = **100%**.",
+     "Our promotions lifted volume by about **34%**, so each promotion week cost about **₦5m** of margin.",
+     "A promotion pays only if it wins **lasting new customers** or clears stock that would otherwise be lost — measure that, not the week's volume."
+    ],
+    "result": "Required uplift = margin ÷ (margin − discount) − 1. With thin margins, small discounts need **huge** volume gains.",
+    "notes": "Margin arithmetic: 100,000 × 150 = ₦15.0m; 134,000 × 75 = ₦10.05m. The 34% uplift is the Lagos figure from the stylised data.",
+    "_slide": 28
+   },
+   {
+    "type": "figure",
+    "kicker": "THE DECISION",
+    "title": "How Much of the Flour Shock to Pass On?",
+    "img": "sessions/s02/figures/python/s02_f08.png",
+    "fig": "S02-F08",
+    "script": "s02_figures.py / .R",
+    "illus": true,
+    "points": [
+     "The shock adds **₦63** to a pack that sells for ₦500 and costs ₦350.",
+     "**Absorb it all**: volume holds; profit falls to **58%** of its old level.",
+     "**Pass it all on**, rivals holding: volume −16%, profit **84%**. If rivals follow: volume −8%, profit **92%**.",
+     "Every miller pays the same world price × naira — rivals are **likely to follow**."
+    ],
+    "notes": "Constant-elasticity model: own −1.47; own + cross ≈ −0.74 when rivals follow. ₦500 and ₦350 are stylised.",
+    "_slide": 29
+   },
+   {
+    "type": "cards",
+    "kicker": "THE PLAYBOOK",
+    "title": "How to Pass On a Cost Shock Without Breaking the Brand",
+    "perRow": 3,
+    "cards": [
+     {
+      "icon": "FaLayerGroup",
+      "title": "Stagger and signal",
+      "body": "Two or three steps rather than one jump; announce the **cost reason** (wheat, naira) — the fairness effect works for you."
+     },
+     {
+      "icon": "FaCompressArrowsAlt",
+      "title": "Resize and re-mix",
+      "body": "Smaller packs at familiar price points protect the **reference price**; premium variants carry more of the increase."
+     },
+     {
+      "icon": "FaCut",
+      "title": "Take cost out",
+      "body": "Recipe, packaging, logistics and procurement savings reduce the share you need to pass on at all."
+     }
+    ],
+    "note": "Watch three numbers weekly after a price change: **volume vs forecast, rivals' prices and distributor stock** — and be ready to adjust the next step.",
+    "notes": "Pack-size changes ('shrinkflation') manage reference prices but can damage trust if hidden; disclose clearly. Session 3 shows how to forecast the volume response.",
+    "_slide": 30
+   },
+   {
+    "type": "check",
+    "q": "Flour costs rise 40% for every noodles maker in Nigeria. Which recommendation is best supported by today's analysis?",
+    "options": [
+     "Rivals face the same shock and will likely follow, so pass on most of the cost — in steps, explained by the cost reason",
+     "Absorb the cost: any price rise hands customers to rivals",
+     "Raise prices by exactly 40%, since flour rose 40%",
+     "Price barely matters — our data show an elasticity near zero"
+    ],
+    "answer": 0,
+    "explain": "A. When all firms face the same cost they tend to move together, so the volume loss is smaller (own + cross ≈ −0.74), and cost-based increases are judged fair. B ignores rivals' costs; C confuses the flour rise with the unit-cost rise (flour is 45% of cost); D is the inflation trap.",
+    "_slide": 31
+   },
+   {
+    "type": "lab",
+    "title": "Lab 2: How Price-Sensitive Are Our Customers?",
+    "time": "20 minutes",
+    "data": "data/fmcg_price_volume.csv",
+    "r": "sessions/s02/R/s02_lab.R",
+    "py": "sessions/s02/python/s02_lab.py",
+    "steps": [
+     "Plot prices and volumes by region, 2022–2025.",
+     "Estimate the **naive elasticity** (units on price only) and explain why it misleads.",
+     "Estimate own-price, cross-price and income elasticities **holding other things constant**.",
+     "Check the **Lerner rule**: which elasticity does today's margin imply?",
+     "Test pass-through of 0%, 50% and 100% of the flour shock — with rivals holding and following."
+    ],
+    "deliver": "a three-sentence pricing recommendation to the MD: how much to pass on, how fast, and what to watch.",
+    "_slide": 32
+   },
+   {
+    "type": "recap",
+    "items": [
+     "A cost shock is **shared**: the side that can least escape it bears more.",
+     "Separate a **move along** a curve from a **shift** of it — inflation hides the true elasticity.",
+     "**Own, cross and income** elasticities tell you how volume reacts to you, rivals and the economy.",
+     "Check **revenue, profit and margin** together; your margin implies an elasticity.",
+     "Customers judge prices against a **reference price** and by **fairness**: stagger, explain, resize."
+    ],
+    "prework": "Read Sahay, Time Series Analysis and Forecasting (BEP8370), chapters on trend and seasonality. Bring one demand number your company forecasts every year and how far off last year's forecast was.",
+    "next": "Session 3: Demand Forecasting & Market Sizing",
+    "_slide": 33
+   },
+   {
+    "type": "section",
+    "label": "APPENDIX",
+    "num": 0,
+    "title": "Self-Study: Going Deeper",
+    "sub": "Read these before the quiz. They are not presented in class.",
+    "question": "What else do I need to master Session 2 on my own?",
+    "_slide": 34
+   },
+   {
+    "type": "lead",
+    "kicker": "SUPPLY ELASTICITY",
+    "title": "Why Sellers Respond Slowly — and Why It Matters",
+    "study": true,
+    "leadLabel": "Price elasticity of supply",
+    "leadSize": 17,
+    "lead": "Supply elasticity = % change in quantity supplied for a 1% change in price. It is **low in the short run** (fixed capacity, contracts, imports in transit) and **higher in the long run**.",
+    "leadFoot": "Inelastic supply + a demand surge = a price spike.",
+    "points": [
+     {
+      "h": "Farm output",
+      "t": "Planting decisions are made a season ahead: food prices spike when a harvest disappoints, then ease."
+     },
+     {
+      "h": "Imported inputs",
+      "t": "FX shortages make supply of imported goods **very inelastic** — prices jump when demand rises."
+     },
+     {
+      "h": "Capacity and pass-through",
+      "t": "When rivals are at full capacity, they cannot steal your customers — you can pass on more."
+     }
+    ],
+    "_slide": 35
+   },
+   {
+    "type": "cards",
+    "kicker": "MORE BEHAVIOURAL PRICING",
+    "title": "Four Effects Every Pricing Manager Meets",
+    "perRow": 2,
+    "study": true,
+    "cards": [
+     {
+      "icon": "FaAnchor",
+      "title": "Anchoring",
+      "body": "The first number seen shapes what feels reasonable: show the premium pack first, and the standard pack feels cheap."
+     },
+     {
+      "icon": "FaTags",
+      "title": "Charm and round prices",
+      "body": "₦499 reads as 'four hundred and something'; round prices signal quality. Test both."
+     },
+     {
+      "icon": "FaClone",
+      "title": "The decoy",
+      "body": "Adding an obviously inferior option makes a target option look better value."
+     },
+     {
+      "icon": "FaWallet",
+      "title": "Pain of paying",
+      "body": "Mobile money and cards reduce the felt cost of paying; cash makes spending more painful."
+     }
+    ],
+    "_slide": 36
+   },
+   {
+    "type": "mistakes",
+    "title": "Common Pricing Mistakes",
+    "study": true,
+    "items": [
+     {
+      "bad": "“Volumes rose while prices rose, so demand is not price-sensitive.”",
+      "good": "Hold **inflation, rivals' prices and income** constant first."
+     },
+     {
+      "bad": "Using one elasticity for every situation.",
+      "good": "Distinguish **our brand alone** (more elastic) from **the whole market** (less elastic)."
+     },
+     {
+      "bad": "Judging a price rise by revenue.",
+      "good": "Judge it by **profit** and market position."
+     },
+     {
+      "bad": "Passing on a big cost increase in one jump.",
+      "good": "Stagger, explain the cost reason, manage the **reference price**."
+     },
+     {
+      "bad": "Judging a promotion by the weeks it ran.",
+      "good": "Count the **dip afterwards** and the margin given away."
+     },
+     {
+      "bad": "Assuming whoever pays a tax bears it.",
+      "good": "Incidence follows **elasticities**, not the law."
+     }
+    ],
+    "_slide": 37
+   },
+   {
+    "type": "glossary",
+    "study": true,
+    "terms": [
+     {
+      "term": "Equilibrium",
+      "def": "The price at which quantity demanded equals quantity supplied."
+     },
+     {
+      "term": "Shift vs move",
+      "def": "Price changes move along a curve; other drivers shift it."
+     },
+     {
+      "term": "Incidence",
+      "def": "Who actually bears a tax or cost, regardless of who pays it."
+     },
+     {
+      "term": "Own-price elasticity",
+      "def": "% change in quantity for a 1% change in own price."
+     },
+     {
+      "term": "Cross-price elasticity",
+      "def": "% change in our quantity for a 1% change in a rival's price."
+     },
+     {
+      "term": "Income elasticity",
+      "def": "% change in quantity for a 1% change in income."
+     },
+     {
+      "term": "Lerner rule",
+      "def": "Optimal margin = 1 ÷ |elasticity|."
+     },
+     {
+      "term": "Reference price",
+      "def": "The price a shopper expects, based on recent experience."
+     },
+     {
+      "term": "Loss aversion",
+      "def": "Losses feel worse than equal-sized gains feel good."
+     },
+     {
+      "term": "Pass-through",
+      "def": "Share of a cost change that ends up in the selling price."
+     }
+    ],
+    "_slide": 38
+   },
+   {
+    "type": "readings",
+    "study": true,
+    "items": [
+     {
+      "core": true,
+      "ref": "Note on Microeconomics for Managers",
+      "why": "The course note for Sessions 1–2: demand, supply, elasticity."
+     },
+     {
+      "core": true,
+      "ref": "Mankiw, Principles of Economics — ch. 4–6",
+      "why": "Market forces of supply and demand; elasticity; supply, demand and government policies (price controls, tax incidence)."
+     },
+     {
+      "ref": "Kahneman & Tversky (1979), 'Prospect Theory'",
+      "why": "Reference points and loss aversion — the foundation of behavioural pricing."
+     },
+     {
+      "ref": "Kahneman, Knetsch & Thaler (1986), 'Fairness as a Constraint on Profit Seeking'",
+      "why": "Why cost-based price rises are accepted and demand-based ones resented."
+     },
+     {
+      "ref": "Thaler, Misbehaving (2015)",
+      "why": "Readable account of behavioural economics, including the fairness studies."
+     },
+     {
+      "ref": "Baye & Prince, Managerial Economics and Business Strategy",
+      "why": "Elasticity, markup rules and pricing strategy for managers (course reading list)."
+     }
+    ],
+    "_slide": 39
+   }
+  ]
  },
  "s03": {
-  "objectives": [
-   {
-    "title": "Read a Demand Series",
-    "body": "Separate trend, seasonality and one-off shocks in monthly sales data."
-   },
-   {
-    "title": "Forecast and Test",
-    "body": "Build a simple trend-plus-season forecast, backtest it against rules of thumb, and express it as a range."
-   },
-   {
-    "title": "Size a Market",
-    "body": "Estimate a Nigerian market top-down and bottom-up, and reconcile the two."
-   }
-  ],
+  "objectives": [],
   "figures": [
    {
     "img": "sessions/s03/figures/python/s03_f01.png",
     "id": "S03-F01",
-    "title": "Ten Years of Cement Demand",
+    "title": "Fourteen Years of Cement Demand",
     "kicker": "THE DATA",
     "points": [
-     "National consumption grew from 18.7 million tonnes in 2012 to 32.2 million in 2025 — about 4.3% a year.",
-     "The 12-month moving average smooths out the seasons and shows the trend.",
+     "Consumption grew from 18.7 Mt in 2012 to 32.2 Mt in 2025 — about 4.3% a year.",
+     "The 12-month moving average strips out the seasons and shows the trend.",
      "Three shocks: the 2016 recession, the 2020 lockdown and the 2024 price spike.",
-     "Each time, demand recovered to the trend within about a year."
+     "Each time, demand returned to trend within about a year."
     ]
    },
    {
     "img": "sessions/s03/figures/python/s03_f02.png",
     "id": "S03-F02",
-    "title": "The Rainy Season Rhythm",
+    "title": "The Rainy-Season Rhythm",
     "kicker": "SEASONALITY",
     "points": [
      "February is about 14% above an average month; July and August about 18% below.",
      "Rain stops site work, so demand dips from June to September.",
      "Plan capacity, stock and cash for the peak months, not the annual average.",
-     "Schedule maintenance shutdowns for the rainy season, when demand is lowest."
+     "Schedule maintenance for the rainy season, when demand is lowest."
     ]
    },
    {
@@ -494,10 +2977,10 @@
     "title": "Pretend It Is January 2024",
     "kicker": "THE BACKTEST",
     "points": [
-     "We fitted each method on 2012–2023 only and asked it to forecast 2024–2025.",
-     "Then we compared the forecasts with what actually happened.",
-     "This is a backtest: the only honest way to judge a forecasting method.",
-     "The model followed both the season and the trend; 'same month last year' missed the growth."
+     "Fit each method on 2012–2023 only and forecast 2024–2025.",
+     "Then compare with what actually happened.",
+     "This backtest is the only honest way to judge a forecasting method.",
+     "The model followed both season and trend; 'same month last year' missed the growth."
     ]
    },
    {
@@ -507,9 +2990,9 @@
     "kicker": "THE SCOREBOARD",
     "points": [
      "Trend + seasonal model: 4.1% average error — the best.",
-     "'Same month last year': 5.8%. The common budget rule 'last year + 5%': 6.6%.",
-     "A flat average ignores the seasons: 10.9% error.",
-     "MAPE = mean absolute percentage error: on average, how far off were we?"
+     "'Same month last year': 5.8%. The budget rule 'last year + 5%': 6.6%.",
+     "A flat average ignores the seasons: 10.9%.",
+     "The 2024 price spike hurt every method — no method saw it coming. Hence ranges and scenarios."
     ]
    },
    {
@@ -518,9 +3001,9 @@
     "title": "2026: A Number and a Range",
     "kicker": "THE FORECAST",
     "points": [
-     "Base forecast for 2026: about 32.9 million tonnes.",
+     "Base forecast for 2026: about 32.9 Mt.",
      "Monthly bands show where each month will probably fall (90% range).",
-     "For the year: roughly 31.0–34.9 million tonnes, based on how far past years strayed from the model.",
+     "For the year: roughly 31.0–34.9 Mt, based on how far past years strayed from the model.",
      "Say it as a range: 'about 33, very likely between 31 and 35'."
     ]
    },
@@ -530,10 +3013,10 @@
     "title": "Plan for More Than One Future",
     "kicker": "SCENARIOS",
     "points": [
-     "Downside (−8%): another cement price spike and weak real incomes → 30.3 mt.",
-     "Base: trend and season continue → 32.9 mt.",
-     "Upside (+6%): a large housing and road programme → 34.9 mt.",
-     "Ask: what capacity is safe in the downside and expandable in the upside?"
+     "Downside (−8%): another price spike and weak real incomes → 30.3 Mt.",
+     "Base: trend and season continue → 32.9 Mt.",
+     "Upside (+6%): a large housing and road programme → 34.9 Mt.",
+     "Name a signpost for each: cement price, mortgage rates, capital budget releases."
     ]
    },
    {
@@ -544,33 +3027,33 @@
     "points": [
      "We made the trend curve more and more flexible.",
      "Fit to the past barely changed (about 4% error).",
-     "Forecasts of the future got much worse: from 4% to over 90% error at the most flexible.",
-     "This is overfitting: the model memorises the past instead of learning its pattern."
+     "Forecasts of the future got much worse: from 4% to over 90% error.",
+     "Overfitting: the model memorises the past instead of learning its pattern. ML earns its place with many series and many drivers — and only after a backtest."
     ]
    },
    {
     "img": "sessions/s03/figures/python/s03_f07.png",
     "id": "S03-F07",
-    "title": "Do the Two Routes Agree?",
+    "title": "Do the Routes Agree?",
     "kicker": "RECONCILE",
     "points": [
-     "Top-down: 32.2 mt. Bottom-up: 33.8 mt. Within about 5% — reassuring.",
-     "If they disagree badly, one of the assumptions is wrong. Find it before you build.",
+     "Top-down 30.6 Mt, bottom-up 33.8 Mt (stylised), industry report 33.9 Mt: within about 10%.",
+     "If they disagree badly, one assumption is wrong. Find it before you build.",
      "New homes are the biggest segment: watch mortgage rates, real incomes and land policy.",
-     "Both estimates sit close to the time-series forecast — three independent views pointing the same way."
+     "Three views pointing the same way — and an explanation for the gap — is what a board should see."
     ]
    }
   ],
   "recap": {
    "items": [
-    "Demand = trend × season × shocks; read each part separately.",
-    "A transparent trend-plus-season model beats most budget rules — backtest to prove it.",
-    "Always give a range and scenarios, not a single number.",
-    "More complex is not more accurate: judge models on unseen data.",
-    "Size markets top-down and bottom-up, and reconcile the two."
+    "Every series = trend × season × shock: seasonally adjust before judging a month.",
+    "Backtest every method; keep the one that wins on data it has not seen.",
+    "Give a number, a range and scenarios — and watch for the planning fallacy.",
+    "Size markets two ways and reconcile; check the per-person assumption against peers.",
+    "Set capacity with the cost of being wrong, not the central forecast."
    ],
-   "prework": "Read the Ant Financial case (917-0029-1). Come ready to say: is Ant a bank, a technology company or a marketplace — and why does the answer matter for regulators?",
-   "next": "Session 4: Market Structure & Platforms"
+   "prework": "Read the case 'Fintech and Finance Transformation: The Rise of Ant Financial Services' (917-0029-1). Think: what makes a platform market different from a market for cement?",
+   "next": "Session 4: Market Structure, Platforms & Competition Policy"
   },
   "glossary": [
    {
@@ -578,56 +3061,56 @@
     "def": "The long-run direction of a series."
    },
    {
-    "term": "Seasonality",
-    "def": "A pattern that repeats at the same time every year."
-   },
-   {
     "term": "Seasonal index",
-    "def": "A month's typical level relative to an average month (100)."
+    "def": "How far a calendar month typically sits from an average month."
    },
    {
-    "term": "Moving average",
-    "def": "An average of the last N periods; smooths out noise and seasons."
+    "term": "Seasonally adjusted",
+    "def": "A figure with the normal seasonal pattern removed."
    },
    {
     "term": "Backtest",
-    "def": "Testing a forecasting method on past data it was not built on."
+    "def": "Forecasting a past period using only data available before it."
    },
    {
     "term": "MAPE",
-    "def": "Mean absolute percentage error: the average size of forecast misses."
+    "def": "Mean absolute percentage error: average size of forecast misses."
    },
    {
-    "term": "Forecast range",
-    "def": "The band within which the outcome will probably fall."
-   },
-   {
-    "term": "Scenario",
-    "def": "A coherent story of the future with its own numbers."
+    "term": "Bias",
+    "def": "Average signed error: does the forecast lean high or low?"
    },
    {
     "term": "Overfitting",
-    "def": "A model that memorises past noise and forecasts badly."
+    "def": "A model that memorises the past and forecasts the future badly."
+   },
+   {
+    "term": "Planning fallacy",
+    "def": "The tendency to under-estimate costs and over-estimate benefits."
    },
    {
     "term": "Top-down / bottom-up",
-    "def": "Sizing from the whole economy vs adding up the uses."
+    "def": "Sizing from a big total down, or from parts up."
+   },
+   {
+    "term": "Critical ratio",
+    "def": "Cost of too little ÷ (cost of too little + cost of too much)."
    }
   ],
   "lab": {
-   "title": "Lab: Cement Demand in 2026",
+   "title": "Lab 3: Cement Demand in 2026",
    "time": "20 minutes",
    "data": "data/cement_demand_monthly.csv",
    "r": "sessions/s03/R/s03_lab.R",
    "py": "sessions/s03/python/s03_lab.py",
    "steps": [
-    "Compute annual totals and the average growth rate since 2012.",
-    "Compute the seasonal index: each month versus its year's average.",
-    "Fit a trend + seasonal model on 2012–2023.",
-    "Backtest it on 2024–2025 against 'same month last year' and 'last year + 5%'.",
-    "Forecast 2026, and compare with the top-down and bottom-up market sizes."
+    "Plot the series and a 12-month moving average; mark the three shocks.",
+    "Estimate the seasonal index; seasonally adjust the latest month.",
+    "Backtest four methods on 2024–2025 and compare MAPE and bias.",
+    "Forecast 2026 with a 90% range and three scenarios.",
+    "Size the market top-down and bottom-up; set capacity with the critical ratio."
    ],
-   "deliver": "a two-sentence 2026 capacity recommendation: how many tonnes, and what flexibility you keep."
+   "deliver": "a one-page memo: 2026 demand (base, range, scenarios), market-sizing check, and a capacity recommendation with the cost logic."
   },
   "hook": {
    "title": "A ₦100 Billion Bet on One Number",
@@ -636,57 +3119,902 @@
   "concepts": [
    {
     "title": "Trend × Season: A Forecast in One Line",
-    "plain": "Our forecast says: next month's demand = the trend level for that month × the seasonal index for that calendar month. We fit both from history with one regression.",
+    "plain": "Next month's demand = the trend level for that month × the seasonal index for that calendar month. Both are fitted from history in one regression.",
     "formula": "forecast = trend(t) × season(month)",
-    "example": "Trend level for August 2026 ≈ 2.76 mt; August index ≈ 0.82 → forecast ≈ 2.26 mt.",
+    "example": "Trend level for August 2026 ≈ 2.76 Mt; August index ≈ 0.82 → forecast ≈ 2.26 Mt.",
     "why": "Simple models are transparent: a manager can see and challenge every assumption. That matters more than an extra decimal of accuracy."
    },
    {
-    "title": "Start From the Whole Economy",
-    "plain": "Top-down sizing starts from a big, known number — population, GDP, households — and multiplies by a rate of use per person or per naira.",
-    "formula": "market = population × use per person",
-    "example": "230 million people × about 140 kg of cement each per year ≈ 32.2 million tonnes.",
-    "why": "Quick and easy to sanity-check against other countries. But the 'use per person' assumption carries all the weight — and it differs widely between countries at similar income levels."
-   },
-   {
     "title": "Add Up the Uses",
-    "plain": "Bottom-up sizing builds the market from its parts: how many homes, roads, factories and repairs, times the cement each one needs.",
+    "plain": "Bottom-up sizing builds the market from its parts: homes, roads, factories and repairs, times the cement each needs.",
     "formula": "market = Σ (units of activity × cement per unit)",
-    "example": "About 450,000 new homes × ~32 tonnes = 14.4 mt, plus repairs (6.5), public works (6.0), commercial (4.5), precast (2.4) = 33.8 mt.",
-    "why": "Slower, but it shows which segments drive demand — and which ones a new government programme or a price shock would hit."
+    "example": "About 450,000 new homes × ~32 t = 14.4 Mt, plus repairs (6.5), public works (6.0), commercial (4.5), precast (2.4) = 33.8 Mt.",
+    "why": "Slower, but it shows which segments drive demand — and which ones a housing programme, a capital-budget release or a price shock would hit."
    }
   ],
   "checks": [
    {
-    "q": "Your sales team forecasts next year as 'this year + 10%'. A trend-plus-seasonal model forecasts +4%, with a range of −2% to +10%. What should you do?",
+    "q": "Your sales team forecasts next year at 'this year + 10%'. A backtested trend-plus-seasonal model says +4%, with a range of −2% to +10%. What should you do?",
     "options": [
+     "Average the two and use +7%",
+     "Start from +4%, ask for named, specific reasons for any upward adjustment, and plan capacity against the range",
      "Use +10% — the sales team knows the market",
-     "Use +4% and ignore the sales team",
-     "Start from the model's +4% and ask the sales team for named, specific reasons for any upward adjustment; plan capacity for the range",
-     "Average the two: +7%"
+     "Ignore the sales team; use +4% exactly"
     ],
-    "answer": 2,
-    "explain": "C. The model is the disciplined baseline; judgement should adjust it only for specific, recorded reasons (a new contract, a new region). D splits the difference without evidence. And capacity should be planned against the range, not a point."
+    "answer": 1,
+    "explain": "B. The backtested model is the disciplined baseline; judgement adjusts it only for specific, recorded reasons (a new contract, a new region), and plans cover the range. A splits the difference without evidence; C ignores the planning fallacy; D throws away information the model cannot see."
    },
    {
-    "q": "Top-down sizing gives 32 million tonnes; bottom-up gives 45 million tonnes. What is the best next step?",
+    "q": "Top-down sizing gives 32 Mt and bottom-up gives 45 Mt. What is the best next step?",
     "options": [
-     "Average them: 38.5 mt",
-     "Trust the bottom-up figure because it is more detailed",
-     "Find which assumption explains the gap (e.g. tonnes per house or homes built) and check it against independent data",
-     "Use whichever supports the investment case"
+     "Average them: 38.5 Mt",
+     "Trust bottom-up because it is more detailed",
+     "Use whichever supports the investment case",
+     "Find which assumption explains the gap (e.g. tonnes per house or homes built) and check it against independent data"
     ],
-    "answer": 2,
-    "explain": "C. A large gap is information: one of the inputs is wrong. Detail does not make bottom-up right — 13 extra million tonnes usually means an inflated activity count or usage rate. D is how bad investments get approved."
+    "answer": 3,
+    "explain": "D. A 40% gap means at least one assumption is badly wrong; averaging hides it. Detail is not accuracy, and choosing the convenient number is motivated reasoning."
    }
   ],
   "case": {
-   "title": "How Much Cement Will Nigeria Buy?",
-   "context": "A Nigerian cement company is deciding whether to add a new production line for 2026. Demand has grown for a decade, but it dipped in the 2016 recession, during COVID-19 and in the 2024 price spike.",
-   "question": "How many tonnes of cement will Nigeria consume in 2026 — and how confident can we be?",
-   "data": "cement_demand_monthly.csv — 168 months (2012–2025) of national cement consumption, price per bag, a rainy-season flag and a building-permits index. *Stylised teaching data.*",
-   "decision": "A 2026 forecast with a range and scenarios, checked against an independent market-sizing estimate."
-  }
+   "title": "How Much Cement Will Nigeria Buy in 2026?",
+   "context": "A Nigerian cement company is deciding whether to add a new production line. Demand has grown for a decade but dipped in the 2016 recession, the 2020 lockdown and the 2024 price spike. The industry already has far more capacity than demand.",
+   "question": "How many tonnes will Nigeria consume in 2026 — and how much capacity should we plan for?",
+   "data": "cement_demand_monthly.csv — 168 months (2012–2025): consumption, price per bag, rainy-season flag, building-permits index. *Stylised teaching data, sized to the real market.*",
+   "decision": "A 2026 forecast with a range and scenarios, cross-checked against market sizing, and a capacity choice that weighs the cost of too much against too little."
+  },
+  "v3": true,
+  "flow": [
+   {
+    "type": "hook",
+    "kicker": "THE QUESTION FOR TODAY",
+    "title": "A ₦100 Billion Bet on One Number",
+    "quote": "“Demand grows 5% every year. Build the new line — we'll sell everything we make.”",
+    "intro": "A capacity decision is a forecast in disguise. Before approving it, ask the three questions of today:",
+    "points": [
+     {
+      "icon": "FaChartLine",
+      "title": "1 · What is the pattern?",
+      "body": "What has demand actually done over ten years — trend, seasons and shocks?"
+     },
+     {
+      "icon": "FaBullseye",
+      "title": "2 · How wrong could we be?",
+      "body": "Which method has forecast best in the past — and what range should we plan for?"
+     },
+     {
+      "icon": "FaGlobeAfrica",
+      "title": "3 · Does the market add up?",
+      "body": "Do population, uses and capacity tell the same story as the time series?"
+     }
+    ],
+    "notes": "Ask participants how their company sets next year's sales budget. 'Last year plus X%' will be the most common answer — we test that rule today. Session 1's nowcasting tells us where we are; today is about where we are going.",
+    "_slide": 2
+   },
+   {
+    "type": "table",
+    "kicker": "EVEN GOVERNMENTS MISS",
+    "title": "Nigeria's 2024 Budget: The Forecast vs What Happened",
+    "fontSize": 12.5,
+    "head": [
+     "Assumption",
+     "2024 budget",
+     "2024 outturn",
+     "Miss",
+     "Why"
+    ],
+    "colW": [
+     2.5,
+     1.7,
+     1.9,
+     1.6,
+     4.2
+    ],
+    "rows": [
+     [
+      "Exchange rate (₦ per US$)",
+      "₦800",
+      "₦1,478 (average)",
+      "+85%",
+      "FX unification and the naira's fall in early 2024"
+     ],
+     [
+      "Inflation",
+      "21.4%",
+      "33.2% (average)",
+      "+11.8 pp",
+      "Pass-through from the naira, fuel and food"
+     ],
+     [
+      "Oil price (Brent, US$/bbl)",
+      "$78",
+      "$80.5 (average)",
+      "+3%",
+      "A world price: hard to beat the market's own forecast"
+     ],
+     [
+      "Oil output (million barrels/day)",
+      "1.78",
+      "≈ 1.55 (incl. condensate)",
+      "−13%",
+      "Theft, pipeline outages, under-investment"
+     ],
+     [
+      "Real GDP growth",
+      "3.76%",
+      "3.4%",
+      "−0.4 pp",
+      "Close — growth is slow-moving"
+     ]
+    ],
+    "note": "The **slow-moving** variable (growth) and the **market-priced** one (oil) were close. The **policy-driven** ones (naira, inflation) missed by most. Your forecasts will have the same pattern.",
+    "notes": "Sources: the signed 2024 Appropriation Act used ₦800/$, $77.96 oil and 1.78 mbpd (Arise, 31 Dec 2023; Budget Minister Bagudu, Legit.ng, 12 Jan 2024). The exchange rate moved ₦700 (MTEF) → ₦750 (executive proposal) → ₦800 (Act). Inflation 21.4% and GDP growth 3.76% are the proposal's figures (Nairametrics, 18 Dec 2023). Outturn: CBN official rate 2024 average ₦1,478 and NBS headline inflation 2024 average 33.2% (CBN statistics; old 2009 CPI base); Brent 2024 average $80.5 (FRED); NUPRC 2024 crude plus condensate 566.8m barrels ≈ 1.55 mbpd (Nairametrics, 14 Jan 2025); NBS 2024 real GDP growth 3.4% (Arise, Feb 2025). Crude alone averaged about 1.4 mbpd; it is not confirmed that the 1.78 benchmark includes condensate.",
+    "_slide": 3
+   },
+   {
+    "type": "plan",
+    "title": "Session 3: From History to a Number You Can Defend",
+    "sub": "75 minutes. The appendix holds the self-study depth.",
+    "blocks": [
+     {
+      "min": 10,
+      "label": "Opening"
+     },
+     {
+      "min": 20,
+      "label": "1 · Read the pattern"
+     },
+     {
+      "min": 25,
+      "label": "2 · Forecast honestly"
+     },
+     {
+      "min": 20,
+      "label": "3 · Size the market and decide"
+     }
+    ],
+    "items": [
+     {
+      "icon": "FaChartLine",
+      "title": "Read a demand series",
+      "body": "Separate **trend, seasonality and shocks**; seasonally adjust a month before judging it."
+     },
+     {
+      "icon": "FaBullseye",
+      "title": "Forecast and test",
+      "body": "Build a **trend × season** forecast, **backtest** it against rules of thumb, and express it as a **range**."
+     },
+     {
+      "icon": "FaGlobeAfrica",
+      "title": "Size a market and decide",
+      "body": "Size a Nigerian market **top-down and bottom-up**, and set capacity using the **cost of being wrong**."
+     }
+    ],
+    "_slide": 4
+   },
+   {
+    "type": "caseSlide",
+    "title": "How Much Cement Will Nigeria Buy in 2026?",
+    "illus": true,
+    "context": "A Nigerian cement company is deciding whether to add a new production line. Demand has grown for a decade but dipped in the 2016 recession, the 2020 lockdown and the 2024 price spike. The industry already has far more capacity than demand.",
+    "question": "How many tonnes will Nigeria consume in **2026** — and how much capacity should we plan for?",
+    "data": "cement_demand_monthly.csv — 168 months (2012–2025): consumption, price per bag, rainy-season flag, building-permits index. *Stylised teaching data, sized to the real market.*",
+    "decision": "A **2026 forecast with a range and scenarios**, cross-checked against **market sizing**, and a capacity choice that weighs the cost of too much against too little.",
+    "notes": "Real anchor: Global Cement Report (16th ed.) puts Nigerian consumption at about 33.9 Mt, up 8.5% (CemNet, 30 Apr 2026); CemNet estimates installed capacity at about 70 Mt a year. The stylised series reaches 32.2 Mt in 2025 — the same order of magnitude.",
+    "_slide": 5
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 1,
+    "title": "Read the Pattern",
+    "sub": "Trend, season, shock.",
+    "question": "What has demand actually done — and what part of it repeats?",
+    "_slide": 6
+   },
+   {
+    "type": "cards",
+    "kicker": "THREE COMPONENTS",
+    "title": "Every Demand Series Has Three Parts",
+    "perRow": 3,
+    "cards": [
+     {
+      "icon": "FaArrowUp",
+      "title": "Trend",
+      "body": "The long-run direction: population, urbanisation, incomes. Cement: about **4.3%** a year since 2012 in our series."
+     },
+     {
+      "icon": "FaCalendarAlt",
+      "title": "Seasonality",
+      "body": "The pattern that repeats every year: the rainy season slows building from June to September."
+     },
+     {
+      "icon": "FaBolt",
+      "title": "Shocks and noise",
+      "body": "Recessions, lockdowns, price spikes — and random month-to-month wobble no model can predict.",
+      "accent": true
+     }
+    ],
+    "note": "Forecasting = project the **trend**, apply the **season**, and put a **range** around it for the shocks.",
+    "_slide": 7
+   },
+   {
+    "type": "figure",
+    "kicker": "THE DATA",
+    "title": "Fourteen Years of Cement Demand",
+    "img": "sessions/s03/figures/python/s03_f01.png",
+    "fig": "S03-F01",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Consumption grew from **18.7 Mt** in 2012 to **32.2 Mt** in 2025 — about **4.3% a year**.",
+     "The 12-month moving average strips out the seasons and shows the **trend**.",
+     "Three shocks: the 2016 recession, the 2020 lockdown and the 2024 price spike.",
+     "Each time, demand returned to trend within about a year."
+    ],
+    "_slide": 8
+   },
+   {
+    "type": "figure",
+    "kicker": "SEASONALITY",
+    "title": "The Rainy-Season Rhythm",
+    "img": "sessions/s03/figures/python/s03_f02.png",
+    "fig": "S03-F02",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "February is about **14% above** an average month; July and August about **18% below**.",
+     "Rain stops site work, so demand dips from June to September.",
+     "Plan **capacity, stock and cash** for the peak months, not the annual average.",
+     "Schedule maintenance for the **rainy season**, when demand is lowest."
+    ],
+    "_slide": 9
+   },
+   {
+    "type": "worked",
+    "kicker": "SEASONAL ADJUSTMENT, WORKED",
+    "title": "Was August 2025 a Collapse?",
+    "tableW": 5.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "2025",
+      "Actual (Mt)",
+      "Seasonal index",
+      "Seasonally adjusted (Mt)",
+      "× 12 = annual rate"
+     ],
+     "rows": [
+      [
+       "February",
+       "2.932",
+       "1.14",
+       "2.572",
+       "30.9 Mt"
+      ],
+      [
+       "August",
+       "2.139",
+       "0.82",
+       "2.609",
+       "31.3 Mt"
+      ]
+     ],
+     "total": [
+      "Change Feb → Aug",
+      "−27%",
+      "",
+      "+1.4%",
+      "steady"
+     ]
+    },
+    "steps": [
+     "Raw numbers say August sales were **27% below** February. The sales director wants to cut production.",
+     "Divide each month by its **seasonal index** (how far that calendar month normally sits from average).",
+     "Seasonally adjusted, August was **1.4% above** February: the business is steady; only the weather changed.",
+     "Multiply by 12 to read any month as an **annual rate** — comparable with the full-year forecast."
+    ],
+    "result": "Never judge a month against the previous month without **seasonal adjustment**.",
+    "notes": "Seasonal index = the month effects from the trend × season regression, rescaled so the 12 months average 1.00 (s03_figures.py). The lab uses a simpler version — each month divided by its calendar-year average — which gives almost the same numbers (Feb 1.13, Aug 0.82). Official statistics do the same: compare NBS releases that are 'seasonally adjusted' with those that are not.",
+    "_slide": 10
+   },
+   {
+    "type": "concept",
+    "kicker": "THE MODEL",
+    "title": "Trend × Season: A Forecast in One Line",
+    "icon": "FaCalculator",
+    "plain": "Next month's demand = the **trend level** for that month × the **seasonal index** for that calendar month. Both are fitted from history in one regression.",
+    "formula": "forecast = trend(t) × season(month)",
+    "formulaSize": 20,
+    "example": "Trend level for August 2026 ≈ 2.76 Mt; August index ≈ 0.82 → forecast ≈ **2.26 Mt**.",
+    "why": "Simple models are **transparent**: a manager can see and challenge every assumption. That matters more than an extra decimal of accuracy.",
+    "notes": "Technically: log(demand) = a + b·t + month dummies. The slope b gives growth of about 0.35% a month, 4.3% a year.",
+    "_slide": 11
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 2,
+    "title": "Forecast Honestly",
+    "sub": "Test it, give a range, plan for scenarios.",
+    "question": "Which method should we trust — and how wrong could it be?",
+    "_slide": 12
+   },
+   {
+    "type": "figure",
+    "kicker": "THE BACKTEST",
+    "title": "Pretend It Is January 2024",
+    "img": "sessions/s03/figures/python/s03_f03.png",
+    "fig": "S03-F03",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Fit each method on **2012–2023 only** and forecast 2024–2025.",
+     "Then compare with what actually happened.",
+     "This **backtest** is the only honest way to judge a forecasting method.",
+     "The model followed both season and trend; 'same month last year' missed the growth."
+    ],
+    "_slide": 13
+   },
+   {
+    "type": "worked",
+    "kicker": "MEASURING ACCURACY",
+    "title": "MAPE: How Far Off Were We, on Average?",
+    "tableW": 5.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "Month",
+      "Actual (Mt)",
+      "Forecast (Mt)",
+      "Error",
+      "|Error| ÷ actual"
+     ],
+     "rows": [
+      [
+       "Jan",
+       "2.60",
+       "2.50",
+       "−0.10",
+       "3.8%"
+      ],
+      [
+       "Feb",
+       "2.40",
+       "2.50",
+       "+0.10",
+       "4.2%"
+      ],
+      [
+       "Mar",
+       "2.00",
+       "2.20",
+       "+0.20",
+       "10.0%"
+      ]
+     ],
+     "total": [
+      "Mean absolute % error (MAPE)",
+      "",
+      "",
+      "",
+      "6.0%"
+     ]
+    },
+    "steps": [
+     "**Error** = forecast − actual. Over- and under-forecasts would cancel out, so take the **absolute** value.",
+     "Divide by the actual to compare months of different size, then average: **MAPE = 6.0%**.",
+     "Also check **% bias**: the average signed percentage error. A forecast that is always high is a planning problem even if MAPE looks fine.",
+     "Compare every method's MAPE on the **same backtest period**."
+    ],
+    "result": "MAPE answers 'how far off, on average?'; bias answers 'which way do we lean?' — track both.",
+    "notes": "Illustrative numbers. MAPE misbehaves when actuals are near zero (new products, intermittent demand); there, use mean absolute error or scaled errors (MASE).",
+    "_slide": 14
+   },
+   {
+    "type": "figure",
+    "kicker": "THE SCOREBOARD",
+    "title": "Which Method Forecast Best?",
+    "img": "sessions/s03/figures/python/s03_f04.png",
+    "fig": "S03-F04",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "**Trend + seasonal model: 4.1%** average error — the best.",
+     "'Same month last year': **5.8%**. The budget rule 'last year + 5%': **6.6%**.",
+     "A flat average ignores the seasons: **10.9%**.",
+     "The 2024 price spike hurt every method — no method saw it coming. Hence ranges and scenarios."
+    ],
+    "_slide": 15
+   },
+   {
+    "type": "lead",
+    "kicker": "WHAT THE EVIDENCE SAYS",
+    "title": "Simple, Combined and Humble Forecasts Win",
+    "leadLabel": "Forecasting research",
+    "leadSize": 17,
+    "lead": "In large forecasting competitions, **simple methods and combinations** of methods beat most complex ones — and people are reliably **over-confident**.",
+    "leadFoot": "Build the habit: backtest, combine, give a range.",
+    "points": [
+     {
+      "h": "The M4 competition (2018)",
+      "t": "100,000 real time series. **12 of the 17** most accurate methods were **combinations**; the winner was a statistics–ML **hybrid**; all six **pure** machine-learning entries did **worse** than a simple combination benchmark."
+     },
+     {
+      "h": "The planning fallacy",
+      "t": "Kahneman and Tversky: people build forecasts from the inside view of their own plan and ignore how similar plans turned out — so they are **systematically optimistic**."
+     },
+     {
+      "h": "Reference-class forecasting",
+      "t": "Flyvbjerg's fix: start from the **track record of similar projects** (cost overruns, demand shortfalls) and adjust from there."
+     },
+     {
+      "h": "Manager's use",
+      "t": "Ask of every forecast: **what is the base rate?** How did the last five capacity expansions in this industry actually fill?",
+      "accent": true
+     }
+    ],
+    "notes": "Makridakis, Spiliotis & Assimakopoulos, 'The M4 Competition: Results, findings, conclusion and way forward', International Journal of Forecasting 34(4):802–808, 2018 (winner: Smyl's hybrid exponential-smoothing/RNN). The term 'inside view' comes from Kahneman & Lovallo (1993). Kahneman & Tversky (1979) on the planning fallacy; Flyvbjerg (2006), 'From Nobel Prize to project management: getting risks right', Project Management Journal. Tetlock & Gardner, 'Superforecasting' (2015), on calibration.",
+    "_slide": 16
+   },
+   {
+    "type": "compare",
+    "kicker": "TWO WAYS TO FORECAST",
+    "title": "Judgement vs Models — Use Both",
+    "left": {
+     "icon": "FaUserTie",
+     "title": "Judgemental forecasts",
+     "tag": "Sales teams, experts, management",
+     "items": [
+      "Know about new projects, policy changes, competitor moves",
+      "Fast, cheap, easy to explain",
+      "Prone to optimism and anchoring on last year",
+      "Best for one-offs and turning points"
+     ]
+    },
+    "right": {
+     "icon": "FaCalculator",
+     "title": "Model-based forecasts",
+     "tag": "Statistics from historical data",
+     "items": [
+      "Consistent, repeatable, easy to backtest",
+      "Capture trend and season well",
+      "Blind to events not in the data",
+      "Best for stable, repeating patterns"
+     ]
+    },
+    "note": "Start from the **model**, let judgement **adjust it for named, specific reasons** — and record each adjustment so you can check it later.",
+    "_slide": 17
+   },
+   {
+    "type": "figure",
+    "kicker": "THE FORECAST",
+    "title": "2026: A Number and a Range",
+    "img": "sessions/s03/figures/python/s03_f05.png",
+    "fig": "S03-F05",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Base forecast for 2026: about **32.9 Mt**.",
+     "Monthly bands show where each month will probably fall (90% range).",
+     "For the year: roughly **31.0–34.9 Mt**, based on how far past years strayed from the model.",
+     "Say it as a range: 'about 33, very likely between 31 and 35'."
+    ],
+    "_slide": 18
+   },
+   {
+    "type": "figure",
+    "kicker": "SCENARIOS",
+    "title": "Plan for More Than One Future",
+    "img": "sessions/s03/figures/python/s03_f06.png",
+    "fig": "S03-F06",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "**Downside (−8%)**: another price spike and weak real incomes → **30.3 Mt**.",
+     "**Base**: trend and season continue → **32.9 Mt**.",
+     "**Upside (+6%)**: a large housing and road programme → **34.9 Mt**.",
+     "Name a **signpost** for each: cement price, mortgage rates, capital budget releases."
+    ],
+    "notes": "Scenario sizes are illustrative. Session 14 builds scenario trees and signposts properly.",
+    "_slide": 19
+   },
+   {
+    "type": "figure",
+    "kicker": "MACHINE LEARNING, RESPONSIBLY",
+    "title": "More Complex Is Not More Accurate",
+    "img": "sessions/s03/figures/python/s03_f08.png",
+    "fig": "S03-F08",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "We made the trend curve more and more flexible.",
+     "Fit to the **past** barely changed (about **4%** error).",
+     "Forecasts of the **future** got much worse: from 4% to over **90%** error.",
+     "**Overfitting**: the model memorises the past instead of learning its pattern. ML earns its place with many series and many drivers — and only after a backtest."
+    ],
+    "notes": "Gradient boosting and neural nets help when there are many related series (SKUs, stores) and many drivers. Watch for data leakage: never let the model see information from the period it forecasts.",
+    "_slide": 20
+   },
+   {
+    "type": "check",
+    "q": "Your sales team forecasts next year at 'this year + 10%'. A backtested trend-plus-seasonal model says +4%, with a range of −2% to +10%. What should you do?",
+    "options": [
+     "Average the two and use +7%",
+     "Start from +4%, ask for named, specific reasons for any upward adjustment, and plan capacity against the range",
+     "Use +10% — the sales team knows the market",
+     "Ignore the sales team; use +4% exactly"
+    ],
+    "answer": 1,
+    "explain": "B. The backtested model is the disciplined baseline; judgement adjusts it only for specific, recorded reasons (a new contract, a new region), and plans cover the range. A splits the difference without evidence; C ignores the planning fallacy; D throws away information the model cannot see.",
+    "_slide": 21
+   },
+   {
+    "type": "section",
+    "label": "PART",
+    "num": 3,
+    "title": "Size the Market and Decide",
+    "sub": "Two routes to one number — then a capacity choice.",
+    "question": "Does the market add up — and how much capacity should we plan for?",
+    "_slide": 22
+   },
+   {
+    "type": "worked",
+    "kicker": "TOP-DOWN SIZING",
+    "title": "Start From the Whole Economy",
+    "tableW": 5.6,
+    "table": {
+     "head": [
+      "Step",
+      "Value",
+      "Source"
+     ],
+     "rows": [
+      [
+       "Population, 2025",
+       "237.5 million",
+       "World Bank"
+      ],
+      [
+       "Cement use per person",
+       "≈ 129 kg a year",
+       "CemNet estimate"
+      ],
+      [
+       "Market = population × use",
+       "≈ 30.6 Mt",
+       "calculation"
+      ],
+      [
+       "Industry report (GCR 16)",
+       "≈ 33.9 Mt",
+       "Global Cement Report"
+      ]
+     ]
+    },
+    "steps": [
+     "Top-down sizing starts from a **big, known number** and multiplies by a **rate of use**.",
+     "237.5m people × 0.129 t = **30.6 Mt**, about 10% below the industry's **33.9 Mt**. Yet 33.9 Mt ÷ 237.5m = **143 kg** — the source's own two numbers disagree.",
+     "Benchmark the rate: the world average is about **550 kg** a person. Nigeria uses a quarter of that — room to grow, or a sign of high prices and low incomes?",
+     "The **rate of use** carries all the weight — test it against peers at similar incomes."
+    ],
+    "result": "Top-down is fast; its weak point is the **use-per-person** rate — and even published sources can disagree with themselves.",
+    "notes": "Sources: World Bank SP.POP.TOTL (Nigeria 2025: 237,527,782). CemNet, 'Nigeria is in the middle of a new cement capacity frenzy' (30 Apr 2026): consumption about 33.9 Mt (+8.5%, citing Global Cement Report 16); 129 kg per capita and world average about 550 kg are CemNet's estimates. CemNet uses the same population, so its 129 kg and 33.9 Mt are mutually inconsistent (33.9 Mt implies 143 kg): probably different reference years. A good classroom exercise: spot the inconsistency before trusting either number.",
+    "_slide": 23
+   },
+   {
+    "type": "concept",
+    "kicker": "BOTTOM-UP SIZING",
+    "title": "Add Up the Uses",
+    "icon": "FaLayerGroup",
+    "plain": "**Bottom-up** sizing builds the market from its parts: homes, roads, factories and repairs, times the cement each needs.",
+    "formula": "market = Σ (units of activity × cement per unit)",
+    "formulaSize": 18,
+    "example": "About 450,000 new homes × ~32 t = **14.4 Mt**, plus repairs (6.5), public works (6.0), commercial (4.5), precast (2.4) = **33.8 Mt**.",
+    "why": "Slower, but it shows **which segments drive demand** — and which ones a housing programme, a capital-budget release or a price shock would hit.",
+    "notes": "Segment assumptions are stylised teaching numbers. Real sizing would use NBS housing data, the federal capital budget, company reports and project pipelines.",
+    "_slide": 24
+   },
+   {
+    "type": "figure",
+    "kicker": "RECONCILE",
+    "title": "Do the Routes Agree?",
+    "img": "sessions/s03/figures/python/s03_f07.png",
+    "fig": "S03-F07",
+    "script": "s03_figures.py / .R",
+    "illus": true,
+    "points": [
+     "Top-down **30.6 Mt**, bottom-up **33.8 Mt** (stylised), industry report **33.9 Mt**: within about 10%.",
+     "If they disagree badly, one assumption is wrong. Find it before you build.",
+     "New homes are the biggest segment: watch **mortgage rates, real incomes and land policy**.",
+     "Three views pointing the same way — and an explanation for the gap — is what a board should see."
+    ],
+    "_slide": 25
+   },
+   {
+    "type": "worked",
+    "kicker": "THE CAPACITY DECISION",
+    "title": "How Much to Build? Weigh the Cost of Being Wrong",
+    "tableW": 5.6,
+    "illus": true,
+    "table": {
+     "head": [
+      "Per tonne of demand",
+      "₦ thousand"
+     ],
+     "rows": [
+      [
+       "Too little capacity: margin lost on a sale we cannot make",
+       "20"
+      ],
+      [
+       "Too much capacity: cost of an idle tonne of capacity",
+       "8"
+      ],
+      [
+       "Critical ratio = 20 ÷ (20 + 8)",
+       "0.71"
+      ]
+     ],
+     "total": [
+      "Plan for the 71st percentile of demand",
+      "≈ 33.6 Mt"
+     ]
+    },
+    "steps": [
+     "A forecast is a **distribution**, not a number. Here: centre **32.9 Mt**, typical annual error about **3.5%**.",
+     "Ask what each error **costs**. Missing a sale loses ₦20k of margin; an idle tonne of capacity costs ₦8k.",
+     "When shortfalls cost more than surpluses, plan **above** the central forecast — at the **71st percentile**: about **33.6 Mt**.",
+     "If idle capacity were the dearer mistake, you would plan **below** the centre. The forecast is the same; the **decision** differs."
+    ],
+    "result": "Capacity = the demand level where the **cost of too little** balances the **cost of too much**.",
+    "notes": "The 'newsvendor' critical-fractile rule from operations management: choose the quantity at percentile Cu ÷ (Cu + Co). Here 20 ÷ 28 = 0.714; z = 0.57; 32.9 × exp(0.57 × 0.035) ≈ 33.6 Mt. With Nigeria's cement capacity already about double consumption, the cost of idle capacity for the industry is high — a reason to doubt the '5% and build' hook.",
+    "_slide": 26
+   },
+   {
+    "type": "check",
+    "q": "Top-down sizing gives 32 Mt and bottom-up gives 45 Mt. What is the best next step?",
+    "options": [
+     "Average them: 38.5 Mt",
+     "Trust bottom-up because it is more detailed",
+     "Use whichever supports the investment case",
+     "Find which assumption explains the gap (e.g. tonnes per house or homes built) and check it against independent data"
+    ],
+    "answer": 3,
+    "explain": "D. A 40% gap means at least one assumption is badly wrong; averaging hides it. Detail is not accuracy, and choosing the convenient number is motivated reasoning.",
+    "_slide": 27
+   },
+   {
+    "type": "lab",
+    "title": "Lab 3: Cement Demand in 2026",
+    "time": "20 minutes",
+    "data": "data/cement_demand_monthly.csv",
+    "r": "sessions/s03/R/s03_lab.R",
+    "py": "sessions/s03/python/s03_lab.py",
+    "steps": [
+     "Plot the series and a 12-month moving average; mark the three shocks.",
+     "Estimate the **seasonal index**; seasonally adjust the latest month.",
+     "Backtest **four methods** on 2024–2025 and compare MAPE and bias.",
+     "Forecast 2026 with a **90% range** and three scenarios.",
+     "Size the market top-down and bottom-up; set capacity with the **critical ratio**."
+    ],
+    "deliver": "a one-page memo: 2026 demand (base, range, scenarios), market-sizing check, and a capacity recommendation with the cost logic.",
+    "_slide": 28
+   },
+   {
+    "type": "recap",
+    "items": [
+     "Every series = **trend × season × shock**: seasonally adjust before judging a month.",
+     "**Backtest** every method; keep the one that wins on data it has not seen.",
+     "Give a **number, a range and scenarios** — and watch for the planning fallacy.",
+     "Size markets **two ways** and reconcile; check the per-person assumption against peers.",
+     "Set capacity with the **cost of being wrong**, not the central forecast."
+    ],
+    "prework": "Read the case 'Fintech and Finance Transformation: The Rise of Ant Financial Services' (917-0029-1). Think: what makes a platform market different from a market for cement?",
+    "next": "Session 4: Market Structure, Platforms & Competition Policy",
+    "_slide": 29
+   },
+   {
+    "type": "section",
+    "label": "APPENDIX",
+    "num": 0,
+    "title": "Self-Study: Going Deeper",
+    "sub": "Read these before the quiz. They are not presented in class.",
+    "question": "What else do I need to master Session 3 on my own?",
+    "_slide": 30
+   },
+   {
+    "type": "lead",
+    "kicker": "FORECASTING WITHOUT GOOD DATA",
+    "title": "Forecasting in Nigeria When the Data Are Thin",
+    "study": true,
+    "leadLabel": "Use proxies and triangulate",
+    "leadSize": 17,
+    "lead": "Official series are often **late, revised or missing**. Good forecasters build from **proxies** and check them against each other.",
+    "leadFoot": "Three imperfect signals that agree beat one 'perfect' number.",
+    "points": [
+     {
+      "h": "Company and industry data",
+      "t": "Listed producers' quarterly volumes, distributor orders, trade-association figures."
+     },
+     {
+      "h": "Activity proxies",
+      "t": "Building permits, the PMI's construction and new-orders components, diesel and electricity use, port arrivals of inputs."
+     },
+     {
+      "h": "Big-picture anchors",
+      "t": "Population, urbanisation, real income growth and peer-country use per person."
+     },
+     {
+      "h": "Revisions and breaks",
+      "t": "Session 1's lesson: check base years and vintages before fitting any model."
+     }
+    ],
+    "_slide": 31
+   },
+   {
+    "type": "table",
+    "kicker": "WHICH METHOD WHEN",
+    "title": "A Forecasting Toolkit for Managers",
+    "study": true,
+    "fontSize": 11.5,
+    "head": [
+     "Method",
+     "Best for",
+     "Watch out for"
+    ],
+    "colW": [
+     3,
+     4.5,
+     4.4
+    ],
+    "rows": [
+     [
+      "Naïve (same as last period / last year)",
+      "A benchmark every method must beat",
+      "Misses trend or season"
+     ],
+     [
+      "Moving averages, exponential smoothing",
+      "Stable series; many SKUs",
+      "Lags at turning points"
+     ],
+     [
+      "Trend × season regression",
+      "Clear trend and seasons; explainable",
+      "Breaks when the trend changes"
+     ],
+     [
+      "Driver (causal) models",
+      "When you know what moves demand (prices, income)",
+      "You must forecast the drivers too"
+     ],
+     [
+      "Machine learning (boosting, neural nets)",
+      "Many series, many drivers, lots of data",
+      "Overfitting; leakage; poor at breaks"
+     ],
+     [
+      "Judgement and scenarios",
+      "One-offs, turning points, policy shocks",
+      "Optimism; anchoring; record the reasons"
+     ]
+    ],
+    "_slide": 32
+   },
+   {
+    "type": "mistakes",
+    "title": "Common Forecasting Mistakes",
+    "study": true,
+    "items": [
+     {
+      "bad": "Presenting a single number as 'the forecast'.",
+      "good": "Give a **base, a range and scenarios** with signposts."
+     },
+     {
+      "bad": "'Last year + X%' because that is how budgets are done.",
+      "good": "**Backtest** against simple rules; keep the winner."
+     },
+     {
+      "bad": "Comparing a month with the previous month.",
+      "good": "**Seasonally adjust** first, or compare with the same month last year."
+     },
+     {
+      "bad": "Choosing the model that fits history best.",
+      "good": "Judge models on **data they have not seen**."
+     },
+     {
+      "bad": "Sizing only top-down.",
+      "good": "Cross-check **bottom-up**; reconcile the two."
+     },
+     {
+      "bad": "Planning capacity on the central forecast.",
+      "good": "Use the **cost of too little vs too much**."
+     }
+    ],
+    "_slide": 33
+   },
+   {
+    "type": "glossary",
+    "study": true,
+    "terms": [
+     {
+      "term": "Trend",
+      "def": "The long-run direction of a series."
+     },
+     {
+      "term": "Seasonal index",
+      "def": "How far a calendar month typically sits from an average month."
+     },
+     {
+      "term": "Seasonally adjusted",
+      "def": "A figure with the normal seasonal pattern removed."
+     },
+     {
+      "term": "Backtest",
+      "def": "Forecasting a past period using only data available before it."
+     },
+     {
+      "term": "MAPE",
+      "def": "Mean absolute percentage error: average size of forecast misses."
+     },
+     {
+      "term": "Bias",
+      "def": "Average signed error: does the forecast lean high or low?"
+     },
+     {
+      "term": "Overfitting",
+      "def": "A model that memorises the past and forecasts the future badly."
+     },
+     {
+      "term": "Planning fallacy",
+      "def": "The tendency to under-estimate costs and over-estimate benefits."
+     },
+     {
+      "term": "Top-down / bottom-up",
+      "def": "Sizing from a big total down, or from parts up."
+     },
+     {
+      "term": "Critical ratio",
+      "def": "Cost of too little ÷ (cost of too little + cost of too much)."
+     }
+    ],
+    "_slide": 34
+   },
+   {
+    "type": "readings",
+    "study": true,
+    "items": [
+     {
+      "core": true,
+      "ref": "Sahay, Time Series Analysis and Forecasting (BEP8370)",
+      "why": "Trend, seasonality, smoothing and evaluation — the core reading."
+     },
+     {
+      "core": true,
+      "ref": "Sahay, Business Analytics at a Glance (BEP8363)",
+      "why": "Where forecasting sits in the analytics toolkit."
+     },
+     {
+      "ref": "Gujarati, Basic Econometrics",
+      "why": "Regression foundations behind the trend × season and driver models."
+     },
+     {
+      "ref": "Makridakis et al. (2018), 'The M4 Competition', IJF",
+      "why": "Large-scale evidence on which forecasting methods work."
+     },
+     {
+      "ref": "Tetlock & Gardner, Superforecasting (2015)",
+      "why": "Calibration, base rates and how to get better at judgement."
+     },
+     {
+      "ref": "Flyvbjerg (2006), reference-class forecasting",
+      "why": "Correcting the planning fallacy with the track record of similar projects."
+     }
+    ],
+    "_slide": 35
+   }
+  ]
  },
  "s04": {
   "objectives": [

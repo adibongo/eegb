@@ -126,7 +126,221 @@ def session_page(s):
     open(f"sessions/{slug}/index.qmd", "w", encoding="utf-8").write("".join(L))
 
 
-for s in S: session_page(s)
+# ---------------------------------------------------------------------------------------------
+# v3 session pages: follow the rebuilt deck slide by slide (Sessions rebuilt from Nov 2026)
+# ---------------------------------------------------------------------------------------------
+def md(t):
+    """Deck text uses **bold** and _italic_ already; keep it, turn newlines into paragraph breaks."""
+    t = re.sub(r"(?<!\\)\$", r"\\$", t or "")          # a bare $ would start LaTeX maths in Quarto
+    return t.replace("\n\n", "\n").replace("\n", "\n\n").strip()
+
+
+def dol(t): return re.sub(r"(?<!\\)\$", r"\\$", t)
+
+
+def cell(t): return md(t).replace("\n\n", "<br>").replace("|", "\\|")
+
+
+def sources(x):
+    """Pull the source sentences out of the speaker notes (the rest is facilitator guidance)."""
+    out = []
+    for para in (x.get("notes") or "").split("\n"):
+        if re.search(r"\b(Sources?|USDA|World Bank|CBN statistics|NBS|FRED|Nairametrics|Mankiw|Ferguson|Piketty|Kahneman|Makridakis|Flyvbjerg|CemNet)\b", para) \
+           and not para.strip().upper().startswith("ANSWERS"):
+            out.append(para.strip())
+    if not out: return ""
+    body = "\n\n".join(out)
+    return f"::: {{.callout-note collapse=\"true\" appearance=\"minimal\" icon=false}}\n## Sources and data notes\n\n{body}\n:::\n\n"
+
+
+def pipe_table(head, rows, total=None):
+    T = "| " + " | ".join(cell(h) for h in head) + " |\n|" + "---|" * len(head) + "\n"
+    for r in rows: T += "| " + " | ".join(cell(str(v)) for v in r) + " |\n"
+    if total: T += "| " + " | ".join(f"**{cell(str(v))}**" if str(v).strip() else "" for v in total) + " |\n"
+    return T + "\n"
+
+
+def slide_img(slug, n):
+    return f"sessions/{slug}/figures/slides/{slug}_slide{n:02d}.png"
+
+
+def render_slide(x, slug, rel):
+    t = x["type"]; L = []
+    kick = f"<span class=\"slide-kicker\">{x['kicker']}</span>\n\n" if x.get("kicker") else ""
+    tag = " <span class='tag tag-illus'>illustrative</span>" if x.get("illus") else ""
+    h = lambda: f"### {x.get('title', '')}{tag}\n\n{kick}"
+    if t == "section":
+        if x.get("label") == "APPENDIX":
+            L.append(f"## Self-study: going deeper\n\n{md(x.get('sub'))}\n\n")
+        else:
+            L.append(f"## Part {x.get('num')} · {x['title']}\n\n")
+            if x.get("question"): L.append(f"::: {{.part-question}}\n**The question this part answers:** {md(x['question'])}\n:::\n\n")
+        return "".join(L)
+    if t in ("plan", "roadmap", "lab", "recap", "glossary", "readings", "caseSlide"):
+        return ""
+    if t == "hook":
+        L.append(f"## {x['title']}\n\n::: {{.hook-quote}}\n{md(x['quote'])}\n:::\n\n{md(x.get('intro'))}\n\n::: {{.grid}}\n")
+        for p in x.get("points", []):
+            L.append(f"::: {{.g-col-12 .g-col-md-4 .obj-card}}\n**{p['title']}**\n\n{md(p['body'])}\n:::\n")
+        L.append(":::\n\n")
+    elif t == "pnlmap":
+        L.append(h())
+        head = [x.get("corner", "")] + x["cols"]
+        rows = [[f"**{r['driver']}**"] + [(f"**{c[1]}**" if c[0] >= 3 else c[1]) or "—" for c in r["cells"]] for r in x["rows"]]
+        L.append(pipe_table(head, rows) + "*Bold = largest effect for an import-dependent FMCG firm.*\n\n")
+        if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
+    elif t == "table":
+        L.append(h() + pipe_table(x["head"], x["rows"]))
+        if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
+    elif t == "worked":
+        tb = x["table"]
+        L.append(h() + pipe_table(tb["head"], tb["rows"], tb.get("total")))
+        L.append("**Step by step**\n\n" + "\n".join(f"{i}. {md(st)}" for i, st in enumerate(x["steps"], 1)) + "\n\n")
+        if x.get("aside"): L.append(f"::: {{.callout-note appearance=\"simple\" icon=false}}\n## {x.get('asideTitle', 'Think about it')}\n\n{md(x['aside'])}\n:::\n\n")
+        if x.get("result"): L.append(f"::: {{.result-box}}\n{md(x['result'])}\n:::\n\n")
+    elif t == "cards":
+        L.append(h() + "::: {.grid}\n")
+        w = 12 // max(1, min(4, x.get("perRow", 3)))
+        for c in x["cards"]:
+            foot = f"\n\n*{md(c['foot'])}*" if c.get("foot") else ""
+            L.append(f"::: {{.g-col-12 .g-col-md-{w} .obj-card}}\n**{c['title']}**\n\n{md(c['body'])}{foot}\n:::\n")
+        L.append(":::\n\n")
+        if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
+    elif t == "compare":
+        L.append(h() + "::: {.grid}\n")
+        for side in ("left", "right"):
+            c = x[side]
+            L.append(f"::: {{.g-col-12 .g-col-md-6 .obj-card}}\n**{c['title']}**\n\n*{md(c.get('tag'))}*\n\n" + "\n".join(f"- {md(i)}" for i in c["items"]) + "\n:::\n")
+        L.append(":::\n\n")
+        if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
+    elif t == "figure":
+        img = x["img"]; rimg = img.replace("/python/", "/r/")
+        L.append(h() + f"::: {{.panel-tabset group=\"lang\"}}\n## Python\n![]({rel}{img}){{.fig-img fig-alt=\"{x['fig']} (Python)\"}}\n\n")
+        if os.path.exists(rimg): L.append(f"## R\n![]({rel}{rimg}){{.fig-img fig-alt=\"{x['fig']} (R)\"}}\n\n")
+        L.append(":::\n\n" + "\n".join(f"- {md(p)}" for p in x.get("points", [])) + f"\n\n<span class=\"fig-id\">{x['fig']} · replicate with {x.get('script', '')}</span>\n\n")
+    elif t == "chart":
+        d = x["data"][0]
+        L.append(h() + pipe_table(["", "%"], [[a, f"{b:g}%"] for a, b in zip(d["labels"], d["values"])]))
+        if x.get("source"): L.append(f"*{md(x['source'])}*\n\n")
+        L.append("\n".join(f"- {md(p)}" for p in x.get("points", [])) + "\n\n")
+    elif t == "lead":
+        L.append(h())
+        lab = f"**{x['leadLabel']}.** " if x.get("leadLabel") else ""
+        L.append(f"::: {{.lead-box}}\n{lab}{md(x['lead'])}\n:::\n\n")
+        L.append("\n".join(f"- **{p['h']}.** {md(p['t'])}" for p in x["points"]) + "\n\n")
+        if x.get("leadFoot"): L.append(f"*{md(x['leadFoot'])}*\n\n")
+        if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
+    elif t == "quote":
+        L.append(f"### {x.get('kicker', '').title()}\n\n> {md(x['quote'])}\n>\n> — {x['who']}\n\n")
+        L.append("\n".join(f"- **{p['h']}.** {md(p['t'])}" for p in x.get("points", [])) + "\n\n")
+    elif t == "concept":
+        L.append(h() + f"{md(x['plain'])}\n\n")
+        if x.get("formula"): L.append(f"::: {{.formula}}\n{md(x['formula'].replace(chr(10), ' '))}\n:::\n\n")
+        if x.get("formulaNote"): L.append(f"*{md(x['formulaNote'])}*\n\n")
+        if x.get("example"): L.append(f"**Example.** {md(x['example'])}\n\n")
+        if x.get("why"): L.append(f"::: {{.callout-tip appearance=\"minimal\"}}\n**Why a manager cares.** {md(x['why'])}\n:::\n\n")
+    elif t == "stats":
+        L.append(h() + "::: {.grid}\n")
+        for st in x["stats"]:
+            L.append(f"::: {{.g-col-12 .g-col-md-4 .stat-card}}\n[{st['value']}]{{.stat-value}}\n\n**{st['label']}**\n\n{md(st.get('desc'))}\n:::\n")
+        L.append(":::\n\n")
+        if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
+    elif t in ("chain", "timeline"):
+        items = x.get("steps") or x.get("events")
+        L.append(h() + "\n".join(f"{i}. **{it.get('label') or it.get('date')}** — {md(it.get('desc'))}" for i, it in enumerate(items, 1)) + "\n\n")
+        if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
+    elif t == "flow":
+        L.append(h() + f"![]({rel}{slide_img(slug, x['_slide'])}){{.fig-img fig-alt=\"{x.get('title')}\"}}\n\n" + "\n".join(f"- {md(p)}" for p in x.get("points", [])) + "\n\n")
+    elif t == "exercise":
+        L.append(h() + "\n".join(f"{i}. {md(it)}" for i, it in enumerate(x["items"], 1)) + "\n\n")
+        if x.get("note"): L.append(f"*{md(x['note'])}*\n\n")
+        ans = re.search(r"ANSWERS?:(.*)", x.get("notes") or "", re.S)
+        if ans: L.append(f"::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Show answers\n{ans.group(1).strip()}\n:::\n\n")
+    elif t == "check":
+        L.append(f"### Check your understanding\n\n**{md(x['q'])}**\n\n" + "\n".join(f"- **{'ABCD'[j]}.** {o}" for j, o in enumerate(x["options"])) + "\n\n")
+        L.append(f"::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Show answer\n{md(x['explain'])}\n:::\n\n")
+    elif t == "mistakes":
+        L.append(f"### {x.get('title') or 'Common mistakes'}\n\n" + pipe_table(["The trap", "The better habit"], [[m['bad'], m['good']] for m in x["items"]]))
+    else:
+        L.append(h())
+    if t not in ("check", "exercise"): L.append(sources(x))
+    return dol("".join(L))
+
+
+def session_page_v3(s):
+    slug, n = s["slug"], s["num"]; c = C[slug]; part = PARTS[s["part"]]; rel = "../../"
+    flow = c["flow"]; byt = lambda t: [x for x in flow if x["type"] == t]
+    pptx, pdf = deck_file(s), deck_file(s, "pdf")
+    prev = next((x for x in S if x["num"] == n - 1), None); nxt = next((x for x in S if x["num"] == n + 1), None)
+    L = [f"---\ntitle: \"Session {n}: {yq(s['title'])}\"\nsubtitle: \"{part[0]} · {part[1]}\"\n"
+         f"description: \"{yq(s['focus'])}\"\nimage: {rel}{part[2]}\n---\n"]
+    L.append(f"::: {{.session-banner}}\n![]({rel}{part[2]}){{.banner-hex width=\"96\"}}\n\n"
+             f"**Session {n} of {NS}** · Facilitator: {s['facilitator']}<br>*The question:* {md(byt('hook')[0]['quote']) if byt('hook') else ''}\n\n:::\n\n")
+    L.append("## The slides {.unnumbered}\n\n::: {.download-row}\n")
+    if pptx: L.append(f"[<i class=\"bi bi-file-earmark-slides\"></i> Teaching slides (.pptx)]({rel}sessions/{slug}/slides/{pptx}){{.btn .btn-primary download=\"\"}}\n")
+    if pdf: L.append(f"[<i class=\"bi bi-file-earmark-pdf\"></i> Slides (PDF)]({rel}sessions/{slug}/slides/{pdf}){{.btn .btn-outline-primary download=\"\"}}\n")
+    L.append(f"[<i class=\"bi bi-github\"></i> Session folder on GitHub]({REPO}/tree/main/sessions/{slug}){{.btn .btn-outline-secondary}}\n:::\n\n")
+    if pdf:
+        L.append(f"```{{=html}}\n<div class=\"deck-viewer\"><object data=\"{rel}sessions/{slug}/slides/{pdf}#view=FitH\" type=\"application/pdf\" width=\"100%\" height=\"620\">"
+                 f"<p>Your browser cannot show the slides here. <a href=\"{rel}sessions/{slug}/slides/{pdf}\">Open the PDF</a>.</p></object></div>\n```\n\n")
+    pl = byt("plan")[0]
+    L.append("## This session\n\n" + " → ".join(f"**{b['label']}** ({b['min']} min)" for b in pl["blocks"]) + "\n\n::: {.grid}\n")
+    for o in pl["items"]:
+        L.append(f"::: {{.g-col-12 .g-col-md-4 .obj-card}}\n**{o['title']}**\n\n{md(o['body'])}\n:::\n")
+    L.append(":::\n\n")
+    rd = byt("readings")
+    if rd:
+        L.append("## Read first {.unnumbered}\n\n" + "".join(f"- **{r['ref']}**{' (core)' if r.get('core') else ''} — {md(r['why'])}\n" for r in rd[0]["items"]) + "\n")
+    cs = byt("caseSlide")
+    if cs:
+        k = cs[0]; tag = " <span class='tag tag-illus'>illustrative</span>" if k.get("illus") else ""
+        L.append(f"## The business case{tag}\n\n::: {{.callout-note appearance=\"simple\" icon=false}}\n## {k['title']}\n\n"
+                 f"**Situation.** {md(k['context'])}\n\n**Question.** {md(k['question'])}\n\n**Data.** {md(k['data'])}\n\n**A good answer.** {md(k['decision'])}\n:::\n\n" + sources(k))
+    appendix = False
+    for x in flow:
+        if x["type"] == "section" and x.get("label") == "APPENDIX":
+            appendix = True
+            # lab, code and takeaways close the taught part, before the self-study appendix
+            L.append(lab_code_recap(s, c, flow, rel))
+        L.append(render_slide(x, slug, rel))
+    if not appendix: L.append(lab_code_recap(s, c, flow, rel))
+    g = byt("glossary")
+    if g: L.append(dol("## Vocabulary\n\n| Term | Meaning |\n|---|---|\n" + "\n".join(f"| **{esc(t['term'])}** | {esc(t['def'])} |" for t in g[0]["terms"]) + "\n\n"))
+    L.append("::: {.callout-note appearance=\"simple\"}\n**About the data.** Charts marked *official* use CBN, NBS, World Bank and FRED series "
+             "(refresh with `tools/fetch_official_data.py`). Items tagged *illustrative* use stylised teaching data or invented numbers built to teach a method.\n:::\n\n")
+    L.append("::: {.session-nav}\n")
+    L.append(f"[← Session {prev['num']}: {prev['short']}]({rel}sessions/{prev['slug']}/index.qmd)\n" if prev else f"[← Pre-module]({rel}pre-module.qmd)\n")
+    if nxt: L.append(f"[Session {nxt['num']}: {nxt['short']} →]({rel}sessions/{nxt['slug']}/index.qmd){{.next}}\n")
+    L.append(":::\n")
+    open(f"sessions/{slug}/index.qmd", "w", encoding="utf-8").write("".join(L))
+
+
+def lab_code_recap(s, c, flow, rel):
+    slug = s["slug"]; L = []
+    lb = next((x for x in flow if x["type"] == "lab"), None)
+    if lb:
+        files = [d.strip() for d in lb["data"].split("\n") if d.strip().startswith("data/")]
+        L.append(f"## {lb['title']}\n\n*Time:* {lb['time']}" + (" · *Data:* " + ", ".join(f"[`{d}`]({rel}{d})" for d in files) if files else "") + "\n\n")
+        L.append("\n".join(f"{i}. {md(st)}" for i, st in enumerate(lb["steps"], 1)) + "\n\n")
+        L.append(f"::: {{.callout-important appearance=\"simple\"}}\n**Deliverable:** {md(lb['deliver'])}\n:::\n\n")
+    sc = scripts(slug)
+    if sc:
+        L.append("## The code (R | Python)\n\nPick your language once; every tab on the site follows your choice. "
+                 "Download a script, or copy it into RStudio and run it line by line.\n\n")
+        for stem, r, p in sc:
+            L.append(f"### {label(stem)}\n\n::: {{.panel-tabset group=\"lang\"}}\n")
+            if p: L.append(f"## Python\n[<i class=\"bi bi-download\"></i> {os.path.basename(p)}]({rel}{p}){{download=\"\"}}\n\n" + code_block(p, "python") + "\n")
+            if r: L.append(f"## R\n[<i class=\"bi bi-download\"></i> {os.path.basename(r)}]({rel}{r}){{download=\"\"}}\n\n" + code_block(r, "r") + "\n")
+            L.append(":::\n\n")
+    rc = next((x for x in flow if x["type"] == "recap"), None)
+    if rc:
+        L.append("## Key takeaways\n\n" + "\n".join(f"{i}. {md(it)}" for i, it in enumerate(rc["items"], 1)) + "\n\n")
+        if rc.get("prework"): L.append(f"::: {{.callout-note appearance=\"simple\"}}\n**Before next session:** {md(rc['prework'])}\n:::\n\n")
+    return "".join(L)
+
+
+for s in S:
+    (session_page_v3 if C.get(s["slug"], {}).get("v3") else session_page)(s)
 
 # ---------------------------------------------------------------------------------------------
 # Home
@@ -155,8 +369,9 @@ for p in (1, 2, 3, 4):
         H.append(f"- [**Session {s['num']}** · {s['title']}](sessions/{s['slug']}/index.qmd){tag}\n")
     H.append(":::\n:::\n\n")
 H.append(f"::: {{.callout-note appearance=\"simple\"}}\nFacilitators: Prof. Bongo Adi, Kelechi Nnamdi, Elvis Ozegbe, and Sumendra Dash (guest). "
-         f"All materials are open on [GitHub]({REPO}). The datasets are **stylised teaching data** shaped like the Nigerian economy — "
-         "not official statistics. See [Datasets](datasets.qmd) for how to download the real series.\n:::\n")
+         f"All materials are open on [GitHub]({REPO}). Sessions 1–3 run on **official data** (CBN, NBS, World Bank, FRED) that you can refresh yourself; "
+         "the other sessions still use **stylised teaching data** shaped like the Nigerian economy, and are being rebuilt in the same way. "
+         "See [Datasets](datasets.qmd).\n:::\n")
 open("index.qmd", "w", encoding="utf-8").write("".join(H))
 
 # ---------------------------------------------------------------------------------------------
@@ -184,7 +399,26 @@ for f in glob.glob("sessions/*/*/*.R") + glob.glob("sessions/*/*/*.py"):
     src = open(f, encoding="utf-8").read(); sn = int(f.split("/")[1][1:])
     for d in DESC:
         if d in src: used.setdefault(d, set()).add(sn)
-D = ["---\ntitle: \"Datasets\"\nsubtitle: \"Every file used in the course — stylised, reproducible, Nigerian settings\"\npage-layout: full\ntoc: false\n---\n\n"
+OFF = {
+ "ng_official_monthly.csv": "Nigeria monthly, from 2006: headline, food and core inflation; MPR and policy rate; T-bill, prime and maximum lending, savings rates; official ₦/$ (average and month-end); BDC ₦/$ (to Apr 2021); gross reserves; plus Brent and wheat prices. Sources: CBN statistics API; FRED (Brent MCOILBRENTEU; IMF global wheat price PWHEAMTUSDM).",
+ "ng_worldbank_annual.csv": "Nigeria annual, from 1960: GDP per person (constant 2015 US$ and current US$), real GDP growth, population growth, ₦/$ annual average. Source: World Bank WDI.",
+ "fred_monthly.csv": "US federal funds rate, US CPI index and Brent crude, monthly from 2000. Source: FRED (St. Louis Fed).",
+ "wdi_annual.csv": "Nigeria and seven African peers (Côte d’Ivoire, Egypt, Ethiopia, Ghana, Kenya, Morocco, South Africa), annual from 2000: growth, inflation, GDP per person, exchange rate, current account, reserves cover, remittances, population. Source: World Bank WDI."}
+used_off = {}
+for f in glob.glob("sessions/*/*/*.R") + glob.glob("sessions/*/*/*.py"):
+    src = open(f, encoding="utf-8").read(); sn = int(f.split("/")[1][1:])
+    for d in OFF:
+        if "official/" + d in src: used_off.setdefault(d, set()).add(sn)
+D = ["---\ntitle: \"Datasets\"\nsubtitle: \"Official series and stylised teaching data — every file used in the course\"\npage-layout: full\ntoc: false\n---\n\n"
+     "## Official data\n\nReal series downloaded from the CBN, NBS, World Bank and FRED by `tools/fetch_official_data.py` (or `.R`). "
+     "Run it again at any time to bring the numbers up to date; the deck charts were drawn from the vintage dated on each chart.\n\n"
+     "| File | Rows × columns | What it is | Sessions |\n|---|---|---|---|\n"]
+for d in OFF:
+    df = pd.read_csv(f"data/official/{d}")
+    ss = ", ".join(f"[{k}](sessions/s{k:02d}/index.qmd)" for k in sorted(used_off.get(d, [])))
+    D.append(f"| [`official/{d}`](data/official/{d}){{download=\"\"}} | {len(df):,} × {df.shape[1]} | {OFF[d]} | {ss or 'reference'} |\n")
+D.append("\n## Stylised teaching data\n\n")
+D += [
      "All datasets are generated by `tools/make_data.py` with fixed random seeds, so everyone gets identical numbers. "
      "They live in the `data/` folder of the repository. Click a file name to download it.\n\n"
      "::: {.callout-warning appearance=\"simple\"}\n**Stylised teaching data, not official statistics.** The macro series follow the broad path of the "

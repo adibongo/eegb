@@ -102,5 +102,5 @@ Participation 30%, quizzes 10%, practice assignment 20%, closed-book final 40%. 
 :::
 
 ::: {.callout-note appearance="simple"}
-Facilitators: Prof. Bongo Adi, Kelechi Nnamdi, Elvis Ozegbe, and Sumendra Dash (guest). All materials are open on [GitHub](https://github.com/adibongo/eegb). The datasets are **stylised teaching data** shaped like the Nigerian economy — not official statistics. See [Datasets](datasets.qmd) for how to download the real series.
+Facilitators: Prof. Bongo Adi, Kelechi Nnamdi, Elvis Ozegbe, and Sumendra Dash (guest). All materials are open on [GitHub](https://github.com/adibongo/eegb). Sessions 1–3 run on **official data** (CBN, NBS, World Bank, FRED) that you can refresh yourself; the other sessions still use **stylised teaching data** shaped like the Nigerian economy, and are being rebuilt in the same way. See [Datasets](datasets.qmd).
 :::

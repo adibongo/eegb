@@ -12,6 +12,8 @@ project:
     - sessions/*/index.qmd
   resources:
     - data/*.csv
+    - data/official/*.csv
+    - sessions/*/figures/slides/*.png
     - assets/logos/*
     - sessions/*/slides/*.pptx
     - sessions/*/slides/*.pdf

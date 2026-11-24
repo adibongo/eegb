@@ -53,3 +53,18 @@ thead { background: $navy; color: #fff; }
 .session-banner p { margin: 0; }
 .session-nav p { display: flex; justify-content: space-between; width: 100%; gap: 1rem; margin: 0; }
 table code { white-space: nowrap; }
+
+/* ---- v3 session pages (rebuilt decks) ---- */
+h2 { scroll-margin-top: 70px; }
+.slide-kicker { display: block; font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: $gold; margin: -.4rem 0 .3rem; }
+.part-question { background: $navy; color: #fff; border-radius: 10px; padding: .8rem 1.2rem; margin-bottom: 1.2rem; p { margin: 0; } strong { color: $gold; } }
+.hook-quote { font-family: $headings-font-family; font-size: 1.35rem; color: $navy; border-left: 6px solid $gold; padding: .3rem 0 .3rem 1rem; margin: .5rem 0 1rem; }
+.result-box { background: #EAF4EE; border-left: 6px solid #2E7D4F; border-radius: 8px; padding: .7rem 1rem; margin: .6rem 0 1rem; p { margin: 0; } }
+.lead-box { background: $card; border: 1px solid $border; border-left: 6px solid $teal; border-radius: 8px; padding: .8rem 1.1rem; margin: .4rem 0 1rem; font-size: 1.05rem; p { margin: .2rem 0; } }
+.stat-card { background: $card; border: 1px solid $border; border-top: 4px solid $gold; border-radius: 10px; padding: .9rem 1rem; }
+.stat-value { display: block; font-family: $headings-font-family; font-size: 1.8rem; font-weight: 700; color: $teal; line-height: 1.15; }
+.tag-illus { background: #7A6A9A; }
+.deck-viewer { border: 1px solid $border; border-radius: 10px; overflow: hidden; margin: .6rem 0 1.4rem; background: #525659; }
+h3 { margin-top: 2rem; color: $navy; }
+blockquote { border-left: 5px solid $gold; color: $navy; font-family: $headings-font-family; }
+.deck-viewer p { color: #fff; padding: 1rem 1.2rem; margin: 0; } .deck-viewer a { color: $gold; font-weight: 700; }

@@ -22,6 +22,17 @@ for (const s of sessions) {
   const rc = pick("recap")[0]; if (rc) o.recap = { items: rc.items.map(strip), prework: strip(rc.prework), next: rc.next };
   const g = pick("glossary")[0]; if (g) o.glossary = g.terms;
   const cs = pick("caseSlide")[0]; if (cs) o.case = { title: cs.title, context: strip(cs.context), question: strip(cs.question), data: strip(cs.data), decision: strip(cs.decision) };
+  // v3 decks (built around a "plan" slide): export the whole teaching flow, in slide order, so the
+  // web page follows the deck section by section. Slide number = position + 2 (the title slide is slide 1).
+  if (pick("plan").length) {
+    o.v3 = true;
+    o.flow = slides.map((x, i) => {
+      const y = JSON.parse(JSON.stringify(x));
+      y._slide = i + 2;
+      if (y.img) y.img = path.relative(ROOT, y.img).replace(/\\/g, "/");
+      return y;
+    });
+  }
   out[s.slug] = o;
 }
 fs.writeFileSync(path.join(__dirname, "content.json"), JSON.stringify(out, null, 1));
