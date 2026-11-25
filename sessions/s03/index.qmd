@@ -23,7 +23,7 @@ image: ../../assets/logos/eegb_hex_p1_256.png
 <div class="deck-viewer"><object data="../../sessions/s03/slides/EEGB_S03_Demand_Forecasting_Market_Sizing.pdf#view=FitH" type="application/pdf" width="100%" height="620"><p>Your browser cannot show the slides here. <a href="../../sessions/s03/slides/EEGB_S03_Demand_Forecasting_Market_Sizing.pdf">Open the PDF</a>.</p></object></div>
 ```
 
-## This session
+## This session {#slide-4}
 
 **Opening** (10 min) → **1 · Read the pattern** (20 min) → **2 · Forecast honestly** (25 min) → **3 · Size the market and decide** (20 min)
 
@@ -54,7 +54,7 @@ Size a Nigerian market **top-down and bottom-up**, and set capacity using the **
 - **Tetlock & Gardner, Superforecasting (2015)** — Calibration, base rates and how to get better at judgement.
 - **Flyvbjerg (2006), reference-class forecasting** — Correcting the planning fallacy with the track record of similar projects.
 
-## The business case <span class='tag tag-illus'>illustrative</span>
+## The business case <span class='tag tag-illus'>illustrative</span> {#slide-5}
 
 ::: {.callout-note appearance="simple" icon=false}
 ## How Much Cement Will Nigeria Buy in 2026?
@@ -100,7 +100,7 @@ Do population, uses and capacity tell the same story as the time series?
 :::
 :::
 
-### Nigeria's 2024 Budget: The Forecast vs What Happened
+### Nigeria's 2024 Budget: The Forecast vs What Happened {#slide-3}
 
 <span class="slide-kicker">EVEN GOVERNMENTS MISS</span>
 
@@ -128,7 +128,7 @@ Sources: the signed 2024 Appropriation Act used ₦800/\$, \$77.96 oil and 1.78 
 **The question this part answers:** What has demand actually done — and what part of it repeats?
 :::
 
-### Every Demand Series Has Three Parts
+### Every Demand Series Has Three Parts {#slide-7}
 
 <span class="slide-kicker">THREE COMPONENTS</span>
 
@@ -154,7 +154,7 @@ Recessions, lockdowns, price spikes — and random month-to-month wobble no mode
 Forecasting = project the **trend**, apply the **season**, and put a **range** around it for the shocks.
 :::
 
-### Fourteen Years of Cement Demand <span class='tag tag-illus'>illustrative</span>
+### Fourteen Years of Cement Demand <span class='tag tag-illus'>illustrative</span> {#slide-8}
 
 <span class="slide-kicker">THE DATA</span>
 
@@ -174,7 +174,7 @@ Forecasting = project the **trend**, apply the **season**, and put a **range** a
 
 <span class="fig-id">S03-F01 · replicate with s03_figures.py / .R</span>
 
-### The Rainy-Season Rhythm <span class='tag tag-illus'>illustrative</span>
+### The Rainy-Season Rhythm <span class='tag tag-illus'>illustrative</span> {#slide-9}
 
 <span class="slide-kicker">SEASONALITY</span>
 
@@ -194,7 +194,7 @@ Forecasting = project the **trend**, apply the **season**, and put a **range** a
 
 <span class="fig-id">S03-F02 · replicate with s03_figures.py / .R</span>
 
-### Was August 2025 a Collapse? <span class='tag tag-illus'>illustrative</span>
+### Was August 2025 a Collapse? <span class='tag tag-illus'>illustrative</span> {#slide-10}
 
 <span class="slide-kicker">SEASONAL ADJUSTMENT, WORKED</span>
 
@@ -221,7 +221,7 @@ Never judge a month against the previous month without **seasonal adjustment**.
 Seasonal index = the month effects from the trend × season regression, rescaled so the 12 months average 1.00 (s03_figures.py). The lab uses a simpler version — each month divided by its calendar-year average — which gives almost the same numbers (Feb 1.13, Aug 0.82). Official statistics do the same: compare NBS releases that are 'seasonally adjusted' with those that are not.
 :::
 
-### Trend × Season: A Forecast in One Line
+### Trend × Season: A Forecast in One Line {#slide-11}
 
 <span class="slide-kicker">THE MODEL</span>
 
@@ -243,7 +243,7 @@ forecast = trend(t) × season(month)
 **The question this part answers:** Which method should we trust — and how wrong could it be?
 :::
 
-### Pretend It Is January 2024 <span class='tag tag-illus'>illustrative</span>
+### Pretend It Is January 2024 <span class='tag tag-illus'>illustrative</span> {#slide-13}
 
 <span class="slide-kicker">THE BACKTEST</span>
 
@@ -263,7 +263,7 @@ forecast = trend(t) × season(month)
 
 <span class="fig-id">S03-F03 · replicate with s03_figures.py / .R</span>
 
-### MAPE: How Far Off Were We, on Average? <span class='tag tag-illus'>illustrative</span>
+### MAPE: How Far Off Were We, on Average? <span class='tag tag-illus'>illustrative</span> {#slide-14}
 
 <span class="slide-kicker">MEASURING ACCURACY</span>
 
@@ -285,7 +285,7 @@ forecast = trend(t) × season(month)
 MAPE answers 'how far off, on average?'; bias answers 'which way do we lean?' — track both.
 :::
 
-### Which Method Forecast Best? <span class='tag tag-illus'>illustrative</span>
+### Which Method Forecast Best? <span class='tag tag-illus'>illustrative</span> {#slide-15}
 
 <span class="slide-kicker">THE SCOREBOARD</span>
 
@@ -305,7 +305,7 @@ MAPE answers 'how far off, on average?'; bias answers 'which way do we lean?' �
 
 <span class="fig-id">S03-F04 · replicate with s03_figures.py / .R</span>
 
-### Simple, Combined and Humble Forecasts Win
+### Simple, Combined and Humble Forecasts Win {#slide-16}
 
 <span class="slide-kicker">WHAT THE EVIDENCE SAYS</span>
 
@@ -326,7 +326,7 @@ MAPE answers 'how far off, on average?'; bias answers 'which way do we lean?' �
 Makridakis, Spiliotis & Assimakopoulos, 'The M4 Competition: Results, findings, conclusion and way forward', International Journal of Forecasting 34(4):802–808, 2018 (winner: Smyl's hybrid exponential-smoothing/RNN). The term 'inside view' comes from Kahneman & Lovallo (1993). Kahneman & Tversky (1979) on the planning fallacy; Flyvbjerg (2006), 'From Nobel Prize to project management: getting risks right', Project Management Journal. Tetlock & Gardner, 'Superforecasting' (2015), on calibration.
 :::
 
-### Judgement vs Models — Use Both
+### Judgement vs Models — Use Both {#slide-17}
 
 <span class="slide-kicker">TWO WAYS TO FORECAST</span>
 
@@ -357,7 +357,7 @@ Makridakis, Spiliotis & Assimakopoulos, 'The M4 Competition: Results, findings, 
 Start from the **model**, let judgement **adjust it for named, specific reasons** — and record each adjustment so you can check it later.
 :::
 
-### 2026: A Number and a Range <span class='tag tag-illus'>illustrative</span>
+### 2026: A Number and a Range <span class='tag tag-illus'>illustrative</span> {#slide-18}
 
 <span class="slide-kicker">THE FORECAST</span>
 
@@ -377,7 +377,7 @@ Start from the **model**, let judgement **adjust it for named, specific reasons*
 
 <span class="fig-id">S03-F05 · replicate with s03_figures.py / .R</span>
 
-### Plan for More Than One Future <span class='tag tag-illus'>illustrative</span>
+### Plan for More Than One Future <span class='tag tag-illus'>illustrative</span> {#slide-19}
 
 <span class="slide-kicker">SCENARIOS</span>
 
@@ -397,7 +397,7 @@ Start from the **model**, let judgement **adjust it for named, specific reasons*
 
 <span class="fig-id">S03-F06 · replicate with s03_figures.py / .R</span>
 
-### More Complex Is Not More Accurate <span class='tag tag-illus'>illustrative</span>
+### More Complex Is Not More Accurate <span class='tag tag-illus'>illustrative</span> {#slide-20}
 
 <span class="slide-kicker">MACHINE LEARNING, RESPONSIBLY</span>
 
@@ -417,7 +417,7 @@ Start from the **model**, let judgement **adjust it for named, specific reasons*
 
 <span class="fig-id">S03-F08 · replicate with s03_figures.py / .R</span>
 
-### Check your understanding
+### Check your understanding {#slide-21}
 
 **Your sales team forecasts next year at 'this year + 10%'. A backtested trend-plus-seasonal model says +4%, with a range of −2% to +10%. What should you do?**
 
@@ -437,7 +437,7 @@ B. The backtested model is the disciplined baseline; judgement adjusts it only f
 **The question this part answers:** Does the market add up — and how much capacity should we plan for?
 :::
 
-### Start From the Whole Economy
+### Start From the Whole Economy {#slide-23}
 
 <span class="slide-kicker">TOP-DOWN SIZING</span>
 
@@ -465,7 +465,7 @@ Top-down is fast; its weak point is the **use-per-person** rate — and even pub
 Sources: World Bank SP.POP.TOTL (Nigeria 2025: 237,527,782). CemNet, 'Nigeria is in the middle of a new cement capacity frenzy' (30 Apr 2026): consumption about 33.9 Mt (+8.5%, citing Global Cement Report 16); 129 kg per capita and world average about 550 kg are CemNet's estimates. CemNet uses the same population, so its 129 kg and 33.9 Mt are mutually inconsistent (33.9 Mt implies 143 kg): probably different reference years. A good classroom exercise: spot the inconsistency before trusting either number.
 :::
 
-### Add Up the Uses
+### Add Up the Uses {#slide-24}
 
 <span class="slide-kicker">BOTTOM-UP SIZING</span>
 
@@ -487,7 +487,7 @@ market = Σ (units of activity × cement per unit)
 Segment assumptions are stylised teaching numbers. Real sizing would use NBS housing data, the federal capital budget, company reports and project pipelines.
 :::
 
-### Do the Routes Agree? <span class='tag tag-illus'>illustrative</span>
+### Do the Routes Agree? <span class='tag tag-illus'>illustrative</span> {#slide-25}
 
 <span class="slide-kicker">RECONCILE</span>
 
@@ -507,7 +507,7 @@ Segment assumptions are stylised teaching numbers. Real sizing would use NBS hou
 
 <span class="fig-id">S03-F07 · replicate with s03_figures.py / .R</span>
 
-### How Much to Build? Weigh the Cost of Being Wrong <span class='tag tag-illus'>illustrative</span>
+### How Much to Build? Weigh the Cost of Being Wrong <span class='tag tag-illus'>illustrative</span> {#slide-26}
 
 <span class="slide-kicker">THE CAPACITY DECISION</span>
 
@@ -529,7 +529,7 @@ Segment assumptions are stylised teaching numbers. Real sizing would use NBS hou
 Capacity = the demand level where the **cost of too little** balances the **cost of too much**.
 :::
 
-### Check your understanding
+### Check your understanding {#slide-27}
 
 **Top-down sizing gives 32 Mt and bottom-up gives 45 Mt. What is the best next step?**
 
@@ -1010,7 +1010,7 @@ c(critical_ratio = cr, plan_capacity_Mt = f26 * exp(qnorm(cr) * annual_sd))
 
 Read these before the quiz. They are not presented in class.
 
-### Forecasting in Nigeria When the Data Are Thin
+### Forecasting in Nigeria When the Data Are Thin {#slide-31}
 
 <span class="slide-kicker">FORECASTING WITHOUT GOOD DATA</span>
 
@@ -1025,7 +1025,7 @@ Read these before the quiz. They are not presented in class.
 
 *Three imperfect signals that agree beat one 'perfect' number.*
 
-### A Forecasting Toolkit for Managers
+### A Forecasting Toolkit for Managers {#slide-32}
 
 <span class="slide-kicker">WHICH METHOD WHEN</span>
 
@@ -1038,7 +1038,7 @@ Read these before the quiz. They are not presented in class.
 | Machine learning (boosting, neural nets) | Many series, many drivers, lots of data | Overfitting; leakage; poor at breaks |
 | Judgement and scenarios | One-offs, turning points, policy shocks | Optimism; anchoring; record the reasons |
 
-### Common Forecasting Mistakes
+### Common Forecasting Mistakes {#slide-33}
 
 | The trap | The better habit |
 |---|---|

@@ -23,7 +23,7 @@ image: ../../assets/logos/eegb_hex_p1_256.png
 <div class="deck-viewer"><object data="../../sessions/s01/slides/EEGB_S01_Course_Overview_Data_Literacy_for_Managers.pdf#view=FitH" type="application/pdf" width="100%" height="620"><p>Your browser cannot show the slides here. <a href="../../sessions/s01/slides/EEGB_S01_Course_Overview_Data_Literacy_for_Managers.pdf">Open the PDF</a>.</p></object></div>
 ```
 
-## This session
+## This session {#slide-4}
 
 **Opening** (10 min) → **1 · Think like an economist** (22 min) → **2 · Read the numbers** (25 min) → **3 · Nowcast and dashboard** (18 min)
 
@@ -86,7 +86,7 @@ If the category grew faster than 30% in naira, we lost market share.
 Sources: World Bank WDI — inflation, consumer prices, Nigeria 2024 = 33.24% (FP.CPI.TOTL.ZG); official exchange rate, period average, 2023 = ₦645.19, 2024 = ₦1,478.97 (PA.NUS.FCRF), last updated Oct 2026. The firm itself is illustrative.
 :::
 
-### The Macro-to-P&L Map: Where the Economy Hits Your Numbers
+### The Macro-to-P&L Map: Where the Economy Hits Your Numbers {#slide-3}
 
 <span class="slide-kicker">THE MENTAL MODEL FOR THIS COURSE</span>
 
@@ -104,7 +104,7 @@ Sources: World Bank WDI — inflation, consumer prices, Nigeria 2024 = 33.24% (F
 We will fill in this map session by session. **Every economic idea in EEGB ends with the question: which cell does it move — and by how much?**
 :::
 
-### Assessment — and How Today Prepares You
+### Assessment — and How Today Prepares You {#slide-5}
 
 <span class="slide-kicker">HOW YOU WILL BE ASSESSED</span>
 
@@ -125,7 +125,7 @@ Participation is a third of the grade. Read before class, bring one number from 
 **The question this part answers:** How should a manager frame a decision before reaching for the numbers?
 :::
 
-### Ten Principles — Translated for a Lagos Boardroom
+### Ten Principles — Translated for a Lagos Boardroom {#slide-7}
 
 <span class="slide-kicker">THE TOOLKIT · MANKIW CH. 1</span>
 
@@ -150,7 +150,7 @@ Mankiw groups the principles: 1–4 how people make decisions; 5–7 how people 
 Principle 8 figure: World Bank NY.GDP.PCAP.KD, Nigeria 2014 = \$2,584, 2024 = \$2,325 (constant 2015 US\$), −10.0%. Ways & Means: CBN overdrafts to the FGN of about ₦22.7trn were securitised in May 2023.
 :::
 
-### What Did ₦1bn of Idle Cash Really Cost in 2024?
+### What Did ₦1bn of Idle Cash Really Cost in 2024? {#slide-8}
 
 <span class="slide-kicker">PRINCIPLE 2 · OPPORTUNITY COST</span>
 
@@ -183,7 +183,7 @@ The cost of a decision is the **best alternative given up** — measured in real
 Sources: NBS CPI Dec 2024 = 34.80% y/y (CBN statistics). 364-day NTB auction yields: 8.40% (10 Jan 2024), 11.54% (24 Jan 2024) — Nairametrics, 26 Jan 2024; 19% (late Feb) and 21.49% (6 Mar 2024) — Nairametrics/ThisDay. CBN official central rate: ₦899.39/\$ (29 Dec 2023), ₦1,535.32/\$ (31 Dec 2024) → ×1.707; real 1.707 ÷ 1.348 = 1.27.
 :::
 
-### Should the Factory Run a Third (Night) Shift? <span class='tag tag-illus'>illustrative</span>
+### Should the Factory Run a Third (Night) Shift? <span class='tag tag-illus'>illustrative</span> {#slide-9}
 
 <span class="slide-kicker">PRINCIPLE 3 · THINK AT THE MARGIN</span>
 
@@ -212,7 +212,7 @@ Find the break-even. At what diesel cost does the shift pay? (₦5.8m a night.) 
 Decide at the **margin**: compare extra benefit with extra cost. Averages and sunk costs mislead.
 :::
 
-### People Respond to Incentives — Often Unexpectedly
+### People Respond to Incentives — Often Unexpectedly {#slide-10}
 
 <span class="slide-kicker">PRINCIPLE 4 · INCENTIVES</span>
 
@@ -250,7 +250,7 @@ Before backing a policy — or a sales commission scheme — ask: **who gains, w
 Sources: NNPC 'under-recovery' (petrol subsidy) ≈ ₦4.39trn in 2022; pump price ₦185/l before 29 May 2023. FX premium: CBN monthly averages, May 2016 — BDC vs official (see the exchange-rate chart in Part 2). CBN circular of June 2015 excluded 41 items from the official FX market. Company example to ask for: a commission plan that paid on volume and destroyed margin.
 :::
 
-### Comparative Advantage: Why the 'Better' Producer Still Gains <span class='tag tag-illus'>illustrative</span>
+### Comparative Advantage: Why the 'Better' Producer Still Gains <span class='tag tag-illus'>illustrative</span> {#slide-11}
 
 <span class="slide-kicker">PRINCIPLE 5 · TRADE CAN MAKE EVERYONE BETTER OFF</span>
 
@@ -278,7 +278,7 @@ Gains from trade come from **comparative** advantage — differences in opportun
 Mankiw ch. 3 ('Interdependence and the Gains from Trade') uses a farmer and a rancher; the logic is identical. Numbers are illustrative, not real productivities. Firm-level version: should your best salesperson also do the invoicing because she is faster at it? No — her opportunity cost is lost sales. Who loses from trade (import-competing workers and firms) is part of Session 12.
 :::
 
-### Markets Usually Work — Governments Can Sometimes Help
+### Markets Usually Work — Governments Can Sometimes Help {#slide-12}
 
 <span class="slide-kicker">PRINCIPLES 6 & 7 · MARKETS AND GOVERNMENT</span>
 
@@ -315,7 +315,7 @@ The manager's question is never 'market or state?' but **'what is failing here, 
 Mankiw ch. 1, principles 6–7 and the invisible-hand passage. Use FX rationing (2015–2023) as the bridge: the control did not remove the cost of dollars; it moved it into queues, premiums and lost production.
 :::
 
-### Living Standards Depend on What a Country Produces
+### Living Standards Depend on What a Country Produces {#slide-13}
 
 <span class="slide-kicker">PRINCIPLE 8 · PRODUCTIVITY</span>
 
@@ -341,7 +341,7 @@ Mankiw ch. 1, principles 6–7 and the invisible-hand passage. Use FX rationing 
 Sources: World Bank WDI NY.GDP.PCAP.KD and NY.GDP.PCAP.CD (updated Oct 2026): 2014 \$2,583.6 real (2015 peak \$2,585.7) / \$3,088.7 current; 2024 \$2,324.6 / \$1,084.2. SP.POP.GROW: 2.6% (2014) to 2.1% (2024). 'The Business Environment of Nigeria' (IB-90), p. 6, for 1992–2002.
 :::
 
-### Money, Prices and the Short-Run Trade-Off
+### Money, Prices and the Short-Run Trade-Off {#slide-14}
 
 <span class="slide-kicker">PRINCIPLES 9 & 10 · THE ECONOMY AS A WHOLE — PREVIEW</span>
 
@@ -364,7 +364,7 @@ Sources: World Bank WDI NY.GDP.PCAP.KD and NY.GDP.PCAP.CD (updated Oct 2026): 20
 Sources: Ferguson, The Ascent of Money (2008), Introduction and ch. 2. Ways & Means: Senate approved securitisation of ₦22.7trn on 3–4 May 2023 (ThisDay); a further ₦7.3trn was securitised later, taking the total near ₦30trn. MPR path: CBN money-market indicators (18.75% Dec 2023; 27.50% Nov 2024; 27.0% from 23 Sep 2025; 26.5% from Feb 2026; 23.00% from 22 Sep 2026). Inflation: CBN/NBS CPI. Unemployment-measurement caveat (33.3% → 4.1% after NBS's 2023 methodology change) is in the appendix.
 :::
 
-### Check your understanding
+### Check your understanding {#slide-15}
 
 **Your CFO wants to run the night shift because 'it lowers our average cost per carton'. Which reply best applies today's principles?**
 
@@ -384,7 +384,7 @@ C. Marginal thinking: only costs that change with the decision matter. A lower a
 **The question this part answers:** Did our firm actually grow — and what is the economy really doing?
 :::
 
-### From Concept to Headline: Where Errors Creep In
+### From Concept to Headline: Where Errors Creep In {#slide-17}
 
 <span class="slide-kicker">EVERY STATISTIC HAS A SUPPLY CHAIN</span>
 
@@ -405,7 +405,7 @@ Piketty's warning applies to every board paper: without precise sources, methods
 Piketty, Capital in the Twenty-First Century (2014), Introduction, 'A Debate without Data?'. Each link maps onto a trap in this part: definition (rebasing), coverage (share of what?), aggregation (CPI weights), revision (the 2025 inflation revision).
 :::
 
-### How the CPI Is Built — a Five-Step Worked Example <span class='tag tag-illus'>illustrative</span>
+### How the CPI Is Built — a Five-Step Worked Example <span class='tag tag-illus'>illustrative</span> {#slide-18}
 
 <span class="slide-kicker">MEASURING PRICES · MANKIW CH. 23</span>
 
@@ -436,7 +436,7 @@ The CPI tracks a **fixed basket**. Your firm's own input basket may inflate much
 Mankiw ch. 23 uses hot dogs and hamburgers; this is a Lagos basket with illustrative prices. Ask: what is your company's 'basket' of inputs and how did its cost change? That is your firm's own inflation rate. Biases of the CPI (substitution, new goods, quality) are in the appendix.
 :::
 
-### Inflation: Food Led, Core Followed — Then the Yardstick Changed
+### Inflation: Food Led, Core Followed — Then the Yardstick Changed {#slide-19}
 
 <span class="slide-kicker">TRAP 1 · REBASING AND REVISIONS</span>
 
@@ -463,7 +463,7 @@ Mankiw ch. 23 uses hot dogs and hamburgers; this is a Lagos basket with illustra
 Sources: CBN statistics (inflation API) reproducing NBS CPI; NBS rebasing (Feb 2025: base 2009 → 2024, food weight 51.8% → 40%, The Guardian); NBS methodology review, Dec 2025 (Jan 2025 revised 24.48% → 27.61%, Nairametrics, 16 Jan 2026). Ask: what would you tell a union negotiating wages off 'inflation has halved'?
 :::
 
-### The Day Nigeria's Economy 'Grew' 35%
+### The Day Nigeria's Economy 'Grew' 35% {#slide-20}
 
 <span class="slide-kicker">TRAP 2 · REBASING GDP</span>
 
@@ -501,7 +501,7 @@ Before comparing GDP ratios across years or countries, ask: **which base year?**
 Source: NBS rebased GDP release, July 2025 (2024 nominal GDP ₦372.8trn; +35.4% vs old series) — TechEconomy factsheet. Nigeria's previous rebasing (April 2014, base 1990 → 2010) raised 2013 GDP by about 89%.
 :::
 
-### Oil Is 4% of GDP — and Still Most of Nigeria's Exports
+### Oil Is 4% of GDP — and Still Most of Nigeria's Exports {#slide-21}
 
 <span class="slide-kicker">TRAP 3 · 'SHARE OF WHAT?'</span>
 
@@ -524,7 +524,7 @@ Source: NBS rebased GDP release, July 2025 (2024 nominal GDP ₦372.8trn; +35.4%
 Sources: NBS GDP Q2 2026 (oil 4.16% of real GDP); NBS Foreign Trade in Goods Q2 2026 via Intelpoint (crude ₦12.91trn; non-crude ₦14.11trn; non-oil ₦3.72trn = 13.8% of total). Oil and gas share = (27.02 − 3.72) / 27.02 = 86.2%. In the 2000s oil supplied about 95% of FX earnings (LBS case IB-90).
 :::
 
-### Small Words, Big Mistakes
+### Small Words, Big Mistakes {#slide-22}
 
 <span class="slide-kicker">TRAP 4 · PERCENT VS PERCENTAGE POINTS</span>
 
@@ -557,7 +557,7 @@ Say **pp** for changes in rates. Mixing the two misstates a change by a factor o
 Sources: CBN/NBS CPI (Dec 2024 34.80%, Sep 2026 14.63%); CBN MPC (MPR 26.5% → 23%, Sep 2026); The Guardian, Feb 2025, 'NBS unveils new inflation template, reduces food weight to 40%' (guardian.ng/news/nbs-unveils-new-inflation-template-reduces-food-weight-to-40/). Year-on-year vs month-on-month and base effects are in the appendix.
 :::
 
-### Real vs Nominal: One Revenue Figure, Three Answers
+### Real vs Nominal: One Revenue Figure, Three Answers {#slide-23}
 
 <span class="slide-kicker">BACK TO THE 30% QUESTION</span>
 
@@ -584,7 +584,7 @@ Sources: CBN/NBS CPI (Dec 2024 34.80%, Sep 2026 14.63%); CBN MPC (MPR 26.5% → 
 Uses 2024 average inflation (33.24%) and annual-average exchange rates (₦645.19, ₦1,478.97), World Bank WDI. Which deflator? The firm's own price index gives volume growth; the CPI gives the customers' purchasing-power view. Ask participants to redo this for their own firm before Session 2.
 :::
 
-### Naira per Dollar: Rationing, Then a Reset
+### Naira per Dollar: Rationing, Then a Reset {#slide-24}
 
 <span class="slide-kicker">THE EXCHANGE RATE</span>
 
@@ -610,7 +610,7 @@ Uses 2024 average inflation (33.24%) and annual-average exchange rates (₦645.1
 Source: CBN statistics — official central rate (daily, averaged monthly) and BDC monthly average (CBN series ends April 2021). Latest: CBN central rate ₦1,347.30/\$, 4 Nov 2026. Session 11 covers regimes, unification and the trilemma.
 :::
 
-### Did Savers Beat Inflation? The Real Policy Rate
+### Did Savers Beat Inflation? The Real Policy Rate {#slide-25}
 
 <span class="slide-kicker">REAL INTEREST RATES</span>
 
@@ -636,7 +636,7 @@ Source: CBN statistics — official central rate (daily, averaged monthly) and B
 Source: CBN statistics (MPR and headline CPI, monthly). Exact Fisher formula. Sep 2026: 1.23 / 1.1463 − 1 = 7.3%. Ask: which cash and inventory habits did your firm learn when real rates were negative — and which should change now?
 :::
 
-### Four Reasons Two Series Move Together
+### Four Reasons Two Series Move Together {#slide-26}
 
 <span class="slide-kicker">TRAP 5 · CORRELATION IS NOT CAUSATION</span>
 
@@ -651,7 +651,7 @@ Source: CBN statistics (MPR and headline CPI, monthly). Exact Fisher formula. Se
 
 *Before acting on 'X drives Y', rule out all four.*
 
-### Oil Earns Nigeria's Dollars — Yet Reserves Don't Simply Track It
+### Oil Earns Nigeria's Dollars — Yet Reserves Don't Simply Track It {#slide-27}
 
 <span class="slide-kicker">SEE IT IN THE DATA</span>
 
@@ -677,7 +677,7 @@ Source: CBN statistics (MPR and headline CPI, monthly). Exact Fisher formula. Se
 Sources: CBN gross external reserves (month-end), FRED MCOILBRENTEU; correlations computed in s01_figures.py over Jan 2015 – Oct 2026. Brent averaged \$123.9 in Oct 2026 (FRED) — a live issue for the dashboard in Part 3.
 :::
 
-### Did Our Price Rise Cut Volumes? Use a Comparison Group <span class='tag tag-illus'>illustrative</span>
+### Did Our Price Rise Cut Volumes? Use a Comparison Group <span class='tag tag-illus'>illustrative</span> {#slide-28}
 
 <span class="slide-kicker">FROM CORRELATION TO CAUSE</span>
 
@@ -704,7 +704,7 @@ Ask of any 'X caused Y' claim: **compared with what?** Without a comparison grou
 Cause needs a **counterfactual**: what would have happened without the decision?
 :::
 
-### Check your understanding
+### Check your understanding {#slide-29}
 
 **A director says: 'Inflation fell from 34.8% in December 2024 to 24.5% in January 2025 — down 10% in a month. We can cut prices.' What is the best response?**
 
@@ -724,7 +724,7 @@ A. Three corrections in one: a rebasing break, a later revision, and points vs p
 **The question this part answers:** Which six numbers should the directors see every month, and what do they mean for us?
 :::
 
-### Seeing the Economy Before GDP Is Published
+### Seeing the Economy Before GDP Is Published {#slide-31}
 
 <span class="slide-kicker">NOWCASTING</span>
 
@@ -748,7 +748,7 @@ PMI > 50 expanding · < 50 contracting
 Source: S&P Global / Stanbic IBTC Bank Nigeria PMI, October 2026 release. NBS publishes quarterly GDP roughly eight weeks after quarter-end (Q2 2026 GDP was released in late August/September 2026).
 :::
 
-### The Board's Macro Page — November 2026
+### The Board's Macro Page — November 2026 {#slide-32}
 
 <span class="slide-kicker">NIGERIA NOW · LATEST OFFICIAL DATA</span>
 
@@ -771,7 +771,7 @@ Each row = **latest value with its date + direction + one 'so what'**. Same layo
 Sources: CBN statistics (CPI Sep 2026; MPR Sep 2026; official central rate 4 Nov 2026 ₦1,347.30; gross reserves 3 Nov 2026 \$55.15bn); FRED MCOILBRENTEU (Oct 2026 \$123.93); NBS GDP Q2 2026 (4.43%); S&P Global/Stanbic IBTC PMI Oct 2026 (55.7). Refresh with tools/fetch_official_data.py before each delivery.
 :::
 
-### Check your understanding
+### Check your understanding {#slide-34}
 
 **Which pair of signals would best tell an FMCG board, **this month**, that demand is weakening?**
 
@@ -1199,7 +1199,7 @@ cat("Oil vs reserves 12 months later:", round(cor(d$brent, lead(d$reserves_gross
 
 Read these before the quiz. They are not presented in class.
 
-### Economics Is the Study of Choice Under Scarcity
+### Economics Is the Study of Choice Under Scarcity {#slide-38}
 
 <span class="slide-kicker">WHAT ECONOMICS IS · MANKIW CH. 1</span>
 
@@ -1213,7 +1213,7 @@ Read these before the quiz. They are not presented in class.
 
 *A firm is a small society: limited cash, capacity, FX, management attention.*
 
-### The Circular-Flow Diagram: The Simplest Model of the Economy
+### The Circular-Flow Diagram: The Simplest Model of the Economy {#slide-39}
 
 <span class="slide-kicker">ECONOMISTS USE MODELS · MANKIW CH. 2</span>
 
@@ -1225,7 +1225,7 @@ Read these before the quiz. They are not presented in class.
 - Left out on purpose: government, banks and the rest of the world (Sessions 7–11).
 - When households' real incomes fall, the flow into your goods market shrinks.
 
-### Positive vs Normative: Scientist or Policy Adviser?
+### Positive vs Normative: Scientist or Policy Adviser? {#slide-40}
 
 <span class="slide-kicker">TWO KINDS OF STATEMENT · MANKIW CH. 2</span>
 
@@ -1254,7 +1254,7 @@ Read these before the quiz. They are not presented in class.
 Why economists disagree: different **scientific judgements**, different **values** — and less often than headlines suggest.
 :::
 
-### Classify Each Statement
+### Classify Each Statement {#slide-41}
 
 <span class="slide-kicker">TRY IT · POSITIVE OR NORMATIVE?</span>
 
@@ -1272,7 +1272,7 @@ Why economists disagree: different **scientific judgements**, different **values
 1 positive (true, but note the CPI break). 2 normative. 3 positive (testable; evidence is mixed). 4 normative. 5 positive (testable). 6 normative — good for whom? Importers and consumers gain; exporters and naira oil revenue lose.
 :::
 
-### GDP: What Is Counted, and What Is Not
+### GDP: What Is Counted, and What Is Not {#slide-42}
 
 <span class="slide-kicker">MEASURING OUTPUT · MANKIW CH. 22</span>
 
@@ -1295,7 +1295,7 @@ Why economists disagree: different **scientific judgements**, different **values
 NBS GDP Q2 2026: nominal ₦119.29trn (basic prices), +18.43%; real +4.43%. Implied deflator 1.1843 / 1.0443 − 1 = 13.4%.
 :::
 
-### Three Biases Every Price Index Carries
+### Three Biases Every Price Index Carries {#slide-43}
 
 <span class="slide-kicker">WHY THE CPI IS IMPERFECT · MANKIW CH. 23</span>
 
@@ -1321,7 +1321,7 @@ If a phone costs 20% more but does twice as much, part of the 'price rise' is re
 These biases are why statistics offices **rebase**. Rebasing reduces the bias — but breaks the series.
 :::
 
-### Which Change Are You Looking At?
+### Which Change Are You Looking At? {#slide-44}
 
 <span class="slide-kicker">READING RATES · YEAR-ON-YEAR VS MONTH-ON-MONTH</span>
 
@@ -1354,7 +1354,7 @@ Ask: **compared with when? seasonally adjusted? headline or core?**
 Source: NBS CPI September 2026 (headline 14.63% y/y, 0.06% m/m; food 19.59%, −1.55%; core 12.95%, 1.11%), as reported by the Gazette, 16 Oct 2026.
 :::
 
-### The Kuznets Curve: A Big Theory Built on a Special Period
+### The Kuznets Curve: A Big Theory Built on a Special Period {#slide-45}
 
 <span class="slide-kicker">A CAUTIONARY TALE · PIKETTY</span>
 
@@ -1375,7 +1375,7 @@ Source: NBS CPI September 2026 (headline 14.63% y/y, 0.06% m/m; food 19.59%, −
 Piketty (2014), Introduction: 'A Debate without Data?' and 'The Kuznets Curve: Good News in the Midst of the Cold War'.
 :::
 
-### Nigeria's Unemployment Rate: 33% to 4% — by Definition
+### Nigeria's Unemployment Rate: 33% to 4% — by Definition {#slide-46}
 
 <span class="slide-kicker">PRINCIPLE 10 · A DATA TRAP</span>
 
@@ -1396,7 +1396,7 @@ Piketty (2014), Introduction: 'A Debate without Data?' and 'The Kuznets Curve: G
 Source: NBS Labour Force Survey, new methodology (Q1 2023, 4.1%; underemployment 12.2%); old-methodology Q4 2020 rate 33.3% — TheCable, Aug 2023.
 :::
 
-### Six Official Series on One Page
+### Six Official Series on One Page {#slide-47}
 
 <span class="slide-kicker">THE DASHBOARD · CHART VERSION</span>
 
@@ -1422,7 +1422,7 @@ Source: NBS Labour Force Survey, new methodology (Q1 2023, 4.1%; underemployment
 Generated from official CBN data and FRED by s01_figures.py. The lab rebuilds it.
 :::
 
-### The Sources Every Nigerian Manager Should Bookmark
+### The Sources Every Nigerian Manager Should Bookmark {#slide-48}
 
 <span class="slide-kicker">WHERE TO LOOK</span>
 
@@ -1441,7 +1441,7 @@ Generated from official CBN data and FRED by s01_figures.py. The lab rebuilds it
 tools/fetch_official_data.py downloads the CBN, World Bank and FRED series used in this deck.
 :::
 
-### The Traps — and the Habit That Beats Each One
+### The Traps — and the Habit That Beats Each One {#slide-49}
 
 | The trap | The better habit |
 |---|---|

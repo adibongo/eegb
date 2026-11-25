@@ -165,11 +165,79 @@ def slide_img(slug, n):
     return f"sessions/{slug}/figures/slides/{slug}_slide{n:02d}.png"
 
 
+CTX = {}
+
+
+def topic_info(tid):
+    for P in CTX.get("outline") or []:
+        for tp in P.get("topics", []):
+            if tp["id"] == tid: return tp, P
+    return None, None
+
+
+def anchor_of(to):
+    """A cross-link target: a slide id -> its slide anchor; a subtopic id -> the subtopic heading."""
+    if to in CTX["ids"]:
+        x = CTX["ids"][to]; lab = (x.get("topic", "") + " · " if x.get("topic") else "") + (x.get("short") or x.get("title", ""))
+        return f"#slide-{x['_slide']}", lab
+    tp, _ = topic_info(to)
+    return f"#t-{to.replace('.', '-')}", f"{to} · {tp['title']}"
+
+
+def xlinks(x):
+    """Builds-on / leads-to links under a slide, plus 'Next' at the end of a subtopic."""
+    if not CTX.get("outline"): return ""
+    parts = []
+    for l in x.get("links") or []:
+        href, lab = anchor_of(l["to"]); back = CTX["num"].get(l["to"], CTX["tfirst"].get(l["to"], 0)) < x["_slide"]
+        parts.append(f"{'◂' if back else '▸'} {l.get('text', '')} [{lab}]({href})")
+    tp = x.get("topic")
+    if tp and CTX["tlast"].get(tp) == x["_slide"]:
+        nxt = next((y for y in CTX["flow"] if y.get("topic") and y["_slide"] > x["_slide"] and y["topic"] != tp), None)
+        if nxt and nxt["topic"].split(".")[0] == tp.split(".")[0]:
+            ti, _ = topic_info(nxt["topic"])
+            parts.append(f"**Next ▸** [{nxt['topic']} {ti['title']}](#t-{nxt['topic'].replace('.', '-')})")
+    return f"::: {{.xlinks}}\n{'  ·  '.join(parts)}\n:::\n\n" if parts else ""
+
+
+def topic_head(x):
+    """Open a new subtopic heading when the slide's subtopic changes."""
+    tp = x.get("topic")
+    if not CTX.get("outline") or not tp or tp == CTX.get("last"): return ""
+    CTX["last"] = tp; ti, _ = topic_info(tp)
+    return f"### {tp} {ti['title']} {{#t-{tp.replace('.', '-')}}}\n\n::: {{.topic-q}}\n{md(ti.get('q', ''))}\n:::\n\n"
+
+
+def part_head(x):
+    P = next((p for p in CTX["outline"] if p["part"] == x.get("part") or (x.get("label") == "APPENDIX" and p["part"] == "A")), None)
+    if not P: return None
+    isA = P["part"] == "A"
+    L = [f"## {'Appendix' if isA else 'Part ' + str(P['part'])} · {P['title']} {{#part-{P['part']}}}\n\n"]
+    if P.get("from"): L.append(f"*Where we are:* {md(P['from'])}\n\n")
+    if P.get("question"): L.append(f"::: {{.part-question}}\n**The question this part answers:** {md(P['question'])}\n:::\n\n")
+    L.append("**In this part**\n\n" + "\n".join(f"- [{tp['id']} {tp['title']}](#t-{tp['id'].replace('.', '-')}) — *{md(tp.get('q', ''))}*" for tp in P.get("topics", [])) + "\n\n")
+    return "".join(L)
+
+
+def storyline_md():
+    if not CTX.get("outline"): return ""
+    L = ["## How today's ideas connect {#slide-%d}\n\nEach part answers the question the previous part raises. Every slide below sits under one of these subtopics.\n\n" % CTX.get("story", 0)]
+    for P in CTX["outline"]:
+        if P["part"] == "A": continue
+        L.append(f"**[Part {P['part']} · {P['title']}](#part-{P['part']})** — " + ", ".join(f"[{tp['id']} {tp['title']}](#t-{tp['id'].replace('.', '-')})" for tp in P["topics"]))
+        L.append(f"<br>*{md(P['leadsTo'])}*\n\n" if P.get("leadsTo") else "\n\n")
+    return "".join(L)
+
+
 def render_slide(x, slug, rel):
     t = x["type"]; L = []
-    kick = f"<span class=\"slide-kicker\">{x['kicker']}</span>\n\n" if x.get("kicker") else ""
+    kick = f"<span class=\"slide-kicker\">{x['kicker']}</span>\n\n" if x.get("kicker") and not x.get("topic") else ""
     tag = " <span class='tag tag-illus'>illustrative</span>" if x.get("illus") else ""
-    h = lambda: f"### {x.get('title', '')}{tag}\n\n{kick}"
+    lvl = "####" if CTX.get("outline") and x.get("topic") else "###"
+    h = lambda: f"{lvl} {x.get('title', '')}{tag} {{#slide-{x['_slide']}}}\n\n{kick}"
+    if t == "section" and CTX.get("outline"):
+        ph = part_head(x)
+        if ph: return ph
     if t == "section":
         if x.get("label") == "APPENDIX":
             L.append(f"## Self-study: going deeper\n\n{md(x.get('sub'))}\n\n")
@@ -177,8 +245,9 @@ def render_slide(x, slug, rel):
             L.append(f"## Part {x.get('num')} · {x['title']}\n\n")
             if x.get("question"): L.append(f"::: {{.part-question}}\n**The question this part answers:** {md(x['question'])}\n:::\n\n")
         return "".join(L)
-    if t in ("plan", "roadmap", "lab", "recap", "glossary", "readings", "caseSlide"):
+    if t in ("plan", "roadmap", "lab", "recap", "glossary", "readings", "caseSlide", "storyline"):
         return ""
+    L.append(topic_head(x))
     if t == "hook":
         L.append(f"## {x['title']}\n\n::: {{.hook-quote}}\n{md(x['quote'])}\n:::\n\n{md(x.get('intro'))}\n\n::: {{.grid}}\n")
         for p in x.get("points", []):
@@ -232,7 +301,7 @@ def render_slide(x, slug, rel):
         if x.get("leadFoot"): L.append(f"*{md(x['leadFoot'])}*\n\n")
         if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
     elif t == "quote":
-        L.append(f"### {x.get('kicker', '').title()}\n\n> {md(x['quote'])}\n>\n> — {x['who']}\n\n")
+        L.append(f"{lvl} From the readings {{#slide-{x['_slide']}}}\n\n> {md(x['quote'])}\n>\n> — {x['who']}\n\n")
         L.append("\n".join(f"- **{p['h']}{'' if p['h'][-1:] in '?!.' else '.'}** {md(p['t'])}" for p in x.get("points", [])) + "\n\n")
     elif t == "concept":
         L.append(h() + f"{md(x['plain'])}\n\n")
@@ -259,19 +328,25 @@ def render_slide(x, slug, rel):
         ans = re.search(r"ANSWERS?:(.*)", x.get("notes") or "", re.S)
         if ans: L.append(f"::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Show answers\n{ans.group(1).strip()}\n:::\n\n")
     elif t == "check":
-        L.append(f"### Check your understanding\n\n**{md(x['q'])}**\n\n" + "\n".join(f"- **{'ABCD'[j]}.** {o}" for j, o in enumerate(x["options"])) + "\n\n")
+        L.append(f"{lvl} {x.get('title') or 'Check your understanding'} {{#slide-{x['_slide']}}}\n\n**{md(x['q'])}**\n\n" + "\n".join(f"- **{'ABCD'[j]}.** {o}" for j, o in enumerate(x["options"])) + "\n\n")
         L.append(f"::: {{.callout-tip collapse=\"true\" appearance=\"simple\"}}\n## Show answer\n{md(x['explain'])}\n:::\n\n")
     elif t == "mistakes":
-        L.append(f"### {x.get('title') or 'Common mistakes'}\n\n" + pipe_table(["The trap", "The better habit"], [[m['bad'], m['good']] for m in x["items"]]))
+        L.append(f"{lvl} {x.get('title') or 'Common mistakes'} {{#slide-{x['_slide']}}}\n\n" + pipe_table(["The trap", "The better habit"], [[m['bad'], m['good']] for m in x["items"]]))
     else:
         L.append(h())
     if t not in ("check", "exercise"): L.append(sources(x))
+    L.append(xlinks(x))
     return dol("".join(L))
 
 
 def session_page_v3(s):
     slug, n = s["slug"], s["num"]; c = C[slug]; part = PARTS[s["part"]]; rel = "../../"
     flow = c["flow"]; byt = lambda t: [x for x in flow if x["type"] == t]
+    CTX.clear(); CTX.update(outline=c.get("outline"), flow=flow, ids={x["id"]: x for x in flow if x.get("id")},
+                            num={x["id"]: x["_slide"] for x in flow if x.get("id")}, tfirst={}, tlast={}, last=None,
+                            story=next((x["_slide"] for x in flow if x["type"] == "storyline"), 0))
+    for x in flow:
+        if x.get("topic"): CTX["tfirst"].setdefault(x["topic"], x["_slide"]); CTX["tlast"][x["topic"]] = x["_slide"]
     pptx, pdf = deck_file(s), deck_file(s, "pdf")
     prev = next((x for x in S if x["num"] == n - 1), None); nxt = next((x for x in S if x["num"] == n + 1), None)
     L = [f"---\ntitle: \"Session {n}: {yq(s['title'])}\"\nsubtitle: \"{part[0]} · {part[1]}\"\n"
@@ -286,17 +361,18 @@ def session_page_v3(s):
         L.append(f"```{{=html}}\n<div class=\"deck-viewer\"><object data=\"{rel}sessions/{slug}/slides/{pdf}#view=FitH\" type=\"application/pdf\" width=\"100%\" height=\"620\">"
                  f"<p>Your browser cannot show the slides here. <a href=\"{rel}sessions/{slug}/slides/{pdf}\">Open the PDF</a>.</p></object></div>\n```\n\n")
     pl = byt("plan")[0]
-    L.append("## This session\n\n" + " → ".join(f"**{b['label']}** ({b['min']} min)" for b in pl["blocks"]) + "\n\n::: {.grid}\n")
+    L.append(f"## This session {{#slide-{pl['_slide']}}}\n\n" + " → ".join(f"**{b['label']}** ({b['min']} min)" for b in pl["blocks"]) + "\n\n::: {.grid}\n")
     for o in pl["items"]:
         L.append(f"::: {{.g-col-12 .g-col-md-4 .obj-card}}\n**{o['title']}**\n\n{md(o['body'])}\n:::\n")
     L.append(":::\n\n")
+    L.append(storyline_md())
     rd = byt("readings")
     if rd:
         L.append("## Read first {.unnumbered}\n\n" + "".join(f"- **{r['ref']}**{' (core)' if r.get('core') else ''} — {md(r['why'])}\n" for r in rd[0]["items"]) + "\n")
     cs = byt("caseSlide")
     if cs:
         k = cs[0]; tag = " <span class='tag tag-illus'>illustrative</span>" if k.get("illus") else ""
-        L.append(f"## The business case{tag}\n\n::: {{.callout-note appearance=\"simple\" icon=false}}\n## {k['title']}\n\n"
+        L.append(f"## The business case{tag} {{#slide-{k['_slide']}}}\n\n::: {{.callout-note appearance=\"simple\" icon=false}}\n## {k['title']}\n\n"
                  f"**Situation.** {md(k['context'])}\n\n**Question.** {md(k['question'])}\n\n**Data.** {md(k['data'])}\n\n**A good answer.** {md(k['decision'])}\n:::\n\n" + sources(k))
     appendix = False
     for x in flow:
@@ -337,7 +413,10 @@ def lab_code_recap(s, c, flow, rel):
             L.append(":::\n\n")
     rc = next((x for x in flow if x["type"] == "recap"), None)
     if rc:
-        L.append("## Key takeaways\n\n" + "\n".join(f"{i}. {md(it)}" for i, it in enumerate(rc["items"], 1)) + "\n\n")
+        def item(it):
+            if isinstance(it, str): return md(it)
+            return md(it["t"]) + (f" ([{it['topic']}](#t-{it['topic'].replace('.', '-')}))" if it.get("topic") and CTX.get("outline") else "")
+        L.append("## Key takeaways\n\n" + "\n".join(f"{i}. {item(it)}" for i, it in enumerate(rc["items"], 1)) + "\n\n")
         if rc.get("prework"): L.append(f"::: {{.callout-note appearance=\"simple\"}}\n**Before next session:** {md(rc['prework'])}\n:::\n\n")
     return "".join(L)
 

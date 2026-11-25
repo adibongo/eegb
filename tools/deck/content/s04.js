@@ -6,8 +6,10 @@
 module.exports = ({ fig }) => {
   const F = (id) => ({ img: fig(id), fig: `S04-${id.toUpperCase()}`, script: "s04_figures.py / .R" });
   const slides = [
+
     // =============================================================== OPENING
-    { type: "hook", kicker: "THE QUESTION FOR TODAY", title: "Is the Biggest Platform Too Big?",
+    { type: "hook", id: "hook",
+      kicker: "THE QUESTION FOR TODAY", title: "Is the Biggest Platform Too Big?",
       quote: "“8 out of 10 in-person payments in Nigeria are made on a Moniepoint terminal.”",
       intro: "That is the company's own claim (2025 Year in Review) — a share of in-person card and POS payments, not of all payments. A triumph for customers, or a problem? Ask three questions:",
       points: [
@@ -15,7 +17,9 @@ module.exports = ({ fig }) => {
         { icon: "FaDoorOpen", title: "2 · Can rivals still win?", body: "Can a new app attract users and merchants, or has the market tipped for good?" },
         { icon: "FaTags", title: "3 · What happens to customers?", body: "Watch fees, quality, innovation and how customers' data are used." }],
       notes: "Source of the quote: Moniepoint, 2025 Year in Review (2025.moniepoint.com). TechCabal (29 Jan 2026) reported a similar line from an internal presentation ('eight out of 10 in-person payments … made with Moniepoint'). It is a company claim, not an official statistic, and it measures in-person terminal payments only — a good first example of asking what a share is a share OF. The Condia (6 Feb 2026) noted inconsistencies among Moniepoint's public numbers. Ask: who in the room uses Moniepoint, OPay, PalmPay or a bank app — and how many use more than one? Multi-homing comes back in Part 2." },
-    { type: "timeline", kicker: "WHY GOVERNMENTS WORRY", title: "A Decade of Platform Showdowns", descSize: 12,
+
+    { type: "timeline", id: "timeline", short: "The opening timeline", links: [{ to: "cases", text: "what each case teaches" }],
+      kicker: "THE BACKGROUND", title: "Why Governments Worry: A Decade of Platform Showdowns", descSize: 12,
       events: [
         { date: "2013", label: "NCC: MTN is dominant", desc: "MTN, with **44%** of mobile voice, is declared dominant. Orders: end the price gap between calls within MTN and calls to rivals; accounting separation." },
         { date: "Nov 2020", label: "Ant's IPO halted", desc: "China stops Ant Group's **~$34bn** listing days before trading — then the largest IPO ever planned." },
@@ -25,23 +29,32 @@ module.exports = ({ fig }) => {
         { date: "Apr 2025", label: "EU fines Apple, Meta", desc: "**€500m** and **€200m** under the Digital Markets Act: new rules written for 'gatekeeper' platforms." }],
       note: "The common thread: **platforms, data and defaults**. Today we learn the economics that explains why regulators act — and how managers should respond.",
       notes: "Sources: NCC 'Determination of Dominance in Selected Communications Markets' (effective 1 May 2013), as reported by Technology Times (28 Apr 2013) and BusinessTech: MTN 44% of mobile voice; on-net/off-net gap about 300%; on-net and off-net retail tariffs to be collapsed; accounting separation. MTN and Glo were also found jointly dominant in wholesale leased lines and transmission. Ant: Shanghai suspended the listing on 3 Nov 2020; Hong Kong followed (planned 5 Nov); size about $34.4–34.5bn (AP, Global Venturing). Alibaba: SAMR, 10 Apr 2021, ¥18.228bn = 4% of Alibaba's 2019 sales in China (¥455.7bn) (Al Jazeera; CMS legal update). FCCPC Final Order 19 Jul 2024; Tribunal judgment 25 Apr 2025 (FCCPC press release). US v. Google: D.D.C., Judge Mehta, 5 Aug 2024; 89.2% share of general search, 94.9% on mobile; more than $26bn paid in 2021 for defaults (NPR). Remedies ruling 2 Sep 2025. EU: Commission decisions of 23 Apr 2025." },
-    { type: "plan", title: "Session 4: When Is Big Bad?", sub: "75 minutes. The appendix holds the self-study depth.",
-      blocks: [{ min: 10, label: "Opening" }, { min: 20, label: "1 · Who sets the price?" }, { min: 20, label: "2 · Platforms" }, { min: 25, label: "3 · Policy, strategy and lab" }],
+
+    { type: "plan", id: "plan",
+      title: "Session 4: When Is Big Bad?", sub: "75 minutes. The appendix holds the self-study depth.",
+      blocks: [{ min: 10, label: "Opening" }, { min: 20, label: "1 · Market power" }, { min: 20, label: "2 · Platforms" }, { min: 25, label: "3 · Policy, strategy and lab" }],
       items: [
         { icon: "FaSitemap", title: "Classify and measure", body: "Place a market on the spectrum from **competition to monopoly**; measure power with the **markup** and the **HHI**." },
         { icon: "FaNetworkWired", title: "Explain platforms", body: "Use **two-sided pricing, network effects, switching costs and data** to explain why platform markets tip." },
         { icon: "FaGavel", title: "Think like a regulator — and a strategist", body: "Judge **dominance, abuse and mergers**; choose how to compete **with, against or as** a platform." }] },
-    { type: "caseSlide", kicker: "THE CASE: ANT FINANCIAL", title: "From Payments App to Financial Empire",
+
+    { type: "storyline", id: "storyline", title: "How Today's Ideas Connect", sub: "Each part answers the question the previous part raises. Click any topic to jump to it.",
+      notes: "Walk the map left to right before starting: market power (Part 1) is the foundation; platforms (Part 2) are a special case in which network effects, switching costs and data create power fast; competition policy and strategy (Part 3) ask what to do about it. Every slide's top line shows where you are on this map, and the links at the bottom of slides point back to the ideas it builds on." },
+
+    { type: "caseSlide", id: "case", short: "The Ant case", links: [{ to: "flywheel", text: "we unpack Ant's model in" }],
+      kicker: "THE CASE: ANT FINANCIAL", title: "The Case: How Ant Became a Financial Empire",
       context: "Alipay began in 2004 as an escrow service for Alibaba's marketplace. By June 2020 it had **711 million monthly users** and handled **¥118 trillion** of payments in China a year. From payments, Ant moved into money-market funds, credit, insurance and credit scoring.",
       question: "Did Ant's scale **serve customers** (cheap payments, credit for people banks ignored) or create **risks and power** that competition alone could not discipline? What should regulators have done?",
       data: "The case (917-0029-1) and Ant's 2020 prospectus; China's payment shares (Alipay **54.5%**, WeChat Pay **39.5%**, Q3 2019); Nigerian data from the NCC, NIBSS and the World Bank's Findex.",
       decision: "A clear view of **where Ant's power came from**, what it did for and to customers, and **which remedy** fits — then the same test applied to a Nigerian platform.",
       notes: "Prospectus figures as reported by Reuters (Insurance Journal, 25 Aug 2020) and TechNode (26 Aug 2020): 711m Alipay monthly active users at end-June 2020; ¥118tn payment volume in China over the 12 months to June 2020. Shares: iResearch via CnTechPost (20 Jan 2020): Alipay 54.5%, Tenpay (WeChat Pay) 39.5%, One Wallet 1.5% of third-party mobile payments, Q3 2019." },
 
-    // =============================================================== PART 1
-    { type: "section", label: "PART", num: 1, title: "Who Sets the Price?", sub: "From many sellers to one.",
-      question: "How much power does a firm have over its price — and how do we measure it?" },
-    { type: "table", kicker: "FOUR MARKET STRUCTURES", title: "From Many Sellers to One", fontSize: 14,
+
+    // =============================================================== PART 1 · MARKET STRUCTURE AND MARKET POWER
+    { type: "section", part: 1, title: "Market Structure and Market Power" },
+
+    { type: "table", topic: "1.1", id: "structures", short: "Four market structures",
+      title: "Four Market Structures, From Many Sellers to One", fontSize: 14,
       head: ["", "Perfect competition", "Monopolistic competition", "Oligopoly", "Monopoly"], colW: [2.0, 2.45, 2.55, 2.45, 2.45],
       rows: [["Number of sellers", "Many", "Many", "A few", "One"],
              ["Product", "Identical", "Differentiated", "Identical or differentiated", "No close substitute"],
@@ -51,19 +64,36 @@ module.exports = ({ fig }) => {
              ["Nigerian example", "Tomatoes at Mile 12 market", "Restaurants, bakeries, fashion", "Mobile telephony, cement, beer", "Power transmission (TCN)"]],
       note: "Most real markets sit in the **middle two**. Platform markets often start crowded and then **tip** towards one or two winners.",
       notes: "Mankiw, Principles of Economics — chapter numbers follow the course copy (2nd ed.): ch. 14 competitive firms, 15 monopoly, 16 oligopoly, 17 monopolistic competition. In the 6th–10th editions, ch. 16 is monopolistic competition and ch. 17 is oligopoly. 'Zero long-run profit' means zero economic profit: entry competes away anything above a normal return. TCN — the Transmission Company of Nigeria — owns and runs the national transmission network; since 2024 the system-operator role sits with the new Nigerian Independent System Operator (NISO)." },
-    { type: "exercise", kicker: "YOUR TURN — 3 MINUTES", title: "Classify These Nigerian Markets", stmtHead: "Market", fontSize: 13,
+
+    { type: "exercise", topic: "1.1", id: "classify",
+      title: "Practise 1.1: Where Do These Nigerian Markets Sit?", stmtHead: "Market", fontSize: 13,
       cols: ["Perfect comp.", "Monop. comp.", "Oligopoly", "Monopoly"],
       items: ["Mobile telephony: MTN, Airtel, Glo, T2", "Maize at a rural periodic market", "Bread from neighbourhood bakeries",
               "Electricity distribution inside one DisCo's franchise area", "Grey cement: Dangote, BUA, Lafarge Africa", "Ride-hailing apps: Uber, Bolt, inDrive"],
       note: "For each, name the **barrier to entry** (or its absence) that puts it there.",
       notes: "ANSWERS: 1 Oligopoly — licences, spectrum and the cost of a national network. 2 Close to perfect competition — many sellers of a near-identical product, free entry. 3 Monopolistic competition — many sellers, each with a slightly different loaf and location. 4 Monopoly (regional) — one licensed distributor per area, a natural monopoly in wires. 5 Oligopoly — huge plants and economies of scale. 6 Oligopoly with network effects — riders want drivers and drivers want riders, but many drivers use several apps (multi-homing)." },
-    { type: "figure", kicker: "MONOPOLY, IN ONE PICTURE", title: "A Monopolist Sells Less and Charges More", ...F("f03"), illus: true, points: [
+
+    { type: "cards", topic: "1.2", id: "barriers", short: "Six barriers to entry", links: [{ to: "structures", text: "they explain the 'entry' row of" }, { to: "forces", text: "the last three power platforms" }],
+      title: "Six Barriers That Let a Firm Keep Its Market Power", perRow: 3,
+      cards: [
+        { icon: "FaIndustry", title: "Economies of scale", body: "Huge fixed costs — towers, kilns, grids — mean only a few firms can cover them." },
+        { icon: "FaFileContract", title: "Licences and regulation", body: "Spectrum, banking and payment licences limit who may enter." },
+        { icon: "FaKey", title: "Control of a key input", body: "Fibre routes, distribution networks, pipelines, retail shelf space." },
+        { icon: "FaNetworkWired", title: "Network effects", body: "The product is worth more when more people use it: WhatsApp, M-Pesa, a POS network." },
+        { icon: "FaLock", title: "Switching costs", body: "Porting a number, retraining staff, moving data and payment history all cost time and money." },
+        { icon: "FaDatabase", title: "Data", body: "More transactions → better fraud and credit models → more customers → more data.", accent: true }],
+      note: "The first three are old barriers. The last three **power platforms** — and they reinforce each other." },
+
+    { type: "figure", topic: "1.3", id: "monopoly", short: "Monopoly vs competition", links: [{ to: "barriers", text: "the power comes from" }],
+      title: "With Market Power, a Firm Sells Less and Charges More", ...F("f03"), illus: true, points: [
         "Under competition the fee falls to cost: **₦20**, and **80m** transactions take place.",
         "A monopolist picks the output where **marginal revenue = marginal cost**: **40m** transactions at **₦60**.",
         "Gold: **₦1.6bn** of profit, taken from customers.",
         "Red: **₦0.8bn** of value lost because 40m trades worth more than they cost never happen — the **deadweight loss**. That, not the profit, is society's loss."],
       notes: "Mankiw ch. 15, 'The Welfare Cost of Monopoly'. The profit is a transfer from consumers to the owner; the deadweight-loss triangle is value that nobody gets. Numbers are illustrative (fee = 100 − Q, marginal cost ₦20); amounts in ₦ million per month." },
-    { type: "worked", kicker: "THE MONOPOLIST'S ARITHMETIC", title: "Why a Monopolist Stops at 40 Million", tableW: 5.6, illus: true,
+
+    { type: "worked", topic: "1.3", id: "markup", short: "The monopolist's price", links: [{ to: "monopoly", text: "the numbers behind" }, { to: "twosided-price", text: "platforms bend this rule" }],
+      title: "How a Monopolist Picks Its Price: Where MR = MC", tableW: 5.6, illus: true,
       table: { head: ["Transactions (m)", "Fee (₦)", "Revenue (₦m)", "Cost at ₦20 (₦m)", "Profit (₦m)"],
         rows: [["30", "70", "2,100", "600", "1,500"], ["40", "60", "2,400", "800", "1,600"], ["50", "50", "2,500", "1,000", "1,500"], ["80", "20", "1,600", "1,600", "0"]],
         total: ["Best: 40m at ₦60", "", "", "", "1,600"] },
@@ -73,85 +103,59 @@ module.exports = ({ fig }) => {
               "Markup rule: (P − MC) ÷ P = 1 ÷ |elasticity|. Here (60 − 20) ÷ 60 = **0.67**, because demand elasticity at that point is **1.5**."],
       result: "Market power = the ability to price **above marginal cost**. The **less elastic** the demand, the bigger the markup.",
       notes: "Elasticity at the monopoly point: |dQ/dP| × P/Q = 1 × 60/40 = 1.5; 1/1.5 = 0.67. The markup ratio (P − MC)/P is the Lerner index. It links back to Session 2: firms with inelastic demand have pricing power." },
-    { type: "cards", kicker: "WHERE MARKET POWER COMES FROM", title: "Six Barriers That Keep Rivals Out", perRow: 3,
-      cards: [
-        { icon: "FaIndustry", title: "Economies of scale", body: "Huge fixed costs — towers, kilns, grids — mean only a few firms can cover them." },
-        { icon: "FaFileContract", title: "Licences and regulation", body: "Spectrum, banking and payment licences limit who may enter." },
-        { icon: "FaKey", title: "Control of a key input", body: "Fibre routes, distribution networks, pipelines, retail shelf space." },
-        { icon: "FaNetworkWired", title: "Network effects", body: "The product is worth more when more people use it: WhatsApp, M-Pesa, a POS network." },
-        { icon: "FaLock", title: "Switching costs", body: "Porting a number, retraining staff, moving data and payment history all cost time and money." },
-        { icon: "FaDatabase", title: "Data", body: "More transactions → better fraud and credit models → more customers → more data.", accent: true }],
-      note: "The first three are old barriers. The last three **power platforms** — and they reinforce each other." },
-    { type: "table", kicker: "OLIGOPOLY AS A GAME", title: "Why Rivals Are Tempted to Cut Prices — and to Collude", illus: true, fontSize: 17,
+
+    { type: "table", topic: "1.4", id: "game", short: "The pricing game", links: [{ to: "markup", text: "a monopolist decides alone" }, { to: "checklist", text: "why the law bans price-fixing" }],
+      title: "With a Few Rivals, Pricing Becomes a Game", illus: true, fontSize: 17,
       head: ["Monthly profit", "Firm B keeps prices high", "Firm B cuts prices"], colW: [3.3, 4.3, 4.3],
       rows: [["Firm A keeps prices high", "A ₦50bn · B ₦50bn", "A ₦20bn · B ₦70bn"],
              ["Firm A cuts prices", "A ₦70bn · B ₦20bn", "A ₦30bn · B ₦30bn  ← equilibrium"]],
       note: "Whatever B does, A earns more by cutting (₦70bn > ₦50bn; ₦30bn > ₦20bn) — and the same holds for B. Both end at **₦30bn** when **₦50bn** each was possible: a **prisoners' dilemma**. The pull towards an agreement to keep prices high is why competition law bans **price-fixing**.",
       notes: "Mankiw, oligopoly chapter (ch. 16 in the course copy; ch. 17 in recent editions): the prisoners' dilemma and Nash equilibrium. Illustrative payoffs. In repeated games firms can sustain high prices without talking (tacit collusion), which is why regulators watch price signals in concentrated markets. Nigeria's FCCPA 2018 prohibits agreements among competitors that fix prices or share markets." },
-    { type: "quote", kicker: "FROM THE READINGS", quoteSize: 22,
+
+    { type: "quote", topic: "1.4", id: "smith",
+      kicker: "1.4 · When a few firms compete — from the readings", quoteSize: 22,
       quote: "People of the same trade seldom meet together, even for merriment and diversion, but the conversation ends in a conspiracy against the public, or in some contrivance to raise prices.",
       who: "Adam Smith, The Wealth of Nations (1776), Book I, ch. X — quoted in Mankiw's oligopoly chapter",
       points: [
         { h: "Why cartels form", t: "Few sellers, similar products and frequent contact make agreement easy — and joint profit is higher." },
         { h: "Why they break", t: "Each member gains by secretly undercutting: the prisoners' dilemma at work." },
         { h: "What the law does", t: "Competition law treats price-fixing and market-sharing as among the most serious offences." }] },
-    { type: "concept", kicker: "MEASURING CONCENTRATION", title: "The HHI: One Number for How Concentrated a Market Is", icon: "FaCalculator",
+
+    { type: "concept", topic: "1.5", id: "hhi", short: "The HHI", links: [{ to: "structures", text: "turns the 'number of sellers' row of" }, { to: "merger", text: "regulators screen mergers with it" }],
+      title: "Measuring Concentration in One Number: The HHI", icon: "FaCalculator",
       plain: "Square each firm's market share (in %), then add them up. Ten equal firms give **1,000**; five give **2,000**; a monopoly gives **10,000**.",
       formula: "HHI = s₁² + s₂² + … + sₙ²", formulaSize: 22,
       example: "Nigeria's mobile market, Dec 2023: 38.79² + 27.55² + 27.45² + 6.21² ≈ **3,056**.",
       why: "Regulators use it to screen mergers. Under the US 2023 Merger Guidelines, a merger that leaves the HHI above **1,800** and raises it by more than **100** is presumed to harm competition.",
       notes: "Shares from the NCC's 2023 Subscriber/Network Performance Report: MTN 38.79%, Airtel 27.55%, Glo 27.45%, EMTS (9mobile) 6.21%. 2023 Merger Guidelines (DOJ/FTC, 18 Dec 2023), Guideline 1. A simpler measure is the concentration ratio: CR2 = the top two firms' combined share (66% in Dec 2023)." },
-    { type: "figure", kicker: "NIGERIA'S MOBILE MARKET", title: "Highly Concentrated — and the 2024 Jump Needs a Health Warning", ...F("f01"), points: [
+
+    { type: "figure", topic: "1.5", id: "ng-telecom", short: "Nigeria's mobile market", links: [{ to: "hhi", text: "computed as in" }],
+      title: "Nigeria's Mobile Market, With a 2024 Health Warning", ...F("f01"), points: [
         "From 2019 to 2023 MTN held **37–40%** of active lines; the HHI stayed around **3,000** — already highly concentrated.",
         "In 2024 the HHI jumped to **~4,000**, yet MTN **lost** 2.4m lines. Glo's count fell by **41.5m** after NIN-SIM barring and a data correction.",
         "Part of the jump is a **reporting correction**: if Glo's earlier count was inflated, earlier HHIs were understated. Always check the **counts** behind a share — Session 1's lesson.",
         "By Sep 2025 MTN and Airtel together held **86%** of active lines."],
       notes: "Data: NCC year-end reports (2019 Annual Report; 2020 Year End Subscriber/Network Data Report; 2023 Subscriber/Network Performance Report; 2024 Year-End Performance Report) and NCC data for Sep 2025 as reported by ThisDay (27 Nov 2025). Dec 2023 → Dec 2024 change in lines (millions): MTN −2.4, Airtel −5.2, Glo −41.5, EMTS −10.7. The NCC's 2024 report attributes the fall to the removal of SIMs not linked to a NIN and to a 'major discrepancy rectified by an MNO'. 2021 shares are computed from operator counts (Technext, 24 Jan 2023)." },
-    { type: "worked", kicker: "A MERGER SCREEN", title: "Would a Regulator Let These Telecoms Merge? (Hypothetical)", tableW: 5.9,
-      table: { head: ["Hypothetical merger", "Merged share", "HHI after", "Change", "Presumed harmful?"],
-        rows: [["Airtel + Glo", "46.1%", "4,843", "+833", "Yes"], ["MTN + T2", "53.9%", "4,198", "+188", "Yes"], ["Glo + T2", "14.1%", "4,055", "+44", "No"]] },
-      steps: ["Start from Sep 2025 shares: MTN **52.1%**, Airtel **33.7%**, Glo **12.3%**, T2 (formerly 9mobile) **1.8%**. HHI = **4,010**.",
-              "A merger of A and B raises the HHI by **2 × sA × sB**. Airtel + Glo: 2 × 33.74 × 12.34 ≈ **833**.",
-              "Screen: HHI after above 1,800 **and** a rise above 100 → presumed harmful. So is a merged share above **30%** with a rise above 100.",
-              "Glo + T2 passes. Two weak rivals combining might even **strengthen** competition against the leaders."],
-      result: "The HHI is a **screen, not a verdict**: efficiencies, entry and the strength of the merged firm also count.",
-      notes: "Shares: NCC data for Sep 2025 via ThisDay (27 Nov 2025). The mergers are hypothetical, for practice only. In Nigeria mergers are reviewed by the FCCPC under the FCCPA 2018 and its merger regulations; telecoms deals also need NCC approval. The US screen is used here because it is simple and published; the FCCPC applies its own assessment." },
-    { type: "check", q: "In 2024 MTN's share of Nigerian mobile lines rose from 39% to 51%, yet MTN had 2.4 million fewer lines. What is the best explanation?",
+
+    { type: "check", topic: "1.5", links: [{ to: "ng-telecom", text: "revisit" }],
+      title: "Check 1.5: What Really Moved MTN's Market Share?", q: "In 2024 MTN's share of Nigerian mobile lines rose from 39% to 51%, yet MTN had 2.4 million fewer lines. What is the best explanation?",
       options: ["MTN won customers from rivals with better service", "Rivals — Glo above all — lost far more lines, through NIN-SIM barring and a reporting correction", "The HHI formula exaggerates the share of large firms", "MTN bought a competitor during 2024"], answer: 1,
       explain: "B. A share is a ratio: if the total shrinks faster than your own count, your share rises. Glo's reported lines fell by 41.5m and 9mobile's by 10.7m. Measured concentration jumped — but part of the jump is a reporting correction, so the true rise is smaller than the series shows, and none of it came from MTN winning customers." },
 
-    // =============================================================== PART 2
-    { type: "section", label: "PART", num: 2, title: "Platforms: Why Winners Take Most", sub: "Two sides, network effects, data.",
-      question: "What makes a platform market different from a market for cement?" },
-    { type: "concept", kicker: "TWO-SIDED MARKETS", title: "A Platform Serves Two Groups Who Need Each Other", icon: "FaExchangeAlt",
+
+    // =============================================================== PART 2 · PLATFORMS
+    { type: "section", part: 2, title: "Platforms: Why Winners Take Most" },
+
+    { type: "concept", topic: "2.1", id: "twosided", short: "Two-sided markets", links: [{ to: "structures", text: "a market structure missing from" }],
+      title: "What a Platform Is: One Business Serving Two Groups", icon: "FaExchangeAlt",
       plain: "A **platform** creates value by connecting two groups — payers and merchants, riders and drivers, borrowers and lenders. Each side values the platform more when the **other side** is bigger.",
-      formula: "more payers → more merchants → more payers", formulaSize: 20,
+      formula: "more payers attract more merchants, who attract more payers", formulaSize: 17,
       example: "Nigerian payment apps often keep transfers cheap or free for users, and earn from merchant fees, float and lending.",
       why: "A price below cost on one side can be **rational**, not predatory — so judge the platform's prices **on both sides together**.",
       notes: "Rochet & Tirole (2003), 'Platform competition in two-sided markets', Journal of the European Economic Association 1(4). Their formal definition: a market is two-sided when the STRUCTURE of prices (who pays what), not just their total, changes how much is traded. Classic examples: card networks (merchants pay, cardholders often get rewards), newspapers (advertisers pay), shopping malls (shops pay rent, shoppers enter free)." },
-    { type: "cards", kicker: "WHY PLATFORMS GROW — AND STICK", title: "Four Forces Behind Platform Power", perRow: 2,
-      cards: [
-        { icon: "FaUserFriends", title: "Direct network effects", body: "More users make the product better for every user: WhatsApp, Facebook, a phone network." },
-        { icon: "FaStore", title: "Cross-side (indirect) network effects", body: "More payers attract merchants; more merchants attract payers. POS networks and ride-hailing grow this way." },
-        { icon: "FaDatabase", title: "Data network effects", body: "More transactions train better fraud and credit models: Ant's credit scoring rested on this." },
-        { icon: "FaMobileAlt", title: "Switching costs vs multi-homing", body: "Lock-in keeps users; but when users can cheaply carry **two apps**, lock-in is much weaker.", accent: true }],
-      note: "**Multi-homing** limits tipping: many Nigerians keep several payment apps. But if one side multi-homes and the other does not, the platform still controls access to its loyal side." },
-    { type: "figure", kicker: "TIPPING", title: "With Strong Network Effects, the Early Leader Can Win — Even Against a Better Rival", ...F("f04"), illus: true, points: [
-        "Platform A starts with **55%** of users; platform B is slightly **better**.",
-        "**No network effect**: users drift to the better product; A ends at **46%**.",
-        "**Strong network effect**: A's head start snowballs to **91%**. The market **tips**.",
-        "Lesson: early scale can beat quality — which is why platforms burn cash to grow, and why regulators act **before** a market tips."],
-      notes: "Illustrative model: each month 15% of users choose again. The chance of choosing A is a logistic function of (strength of network effect × A's lead in users) minus B's quality edge (0.15). With a moderate effect (1.5), B still wins and A ends at 40%." },
-    { type: "lead", kicker: "THE ANT FLYWHEEL", title: "How a Payments App Became a Financial Empire", leadLabel: "From the case", leadSize: 18,
-      lead: "Payments brought Ant the **users and the data**. The data built **credit, investment and insurance** businesses — credit alone brought in **39%** of revenue in early 2020.",
-      leadFoot: "Figures: Ant Group IPO prospectus (Aug 2020), as reported by Reuters, TechNode and ABS-CBN.",
-      points: [
-        { h: "Payments: the hook", t: "Alipay had **711 million** monthly users and handled **¥118 trillion** of payments in China in the year to June 2020." },
-        { h: "Data: the moat", t: "Each payment adds to a profile: spending, repayment, merchants. Ant used it to score borrowers that banks could not assess." },
-        { h: "Credit: the growth engine", t: "Ant arranged **¥1.7 trillion** of consumer credit and **¥0.4 trillion** for small firms (June 2020): **39%** of first-half revenue. About **98%** was funded by banks or sold to investors." },
-        { h: "The regulator's worry", t: "Bank-like risks with little of Ant's own capital at stake — and a dominant app steering users to its own products.", accent: true }],
-      notes: "TechNode (26 Aug 2020): consumer credit balance ¥1.7tn and SMB credit ¥0.4tn at end-June 2020; CreditTech 39.4% of H1 2020 revenue (¥28.6bn of ¥72.5bn). ABS-CBN/Bloomberg (28 Oct 2020): 98% of loans Ant originates are underwritten by financial institutions or securitised. Discussion: is the problem competition (power) or prudential (risk)? Regulators answered with both: restructuring into a financial holding company and capital rules." },
-    { type: "worked", kicker: "TWO-SIDED PRICING, WORKED", title: "Why Free Transfers Can Be the Profitable Choice", tableW: 6.0, illus: true,
+
+    { type: "worked", topic: "2.1", id: "twosided-price", short: "Two-sided pricing", links: [{ to: "markup", text: "compare the one-sided rule in" }],
+      title: "How a Platform Prices: Why Free Transfers Can Pay", tableW: 6.0, illus: true,
       table: { head: ["Per month", "Charge payers ₦20 a transfer", "Free transfers for payers"],
         rows: [["Active payers", "1.0m", "2.0m"], ["Merchants (they follow the payers)", "40,000", "70,000"],
                ["Revenue from payers (10 transfers each)", "₦200m", "₦0"], ["Revenue from merchants (₦10,000 each)", "₦400m", "₦700m"],
@@ -163,31 +167,69 @@ module.exports = ({ fig }) => {
               "Losing money on one side can **maximise total profit**. Test 'predatory pricing' claims on the whole platform."],
       result: "A platform prices **the whole network**, not each side on its own.",
       notes: "Illustrative numbers. Economists test predation on the platform's prices as a whole. Legal tests vary: US law (Brooke Group) also requires a likelihood of recoupment; EU law does not; Nigeria's FCCPA lists below-cost selling by a dominant firm among exclusionary abuses, subject to an efficiency defence." },
-    { type: "figure", kicker: "NIGERIA'S PAYMENT RAILS", title: "Instant Transfers Grew 13-Fold in Naira — About 3-Fold in Dollars", ...F("f05"), points: [
+
+    { type: "check", topic: "2.1", links: [{ to: "twosided-price", text: "revisit" }],
+      title: "Check 2.1: Free Transfers — Predatory or Smart Pricing?", q: "A new payments app makes transfers free for users and charges merchants 1%. A rival calls this predatory pricing. What is the best first response?",
+      options: ["Agree: any price below cost is predatory", "Check whether the platform as a whole prices below cost, and whether it could later recoup losses by excluding rivals", "Disagree: platforms can never price predatorily", "Ask the regulator to cap merchant fees"], answer: 1,
+      explain: "B. In two-sided markets a below-cost price on one side is often efficient, so economists test the platform's prices on both sides together. Legal tests differ: US courts also require a realistic chance to recoup the losses; Nigeria's FCCPA lists selling below cost by a dominant firm as a possible abuse without requiring recoupment." },
+
+    { type: "cards", topic: "2.2", id: "forces", short: "Four forces behind tipping", links: [{ to: "barriers", text: "three of the six barriers in" }],
+      title: "Why Platform Markets Tip: Four Forces", perRow: 2,
+      cards: [
+        { icon: "FaUserFriends", title: "Direct network effects", body: "More users make the product better for every user: WhatsApp, Facebook, a phone network." },
+        { icon: "FaStore", title: "Cross-side (indirect) network effects", body: "More payers attract merchants; more merchants attract payers. POS networks and ride-hailing grow this way." },
+        { icon: "FaDatabase", title: "Data network effects", body: "More transactions train better fraud and credit models: Ant's credit scoring rested on this." },
+        { icon: "FaMobileAlt", title: "Switching costs vs multi-homing", body: "Lock-in keeps users; but when users can cheaply carry **two apps**, lock-in is much weaker.", accent: true }],
+      note: "**Multi-homing** limits tipping: many Nigerians keep several payment apps. But if one side multi-homes and the other does not, the platform still controls access to its loyal side." },
+
+    { type: "figure", topic: "2.2", id: "tipping", short: "Tipping simulation", links: [{ to: "forces", text: "the first force in" }],
+      title: "Tipping in Action: An Early Leader Can Beat a Better Rival", ...F("f04"), illus: true, points: [
+        "Platform A starts with **55%** of users; platform B is slightly **better**.",
+        "**No network effect**: users drift to the better product; A ends at **46%**.",
+        "**Strong network effect**: A's head start snowballs to **91%**. The market **tips**.",
+        "Lesson: early scale can beat quality — which is why platforms burn cash to grow, and why regulators act **before** a market tips."],
+      notes: "Illustrative model: each month 15% of users choose again. The chance of choosing A is a logistic function of (strength of network effect × A's lead in users) minus B's quality edge (0.15). With a moderate effect (1.5), B still wins and A ends at 40%." },
+
+    { type: "lead", topic: "2.3", id: "flywheel", short: "The Ant flywheel", links: [{ to: "case", text: "answers part of" }, { to: "cases", text: "what regulators then did" }],
+      title: "The Ant Flywheel: From Payments to Data to Credit", leadLabel: "From the case", leadSize: 18,
+      lead: "Payments brought Ant the **users and the data**. The data built **credit, investment and insurance** businesses — credit alone brought in **39%** of revenue in early 2020.",
+      leadFoot: "Figures: Ant Group IPO prospectus (Aug 2020), as reported by Reuters, TechNode and ABS-CBN.",
+      points: [
+        { h: "Payments: the hook", t: "Alipay had **711 million** monthly users and handled **¥118 trillion** of payments in China in the year to June 2020." },
+        { h: "Data: the moat", t: "Each payment adds to a profile: spending, repayment, merchants. Ant used it to score borrowers that banks could not assess." },
+        { h: "Credit: the growth engine", t: "Ant arranged **¥1.7 trillion** of consumer credit and **¥0.4 trillion** for small firms (June 2020): **39%** of first-half revenue. About **98%** was funded by banks or sold to investors." },
+        { h: "The regulator's worry", t: "Bank-like risks with little of Ant's own capital at stake — and a dominant app steering users to its own products.", accent: true }],
+      notes: "TechNode (26 Aug 2020): consumer credit balance ¥1.7tn and SMB credit ¥0.4tn at end-June 2020; CreditTech 39.4% of H1 2020 revenue (¥28.6bn of ¥72.5bn). ABS-CBN/Bloomberg (28 Oct 2020): 98% of loans Ant originates are underwritten by financial institutions or securitised. Discussion: is the problem competition (power) or prudential (risk)? Regulators answered with both: restructuring into a financial holding company and capital rules." },
+
+    { type: "figure", topic: "2.4", id: "nip", short: "NIBSS instant payments", links: [{ to: "forces", text: "shared rails make multi-homing easy —" }],
+      title: "Nigeria's Shared Payment Rails: ×13 in Naira, ×3 in Dollars", ...F("f05"), points: [
         "NIBSS instant payments rose from **₦80 trillion** (2018) to **₦1.07 quadrillion** (2024).",
         "Deflated by inflation: **×4.6** — still a huge real increase.",
         "In dollars: **×2.8** at the official rate (**×3.3** at the market rate for 2018), and **down** since 2023 as the naira fell.",
         "NIBSS links every bank and fintech, so customers can pay anyone from any app: **interoperability** limits lock-in."],
       notes: "NIP values (₦ trillion), from NIBSS as reported: 2018 80.4 and 2019 105.2 (Techpoint, 23 Jan 2020); 2020 158.21 and 2021 271.95 (ThisDay, 26 Jan 2022); 2022 387.07 and 2023 600.36 (TheCable, Feb 2024); 2024 ≈ 1,070 (Nairametrics, 29 Jan 2025). Real values deflate by the annual-average headline CPI inflation from the CBN (2024 on the old 2009 base). Dollars use the World Bank's official annual-average rate (₦306/$ in 2018; ₦1,479/$ in 2024). In 2018 most trade cleared at the investors' and exporters' (I&E) window rate of about ₦362/$; Techpoint converted the 2018 total to $222.3bn on that basis, which gives ×3.3 to 2024. By 2024 the rates had been unified." },
-    { type: "figure", kicker: "INCLUSION", title: "Mobile Money: Kenya Tipped Early; Nigeria Is Catching Up Fast", ...F("f06"), points: [
+
+    { type: "figure", topic: "2.4", id: "findex", short: "Mobile-money use",
+      title: "Mobile-Money Use: Kenya Tipped Early, Nigeria Is Catching Up", ...F("f06"), points: [
         "Kenya: **88%** of adults have mobile money, and one platform — M-Pesa — holds about **90%** of accounts.",
         "Nigeria: from **9%** of adults (2021) to **33%** (2024), with many competing apps and banks.",
         "Dominance and inclusion can **coexist**; so can competition and inclusion.",
         "The question is not 'how big?' but '**what does the leader do with its position?**'"],
       notes: "World Bank Global Findex Database 2025 (survey years 2014, 2017, 2021, 2024), indicator mobileaccount.t.d: Nigeria 2.3, 5.6, 8.7, 32.8; Kenya 58.4, 72.9, 68.7, 87.5. M-Pesa share of mobile-money subscriptions: 89.7% in Sep 2025 (Communications Authority of Kenya, via The Star, 10 Dec 2025); 89.0% for Safaricom at Dec 2025 (CA Sector Statistics Report Q2 FY2025/26)." },
-    { type: "compare", kicker: "TWO ROUTES TO INCLUSION", title: "Kenya's Dominant Platform vs Nigeria's Crowded Field",
+
+    { type: "compare", topic: "2.4", id: "routes", short: "Kenya vs Nigeria", links: [{ to: "tipping", text: "Kenya is a tipped market, as in" }],
+      title: "Two Routes to Inclusion: One Dominant Platform or Many Rivals",
       left: { icon: "FaCrown", title: "Kenya: M-Pesa", tag: "One platform, about 90% of mobile-money accounts", items: ["Launched in 2007 by the leading mobile operator, Safaricom", "Network effects and a dense agent network gave near-universal reach", "Transfers to rival wallets only from **2018**, after regulators pushed", "Concern: pricing power and slow openness"] },
       right: { icon: "FaUsers", title: "Nigeria: banks plus many fintechs", tag: "Shared rails, many competing apps", items: ["NIBSS instant payments connect every bank and fintech", "OPay, Moniepoint, PalmPay, Kuda and the banks fight for the same customers", "Mobile-money accounts: **9% → 33%** of adults (2021–2024)", "Concern: fraud and weak KYC — the CBN paused onboarding at five fintechs in April–June 2024"] },
       note: "Neither route is free. **Dominance** brought scale but needed regulators to force openness; **competition** brought speed but needed rules on fraud and identity.",
       notes: "Kenya: cross-network mobile-money transfers went live in April 2018 (Khusoko, 6 Apr 2018; Mobile World Live). Registered mobile-money agents: 501,399 at Dec 2025 (CA Q2 FY2025/26). Nigeria: the CBN told OPay, Moniepoint, PalmPay, Kuda and Paga to stop onboarding new customers on 29 Apr 2024, citing KYC and crypto-fraud concerns, and cleared them to resume on 3 Jun 2024 with new KYC conditions (TechCabal, 3 Jun 2024)." },
-    { type: "check", q: "A new payments app makes transfers free for users and charges merchants 1%. A rival calls this predatory pricing. What is the best first response?",
-      options: ["Agree: any price below cost is predatory", "Check whether the platform as a whole prices below cost, and whether it could later recoup losses by excluding rivals", "Disagree: platforms can never price predatorily", "Ask the regulator to cap merchant fees"], answer: 1,
-      explain: "B. In two-sided markets a below-cost price on one side is often efficient, so economists test the platform's prices on both sides together. Legal tests differ: US courts also require a realistic chance to recoup the losses; Nigeria's FCCPA lists selling below cost by a dominant firm as a possible abuse without requiring recoupment." },
 
-    // =============================================================== PART 3
-    { type: "section", label: "PART", num: 3, title: "Competition Policy — and Strategy", sub: "When to intervene; how to compete.",
-      question: "When should regulators step in — and how should managers compete with, against or as a platform?" },
-    { type: "lead", kicker: "THE REGULATOR'S CHECKLIST", title: "Four Questions Before Calling a Platform a Problem", leadLabel: "Big is not illegal", leadSize: 18,
+
+    // =============================================================== PART 3 · COMPETITION POLICY AND STRATEGY
+    { type: "section", part: 3, title: "Competition Policy and Strategy" },
+
+    { type: "lead", topic: "3.1", id: "checklist", short: "The regulator's four questions",
+      title: "How Regulators Judge Market Power: Four Questions", leadLabel: "Big is not illegal", leadSize: 18,
       lead: "Competition law punishes the **abuse** of market power and mergers that **lessen competition** — not size or success.",
       leadFoot: "Nigeria: the Federal Competition and Consumer Protection Act 2018, enforced by the FCCPC; sector regulators (NCC, CBN) also act.",
       points: [
@@ -195,7 +237,28 @@ module.exports = ({ fig }) => {
         { h: "Is there dominance?", t: "A large, lasting share; barriers to entry; customers who cannot easily switch." },
         { h: "Is there abuse?", t: "Exclusivity, tying, favouring your own products, exploiting users' data, cutting rivals off from something they need." },
         { h: "What are the effects?", t: "Higher prices, worse quality, less innovation, fewer choices — weighed against real efficiencies.", accent: true }] },
-    { type: "table", kicker: "THE CASES", title: "Six Platform Cases and What They Teach", fontSize: 12,
+
+    { type: "figure", topic: "3.1", id: "platform-hhi", short: "Platform HHIs", links: [{ to: "hhi", text: "the HHI from" }],
+      title: "Question 2 in Practice: How Concentrated Are Platform Markets?", ...F("f02"), points: [
+        "Kenya mobile money (accounts): **8,152**. US search (queries): **≈ 8,000**. China mobile payments (value, 2019): **≈ 4,500**. Nigerian mobile (lines): **4,010**.",
+        "All far above the **1,800** line used to screen mergers.",
+        "Each share measures something different — accounts, queries, value, lines. Because platform markets tip, high HHIs are common; the real test is **conduct and contestability**.",
+        "Even when some shares are unpublished (pale bars), the largest firms pin the HHI down."],
+      notes: "HHI computed from the published shares in data/official/platform_concentration.csv. Lower bound = sum of squared known shares; upper bound adds the unexplained remainder as one firm. US search: the court's 89.2% share of general search services." },
+
+    { type: "worked", topic: "3.1", id: "merger", short: "Merger screen", links: [{ to: "ng-telecom", text: "shares from" }],
+      title: "Screening Hypothetical Telecom Mergers With the HHI", tableW: 5.9,
+      table: { head: ["Hypothetical merger", "Merged share", "HHI after", "Change", "Presumed harmful?"],
+        rows: [["Airtel + Glo", "46.1%", "4,843", "+833", "Yes"], ["MTN + T2", "53.9%", "4,198", "+188", "Yes"], ["Glo + T2", "14.1%", "4,055", "+44", "No"]] },
+      steps: ["Start from Sep 2025 shares: MTN **52.1%**, Airtel **33.7%**, Glo **12.3%**, T2 (formerly 9mobile) **1.8%**. HHI = **4,010**.",
+              "A merger of A and B raises the HHI by **2 × sA × sB**. Airtel + Glo: 2 × 33.74 × 12.34 ≈ **833**.",
+              "Screen: HHI after above 1,800 **and** a rise above 100 → presumed harmful. So is a merged share above **30%** with a rise above 100.",
+              "Glo + T2 passes. Two weak rivals combining might even **strengthen** competition against the leaders."],
+      result: "The HHI is a **screen, not a verdict**: efficiencies, entry and the strength of the merged firm also count.",
+      notes: "Shares: NCC data for Sep 2025 via ThisDay (27 Nov 2025). The mergers are hypothetical, for practice only. In Nigeria mergers are reviewed by the FCCPC under the FCCPA 2018 and its merger regulations; telecoms deals also need NCC approval. The US screen is used here because it is simple and published; the FCCPC applies its own assessment." },
+
+    { type: "table", topic: "3.2", id: "cases", short: "Six platform cases", links: [{ to: "timeline", text: "the cases previewed in" }, { to: "checklist", text: "each applies the four questions in" }],
+      title: "What Regulators Have Done: Six Cases, Six Lessons", fontSize: 12,
       head: ["Case", "When", "The problem", "Outcome", "Lesson"], colW: [1.9, 1.0, 3.2, 3.0, 2.8],
       rows: [["NCC on MTN (Nigeria)", "2013", "44% of mobile voice; calls within MTN far cheaper than calls to rivals", "Declared dominant; told to end the on-net/off-net price gap; accounting separation", "Price gaps that punish calling rivals strengthen network effects"],
              ["SAMR v Alibaba (China)", "2021", "Merchants forced to 'choose one of two' platforms", "¥18bn fine (4% of its 2019 China sales)", "Exclusivity is a classic abuse"],
@@ -204,27 +267,29 @@ module.exports = ({ fig }) => {
              ["US v Google", "2024–25", "~89% of search, protected by default deals worth >$26bn (2021)", "Ruled a monopolist; exclusive defaults banned; some data sharing; no Chrome sale", "Defaults matter; remedies are hard"],
              ["EU v Apple and Meta", "2025", "Blocking cheaper offers outside the App Store; 'pay or consent' ads", "€500m and €200m fines (Digital Markets Act)", "Rules set in advance for 'gatekeepers'"]],
       notes: "Sources: NCC determination (2013) via Technology Times; Al Jazeera (10 Apr 2021) for Alibaba; AP via Click2Houston (7 Jul 2023): People's Bank of China fined Ant ¥7.123bn ($985m) for breaches of corporate governance, consumer protection, payments and anti-money-laundering rules; FCCPC press release on the Tribunal judgment (25 Apr 2025); NPR (5 Aug 2024; 2 Sep 2025) for Google; NBC News and the European Commission (23 Apr 2025) for the DMA fines. The Tribunal set aside one order (Order 7) of the FCCPC's Final Order. Whether Meta has paid the fine was unclear as of September 2025 (Techpoint) — check before class." },
-    { type: "figure", kicker: "HOW CONCENTRATED?", title: "These Platform Markets Sit Far Above Merger-Screen Levels", ...F("f02"), points: [
-        "Kenya mobile money (accounts): **8,152**. US search (queries): **≈ 8,000**. China mobile payments (value, 2019): **≈ 4,500**. Nigerian mobile (lines): **4,010**.",
-        "All far above the **1,800** line used to screen mergers.",
-        "Each share measures something different — accounts, queries, value, lines. Because platform markets tip, high HHIs are common; the real test is **conduct and contestability**.",
-        "Even when some shares are unpublished (pale bars), the largest firms pin the HHI down."],
-      notes: "HHI computed from the published shares in data/official/platform_concentration.csv. Lower bound = sum of squared known shares; upper bound adds the unexplained remainder as one firm. US search: the court's 89.2% share of general search services." },
-    { type: "compare", kicker: "THE BIG DEBATE", title: "Is Big Tech's Size Itself the Problem?",
+
+    { type: "compare", topic: "3.3", id: "debate", short: "The size debate", links: [{ to: "monopoly", text: "both judge the harm shown in" }],
+      title: "Is Size Itself the Problem? Two Schools of Thought",
       left: { icon: "FaBalanceScale", title: "Consumer-welfare view", tag: "Judge by prices, output and quality", items: ["Many platform services are free or cheaper than before", "Scale lowers costs; network effects benefit users", "Act only on proven harm to consumers", "Risk: missing harm that shows up as less innovation or less privacy"] },
       right: { icon: "FaLandmark", title: "Neo-Brandeisian view", tag: "Lina Khan (2017): look at power and market structure", items: ["'Free' hides the price: data, attention, lock-in", "Platforms that host rivals have conflicts of interest", "Act early, before markets tip", "Risk: punishing success and blocking efficient scale"] },
       note: "Nigeria's FCCPA aims both to protect **consumers** and to keep markets **competitive**. Know both arguments — your regulator may use either.",
       notes: "Khan, L. (2017), 'Amazon's Antitrust Paradox', Yale Law Journal 126(3). The consumer-welfare standard is associated with Robert Bork, The Antitrust Paradox (1978)." },
-    { type: "cards", kicker: "THE MANAGER'S PLAYBOOK", title: "Competing With, Against and As a Platform", perRow: 3,
+
+    { type: "cards", topic: "3.3", id: "playbook", short: "The manager's playbook", links: [{ to: "forces", text: "uses multi-homing and switching costs from" }],
+      title: "The Manager's Playbook: With, Against or As a Platform", perRow: 3,
       cards: [
         { icon: "FaChessKing", title: "If you ARE the platform", body: "Avoid exclusivity and self-favouring. Keep data use consented and documented. Build interoperability before it is imposed.", accent: true },
         { icon: "FaChessKnight", title: "If you COMPETE with one", body: "Be the second app users keep (multi-homing). Win a niche the leader ignores. Push for interoperability and portability." },
         { icon: "FaChessPawn", title: "If you DEPEND on one", body: "Diversify channels so no app owns your customers. Keep your own customer data. Watch fee and ranking changes." }],
       note: "Ant's lesson: grow fast, but **price in regulation** — in finance, scale brings bank-like rules." },
-    { type: "check", q: "A dominant ride-hailing app offers drivers a 10% bonus if they work only on its app. Which competition concern is most direct?",
+
+    { type: "check", topic: "3.3", links: [{ to: "checklist", text: "apply the four questions in" }, { to: "forces", text: "multi-homing in" }],
+      title: "Check 3.3: Is an Exclusivity Bonus a Competition Problem?", q: "A dominant ride-hailing app offers drivers a 10% bonus if they work only on its app. Which competition concern is most direct?",
       options: ["Predatory pricing", "Exclusive dealing that makes it harder for rivals to sign up drivers", "Price discrimination between riders", "Collusion between apps"], answer: 1,
       explain: "B. Like Alibaba's 'choose one of two', exclusivity stops multi-homing and starves rivals of the other side of their network. Whether it is illegal depends on dominance and its effects." },
-    { type: "lab", title: "Lab 4: Is the Market Too Concentrated?", time: "10 minutes in class; finish the memo at home",
+
+    { type: "lab", id: "lab",
+      title: "Lab 4: Is the Market Too Concentrated?", time: "10 minutes in class; finish the memo at home",
       data: "data/official/ng_mobile_market_shares.csv\ndata/official/platform_concentration.csv\ndata/official/ng_nip_value.csv", r: "sessions/s04/R/s04_lab.R", py: "sessions/s04/python/s04_lab.py",
       steps: [
         "Compute **CR2 and the HHI** for Nigeria's mobile market, 2019–2025.",
@@ -233,19 +298,22 @@ module.exports = ({ fig }) => {
         "Solve the **monopoly fee**, deadweight loss and markup for a payments app.",
         "Measure instant-payment growth in **naira, real terms and dollars**."],
       deliver: "a one-page memo to the FCCPC: is Nigeria's mobile (or mobile-payments) market a competition problem? Which evidence matters most, and what remedy — if any — would you propose?" },
+
     { type: "recap", items: [
-        "Market power = pricing **above marginal cost**; it grows when demand is **inelastic** and entry is hard.",
-        "Measure concentration with **CR and the HHI** — and check the **counts and definitions** behind every share.",
-        "Platforms are **two-sided**: network effects, switching costs and data make markets **tip**; multi-homing and interoperability push back.",
-        "Competition law targets **abuse and harmful mergers**, not size: exclusivity, self-favouring, data exploitation.",
-        "Strategy: compete **with, against or as** a platform — and price in regulation."],
+        { t: "Market power = pricing **above marginal cost**; it grows when demand is **inelastic** and entry is hard.", topic: "1.3" },
+        { t: "Measure concentration with **CR and the HHI** — and check the **counts and definitions** behind every share.", topic: "1.5" },
+        { t: "Platforms are **two-sided**: network effects, switching costs and data make markets **tip**; multi-homing and interoperability push back.", topic: "2.2" },
+        { t: "Competition law targets **abuse and harmful mergers**, not size: exclusivity, self-favouring, data exploitation.", topic: "3.1" },
+        { t: "Strategy: compete **with, against or as** a platform — and price in regulation.", topic: "3.3" }],
       prework: "Read 'Externalities: Justification for Public Goods?' (210-023-1) and 'A Framework to Think About Pollution' (UVA-GEM-0104). Think: who really paid for Nigeria's petrol subsidy?",
       next: "Session 5: Market Failures & Government Intervention" },
 
+
     // =============================================================== APPENDIX
-    { type: "section", label: "APPENDIX", num: 0, title: "Self-Study: Going Deeper", sub: "Read these before the quiz. They are not presented in class.",
-      question: "What else do I need to master Session 4 on my own?" },
-    { type: "lead", kicker: "DATA AS MARKET POWER", title: "When Data Becomes a Barrier to Entry", study: true, leadLabel: "Data network effects", leadSize: 17,
+    { type: "section", part: "A", label: "APPENDIX", title: "Self-Study: Going Deeper" },
+
+    { type: "lead", topic: "A.1", id: "data-power", short: "Data as market power", links: [{ to: "barriers", text: "extends the sixth barrier in" }, { to: "forces", text: "and data network effects in" }],
+      title: "Data as Market Power: When Data Becomes a Barrier", study: true, leadLabel: "Data network effects", leadSize: 17,
       lead: "Data can be copied, but a platform's transaction history is **exclusive**: the firm with the most transactions trains the best fraud and credit models — which attract more transactions.",
       leadFoot: "The remedy debate: share the data (with consent), or limit how it is combined.",
       points: [
@@ -254,14 +322,18 @@ module.exports = ({ fig }) => {
         { h: "Privacy law", t: "Nigeria's data-protection rules — the NDPR 2019, now the Nigeria Data Protection Act 2023, enforced by the NDPC — govern consent and data sharing. The NDPR was the basis of part of the Meta case." },
         { h: "The remedy menu", t: "Data portability, interoperability, limits on combining data across services (as in the EU's DMA), consent rules.", accent: true }],
       notes: "CBN: Regulatory Framework for Open Banking in Nigeria (Feb 2021); Operational Guidelines for Open Banking in Nigeria (Mar 2023). The FCCPC–Meta investigation was run jointly with the data-protection regulator (the NDPB, now NDPC); the final order found breaches of the FCCPA 2018 and the NDPR 2019, including abuse of dominance (Jurist, Jul 2024; FCCPC press release, Apr 2025)." },
-    { type: "table", kicker: "THE ECONOMICS IN ONE TABLE", title: "Pricing Rules by Market Structure", study: true, fontSize: 14,
+
+    { type: "table", topic: "A.2", id: "rules", short: "Pricing rules", links: [{ to: "structures", text: "extends" }, { to: "twosided-price", text: "adds platforms from" }],
+      title: "The Pricing Rules of Each Market Structure in One Table", study: true, fontSize: 14,
       head: ["Structure", "Pricing rule", "Long-run economic profit", "Efficiency"], colW: [2.4, 3.6, 2.6, 3.3],
       rows: [["Perfect competition", "P = MC", "Zero", "Efficient: no deadweight loss"],
              ["Monopolistic competition", "MR = MC, so P > MC", "Zero: entry competes it away", "Small markup and spare capacity; buyers get variety"],
              ["Oligopoly", "Depends on how rivals react (game theory)", "Can persist", "Between competition and monopoly"],
              ["Monopoly", "MR = MC, so P > MC", "Can persist", "Deadweight loss"],
              ["Platform", "Prices on both sides set together; one side may pay below cost", "Can persist if the market tips", "Network benefits vs lock-in"]] },
-    { type: "mistakes", title: "Common Mistakes About Competition", study: true,
+
+    { type: "mistakes", topic: "A.3", id: "mistakes",
+      title: "Common Mistakes About Competition", study: true,
       items: [
         { bad: "'They have a 50% share, so they are abusing dominance.'", good: "Dominance is not abuse: look for **exclusionary or exploitative conduct** and its effects." },
         { bad: "Quoting a market share without its definition.", good: "Say what the market is: lines, revenue or active users? Which products?" },
@@ -269,7 +341,9 @@ module.exports = ({ fig }) => {
         { bad: "Calling a below-cost price on one side 'predatory'.", good: "Test the **whole platform's** pricing — and know your jurisdiction's legal test." },
         { bad: "Assuming network effects make the leader unbeatable.", good: "**Multi-homing**, interoperability and niche entry can unseat leaders." },
         { bad: "Ignoring the regulator until the IPO.", good: "Ant's lesson: treat **regulation as part of strategy**." }] },
-    { type: "glossary", study: true, terms: [
+
+    { type: "glossary", topic: "A.3", id: "glossary",
+      study: true, terms: [
         { term: "Market power", def: "The ability to price above marginal cost without losing all customers." },
         { term: "Deadweight loss", def: "Value lost because trades that are worth more than they cost do not happen." },
         { term: "Lerner index", def: "(Price − marginal cost) ÷ price; equals 1 ÷ |elasticity| for a monopolist." },
@@ -282,13 +356,47 @@ module.exports = ({ fig }) => {
         { term: "Multi-homing", def: "Using two or more competing platforms at the same time." },
         { term: "Tipping", def: "A platform market swinging to one dominant winner." },
         { term: "Abuse of dominance", def: "Conduct by a dominant firm that excludes rivals or exploits customers." }] },
-    { type: "readings", study: true, items: [
+
+    { type: "readings", topic: "A.3", id: "readings",
+      study: true, items: [
         { core: true, ref: "Fintech and Finance Transformation: The Rise of Ant Financial Services (917-0029-1)", why: "The case: how a payments app became a financial platform, and why regulators stepped in." },
         { core: true, ref: "Mankiw, Principles of Economics, chs. 15–17 (course copy)", why: "Monopoly, oligopoly and monopolistic competition: pricing, deadweight loss and game theory. In recent editions oligopoly is ch. 17." },
         { ref: "Rochet & Tirole (2003), 'Platform Competition in Two-Sided Markets', JEEA", why: "The economics of pricing both sides of a platform." },
         { ref: "Shapiro & Varian (1999), Information Rules", why: "Network effects, lock-in and switching costs, written for managers." },
         { ref: "Khan (2017), 'Amazon's Antitrust Paradox', Yale Law Journal", why: "The case for a structural view of platform power." },
         { ref: "Federal Competition and Consumer Protection Act 2018 (Nigeria)", why: "The law the FCCPC enforces: restrictive agreements, dominance, mergers and consumer protection." }] },
+
+];
+  slides.outline = [
+    { part: 1, title: "Market Structure and Market Power", question: "How much power does a firm have over its price — and how do we measure it?",
+      leadsTo: "Power comes from **barriers to entry** and shows up as **prices above cost**. Platforms add new barriers…",
+      topics: [
+        { id: "1.1", title: "Four market structures", q: "How many sellers — and how similar are their products?" },
+        { id: "1.2", title: "Where market power comes from", q: "Why do some markets keep only a few sellers?" },
+        { id: "1.3", title: "How a firm with power prices", q: "What does a monopolist charge — and what does it cost society?" },
+        { id: "1.4", title: "When a few firms compete", q: "Why do rivals fight price wars — or collude?" },
+        { id: "1.5", title: "Measuring concentration", q: "How do we put a number on market power?" }] },
+    { part: 2, title: "Platforms: Why Winners Take Most", question: "What makes a platform market different from a market for cement — and why do platform markets tip?",
+      from: "Part 1 showed that power comes from **barriers to entry** and lets a firm price above cost. Platforms create three new barriers: **network effects, switching costs and data**.",
+      leadsTo: "…so platform markets **tip** towards one or two winners. When is that a problem?",
+      topics: [
+        { id: "2.1", title: "What a platform is", q: "How does a market with two sides set its prices?" },
+        { id: "2.2", title: "Why platform markets tip", q: "Which forces push a market towards one winner?" },
+        { id: "2.3", title: "The Ant flywheel", q: "How did a payments app become a financial empire?" },
+        { id: "2.4", title: "Platforms in Nigerian payments", q: "Is Nigeria's payments market tipping — and does it matter?" }] },
+    { part: 3, title: "Competition Policy and Strategy", question: "When should regulators step in — and how should managers compete with, against or as a platform?",
+      from: "Part 2 showed that platform markets tend to **tip and concentrate**. Part 3 asks when that becomes a problem — and what a manager should do about it.",
+      leadsTo: "Regulators judge **conduct and effects**, not size; managers plan for both.",
+      topics: [
+        { id: "3.1", title: "How regulators judge market power", q: "Dominance, abuse and mergers: what is the test?" },
+        { id: "3.2", title: "What regulators have done", q: "What do six platform cases teach?" },
+        { id: "3.3", title: "The size debate and your playbook", q: "Is size itself the problem — and what should you do?" }] },
+    { part: "A", title: "Self-Study: Going Deeper", question: "What else do I need to master Session 4 on my own?",
+      from: "Each self-study slide extends one subtopic from class — follow the links back.",
+      topics: [
+        { id: "A.1", title: "Data as market power", q: "Extends 1.2 and 2.2." },
+        { id: "A.2", title: "The pricing rules in one table", q: "Extends 1.1–1.4 and 2.1." },
+        { id: "A.3", title: "Mistakes, vocabulary and readings", q: "Check yourself before the quiz." }] },
   ];
   slides.titleNotes = "Open with Moniepoint's claim: eight of ten in-person payments. Then the decade of platform showdowns: regulators everywhere are asking the same question. Today we learn the economics behind it — market power, platforms and competition policy — and what a manager should do on either side of a dominant platform.";
   return slides;

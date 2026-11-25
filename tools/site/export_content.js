@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const sessions = require("../sessions.json");
 const ROOT = path.resolve(__dirname, "..", "..");
-const strip = (t) => (t || "").replace(/\*\*/g, "").replace(/(^|\W)_(\S[^_]*?)_(?=\W|$)/g, "$1$2");
+const strip = (t) => ((t && typeof t === "object" ? t.t : t) || "").replace(/\*\*/g, "").replace(/(^|\W)_(\S[^_]*?)_(?=\W|$)/g, "$1$2");
 const out = {};
 for (const s of sessions) {
   const f = path.join(__dirname, "..", "deck", "content", `${s.slug}.js`);
@@ -26,6 +26,7 @@ for (const s of sessions) {
   // web page follows the deck section by section. Slide number = position + 2 (the title slide is slide 1).
   if (pick("plan").length) {
     o.v3 = true;
+    o.outline = slides.outline || null;
     o.flow = slides.map((x, i) => {
       const y = JSON.parse(JSON.stringify(x));
       y._slide = i + 2;

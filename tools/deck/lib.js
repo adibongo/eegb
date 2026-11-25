@@ -147,7 +147,10 @@ class Deck {
     s.addImage({ path: path.join(LBS, "lbs_logo_navy.png"), x: 11.42, y: 0.32, w: 1.45, h: 0.495 });
     s.addShape("rect", { x: 0, y: 7.08, w: W, h: 0.04, fill: { color: C.cyan }, line: { color: C.cyan } });
     s.addShape("rect", { x: 0, y: 7.12, w: W, h: 0.38, fill: { color: C.navy }, line: { color: C.navy } });
-    T(s, `LAGOS BUSINESS SCHOOL  ·  EEGB  ·  ${this.footerText()}`, { x: MX, y: 7.12, w: 9.5, h: 0.38, fontSize: 8.5, color: C.white, charSpacing: 2, valign: "middle" });
+    const cur = this.cur || {}, ti = this.outline && cur.topic ? this.topicInfo(cur.topic) : null;
+    const crumb = ti ? `  ·  ${ti.part.part === "A" ? "APPENDIX" : "PART " + ti.part.part}  ›  ${ti.id} ${ti.title.toUpperCase()}` : "";
+    T(s, crumb ? `LAGOS BUSINESS SCHOOL  ·  EEGB  ·  SESSION ${this.m.num}${crumb}` : `LAGOS BUSINESS SCHOOL  ·  EEGB  ·  ${this.footerText()}`, { x: MX, y: 7.12, w: 11.0, h: 0.38, fontSize: 8.5, color: C.white, charSpacing: 2, valign: "middle", fit: "shrink" });
+    if (ti) spec = { ...spec, kicker: `${ti.part.part === "A" ? "Appendix" : "Part " + ti.part.part}  ›  ${ti.id}  ${ti.title}` };
     T(s, String(this.n), { x: 11.9, y: 7.12, w: 0.5, h: 0.38, fontSize: 9, bold: true, color: C.white, align: "right", valign: "middle" });
     s.addImage({ path: path.join(LOGO, "eegb_hex_256.png"), x: 12.6, y: 7.14, w: 0.34, h: 0.34 });
     if (spec.kicker) {
@@ -167,6 +170,7 @@ class Deck {
     if (spec.title) T(s, spec.title, { x: MX, y: 0.74, w: spec.titleW || 10.5, h: 0.7, fontFace: HEAD, fontSize: spec.titleSize || 28, bold: true, color: C.navy, valign: "middle", fit: "shrink" });
     if (spec.sub) T(s, spec.sub, { x: MX, y: 1.44, w: 11.9, h: 0.35, fontSize: 13, italic: true, color: C.muted });
     if (spec.notes) s.addNotes(spec.notes);
+    this.linkLine(s);
     return s;
   }
   dark(spec, img = "campus_dark.jpg") {
@@ -180,6 +184,56 @@ class Deck {
   }
 
   // ---------------- slide types ----------------
+  sectionToc(spec, P) {
+    const s = this.dark(spec, "campus_darker.jpg");
+    const isA = P.part === "A";
+    T(s, isA ? "APPENDIX" : "PART", { x: 0.9, y: 1.35, w: 6, h: 0.35, fontSize: 13, bold: true, color: C.gold, charSpacing: 4 });
+    T(s, isA ? "A" : String(P.part).padStart(2, "0"), { x: 0.9, y: 1.7, w: 3, h: 1.1, fontFace: HEAD, fontSize: 66, bold: true, color: C.cyan });
+    T(s, spec.title || P.title, { x: 0.9, y: 2.85, w: 5.6, h: 1.2, fontFace: HEAD, fontSize: 30, bold: true, color: C.white, valign: "top", fit: "shrink" });
+    let y = 4.15;
+    if (P.from) { T(s, rich("**Where we are:** " + P.from, { fontSize: 13, color: C.pale2 }), { x: 0.9, y, w: 5.6, h: 0.95, valign: "top" }); y += 1.0; }
+    s.addShape("roundRect", { x: 0.9, y: Math.max(y, 5.2), w: 5.6, h: 1.3, rectRadius: 0.08, fill: { color: C.deep, transparency: 20 }, line: { color: C.cyan, width: 1 } });
+    T(s, rich("**The question this part answers:** " + (spec.question || P.question), { fontSize: 13.5, color: C.white }), { x: 1.1, y: Math.max(y, 5.2), w: 5.25, h: 1.3, valign: "middle" });
+    // contents: one row per subtopic, each clickable
+    const tops = P.topics || [], x0 = 7.0, w0 = 5.7, rh = Math.min(1.0, 5.1 / Math.max(1, tops.length));
+    T(s, "IN THIS PART", { x: x0, y: 1.35, w: w0, h: 0.3, fontSize: 11.5, bold: true, color: C.gold, charSpacing: 3 });
+    tops.forEach((t, i) => {
+      const yy = 1.8 + i * rh, num = this.tFirst[t.id];
+      s.addShape("roundRect", { x: x0, y: yy, w: w0, h: rh - 0.12, rectRadius: 0.06, fill: { color: C.deep, transparency: 30 }, line: { color: C.teal2, width: 0.75 } });
+      T(s, t.id, { x: x0 + 0.15, y: yy, w: 0.75, h: rh - 0.12, fontFace: HEAD, fontSize: 18, bold: true, color: C.cyan, valign: "middle" });
+      T(s, [{ text: t.title, options: { fontSize: 14, bold: true, color: C.white, breakLine: true, hyperlink: num ? { slide: num, tooltip: `Go to slide ${num}` } : undefined } },
+            { text: t.q || "", options: { fontSize: 11, italic: true, color: C.pale2 } }], { x: x0 + 0.9, y: yy + 0.04, w: w0 - 1.75, h: rh - 0.2, valign: "middle", fit: "shrink" });
+      if (num) T(s, [{ text: `slide ${num}`, options: { hyperlink: { slide: num, tooltip: `Go to slide ${num}` }, color: C.gold } }], { x: x0 + w0 - 0.95, y: yy, w: 0.85, h: rh - 0.12, fontSize: 10.5, bold: true, align: "right", valign: "middle" });
+    });
+  }
+
+  async storyline(spec) {
+    // the whole session as a connected map: parts as columns, subtopics as clickable rows, bridges between parts
+    const s = this.frame({ kicker: spec.kicker || "HOW TODAY FITS TOGETHER", title: spec.title, sub: spec.sub, notes: spec.notes });
+    const parts = this.outline.filter(p => p.part !== "A"), n = parts.length, gap = 0.55, cw = (11.9 - gap * (n - 1)) / n;
+    const top = spec.sub ? 2.05 : 1.9, bot = spec.note ? 5.95 : 6.7;
+    parts.forEach((p, i) => {
+      const x = MX + i * (cw + gap);
+      s.addShape("roundRect", { x, y: top, w: cw, h: 0.95, rectRadius: 0.06, fill: { color: [C.navy, C.teal, C.teal2, C.gold][i % 4] }, line: { color: C.white } });
+      const ps = this.partSlide[p.part];
+      T(s, [{ text: `PART ${p.part}`, options: { fontSize: 10, bold: true, color: "FFE3A8", charSpacing: 2, breakLine: true } },
+            { text: p.title, options: { fontSize: 13.5, bold: true, color: C.white, hyperlink: ps ? { slide: ps, tooltip: `Go to slide ${ps}` } : undefined } }],
+        { x: x + 0.15, y: top, w: cw - 0.3, h: 0.95, valign: "middle", fontFace: HEAD, fit: "shrink" });
+      const tops = p.topics || [], rh = Math.min(0.78, (bot - top - 1.95) / tops.length);
+      tops.forEach((t, j) => {
+        const y = top + 1.1 + j * rh, num = this.tFirst[t.id];
+        card(s, x, y, cw, rh - 0.1);
+        T(s, [{ text: `${t.id}  `, options: { bold: true, color: C.teal2 } }, { text: t.title, options: { bold: true, color: C.navy, hyperlink: num ? { slide: num, tooltip: t.q || "" } : undefined } },
+              { text: num ? `  ·  ${num}` : "", options: { color: C.muted } }], { x: x + 0.15, y, w: cw - 0.3, h: rh - 0.1, fontSize: 11.5, valign: "middle", fit: "shrink" });
+      });
+      if (p.leadsTo && i < n - 1) {
+        T(s, "➜", { x: x + cw + 0.02, y: top + 0.18, w: gap - 0.04, h: 0.6, fontSize: 24, bold: true, color: C.gold, align: "center", valign: "middle" });
+      }
+      if (p.leadsTo) T(s, rich(p.leadsTo, { fontSize: 11, color: C.ink, italic: true }), { x, y: bot - 0.85, w: cw, h: 0.8, valign: "top" });
+    });
+    if (spec.note) this.noteBar(s, spec.note, 6.1);
+  }
+
   async title() {
     const s = this.dark({ notes: this.m.notes || "" }, "campus_dark.jpg");
     const mod = this.m.part ? `  ·  ${PART_NAMES[this.m.part]}` : "";
@@ -196,6 +250,8 @@ class Deck {
   }
 
   section(spec) {
+    const P = this.outline && (this.outline.find(p => p.part === spec.part) || (spec.label === "APPENDIX" && this.outline.find(p => p.part === "A")));
+    if (P) return this.sectionToc(spec, P);
     const s = this.dark(spec, "campus_darker.jpg");
     T(s, spec.label || "PART", { x: 0.9, y: 2.0, w: 6, h: 0.35, fontSize: 13, bold: true, color: C.gold, charSpacing: 4 });
     T(s, spec.num ? String(spec.num).padStart(2, "0") : "", { x: 0.9, y: 2.35, w: 3, h: 1.2, fontFace: HEAD, fontSize: 72, bold: true, color: C.cyan });
@@ -568,7 +624,10 @@ class Deck {
     for (let i = 0; i < n; i++) {
       const y = top + i * rh;
       T(s, String(i + 1).padStart(2, "0"), { x: 0.9, y, w: 0.8, h: rh, fontFace: HEAD, fontSize: 22, bold: true, color: C.gold, valign: "middle" });
-      T(s, rich(spec.items[i], { fontSize: 15, color: C.white }), { x: 1.75, y, w: 8.0, h: rh, valign: "middle" });
+      const it = spec.items[i], txt = typeof it === "string" ? it : it.t;
+      const runs = rich(txt, { fontSize: 15, color: C.white });
+      if (it.topic && this.tFirst && this.tFirst[it.topic]) runs.push({ text: `   ▸ ${it.topic}, slide ${this.tFirst[it.topic]}`, options: { fontSize: 11, color: C.gold, hyperlink: { slide: this.tFirst[it.topic], tooltip: "Revisit" } } });
+      T(s, runs, { x: 1.75, y, w: 8.0, h: rh, valign: "middle" });
     }
     const by = top + n * rh + 0.2;
     if (spec.prework) {
@@ -795,13 +854,64 @@ class Deck {
   }
 
   async run(slides) {
+    // ---- structure pass: number every slide, index ids and the first/last slide of each subtopic ----
+    this.outline = slides.outline || null;
+    this.idx = {}; this.tFirst = {}; this.tLast = {}; this.partSlide = {};
+    slides.forEach((sp, i) => {
+      sp._num = i + 2;                                   // slide 1 is the title slide
+      if (sp.id) this.idx[sp.id] = sp._num;
+      if (sp.topic) { if (!(sp.topic in this.tFirst)) this.tFirst[sp.topic] = sp._num; this.tLast[sp.topic] = sp._num; }
+      if (sp.type === "section" && sp.part !== undefined) this.partSlide[sp.part] = sp._num;
+    });
+    if (this.outline) {                                   // every link and topic must resolve
+      for (const sp of slides) for (const l of sp.links || []) if (!(l.to in this.idx) && !(l.to in this.tFirst)) throw new Error(`Unresolved link '${l.to}' on slide ${sp._num}`);
+    }
+    this.slides = slides;
+    // the first slide of each subtopic states the question that subtopic answers
+    if (this.outline) for (const sp of slides) {
+      if (sp.topic && this.tFirst[sp.topic] === sp._num && !sp.sub && !["check", "quote", "hook", "section"].includes(sp.type)) {
+        const ti = this.topicInfo(sp.topic); if (ti && ti.q && !sp.topic.startsWith("A")) sp.sub = `${ti.id} asks: ${ti.q}`;
+      }
+    }
     await this.title();
     for (const sp of slides) {
+      this.cur = sp;
       const fn = { caseSlide: "caseSlide", case: "caseSlide" }[sp.type] || sp.type;
       if (!this[fn]) throw new Error("Unknown slide type: " + sp.type);
       await this[fn](sp);
     }
   }
+  // ---- structure helpers ----
+  topicInfo(id) {
+    for (const p of this.outline || []) for (const t of p.topics || []) if (t.id === id) return { ...t, part: p };
+    return null;
+  }
+  target(to) {            // a link target is a slide id or a subtopic id
+    if (to in this.idx) { const sp = this.slides[this.idx[to] - 2]; return { num: this.idx[to], label: (sp.topic ? sp.topic + " · " : "") + (sp.short || sp.title || "") }; }
+    const t = this.topicInfo(to); return { num: this.tFirst[to], label: `${to} · ${t.title}` };
+  }
+  linkLine(s) {
+    // bottom band: explicit cross-links on the left, "Next" subtopic on the right — all clickable
+    const sp = this.cur; if (!this.outline || !sp) return;
+    const links = [];
+    for (const l of sp.links || []) {
+      const t = this.target(l.to), back = t.num < sp._num;
+      links.push([{ text: (back ? "◂ " : "▸ ") + (l.text ? l.text + " " : ""), options: { color: C.muted } },
+                  { text: `${t.label} (${t.num})`, options: { color: C.teal2, bold: true, hyperlink: { slide: t.num, tooltip: `Go to slide ${t.num}` } } }]);
+    }
+    let next = null;
+    if (sp.topic && this.tLast[sp.topic] === sp._num) {
+      const nx = this.slides.slice(sp._num - 1).find(x => x.topic && x.topic !== sp.topic);
+      if (nx && nx.topic.split(".")[0] === sp.topic.split(".")[0]) {
+        const t = this.topicInfo(nx.topic);
+        next = [{ text: "Next ▸ ", options: { color: C.muted, bold: true } }, { text: `${nx.topic} ${t.title}`, options: { color: C.gold, bold: true, hyperlink: { slide: nx._num, tooltip: t.q || "" } } }];
+      }
+    }
+    const runs = links.flatMap((r, i) => i ? [{ text: "     ", options: {} }, ...r] : r);
+    if (runs.length) T(s, runs, { x: MX, y: 6.79, w: next ? 8.2 : 11.9, h: 0.27, fontSize: 10, valign: "middle", fit: "shrink" });
+    if (next) T(s, next, { x: runs.length ? 8.9 : MX, y: 6.79, w: runs.length ? 3.7 : 11.9, h: 0.27, fontSize: 10, valign: "middle", align: "right", fit: "shrink" });
+  }
+
   async save(file) {
     fs.mkdirSync(path.dirname(file), { recursive: true });
     await this.p.writeFile({ fileName: file });
