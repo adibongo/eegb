@@ -27,8 +27,8 @@ merger_screen <- function(s, a, b) {
   tibble(merger = paste(a, "+", b), hhi_before = h0, hhi_after = h1, change = d, merged_share = post[[a]],
          presumed_harmful = (h1 > 1800 & d > 100) | (post[[a]] > 30 & d > 100))
 }
-bind_rows(merger_screen(latest, "Airtel", "Glo"), merger_screen(latest, "Glo", "9mobile"),
-          merger_screen(latest, "MTN", "9mobile")) |> print()
+bind_rows(merger_screen(latest, "Airtel", "Glo"), merger_screen(latest, "Glo", "9mobile/T2"),
+          merger_screen(latest, "MTN", "9mobile/T2")) |> print()
 # Note: change in HHI = 2 × share_a × share_b (check it!)
 
 # ---- STEP 4 · Monopoly pricing (illustrative): fee = 100 − Q, marginal cost ₦20 -------------------------------------
@@ -53,6 +53,6 @@ read_csv("data/official/ng_nip_value.csv", show_col_types = FALSE) |> left_join(
 # ---- YOUR TURN ------------------------------------------------------------------------------------------------------------
 # (a) Recompute the HHI for Dec 2023 by hand from the four shares. Is the market 'highly concentrated'?
 # (b) In Step 2, MTN LOST lines in 2024 yet its share rose 12 points. Explain in two sentences.
-# (c) Which merger in Step 3 would a regulator block? Which might pass? Why might 'Glo + 9mobile' still be good for customers?
+# (c) Which merger in Step 3 would a regulator block? Which might pass? Why might 'Glo + 9mobile/T2' still be good for customers?
 # (d) If demand became MORE elastic (fee = 60 − 0.5Q), how would the monopoly fee change? Re-run Step 4.
 # (e) Kenya's M-Pesa holds ~90% of mobile-money accounts, yet Kenya has near-universal inclusion. Is that market 'too concentrated'?

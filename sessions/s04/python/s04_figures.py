@@ -17,7 +17,7 @@ from matplotlib.ticker import FuncFormatter
 from eegb_style import *
 
 set_style()
-OPS = ["MTN", "Airtel", "Glo", "9mobile"]; COL = {"MTN": GOLD, "Airtel": RUST, "Glo": TEAL, "9mobile": OLIVE}
+OPS = ["MTN", "Airtel", "Glo", "9mobile/T2"]; COL = {"MTN": GOLD, "Airtel": RUST, "Glo": TEAL, "9mobile/T2": OLIVE}
 
 # ---- NCC shares: use published shares; where only counts are published, compute them --------------
 ms = pd.read_csv("data/official/ng_mobile_market_shares.csv")
@@ -55,7 +55,7 @@ rows = []
 for mkt, g in pc.groupby("market", sort=False):
     known = (g.share_pct ** 2).sum(); rest = max(0, 100 - g.share_pct.sum())
     rows.append((f"{mkt}\n({g.period.iloc[0]})", known, known + rest ** 2))   # lower and upper bound
-rows += [("Nigeria mobile telephony\n(2023-12, before the break)", hhi["2023-12"], hhi["2023-12"]),
+rows += [("Nigeria mobile telephony (lines)\n(2023-12, before the break)", hhi["2023-12"], hhi["2023-12"]),
          ("Benchmark: 10 equal firms", 1000, 1000), ("Benchmark: 5 equal firms", 2000, 2000)]
 d = pd.DataFrame(rows, columns=["market", "lo", "hi"]).sort_values("lo")
 fig, ax = plt.subplots(figsize=(11, 5.8))
@@ -67,7 +67,7 @@ for i, (lo, hi) in enumerate(zip(d.lo, d.hi)):
 ax.axvline(1800, color=RUST, ls="--", lw=1.5); ax.text(1850, len(d) - .6, "1,800", color=RUST, fontsize=11)
 ax.axvline(10000, color=SLATE, lw=1); ax.text(9950, len(d) - .6, "monopoly = 10,000", ha="right", fontsize=10.5, color=SLATE)
 ax.set_xlim(0, 10400); ax.tick_params(axis="y", labelsize=10.5)
-ax.set(title="Platform markets are among the most concentrated anywhere", xlabel="Herfindahl–Hirschman Index (sum of squared % shares)")
+ax.set(title="Four platform markets, all far above the merger-screen line", xlabel="Herfindahl–Hirschman Index (sum of squared % shares)")
 note(fig, "Sources: NCC; Communications Authority of Kenya (via The Star); iResearch (via CnTechPost); US v. Google (D.D.C., Aug 2024). "
           "Pale bar = range when some firms' shares are not published.")
 save(fig, "s04", "f02")
@@ -131,7 +131,7 @@ ax.set_xticks(xx, nip.index); ax.set_ylabel("₦ trillion"); ax.set_ylim(0, 1200
 h1, l1 = ax.get_legend_handles_labels(); h2, l2 = ax2.get_legend_handles_labels(); ax.legend(h1 + h2, l1 + l2, loc="upper left", fontsize=11)
 ax.set_title(f"Instant transfers, 2018→2024: ×{g_nom:.0f} in naira, ×{g_real:.1f} in real terms, ×{g_usd:.1f} in dollars")
 note(fig, "Sources: NIBSS annual NIP values (via Techpoint, ThisDay, TheCable, Nairametrics); CBN headline CPI (annual average); "
-          "World Bank official ₦/$ annual average. 2024 CPI on the old 2009 base.")
+          "World Bank official ₦/$ annual average (2018: ₦306; at the ₦362 market rate the dollar rise is ×3.3). 2024 CPI on the old 2009 base.")
 save(fig, "s04", "f05")
 print(nip.round(1)); print(f"F05 growth: nominal x{g_nom:.2f}, real x{g_real:.2f}, usd x{g_usd:.2f}")
 

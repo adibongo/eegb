@@ -1,11 +1,11 @@
 market,period,firm,share_pct,source
-Nigeria mobile telephony,2025-09,MTN,52.12,NCC via ThisDay (27 Nov 2025)
-Nigeria mobile telephony,2025-09,Airtel,33.74,NCC via ThisDay (27 Nov 2025)
-Nigeria mobile telephony,2025-09,Glo,12.34,NCC via ThisDay (27 Nov 2025)
-Nigeria mobile telephony,2025-09,T2 (9mobile),1.80,NCC via ThisDay (27 Nov 2025)
-Kenya mobile money (subscriptions),2025-09,M-Pesa,89.7,Communications Authority of Kenya via The Star (10 Dec 2025)
-Kenya mobile money (subscriptions),2025-09,Airtel Money,10.3,Communications Authority of Kenya via The Star (10 Dec 2025)
-China third-party mobile payments,2019-Q3,Alipay,54.5,iResearch via CnTechPost (20 Jan 2020)
-China third-party mobile payments,2019-Q3,Tenpay (WeChat Pay),39.5,iResearch via CnTechPost (20 Jan 2020)
-China third-party mobile payments,2019-Q3,One Wallet,1.5,iResearch via CnTechPost (20 Jan 2020)
-US general search services,2020,Google,89.2,US v. Google (D.D.C. 5 Aug 2024) via NPR
+Nigeria mobile telephony (lines),2025-09,MTN,52.12,NCC via ThisDay (27 Nov 2025)
+Nigeria mobile telephony (lines),2025-09,Airtel,33.74,NCC via ThisDay (27 Nov 2025)
+Nigeria mobile telephony (lines),2025-09,Glo,12.34,NCC via ThisDay (27 Nov 2025)
+Nigeria mobile telephony (lines),2025-09,9mobile/T2,1.80,NCC via ThisDay (27 Nov 2025)
+Kenya mobile money (accounts),2025-09,M-Pesa,89.7,Communications Authority of Kenya via The Star (10 Dec 2025)
+Kenya mobile money (accounts),2025-09,Airtel Money,10.3,Communications Authority of Kenya via The Star (10 Dec 2025)
+China mobile payments (value),2019-Q3,Alipay,54.5,iResearch via CnTechPost (20 Jan 2020)
+China mobile payments (value),2019-Q3,Tenpay (WeChat Pay),39.5,iResearch via CnTechPost (20 Jan 2020)
+China mobile payments (value),2019-Q3,One Wallet,1.5,iResearch via CnTechPost (20 Jan 2020)
+US general search (queries),2020,Google,89.2,US v. Google (D.D.C. 5 Aug 2024) via NPR

@@ -12,13 +12,13 @@ ms = pd.read_csv("data/official/ng_mobile_market_shares.csv")
 print(ms[["period", "operator", "subscriptions_m", "share_pct"]].head(8))
 tot = ms.groupby("period").subscriptions_m.transform("sum")
 ms["share"] = ms.share_pct.fillna(100 * ms.subscriptions_m / tot)       # 2021: only counts are published
-sh = ms.pivot(index="period", columns="operator", values="share")[["MTN", "Airtel", "Glo", "9mobile"]]
+sh = ms.pivot(index="period", columns="operator", values="share")[["MTN", "Airtel", "Glo", "9mobile/T2"]]
 conc = pd.DataFrame({"CR2": sh.apply(lambda r: r.nlargest(2).sum(), axis=1),   # top-two share
                      "HHI": (sh ** 2).sum(axis=1)})                            # sum of squared % shares
 print(conc.round(0))
 
 # ---- STEP 2 · Did MTN really grow from 39% to 51% in 2024? Look at the counts ----------------------
-cnt = ms.pivot(index="period", columns="operator", values="subscriptions_m")[["MTN", "Airtel", "Glo", "9mobile"]]
+cnt = ms.pivot(index="period", columns="operator", values="subscriptions_m")[["MTN", "Airtel", "Glo", "9mobile/T2"]]
 print((cnt.loc["2024-12"] - cnt.loc["2023-12"]).round(1))   # change in millions of lines, Dec 2023 → Dec 2024
 
 # ---- STEP 3 · Merger screen: what would a merger do to the HHI? ---------------------------------------
@@ -30,7 +30,7 @@ def merger_screen(shares, a, b):
                       "merged share %": post[a], "presumed harmful (US 2023 test)": flag})
 latest = sh.loc["2025-09"]
 print(pd.DataFrame({f"{a} + {b}": merger_screen(latest, a, b)
-                    for a, b in [("Airtel", "Glo"), ("Glo", "9mobile"), ("MTN", "9mobile")]}).T)
+                    for a, b in [("Airtel", "Glo"), ("Glo", "9mobile/T2"), ("MTN", "9mobile/T2")]}).T)
 # Note: change in HHI = 2 × share_a × share_b  (check it!)
 
 # ---- STEP 4 · Monopoly pricing (illustrative): fee = 100 − Q, marginal cost ₦20 ------------------------
@@ -61,6 +61,6 @@ print(nip.drop(columns="source").round(1))
 # ---- YOUR TURN ------------------------------------------------------------------------------------------------------
 # (a) Recompute the HHI for Dec 2023 by hand from the four shares. Is the market 'highly concentrated'?
 # (b) In Step 2, MTN LOST lines in 2024 yet its share rose 12 points. Explain in two sentences.
-# (c) Which merger in Step 3 would a regulator block? Which might pass? Why might 'Glo + 9mobile' still be good for customers?
+# (c) Which merger in Step 3 would a regulator block? Which might pass? Why might 'Glo + 9mobile/T2' still be good for customers?
 # (d) If demand became MORE elastic (fee = 60 − 0.5Q), how would the monopoly fee change? Re-run Step 4.
 # (e) Kenya's M-Pesa holds ~90% of mobile-money accounts, yet Kenya has near-universal inclusion. Is that market 'too concentrated'?

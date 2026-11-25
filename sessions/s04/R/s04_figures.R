@@ -8,8 +8,8 @@
 # =============================================================================
 source("R/theme_eegb.R")
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(tidyr) })
-ops <- c("MTN", "Airtel", "Glo", "9mobile")
-opcol <- c(MTN = eegb[["gold"]], Airtel = eegb[["rust"]], Glo = eegb[["teal"]], `9mobile` = eegb[["olive"]])
+ops <- c("MTN", "Airtel", "Glo", "9mobile/T2")
+opcol <- c(MTN = eegb[["gold"]], Airtel = eegb[["rust"]], Glo = eegb[["teal"]], `9mobile/T2` = eegb[["olive"]])
 
 # ---- NCC shares: published shares, or computed from counts where only counts are published -------
 ms <- read_csv("data/official/ng_mobile_market_shares.csv", show_col_types = FALSE) |>
@@ -39,7 +39,7 @@ save_fig(p1, "s04", "f01")
 pc <- read_csv("data/official/platform_concentration.csv", show_col_types = FALSE)
 h2 <- pc |> group_by(market, period) |> summarise(lo = sum(share_pct^2), rest = pmax(0, 100 - sum(share_pct)), .groups = "drop") |>
   mutate(hi = lo + rest^2, market = paste0(market, "\n(", period, ")")) |>
-  bind_rows(tibble(market = c("Nigeria mobile telephony\n(2023-12, before the break)", "Benchmark: 10 equal firms", "Benchmark: 5 equal firms"),
+  bind_rows(tibble(market = c("Nigeria mobile telephony (lines)\n(2023-12, before the break)", "Benchmark: 10 equal firms", "Benchmark: 5 equal firms"),
                    lo = c(hhi$hhi[hhi$lab == "Dec 2023"], 1000, 2000), hi = c(hhi$hhi[hhi$lab == "Dec 2023"], 1000, 2000))) |>
   mutate(kind = ifelse(grepl("Benchmark", market), "b", ifelse(grepl("Nigeria", market), "n", "p")),
          market = reorder(market, lo), lab = ifelse(hi - lo > 5, sprintf("%s–%s", format(round(lo), big.mark = ","), format(round(hi), big.mark = ",")), format(round(lo), big.mark = ",")))
@@ -47,7 +47,7 @@ p2 <- ggplot(h2, aes(y = market)) + geom_col(aes(x = hi, fill = kind), alpha = .
   geom_text(aes(x = hi, label = lab), hjust = -0.1, size = 3.8) + geom_vline(xintercept = 1800, colour = eegb[["rust"]], linetype = 2) +
   scale_fill_manual(values = c(b = eegb[["slate"]], n = eegb[["gold"]], p = eegb[["teal"]]), guide = "none") +
   scale_x_continuous(limits = c(0, 10400), labels = comma) +
-  labs(title = "Platform markets are among the most concentrated anywhere", x = "Herfindahl–Hirschman Index (sum of squared % shares)", y = NULL,
+  labs(title = "Four platform markets, all far above the merger-screen line", x = "Herfindahl–Hirschman Index (sum of squared % shares)", y = NULL,
        caption = "Sources: NCC; CA Kenya; iResearch; US v. Google (Aug 2024). Dashed line = 1,800.\nPale bar = range when some shares are unpublished.") +
   theme_eegb()
 save_fig(p2, "s04", "f02")
