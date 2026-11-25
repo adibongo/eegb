@@ -129,3 +129,18 @@ try:
     print("saved", f"{OUT}/ng_worldbank_annual.csv", wb.shape)
 except Exception as e:
     print("WARNING: World Bank Nigeria download failed; kept the existing ng_worldbank_annual.csv:", e)
+
+print("World Bank Global Findex: account and mobile-money ownership (Session 4)")
+FX = {"account.t.d": "account_pct", "mobileaccount.t.d": "mobile_money_pct"}
+try:
+    rows = []
+    for code, name in FX.items():
+        js = getjson(f"https://api.worldbank.org/v2/country/NGA;KEN;GHA;ZAF;EGY;CHN;SSF/indicator/{code}?format=json&per_page=500&date=2011:2025")
+        for r in js[1]:
+            if r["value"] is not None:
+                rows.append({"iso3": r["country"]["id"], "country": r["country"]["value"], "year": int(r["date"]), "series": name, "value": r["value"]})
+    fx = pd.DataFrame(rows).pivot_table(index=["iso3", "country", "year"], columns="series", values="value").reset_index()
+    fx.to_csv(f"{OUT}/findex_accounts.csv", index=False, float_format="%.1f")
+    print("saved", f"{OUT}/findex_accounts.csv", fx.shape)
+except Exception as e:
+    print("WARNING: Findex download failed; kept the existing findex_accounts.csv:", e)

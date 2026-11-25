@@ -1,0 +1,31 @@
+iso3,country,year,account_pct,mobile_money_pct
+CHN,China,2011,63.8,
+CHN,China,2014,79.0,
+CHN,China,2017,79.5,
+CHN,China,2021,88.7,
+CHN,China,2024,89.4,
+EGY,"Egypt, Arab Rep.",2011,9.7,
+EGY,"Egypt, Arab Rep.",2014,14.1,1.1
+EGY,"Egypt, Arab Rep.",2017,32.8,1.8
+EGY,"Egypt, Arab Rep.",2021,27.4,2.9
+EGY,"Egypt, Arab Rep.",2024,43.1,15.6
+GHA,Ghana,2011,29.4,
+GHA,Ghana,2014,40.5,13.0
+GHA,Ghana,2017,57.7,38.9
+GHA,Ghana,2021,68.2,59.7
+GHA,Ghana,2024,81.2,78.3
+KEN,Kenya,2011,42.3,
+KEN,Kenya,2014,74.7,58.4
+KEN,Kenya,2017,81.6,72.9
+KEN,Kenya,2021,79.2,68.7
+KEN,Kenya,2024,90.1,87.5
+NGA,Nigeria,2011,29.7,
+NGA,Nigeria,2014,44.4,2.3
+NGA,Nigeria,2017,39.7,5.6
+NGA,Nigeria,2021,45.3,8.7
+NGA,Nigeria,2024,63.3,32.8
+ZAF,South Africa,2011,53.6,
+ZAF,South Africa,2014,70.3,14.4
+ZAF,South Africa,2017,69.2,19.0
+ZAF,South Africa,2021,85.4,36.6
+ZAF,South Africa,2024,81.1,31.6

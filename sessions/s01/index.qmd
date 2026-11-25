@@ -1468,7 +1468,7 @@ tools/fetch_official_data.py downloads the CBN, World Bank and FRED series used 
 | **Difference-in-differences** | Effect = change in treated group − change in comparison group. |
 
 ::: {.callout-note appearance="simple"}
-**About the data.** Charts marked *official* use CBN, NBS, World Bank and FRED series (refresh with `tools/fetch_official_data.py`). Items tagged *illustrative* use stylised teaching data or invented numbers built to teach a method.
+**About the data.** Charts use real data (CBN, NBS, NCC, NIBSS, World Bank, FRED), with the source printed under each chart. Series from official APIs refresh with `tools/fetch_official_data.py`; hand-compiled files in `data/official/` give the source on every row. Items tagged *illustrative* use stylised teaching data or invented numbers built to teach a method.
 :::
 
 ::: {.session-nav}

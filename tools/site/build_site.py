@@ -10,6 +10,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 os.chdir(ROOT)
 S = json.load(open("tools/sessions.json"))
 C = json.load(open("tools/site/content.json"))
+V3N = max([int(k[1:]) for k, v in C.items() if v.get("v3")] or [0])
 REPO = "https://github.com/adibongo/eegb"
 NS = len(S)
 PARTS = {1: ("Part I", "Microeconomics & the Market System", "assets/logos/eegb_hex_p1_256.png"),
@@ -227,12 +228,12 @@ def render_slide(x, slug, rel):
         L.append(h())
         lab = f"**{x['leadLabel']}.** " if x.get("leadLabel") else ""
         L.append(f"::: {{.lead-box}}\n{lab}{md(x['lead'])}\n:::\n\n")
-        L.append("\n".join(f"- **{p['h']}.** {md(p['t'])}" for p in x["points"]) + "\n\n")
+        L.append("\n".join(f"- **{p['h']}{'' if p['h'][-1:] in '?!.' else '.'}** {md(p['t'])}" for p in x["points"]) + "\n\n")
         if x.get("leadFoot"): L.append(f"*{md(x['leadFoot'])}*\n\n")
         if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
     elif t == "quote":
         L.append(f"### {x.get('kicker', '').title()}\n\n> {md(x['quote'])}\n>\n> — {x['who']}\n\n")
-        L.append("\n".join(f"- **{p['h']}.** {md(p['t'])}" for p in x.get("points", [])) + "\n\n")
+        L.append("\n".join(f"- **{p['h']}{'' if p['h'][-1:] in '?!.' else '.'}** {md(p['t'])}" for p in x.get("points", [])) + "\n\n")
     elif t == "concept":
         L.append(h() + f"{md(x['plain'])}\n\n")
         if x.get("formula"): L.append(f"::: {{.formula}}\n{md(x['formula'].replace(chr(10), ' '))}\n:::\n\n")
@@ -247,7 +248,8 @@ def render_slide(x, slug, rel):
         if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
     elif t in ("chain", "timeline"):
         items = x.get("steps") or x.get("events")
-        L.append(h() + "\n".join(f"{i}. **{it.get('label') or it.get('date')}** — {md(it.get('desc'))}" for i, it in enumerate(items, 1)) + "\n\n")
+        lab = lambda it: f"{it['date']} · {it['label']}" if it.get("date") else it.get("label")
+        L.append(h() + "\n".join(f"{i}. **{lab(it)}** — {md(it.get('desc'))}" for i, it in enumerate(items, 1)) + "\n\n")
         if x.get("note"): L.append(f"::: {{.callout-tip appearance=\"simple\"}}\n{md(x['note'])}\n:::\n\n")
     elif t == "flow":
         L.append(h() + f"![]({rel}{slide_img(slug, x['_slide'])}){{.fig-img fig-alt=\"{x.get('title')}\"}}\n\n" + "\n".join(f"- {md(p)}" for p in x.get("points", [])) + "\n\n")
@@ -306,8 +308,9 @@ def session_page_v3(s):
     if not appendix: L.append(lab_code_recap(s, c, flow, rel))
     g = byt("glossary")
     if g: L.append(dol("## Vocabulary\n\n| Term | Meaning |\n|---|---|\n" + "\n".join(f"| **{esc(t['term'])}** | {esc(t['def'])} |" for t in g[0]["terms"]) + "\n\n"))
-    L.append("::: {.callout-note appearance=\"simple\"}\n**About the data.** Charts marked *official* use CBN, NBS, World Bank and FRED series "
-             "(refresh with `tools/fetch_official_data.py`). Items tagged *illustrative* use stylised teaching data or invented numbers built to teach a method.\n:::\n\n")
+    L.append("::: {.callout-note appearance=\"simple\"}\n**About the data.** Charts use real data (CBN, NBS, NCC, NIBSS, World Bank, FRED), with the source printed under each chart. "
+             "Series from official APIs refresh with `tools/fetch_official_data.py`; hand-compiled files in `data/official/` give the source on every row. "
+             "Items tagged *illustrative* use stylised teaching data or invented numbers built to teach a method.\n:::\n\n")
     L.append("::: {.session-nav}\n")
     L.append(f"[← Session {prev['num']}: {prev['short']}]({rel}sessions/{prev['slug']}/index.qmd)\n" if prev else f"[← Pre-module]({rel}pre-module.qmd)\n")
     if nxt: L.append(f"[Session {nxt['num']}: {nxt['short']} →]({rel}sessions/{nxt['slug']}/index.qmd){{.next}}\n")
@@ -369,7 +372,7 @@ for p in (1, 2, 3, 4):
         H.append(f"- [**Session {s['num']}** · {s['title']}](sessions/{s['slug']}/index.qmd){tag}\n")
     H.append(":::\n:::\n\n")
 H.append(f"::: {{.callout-note appearance=\"simple\"}}\nFacilitators: Prof. Bongo Adi, Kelechi Nnamdi, Elvis Ozegbe, and Sumendra Dash (guest). "
-         f"All materials are open on [GitHub]({REPO}). Sessions 1–3 run on **official data** (CBN, NBS, World Bank, FRED) that you can refresh yourself; "
+         f"All materials are open on [GitHub]({REPO}). Sessions 1–{V3N} have been rebuilt on **real data** (CBN, NBS, NCC, NIBSS, World Bank, FRED) that you can check and refresh; "
          "the other sessions still use **stylised teaching data** shaped like the Nigerian economy, and are being rebuilt in the same way. "
          "See [Datasets](datasets.qmd).\n:::\n")
 open("index.qmd", "w", encoding="utf-8").write("".join(H))
@@ -403,6 +406,10 @@ OFF = {
  "ng_official_monthly.csv": "Nigeria monthly, from 2006: headline, food and core inflation; MPR and policy rate; T-bill, prime and maximum lending, savings rates; official ₦/$ (average and month-end); BDC ₦/$ (to Apr 2021); gross reserves; plus Brent and wheat prices. Sources: CBN statistics API; FRED (Brent MCOILBRENTEU; IMF global wheat price PWHEAMTUSDM).",
  "ng_worldbank_annual.csv": "Nigeria annual, from 1960: GDP per person (constant 2015 US$ and current US$), real GDP growth, population growth, ₦/$ annual average. Source: World Bank WDI.",
  "fred_monthly.csv": "US federal funds rate, US CPI index and Brent crude, monthly from 2000. Source: FRED (St. Louis Fed).",
+ "ng_mobile_market_shares.csv": "Nigeria's mobile operators (MTN, Airtel, Glo, 9mobile/T2): active subscriptions and market shares at each year-end 2019–2024 and Sep 2025, with the source on every row. Source: NCC reports.",
+ "ng_nip_value.csv": "Annual value of NIBSS Instant Payment (NIP) transfers, 2018–2024 (₦ trillion), with the source on every row. Source: NIBSS, as reported.",
+ "platform_concentration.csv": "Published market shares in four platform markets — Nigerian mobile, Kenyan mobile money, Chinese mobile payments, US search — for HHI calculations. Sources on every row.",
+ "findex_accounts.csv": "Share of adults with an account and with a mobile-money account: Nigeria, Kenya, Ghana, South Africa, Egypt, China; survey years 2011–2024. Source: World Bank Global Findex 2025.",
  "wdi_annual.csv": "Nigeria and seven African peers (Côte d’Ivoire, Egypt, Ethiopia, Ghana, Kenya, Morocco, South Africa), annual from 2000: growth, inflation, GDP per person, exchange rate, current account, reserves cover, remittances, population. Source: World Bank WDI."}
 used_off = {}
 for f in glob.glob("sessions/*/*/*.R") + glob.glob("sessions/*/*/*.py"):

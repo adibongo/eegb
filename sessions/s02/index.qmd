@@ -1183,7 +1183,7 @@ Mobile money and cards reduce the felt cost of paying; cash makes spending more 
 | **Pass-through** | Share of a cost change that ends up in the selling price. |
 
 ::: {.callout-note appearance="simple"}
-**About the data.** Charts marked *official* use CBN, NBS, World Bank and FRED series (refresh with `tools/fetch_official_data.py`). Items tagged *illustrative* use stylised teaching data or invented numbers built to teach a method.
+**About the data.** Charts use real data (CBN, NBS, NCC, NIBSS, World Bank, FRED), with the source printed under each chart. Series from official APIs refresh with `tools/fetch_official_data.py`; hand-compiled files in `data/official/` give the source on every row. Items tagged *illustrative* use stylised teaching data or invented numbers built to teach a method.
 :::
 
 ::: {.session-nav}
