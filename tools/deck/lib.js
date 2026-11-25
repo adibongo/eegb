@@ -150,7 +150,7 @@ class Deck {
     const cur = this.cur || {}, ti = this.outline && cur.topic ? this.topicInfo(cur.topic) : null;
     const crumb = ti ? `  ·  ${ti.part.part === "A" ? "APPENDIX" : "PART " + ti.part.part}  ›  ${ti.id} ${ti.title.toUpperCase()}` : "";
     T(s, crumb ? `LAGOS BUSINESS SCHOOL  ·  EEGB  ·  SESSION ${this.m.num}${crumb}` : `LAGOS BUSINESS SCHOOL  ·  EEGB  ·  ${this.footerText()}`, { x: MX, y: 7.12, w: 11.0, h: 0.38, fontSize: 8.5, color: C.white, charSpacing: 2, valign: "middle", fit: "shrink" });
-    if (ti) spec = { ...spec, kicker: `${ti.part.part === "A" ? "Appendix" : "Part " + ti.part.part}  ›  ${ti.id}  ${ti.title}` };
+    if (ti) spec = { ...spec, kicker: `${ti.part.part === "A" ? "Appendix" : "Part " + ti.part.part}  ›  ${ti.id}  ${ti.title}${cur.ref ? "   ·   " + cur.ref : ""}` };
     T(s, String(this.n), { x: 11.9, y: 7.12, w: 0.5, h: 0.38, fontSize: 9, bold: true, color: C.white, align: "right", valign: "middle" });
     s.addImage({ path: path.join(LOGO, "eegb_hex_256.png"), x: 12.6, y: 7.14, w: 0.34, h: 0.34 });
     if (spec.kicker) {
@@ -217,7 +217,7 @@ class Deck {
       s.addShape("roundRect", { x, y: top, w: cw, h: 0.95, rectRadius: 0.06, fill: { color: [C.navy, C.teal, C.teal2, C.gold][i % 4] }, line: { color: C.white } });
       const ps = this.partSlide[p.part];
       T(s, [{ text: `PART ${p.part}`, options: { fontSize: 10, bold: true, color: "FFE3A8", charSpacing: 2, breakLine: true } },
-            { text: p.title, options: { fontSize: 13.5, bold: true, color: C.white, hyperlink: ps ? { slide: ps, tooltip: `Go to slide ${ps}` } : undefined } }],
+            { text: p.title, options: { fontSize: p.title.length > 36 ? 11 : p.title.length > 28 ? 12 : 13.5, bold: true, color: C.white, hyperlink: ps ? { slide: ps, tooltip: `Go to slide ${ps}` } : undefined } }],
         { x: x + 0.15, y: top, w: cw - 0.3, h: 0.95, valign: "middle", fontFace: HEAD, fit: "shrink" });
       const tops = p.topics || [], rh = Math.min(0.78, (bot - top - 1.95) / tops.length);
       tops.forEach((t, j) => {

@@ -45,6 +45,16 @@ Use reference prices, loss aversion and fairness to decide **how much, how fast 
 :::
 :::
 
+## How today's ideas connect {#slide-5}
+
+Each part answers the question the previous part raises. Every slide below sits under one of these subtopics.
+
+**[Part 1 · Who Bears a Cost Shock?](#part-1)** — [1.1 What moves demand and supply](#t-1-1), [1.2 Equilibrium before and after a shock](#t-1-2), [1.3 When government steps in](#t-1-3)<br>*The split depends on **how strongly customers react** to price…*
+
+**[Part 2 · Elasticity: How Much Do Customers React?](#part-2)** — [2.1 Own-price elasticity](#t-2-1), [2.2 What drives elasticity](#t-2-2), [2.3 Estimating elasticity from data](#t-2-3), [2.4 Elasticity, revenue and margin](#t-2-4)<br>*…but customers are not calculators: **behaviour** matters too.*
+
+**[Part 3 · Behaviour, Promotions and the Decision](#part-3)** — [3.1 Reference prices and fairness](#t-3-1), [3.2 Promotions](#t-3-2), [3.3 The pass-through decision](#t-3-3)<br>*A pass-through plan that the numbers **and** the customers can live with.*
+
 ## Read first {.unnumbered}
 
 - **Note on Microeconomics for Managers** (core) — The course note for Sessions 1–2: demand, supply, elasticity.
@@ -54,7 +64,7 @@ Use reference prices, loss aversion and fairness to decide **how much, how fast 
 - **Thaler, Misbehaving (2015)** — Readable account of behavioural economics, including the fairness studies.
 - **Baye & Prince, Managerial Economics and Business Strategy** — Elasticity, markup rules and pricing strategy for managers (course reading list).
 
-## The business case <span class='tag tag-illus'>illustrative</span> {#slide-5}
+## The business case <span class='tag tag-illus'>illustrative</span> {#slide-6}
 
 ::: {.callout-note appearance="simple" icon=false}
 ## Pricing Noodles Through a Flour Shock
@@ -120,15 +130,29 @@ Shoppers compare with the price they are used to. Big jumps hurt more than the a
 Sources: FRED PWHEAMTUSDM (IMF global price of wheat, US\$/tonne, monthly) × CBN official central rate (monthly average); computed in s02_figures.py: ₦35.7k/t (Jan 2015) → ₦330.1k (Feb 2024 peak) → ₦327.5k (Sep 2026); world price \$169/t (Jan 2026) → \$247/t (Sep 2026). USDA FAS via Milling Middle East & Africa, 29 Sep 2025 (2025/26 imports 6.7 mt, up from 6.25 mt; less than one percent of major millers' flour contains domestic wheat) and 6 Mar 2026 (USDA Grain & Feed Annual: 2026/27 imports forecast at 7.2 mt). This is a world benchmark price, not the landed cost in Lagos (add freight, insurance, duties and port charges).
 :::
 
-## Part 1 · Who Bears a Cost Shock?
-
-::: {.part-question}
-**The question this part answers:** When costs rise, how much ends up in the price — and how much in our margin?
+::: {.xlinks}
+▸ we solve this shock in [1.2 · Solving for equilibrium](#slide-10)
 :::
 
-### What Moves Demand, and What Moves Supply {#slide-7}
+## Part 1 · Who Bears a Cost Shock? {#part-1}
 
-<span class="slide-kicker">THE TWO SIDES OF A MARKET · MANKIW CH. 4</span>
+::: {.part-question}
+**The question this part answers:** When flour costs jump, who pays — the firm or the customer?
+:::
+
+**In this part**
+
+- [1.1 What moves demand and supply](#t-1-1) — *Which forces shift each side of a market?*
+- [1.2 Equilibrium before and after a shock](#t-1-2) — *How far does the price rise when costs jump?*
+- [1.3 When government steps in](#t-1-3) — *Who really pays a tax — or a price ceiling?*
+
+### 1.1 What moves demand and supply {#t-1-1}
+
+::: {.topic-q}
+Which forces shift each side of a market?
+:::
+
+#### Demand and Supply: What Moves Each Side of a Market {#slide-8}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-6 .obj-card}
@@ -157,62 +181,7 @@ Sources: FRED PWHEAMTUSDM (IMF global price of wheat, US\$/tonne, monthly) × CB
 A change in **price** moves you **along** a curve. A change in **anything else** **shifts** the curve. Most pricing mistakes come from mixing the two.
 :::
 
-### Solve the Market Before and After the Shock <span class='tag tag-illus'>illustrative</span> {#slide-8}
-
-<span class="slide-kicker">EQUILIBRIUM, WORKED</span>
-
-|  | Demand | Supply | Price | Quantity |
-|---|---|---|---|---|
-| Before | Q = 1,000 − 2P | Q = −200 + 2P | ₦300 | 400 |
-| Cost +₦60 per unit | unchanged | Q = −200 + 2(P − 60) | ₦330 | 340 |
-| **Change** |  |  | **+₦30** | **−60 (−15%)** |
-
-**Step by step**
-
-1. **Equilibrium**: set demand = supply. 1,000 − 2P = −200 + 2P → P = **₦300**, Q = **400**.
-2. A ₦60 cost rise means firms need ₦60 more to supply each quantity: supply shifts **up by ₦60**.
-3. New equilibrium: 1,000 − 2P = −320 + 2P → P = **₦330**, Q = **340**.
-4. Buyers pay **₦30** of the ₦60; sellers' net price falls by the other **₦30** (from ₦300 to ₦270). Lost volume is an extra cost on top.
-
-::: {.callout-note appearance="simple" icon=false}
-## The general rule
-
-**Pass-through rule** for straight-line curves: share passed to price = supply responsiveness ÷ (supply + demand responsiveness) = 2 ÷ (2 + 2) = **50%**. The **less** price-sensitive the buyers, the **more** they pay.
-:::
-
-::: {.result-box}
-A cost shock is **shared**. Who pays more depends on who can **walk away** more easily.
-:::
-
-::: {.callout-note collapse="true" appearance="minimal" icon=false}
-## Sources and data notes
-
-Mankiw ch. 4 (equilibrium) and ch. 6 (tax incidence) use the same logic: a per-unit cost or tax is split by relative elasticities, not by who writes the cheque. With demand Q = 1,000 − 2P the slope term is 2 for both curves, hence 50%.
-:::
-
-### A Cost Shock Shifts Supply Up — the Price Rises by Less <span class='tag tag-illus'>illustrative</span> {#slide-9}
-
-<span class="slide-kicker">THE PICTURE</span>
-
-::: {.panel-tabset group="lang"}
-## Python
-![](../../sessions/s02/figures/python/s02_f01.png){.fig-img fig-alt="S02-F01 (Python)"}
-
-## R
-![](../../sessions/s02/figures/r/s02_f01.png){.fig-img fig-alt="S02-F01 (R)"}
-
-:::
-
-- Higher flour costs shift supply **up**: firms need more to supply the same quantity.
-- New equilibrium: price **+10%**, quantity **−13%** in this example.
-- The price rises by **less than the cost**: customers pay part, producers absorb part.
-- Steeper (less elastic) demand → more of the shock lands on customers.
-
-<span class="fig-id">S02-F01 · replicate with s02_figures.py / .R</span>
-
-### Nigerian Shocks, Read as Demand and Supply {#slide-10}
-
-<span class="slide-kicker">SHIFTS YOU HAVE LIVED THROUGH</span>
+#### Nigerian Shocks, Read as Shifts in Demand or Supply {#slide-9}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-6 .obj-card}
@@ -243,9 +212,80 @@ Social-media and e-commerce sellers add supply and make prices easier to compare
 Source: NBS Transport Fare Watch, June 2023 (intra-city bus fare per drop ₦649.59 → ₦1,285.41, +97.88% m/m; inter-city ₦4,002.16 → ₦5,686.49, +42.09%), reported by Nairametrics, 14 Aug 2023. Inference for discussion (not measured by NBS): fares could nearly double because commuters had few short-run alternatives — inelastic demand allows high pass-through.
 :::
 
-### Taxes, Ceilings and Floors: Who Really Pays? {#slide-11}
+::: {.xlinks}
+◂ applies [1.1 · What moves demand and supply](#slide-8)  ·  **Next ▸** [1.2 Equilibrium before and after a shock](#t-1-2)
+:::
 
-<span class="slide-kicker">GOVERNMENT IN THE MARKET · MANKIW CH. 6</span>
+### 1.2 Equilibrium before and after a shock {#t-1-2}
+
+::: {.topic-q}
+How far does the price rise when costs jump?
+:::
+
+#### Solving the Market Before and After the Flour Shock <span class='tag tag-illus'>illustrative</span> {#slide-10}
+
+|  | Demand | Supply | Price | Quantity |
+|---|---|---|---|---|
+| Before | Q = 1,000 − 2P | Q = −200 + 2P | ₦300 | 400 |
+| Cost +₦60 per unit | unchanged | Q = −200 + 2(P − 60) | ₦330 | 340 |
+| **Change** |  |  | **+₦30** | **−60 (−15%)** |
+
+**Step by step**
+
+1. **Equilibrium**: set demand = supply. 1,000 − 2P = −200 + 2P → P = **₦300**, Q = **400**.
+2. A ₦60 cost rise means firms need ₦60 more to supply each quantity: supply shifts **up by ₦60**.
+3. New equilibrium: 1,000 − 2P = −320 + 2P → P = **₦330**, Q = **340**.
+4. Buyers pay **₦30** of the ₦60; sellers' net price falls by the other **₦30** (from ₦300 to ₦270). Lost volume is an extra cost on top.
+
+::: {.callout-note appearance="simple" icon=false}
+## The general rule
+
+**Pass-through rule** for straight-line curves: share passed to price = supply responsiveness ÷ (supply + demand responsiveness) = 2 ÷ (2 + 2) = **50%**. The **less** price-sensitive the buyers, the **more** they pay.
+:::
+
+::: {.result-box}
+A cost shock is **shared**. Who pays more depends on who can **walk away** more easily.
+:::
+
+::: {.callout-note collapse="true" appearance="minimal" icon=false}
+## Sources and data notes
+
+Mankiw ch. 4 (equilibrium) and ch. 6 (tax incidence) use the same logic: a per-unit cost or tax is split by relative elasticities, not by who writes the cheque. With demand Q = 1,000 − 2P the slope term is 2 for both curves, hence 50%.
+:::
+
+::: {.xlinks}
+◂ the shock in [The wheat shock](#slide-3)
+:::
+
+#### In a Diagram: Supply Shifts Up, the Price Rises by Less <span class='tag tag-illus'>illustrative</span> {#slide-11}
+
+::: {.panel-tabset group="lang"}
+## Python
+![](../../sessions/s02/figures/python/s02_f01.png){.fig-img fig-alt="S02-F01 (Python)"}
+
+## R
+![](../../sessions/s02/figures/r/s02_f01.png){.fig-img fig-alt="S02-F01 (R)"}
+
+:::
+
+- Higher flour costs shift supply **up**: firms need more to supply the same quantity.
+- New equilibrium: price **+10%**, quantity **−13%** in this example.
+- The price rises by **less than the cost**: customers pay part, producers absorb part.
+- Steeper (less elastic) demand → more of the shock lands on customers.
+
+<span class="fig-id">S02-F01 · replicate with s02_figures.py / .R</span>
+
+::: {.xlinks}
+◂ the picture of [1.2 · Solving for equilibrium](#slide-10)  ·  **Next ▸** [1.3 When government steps in](#t-1-3)
+:::
+
+### 1.3 When government steps in {#t-1-3}
+
+::: {.topic-q}
+Who really pays a tax — or a price ceiling?
+:::
+
+#### When Government Steps In: Taxes, Ceilings and Floors {#slide-12}
 
 ::: {.lead-box}
 **The incidence rule.** The burden of a tax or a cost falls on whichever side **can least escape it** — regardless of who hands the money to the government.
@@ -264,15 +304,32 @@ Source: NBS Transport Fare Watch, June 2023 (intra-city bus fare per drop ₦649
 Sources: Forvis Mazars, 'VAT & Nigeria 2025 Tax Reforms' (7.5% retained; basic food zero-rated; effective 1 January 2026). Basic food was already VAT-exempt under the old VAT Act, so the change is about input VAT, not a 7.5% cut at the till; check whether a product such as noodles counts as basic food. Mankiw ch. 6 ('Supply, Demand and Government Policies'). Zero-rating, unlike exemption, lets suppliers reclaim input VAT. Petrol: NNPC pump prices were about ₦184–₦199 by region before 31 May 2023, raised to ₦488–₦557 (ThisDay, 31 May 2023).
 :::
 
-## Part 2 · Elasticity: How Much Do Customers React?
-
-::: {.part-question}
-**The question this part answers:** If we raise the price, how many customers do we lose — and does revenue rise or fall?
+::: {.xlinks}
+◂ the same sharing logic as [1.2 · The shock in a diagram](#slide-11)
 :::
 
-### Own-Price Elasticity of Demand {#slide-13}
+## Part 2 · Elasticity: How Much Do Customers React? {#part-2}
 
-<span class="slide-kicker">THE KEY NUMBER · MANKIW CH. 5</span>
+*Where we are:* Part 1 showed that a cost shock is **shared**. How it is shared depends on one number: **elasticity**.
+
+::: {.part-question}
+**The question this part answers:** How much do volumes fall when we raise prices — and how do we know?
+:::
+
+**In this part**
+
+- [2.1 Own-price elasticity](#t-2-1) — *How do we measure customers' reaction to price?*
+- [2.2 What drives elasticity](#t-2-2) — *Why do some customers shrug and others walk away?*
+- [2.3 Estimating elasticity from data](#t-2-3) — *How do we read elasticity from real sales data?*
+- [2.4 Elasticity, revenue and margin](#t-2-4) — *When does a price rise raise revenue — and profit?*
+
+### 2.1 Own-price elasticity {#t-2-1}
+
+::: {.topic-q}
+How do we measure customers' reaction to price?
+:::
+
+#### The Key Number: Own-Price Elasticity of Demand {#slide-14}
 
 Elasticity is the **% change in quantity for a 1% change in price**. Bigger than 1 (ignoring the sign) = **elastic**: customers react strongly. Smaller than 1 = **inelastic**.
 
@@ -286,9 +343,11 @@ elasticity = % change in quantity ÷ % change in price
 **Why a manager cares.** Elastic demand: a price rise **cuts revenue**. Inelastic demand: a price rise **raises revenue**. Knowing which you face is the start of every pricing decision.
 :::
 
-### Elasticity and the Revenue Test, Step by Step <span class='tag tag-illus'>illustrative</span> {#slide-14}
+::: {.xlinks}
+◂ decides the split in [1.2 · The shock in a diagram](#slide-11)
+:::
 
-<span class="slide-kicker">COMPUTING IT</span>
+#### Computing Elasticity and the Revenue Test, Step by Step <span class='tag tag-illus'>illustrative</span> {#slide-15}
 
 |  | Before | After | Change | Midpoint % |
 |---|---|---|---|---|
@@ -307,9 +366,17 @@ elasticity = % change in quantity ÷ % change in price
 Elasticity tells you what happens to **revenue**; add costs to see what happens to **profit**.
 :::
 
-### Why Some Customers Shrug and Others Walk Away {#slide-15}
+::: {.xlinks}
+**Next ▸** [2.2 What drives elasticity](#t-2-2)
+:::
 
-<span class="slide-kicker">WHAT DRIVES ELASTICITY</span>
+### 2.2 What drives elasticity {#t-2-2}
+
+::: {.topic-q}
+Why do some customers shrug and others walk away?
+:::
+
+#### What Makes Customers More or Less Price-Sensitive {#slide-16}
 
 ::: {.lead-box}
 **The determinants.** Demand is more elastic when customers have **close substitutes**, the item is a **luxury** or a **big share of the budget**, and they have **time** to adjust.
@@ -328,9 +395,48 @@ Elasticity tells you what happens to **revenue**; add costs to see what happens 
 Mankiw ch. 5. The brand-versus-market distinction drives the pass-through decision at the end of the session.
 :::
 
-### Prices Tripled — Volumes Did Not Collapse <span class='tag tag-illus'>illustrative</span> {#slide-16}
+#### The Elasticity Family: Own, Cross and Income {#slide-17}
 
-<span class="slide-kicker">THE DATA</span>
+| Elasticity | Question it answers | Our estimate | Business use |
+|---|---|---|---|
+| Own-price | If we raise our price 1%, what happens to our volume? | −1.47 | Price setting, revenue forecasts |
+| Cross-price | If a rival raises its price 1%, what happens to our volume? | +0.73 | Is the rival a close substitute? Will they follow? |
+| Income | If customers' real income rises 1%, what happens to our volume? | +1.11 | Planning through recessions; trading down |
+| Price elasticity of supply | If the market price rises 1%, how much more will sellers offer? | — | Who bears a cost shock; capacity planning |
+
+::: {.callout-tip appearance="simple"}
+Cross-price **positive** = substitutes (rival noodles). **Negative** = complements (noodles and seasoning). Income elasticity **negative** = an inferior good that people buy less of as they get richer.
+:::
+
+::: {.xlinks}
+◂ extends [2.1 · Own-price elasticity](#slide-14)
+:::
+
+#### Check 2.2: A Rival Cuts Its Price by 10% — What Happens? {#slide-18}
+
+**A competitor cuts its noodle price by 10%. Our cross-price elasticity is +0.73. Holding our price, what happens to our volume?**
+
+- **A.** Rises about 7% — their cut expands the whole market
+- **B.** Falls about 15% — use the own-price elasticity
+- **C.** Falls about 7% — some of our customers switch to them
+- **D.** No change — cross-price elasticity applies only to complements
+
+::: {.callout-tip collapse="true" appearance="simple"}
+## Show answer
+C. A cross-price elasticity of +0.73 means our volume moves 0.73% in the **same** direction as the rival's price. A 10% cut by them → about 7% fewer packs for us. A gets the sign wrong; B uses the wrong elasticity; D has substitutes and complements reversed.
+:::
+
+::: {.xlinks}
+◂ revisit [2.2 · Three elasticities](#slide-17)  ·  **Next ▸** [2.3 Estimating elasticity from data](#t-2-3)
+:::
+
+### 2.3 Estimating elasticity from data {#t-2-3}
+
+::: {.topic-q}
+How do we read elasticity from real sales data?
+:::
+
+#### The Data: Prices Tripled, Yet Volumes Did Not Collapse <span class='tag tag-illus'>illustrative</span> {#slide-19}
 
 ::: {.panel-tabset group="lang"}
 ## Python
@@ -348,9 +454,7 @@ Mankiw ch. 5. The brand-versus-market distinction drives the pass-through decisi
 
 <span class="fig-id">S02-F02 · replicate with s02_figures.py / .R</span>
 
-### Inflation Hides the Elasticity <span class='tag tag-illus'>illustrative</span> {#slide-17}
-
-<span class="slide-kicker">THE TRAP</span>
+#### The Trap: Inflation Hides the Elasticity <span class='tag tag-illus'>illustrative</span> {#slide-20}
 
 ::: {.panel-tabset group="lang"}
 ## Python
@@ -368,9 +472,11 @@ Mankiw ch. 5. The brand-versus-market distinction drives the pass-through decisi
 
 <span class="fig-id">S02-F03 · replicate with s02_figures.py / .R</span>
 
-### What Customers Really Respond To <span class='tag tag-illus'>illustrative</span> {#slide-18}
+::: {.xlinks}
+◂ a shift, not a move along the curve — [1.1 · What moves demand and supply](#slide-8)
+:::
 
-<span class="slide-kicker">HOLDING OTHER THINGS CONSTANT</span>
+#### Holding Other Things Constant: What Customers Respond To <span class='tag tag-illus'>illustrative</span> {#slide-21}
 
 ::: {.panel-tabset group="lang"}
 ## Python
@@ -388,24 +494,17 @@ Mankiw ch. 5. The brand-versus-market distinction drives the pass-through decisi
 
 <span class="fig-id">S02-F04 · replicate with s02_figures.py / .R</span>
 
-### Three Elasticities Every Manager Should Know {#slide-19}
-
-<span class="slide-kicker">THE ELASTICITY FAMILY</span>
-
-| Elasticity | Question it answers | Our estimate | Business use |
-|---|---|---|---|
-| Own-price | If we raise our price 1%, what happens to our volume? | −1.47 | Price setting, revenue forecasts |
-| Cross-price | If a rival raises its price 1%, what happens to our volume? | +0.73 | Is the rival a close substitute? Will they follow? |
-| Income | If customers' real income rises 1%, what happens to our volume? | +1.11 | Planning through recessions; trading down |
-| Price elasticity of supply | If the market price rises 1%, how much more will sellers offer? | — | Who bears a cost shock; capacity planning |
-
-::: {.callout-tip appearance="simple"}
-Cross-price **positive** = substitutes (rival noodles). **Negative** = complements (noodles and seasoning). Income elasticity **negative** = an inferior good that people buy less of as they get richer.
+::: {.xlinks}
+◂ estimates the elasticities in [2.2 · Three elasticities](#slide-17)  ·  **Next ▸** [2.4 Elasticity, revenue and margin](#t-2-4)
 :::
 
-### When Does a Price Rise Raise Revenue? <span class='tag tag-illus'>illustrative</span> {#slide-20}
+### 2.4 Elasticity, revenue and margin {#t-2-4}
 
-<span class="slide-kicker">PRICE, VOLUME AND REVENUE</span>
+::: {.topic-q}
+When does a price rise raise revenue — and profit?
+:::
+
+#### Elasticity and Revenue: When Does a Price Rise Pay? <span class='tag tag-illus'>illustrative</span> {#slide-22}
 
 ::: {.panel-tabset group="lang"}
 ## Python
@@ -423,9 +522,11 @@ Cross-price **positive** = substitutes (rival noodles). **Negative** = complemen
 
 <span class="fig-id">S02-F05 · replicate with s02_figures.py / .R</span>
 
-### Your Gross Margin Reveals the Elasticity You Assume <span class='tag tag-illus'>illustrative</span> {#slide-21}
+::: {.xlinks}
+◂ the revenue test in [2.1 · Computing elasticity](#slide-15)
+:::
 
-<span class="slide-kicker">ELASTICITY AND MARGIN</span>
+#### Elasticity and Margin: What Your Gross Margin Assumes <span class='tag tag-illus'>illustrative</span> {#slide-23}
 
 | Elasticity (\|e\|) | Profit-maximising margin = 1 ÷ \|e\| | Price if unit cost = ₦350 |
 |---|---|---|
@@ -446,29 +547,27 @@ Cross-price **positive** = substitutes (rival noodles). **Negative** = complemen
 Margins and elasticities must be **consistent**. If they are not, one of them is wrong.
 :::
 
-### Check your understanding {#slide-22}
+## Part 3 · Behaviour, Promotions and the Decision {#part-3}
 
-**A competitor cuts its noodle price by 10%. Our cross-price elasticity is +0.73. Holding our price, what happens to our volume?**
-
-- **A.** Rises about 7% — their cut expands the whole market
-- **B.** Falls about 15% — use the own-price elasticity
-- **C.** Falls about 7% — some of our customers switch to them
-- **D.** No change — cross-price elasticity applies only to complements
-
-::: {.callout-tip collapse="true" appearance="simple"}
-## Show answer
-C. A cross-price elasticity of +0.73 means our volume moves 0.73% in the **same** direction as the rival's price. A 10% cut by them → about 7% fewer packs for us. A gets the sign wrong; B uses the wrong elasticity; D has substitutes and complements reversed.
-:::
-
-## Part 3 · Behaviour, Promotions and the Decision
+*Where we are:* Part 2 gave the numbers. Part 3 adds how customers actually **feel** about prices — and makes the decision.
 
 ::: {.part-question}
-**The question this part answers:** How much of the flour shock should we pass on — how fast, and in what form?
+**The question this part answers:** How should we pass on the shock — and what will customers accept?
 :::
 
-### Reference Prices and Loss Aversion {#slide-24}
+**In this part**
 
-<span class="slide-kicker">BEHAVIOURAL ECONOMICS</span>
+- [3.1 Reference prices and fairness](#t-3-1) — *Why do some price rises hurt more than the arithmetic says?*
+- [3.2 Promotions](#t-3-2) — *Does a discount pay for itself?*
+- [3.3 The pass-through decision](#t-3-3) — *How much of the shock should we pass on?*
+
+### 3.1 Reference prices and fairness {#t-3-1}
+
+::: {.topic-q}
+Why do some price rises hurt more than the arithmetic says?
+:::
+
+#### Behavioural Pricing: Reference Prices and Loss Aversion {#slide-25}
 
 Shoppers judge a price against the price they are **used to** — their **reference price**. Paying more than usual feels like a **loss**, and people weigh losses about **twice** as heavily as equal gains (Kahneman & Tversky).
 
@@ -488,9 +587,7 @@ pain of a ₦50 rise  >  pleasure of a ₦50 cut
 Kahneman & Tversky, 'Prospect Theory' (Econometrica, 1979); Tversky & Kahneman (1992) estimate a loss-aversion coefficient of about 2.25. The 7.7% penalty is from the stylised dataset.
 :::
 
-### Big Jumps Hurt More Than the Arithmetic Says <span class='tag tag-illus'>illustrative</span> {#slide-25}
-
-<span class="slide-kicker">THE EVIDENCE</span>
+#### The Evidence: Big Price Jumps Hurt More Than the Maths Says <span class='tag tag-illus'>illustrative</span> {#slide-26}
 
 ::: {.panel-tabset group="lang"}
 ## Python
@@ -508,9 +605,11 @@ Kahneman & Tversky, 'Prospect Theory' (Econometrica, 1979); Tversky & Kahneman (
 
 <span class="fig-id">S02-F06 · replicate with s02_figures.py / .R</span>
 
-### Customers Punish Prices That Feel Unfair {#slide-26}
+::: {.xlinks}
+◂ beyond the simple elasticity in [2.1 · Own-price elasticity](#slide-14)
+:::
 
-<span class="slide-kicker">FAIRNESS AND DYNAMIC PRICING</span>
+#### Fairness: Customers Punish Prices That Feel Unfair {#slide-27}
 
 ::: {.lead-box}
 **Kahneman, Knetsch & Thaler (1986).** A hardware store raises the price of snow shovels from **\$15 to \$20** the morning after a snowstorm. **82%** of respondents called it **unfair**.
@@ -529,9 +628,17 @@ Kahneman & Tversky, 'Prospect Theory' (Econometrica, 1979); Tversky & Kahneman (
 Kahneman, Knetsch & Thaler, 'Fairness as a Constraint on Profit Seeking: Entitlements in the Market', American Economic Review 76(4), 1986. Thaler's 'Misbehaving' (2015) retells the study. Session 4 returns to data, platforms and pricing power.
 :::
 
-### What a 15% Discount Buys <span class='tag tag-illus'>illustrative</span> {#slide-27}
+::: {.xlinks}
+**Next ▸** [3.2 Promotions](#t-3-2)
+:::
 
-<span class="slide-kicker">PROMOTIONS</span>
+### 3.2 Promotions {#t-3-2}
+
+::: {.topic-q}
+Does a discount pay for itself?
+:::
+
+#### Promotions: What a 15% Discount Buys <span class='tag tag-illus'>illustrative</span> {#slide-28}
 
 ::: {.panel-tabset group="lang"}
 ## Python
@@ -549,9 +656,11 @@ Kahneman, Knetsch & Thaler, 'Fairness as a Constraint on Profit Seeking: Entitle
 
 <span class="fig-id">S02-F07 · replicate with s02_figures.py / .R</span>
 
-### A 15% Discount Needs Volume to Double — We Got +34% <span class='tag tag-illus'>illustrative</span> {#slide-28}
+::: {.xlinks}
+◂ measured as in [2.3 · Real prices and volumes](#slide-21)
+:::
 
-<span class="slide-kicker">PROMOTION ARITHMETIC</span>
+#### Promotion Arithmetic: A 15% Discount Needs Volume to Double <span class='tag tag-illus'>illustrative</span> {#slide-29}
 
 | Per week | Normal week | Promotion week |
 |---|---|---|
@@ -571,9 +680,17 @@ Kahneman, Knetsch & Thaler, 'Fairness as a Constraint on Profit Seeking: Entitle
 Required uplift = margin ÷ (margin − discount) − 1. With thin margins, small discounts need **huge** volume gains.
 :::
 
-### How Much of the Flour Shock to Pass On? <span class='tag tag-illus'>illustrative</span> {#slide-29}
+::: {.xlinks}
+◂ the margin logic in [2.4 · Elasticity and margin](#slide-23)  ·  **Next ▸** [3.3 The pass-through decision](#t-3-3)
+:::
 
-<span class="slide-kicker">THE DECISION</span>
+### 3.3 The pass-through decision {#t-3-3}
+
+::: {.topic-q}
+How much of the shock should we pass on?
+:::
+
+#### The Decision: How Much of the Flour Shock to Pass On? <span class='tag tag-illus'>illustrative</span> {#slide-30}
 
 ::: {.panel-tabset group="lang"}
 ## Python
@@ -591,9 +708,11 @@ Required uplift = margin ÷ (margin − discount) − 1. With thin margins, smal
 
 <span class="fig-id">S02-F08 · replicate with s02_figures.py / .R</span>
 
-### How to Pass On a Cost Shock Without Breaking the Brand {#slide-30}
+::: {.xlinks}
+◂ starts from [1.2 · The shock in a diagram](#slide-11)  ·  ◂ answers [The noodle case](#slide-6)
+:::
 
-<span class="slide-kicker">THE PLAYBOOK</span>
+#### The Playbook: Pass On a Cost Shock Without Breaking the Brand {#slide-31}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-4 .obj-card}
@@ -617,7 +736,11 @@ Recipe, packaging, logistics and procurement savings reduce the share you need t
 Watch three numbers weekly after a price change: **volume vs forecast, rivals' prices and distributor stock** — and be ready to adjust the next step.
 :::
 
-### Check your understanding {#slide-31}
+::: {.xlinks}
+◂ applies [3.1 · Fairness](#slide-27)
+:::
+
+#### Check 3.3: Every Maker Faces the Same 40% Rise — What Now? {#slide-32}
 
 **Flour costs rise 40% for every noodles maker in Nigeria. Which recommendation is best supported by today's analysis?**
 
@@ -629,6 +752,10 @@ Watch three numbers weekly after a price change: **volume vs forecast, rivals' p
 ::: {.callout-tip collapse="true" appearance="simple"}
 ## Show answer
 A. When all firms face the same cost they tend to move together, so the volume loss is smaller (own + cross ≈ −0.74), and cost-based increases are judged fair. B ignores rivals' costs; C confuses the flour rise with the unit-cost rise (flour is 45% of cost); D is the inflation trap.
+:::
+
+::: {.xlinks}
+◂ revisit [1.2 · The shock in a diagram](#slide-11)
 :::
 
 ## Lab 2: How Price-Sensitive Are Our Customers?
@@ -1101,23 +1228,37 @@ for (share in c(0, .5, 1)) {
 
 ## Key takeaways
 
-1. A cost shock is **shared**: the side that can least escape it bears more.
-2. Separate a **move along** a curve from a **shift** of it — inflation hides the true elasticity.
-3. **Own, cross and income** elasticities tell you how volume reacts to you, rivals and the economy.
-4. Check **revenue, profit and margin** together; your margin implies an elasticity.
-5. Customers judge prices against a **reference price** and by **fairness**: stagger, explain, resize.
+1. A cost shock is **shared**: the side that can least escape it bears more. ([1.2](#t-1-2))
+2. Separate a **move along** a curve from a **shift** of it — inflation hides the true elasticity. ([2.3](#t-2-3))
+3. **Own, cross and income** elasticities tell you how volume reacts to you, rivals and the economy. ([2.2](#t-2-2))
+4. Check **revenue, profit and margin** together; your margin implies an elasticity. ([2.4](#t-2-4))
+5. Customers judge prices against a **reference price** and by **fairness**: stagger, explain, resize. ([3.1](#t-3-1))
 
 ::: {.callout-note appearance="simple"}
 **Before next session:** Read Sahay, Time Series Analysis and Forecasting (BEP8370), chapters on trend and seasonality. Bring one demand number your company forecasts every year and how far off last year's forecast was.
 :::
 
-## Self-study: going deeper
+## Appendix · Self-Study: Going Deeper {#part-A}
 
-Read these before the quiz. They are not presented in class.
+*Where we are:* Each self-study slide extends a topic from class — follow the links back.
 
-### Why Sellers Respond Slowly — and Why It Matters {#slide-35}
+::: {.part-question}
+**The question this part answers:** What else do I need to master Session 2 on my own?
+:::
 
-<span class="slide-kicker">SUPPLY ELASTICITY</span>
+**In this part**
+
+- [A.1 Supply elasticity](#t-A-1) — *Extends 1.2.*
+- [A.2 More behavioural pricing](#t-A-2) — *Extends 3.1.*
+- [A.3 Mistakes, vocabulary and readings](#t-A-3) — *Check yourself before the quiz.*
+
+### A.1 Supply elasticity {#t-A-1}
+
+::: {.topic-q}
+Extends 1.2.
+:::
+
+#### Why Sellers Respond Slowly — and Why It Matters {#slide-36}
 
 ::: {.lead-box}
 **Price elasticity of supply.** Supply elasticity = % change in quantity supplied for a 1% change in price. It is **low in the short run** (fixed capacity, contracts, imports in transit) and **higher in the long run**.
@@ -1129,9 +1270,17 @@ Read these before the quiz. They are not presented in class.
 
 *Inelastic supply + a demand surge = a price spike.*
 
-### Four Effects Every Pricing Manager Meets {#slide-36}
+::: {.xlinks}
+◂ extends [1.2 · The shock in a diagram](#slide-11)  ·  **Next ▸** [A.2 More behavioural pricing](#t-A-2)
+:::
 
-<span class="slide-kicker">MORE BEHAVIOURAL PRICING</span>
+### A.2 More behavioural pricing {#t-A-2}
+
+::: {.topic-q}
+Extends 3.1.
+:::
+
+#### Four Effects Every Pricing Manager Meets {#slide-37}
 
 ::: {.grid}
 ::: {.g-col-12 .g-col-md-6 .obj-card}
@@ -1156,7 +1305,17 @@ Mobile money and cards reduce the felt cost of paying; cash makes spending more 
 :::
 :::
 
-### Common Pricing Mistakes {#slide-37}
+::: {.xlinks}
+◂ extends [3.1 · Reference prices](#slide-25)  ·  **Next ▸** [A.3 Mistakes, vocabulary and readings](#t-A-3)
+:::
+
+### A.3 Mistakes, vocabulary and readings {#t-A-3}
+
+::: {.topic-q}
+Check yourself before the quiz.
+:::
+
+#### Common Pricing Mistakes {#slide-38}
 
 | The trap | The better habit |
 |---|---|

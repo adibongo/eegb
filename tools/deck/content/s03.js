@@ -5,8 +5,10 @@
 module.exports = ({ fig }) => {
   const F = (id) => ({ img: fig(id), fig: `S03-${id.toUpperCase()}`, script: "s03_figures.py / .R" });
   const slides = [
+
     // =============================================================== OPENING
-    { type: "hook", kicker: "THE QUESTION FOR TODAY", title: "A ₦100 Billion Bet on One Number",
+    { type: "hook", id: "hook", short: "The ₦100bn bet",
+      kicker: "THE QUESTION FOR TODAY", title: "A ₦100 Billion Bet on One Number",
       quote: "“Demand grows 5% every year. Build the new line — we'll sell everything we make.”",
       intro: "A capacity decision is a forecast in disguise. Before approving it, ask the three questions of today:",
       points: [
@@ -14,7 +16,8 @@ module.exports = ({ fig }) => {
         { icon: "FaBullseye", title: "2 · How wrong could we be?", body: "Which method has forecast best in the past — and what range should we plan for?" },
         { icon: "FaGlobeAfrica", title: "3 · Does the market add up?", body: "Do population, uses and capacity tell the same story as the time series?" }],
       notes: "Ask participants how their company sets next year's sales budget. 'Last year plus X%' will be the most common answer — we test that rule today. Session 1's nowcasting tells us where we are; today is about where we are going." },
-    { type: "table", kicker: "EVEN GOVERNMENTS MISS", title: "Nigeria's 2024 Budget: The Forecast vs What Happened", fontSize: 12.5,
+    { type: "table", id: "budget", short: "The 2024 budget forecast", links: [{ to: "backtest", text: "we test forecasts in" }],
+      kicker: "EVEN GOVERNMENTS MISS", title: "Nigeria's 2024 Budget: The Forecast vs What Happened", fontSize: 12.5,
       head: ["Assumption", "2024 budget", "2024 outturn", "Miss", "Why"], colW: [2.5, 1.7, 1.9, 1.6, 4.2],
       rows: [["Exchange rate (₦ per US$)", "₦800", "₦1,478 (average)", "+85%", "FX unification and the naira's fall in early 2024"],
              ["Inflation", "21.4%", "33.2% (average)", "+11.8 pp", "Pass-through from the naira, fuel and food"],
@@ -23,39 +26,46 @@ module.exports = ({ fig }) => {
              ["Real GDP growth", "3.76%", "3.4%", "−0.4 pp", "Close — growth is slow-moving"]],
       note: "The **slow-moving** variable (growth) and the **market-priced** one (oil) were close. The **policy-driven** ones (naira, inflation) missed by most. Your forecasts will have the same pattern.",
       notes: "Sources: the signed 2024 Appropriation Act used ₦800/$, $77.96 oil and 1.78 mbpd (Arise, 31 Dec 2023; Budget Minister Bagudu, Legit.ng, 12 Jan 2024). The exchange rate moved ₦700 (MTEF) → ₦750 (executive proposal) → ₦800 (Act). Inflation 21.4% and GDP growth 3.76% are the proposal's figures (Nairametrics, 18 Dec 2023). Outturn: CBN official rate 2024 average ₦1,478 and NBS headline inflation 2024 average 33.2% (CBN statistics; old 2009 CPI base); Brent 2024 average $80.5 (FRED); NUPRC 2024 crude plus condensate 566.8m barrels ≈ 1.55 mbpd (Nairametrics, 14 Jan 2025); NBS 2024 real GDP growth 3.4% (Arise, Feb 2025). Crude alone averaged about 1.4 mbpd; it is not confirmed that the 1.78 benchmark includes condensate." },
-    { type: "plan", title: "Session 3: From History to a Number You Can Defend", sub: "75 minutes. The appendix holds the self-study depth.",
+    { type: "plan", id: "plan",
+      title: "Session 3: From History to a Number You Can Defend", sub: "75 minutes. The appendix holds the self-study depth.",
       blocks: [{ min: 10, label: "Opening" }, { min: 20, label: "1 · Read the pattern" }, { min: 25, label: "2 · Forecast honestly" }, { min: 20, label: "3 · Size the market and decide" }],
       items: [
         { icon: "FaChartLine", title: "Read a demand series", body: "Separate **trend, seasonality and shocks**; seasonally adjust a month before judging it." },
         { icon: "FaBullseye", title: "Forecast and test", body: "Build a **trend × season** forecast, **backtest** it against rules of thumb, and express it as a **range**." },
         { icon: "FaGlobeAfrica", title: "Size a market and decide", body: "Size a Nigerian market **top-down and bottom-up**, and set capacity using the **cost of being wrong**." }] },
-    { type: "caseSlide", title: "How Much Cement Will Nigeria Buy in 2026?", illus: true,
+    { type: "storyline", id: "storyline", title: "How Today's Ideas Connect", sub: "Each part answers the question the previous part raises. Click any topic to jump to it.",
+      notes: "Walk the map left to right before starting. Every slide's top line shows where you are on this map; the links at the foot of slides point to the ideas each slide builds on and where they are used again." },
+    { type: "caseSlide", id: "case", short: "The cement case", links: [{ to: "capacity", text: "we decide in" }],
+      title: "How Much Cement Will Nigeria Buy in 2026?", illus: true,
       context: "A Nigerian cement company is deciding whether to add a new production line. Demand has grown for a decade but dipped in the 2016 recession, the 2020 lockdown and the 2024 price spike. The industry already has far more capacity than demand.",
       question: "How many tonnes will Nigeria consume in **2026** — and how much capacity should we plan for?",
       data: "cement_demand_monthly.csv — 168 months (2012–2025): consumption, price per bag, rainy-season flag, building-permits index. *Stylised teaching data, sized to the real market.*",
       decision: "A **2026 forecast with a range and scenarios**, cross-checked against **market sizing**, and a capacity choice that weighs the cost of too much against too little.",
       notes: "Real anchor: Global Cement Report (16th ed.) puts Nigerian consumption at about 33.9 Mt, up 8.5% (CemNet, 30 Apr 2026); CemNet estimates installed capacity at about 70 Mt a year. The stylised series reaches 32.2 Mt in 2025 — the same order of magnitude." },
 
-    // =============================================================== PART 1
-    { type: "section", label: "PART", num: 1, title: "Read the Pattern", sub: "Trend, season, shock.",
-      question: "What has demand actually done — and what part of it repeats?" },
-    { type: "cards", kicker: "THREE COMPONENTS", title: "Every Demand Series Has Three Parts", perRow: 3,
+    // =============================================================== PART 1 · READ THE PATTERN
+    { type: "section", part: 1, title: "Read the Pattern" },
+    { type: "cards", topic: "1.1", id: "components", short: "Three components",
+      title: "Every Demand Series Has Three Parts: Trend, Season and Shock", perRow: 3,
       cards: [
         { icon: "FaArrowUp", title: "Trend", body: "The long-run direction: population, urbanisation, incomes. Cement: about **4.3%** a year since 2012 in our series." },
         { icon: "FaCalendarAlt", title: "Seasonality", body: "The pattern that repeats every year: the rainy season slows building from June to September." },
         { icon: "FaBolt", title: "Shocks and noise", body: "Recessions, lockdowns, price spikes — and random month-to-month wobble no model can predict.", accent: true }],
       note: "Forecasting = project the **trend**, apply the **season**, and put a **range** around it for the shocks." },
-    { type: "figure", kicker: "THE DATA", title: "Fourteen Years of Cement Demand", ...F("f01"), illus: true, points: [
+    { type: "figure", topic: "1.1", id: "history", short: "Cement demand history", links: [{ to: "components", text: "find the three parts of" }],
+      title: "Fourteen Years of Nigerian Cement Demand", ...F("f01"), illus: true, points: [
         "Consumption grew from **18.7 Mt** in 2012 to **32.2 Mt** in 2025 — about **4.3% a year**.",
         "The 12-month moving average strips out the seasons and shows the **trend**.",
         "Three shocks: the 2016 recession, the 2020 lockdown and the 2024 price spike.",
         "Each time, demand returned to trend within about a year."] },
-    { type: "figure", kicker: "SEASONALITY", title: "The Rainy-Season Rhythm", ...F("f02"), illus: true, points: [
+    { type: "figure", topic: "1.2", id: "season", short: "Seasonality",
+      title: "Seasonality: The Rainy-Season Rhythm", ...F("f02"), illus: true, points: [
         "February is about **14% above** an average month; July and August about **18% below**.",
         "Rain stops site work, so demand dips from June to September.",
         "Plan **capacity, stock and cash** for the peak months, not the annual average.",
         "Schedule maintenance for the **rainy season**, when demand is lowest."] },
-    { type: "worked", kicker: "SEASONAL ADJUSTMENT, WORKED", title: "Was August 2025 a Collapse?", tableW: 5.6, illus: true,
+    { type: "worked", topic: "1.2", id: "sa", short: "Seasonal adjustment",
+      title: "Seasonal Adjustment: Was August 2025 Really a Collapse?", tableW: 5.6, illus: true,
       table: { head: ["2025", "Actual (Mt)", "Seasonal index", "Seasonally adjusted (Mt)", "× 12 = annual rate"],
         rows: [["February", "2.932", "1.14", "2.572", "30.9 Mt"], ["August", "2.139", "0.82", "2.609", "31.3 Mt"]],
         total: ["Change Feb → Aug", "−27%", "", "+1.4%", "steady"] },
@@ -65,22 +75,24 @@ module.exports = ({ fig }) => {
               "Multiply by 12 to read any month as an **annual rate** — comparable with the full-year forecast."],
       result: "Never judge a month against the previous month without **seasonal adjustment**.",
       notes: "Seasonal index = the month effects from the trend × season regression, rescaled so the 12 months average 1.00 (s03_figures.py). The lab uses a simpler version — each month divided by its calendar-year average — which gives almost the same numbers (Feb 1.13, Aug 0.82). Official statistics do the same: compare NBS releases that are 'seasonally adjusted' with those that are not." },
-    { type: "concept", kicker: "THE MODEL", title: "Trend × Season: A Forecast in One Line", icon: "FaCalculator",
+    { type: "concept", topic: "1.3", id: "model", short: "Trend × season", links: [{ to: "components", text: "combines the parts in" }],
+      title: "Trend × Season: A Forecast in One Line", icon: "FaCalculator",
       plain: "Next month's demand = the **trend level** for that month × the **seasonal index** for that calendar month. Both are fitted from history in one regression.",
       formula: "forecast = trend(t) × season(month)", formulaSize: 20,
       example: "Trend level for August 2026 ≈ 2.76 Mt; August index ≈ 0.82 → forecast ≈ **2.26 Mt**.",
       why: "Simple models are **transparent**: a manager can see and challenge every assumption. That matters more than an extra decimal of accuracy.",
       notes: "Technically: log(demand) = a + b·t + month dummies. The slope b gives growth of about 0.35% a month, 4.3% a year." },
 
-    // =============================================================== PART 2
-    { type: "section", label: "PART", num: 2, title: "Forecast Honestly", sub: "Test it, give a range, plan for scenarios.",
-      question: "Which method should we trust — and how wrong could it be?" },
-    { type: "figure", kicker: "THE BACKTEST", title: "Pretend It Is January 2024", ...F("f03"), illus: true, points: [
+    // =============================================================== PART 2 · FORECAST HONESTLY
+    { type: "section", part: 2, title: "Forecast Honestly" },
+    { type: "figure", topic: "2.1", id: "backtest", short: "The backtest", links: [{ to: "model", text: "tests the model in" }],
+      title: "The Backtest: Pretend It Is January 2024", ...F("f03"), illus: true, points: [
         "Fit each method on **2012–2023 only** and forecast 2024–2025.",
         "Then compare with what actually happened.",
         "This **backtest** is the only honest way to judge a forecasting method.",
         "The model followed both season and trend; 'same month last year' missed the growth."] },
-    { type: "worked", kicker: "MEASURING ACCURACY", title: "MAPE: How Far Off Were We, on Average?", tableW: 5.6, illus: true,
+    { type: "worked", topic: "2.1", id: "mape", short: "MAPE",
+      title: "Measuring Accuracy: How Far Off Were We, on Average?", tableW: 5.6, illus: true,
       table: { head: ["Month", "Actual (Mt)", "Forecast (Mt)", "Error", "|Error| ÷ actual"],
         rows: [["Jan", "2.60", "2.50", "−0.10", "3.8%"], ["Feb", "2.40", "2.50", "+0.10", "4.2%"], ["Mar", "2.00", "2.20", "+0.20", "10.0%"]],
         total: ["Mean absolute % error (MAPE)", "", "", "", "6.0%"] },
@@ -90,12 +102,14 @@ module.exports = ({ fig }) => {
               "Compare every method's MAPE on the **same backtest period**."],
       result: "MAPE answers 'how far off, on average?'; bias answers 'which way do we lean?' — track both.",
       notes: "Illustrative numbers. MAPE misbehaves when actuals are near zero (new products, intermittent demand); there, use mean absolute error or scaled errors (MASE)." },
-    { type: "figure", kicker: "THE SCOREBOARD", title: "Which Method Forecast Best?", ...F("f04"), illus: true, points: [
+    { type: "figure", topic: "2.1", id: "scoreboard", short: "The scoreboard",
+      title: "The Scoreboard: Which Method Forecast Best?", ...F("f04"), illus: true, points: [
         "**Trend + seasonal model: 4.1%** average error — the best.",
         "'Same month last year': **5.8%**. The budget rule 'last year + 5%': **6.6%**.",
         "A flat average ignores the seasons: **10.9%**.",
         "The 2024 price spike hurt every method — no method saw it coming. Hence ranges and scenarios."] },
-    { type: "lead", kicker: "WHAT THE EVIDENCE SAYS", title: "Simple, Combined and Humble Forecasts Win", leadLabel: "Forecasting research", leadSize: 17,
+    { type: "lead", topic: "2.2", id: "evidence", short: "What the evidence says", links: [{ to: "scoreboard", text: "matches" }],
+      title: "What the Evidence Says: Simple, Combined Forecasts Win", leadLabel: "Forecasting research", leadSize: 17,
       lead: "In large forecasting competitions, **simple methods and combinations** of methods beat most complex ones — and people are reliably **over-confident**.",
       leadFoot: "Build the habit: backtest, combine, give a range.",
       points: [
@@ -104,35 +118,40 @@ module.exports = ({ fig }) => {
         { h: "Reference-class forecasting", t: "Flyvbjerg's fix: start from the **track record of similar projects** (cost overruns, demand shortfalls) and adjust from there." },
         { h: "Manager's use", t: "Ask of every forecast: **what is the base rate?** How did the last five capacity expansions in this industry actually fill?", accent: true }],
       notes: "Makridakis, Spiliotis & Assimakopoulos, 'The M4 Competition: Results, findings, conclusion and way forward', International Journal of Forecasting 34(4):802–808, 2018 (winner: Smyl's hybrid exponential-smoothing/RNN). The term 'inside view' comes from Kahneman & Lovallo (1993). Kahneman & Tversky (1979) on the planning fallacy; Flyvbjerg (2006), 'From Nobel Prize to project management: getting risks right', Project Management Journal. Tetlock & Gardner, 'Superforecasting' (2015), on calibration." },
-    { type: "compare", kicker: "TWO WAYS TO FORECAST", title: "Judgement vs Models — Use Both",
+    { type: "compare", topic: "2.2", id: "judgement", short: "Judgement vs models",
+      title: "Judgement vs Models — Use Both",
       left: { icon: "FaUserTie", title: "Judgemental forecasts", tag: "Sales teams, experts, management", items: ["Know about new projects, policy changes, competitor moves", "Fast, cheap, easy to explain", "Prone to optimism and anchoring on last year", "Best for one-offs and turning points"] },
       right: { icon: "FaCalculator", title: "Model-based forecasts", tag: "Statistics from historical data", items: ["Consistent, repeatable, easy to backtest", "Capture trend and season well", "Blind to events not in the data", "Best for stable, repeating patterns"] },
       note: "Start from the **model**, let judgement **adjust it for named, specific reasons** — and record each adjustment so you can check it later." },
-    { type: "figure", kicker: "THE FORECAST", title: "2026: A Number and a Range", ...F("f05"), illus: true, points: [
-        "Base forecast for 2026: about **32.9 Mt**.",
-        "Monthly bands show where each month will probably fall (90% range).",
-        "For the year: roughly **31.0–34.9 Mt**, based on how far past years strayed from the model.",
-        "Say it as a range: 'about 33, very likely between 31 and 35'."] },
-    { type: "figure", kicker: "SCENARIOS", title: "Plan for More Than One Future", ...F("f06"), illus: true, points: [
-        "**Downside (−8%)**: another price spike and weak real incomes → **30.3 Mt**.",
-        "**Base**: trend and season continue → **32.9 Mt**.",
-        "**Upside (+6%)**: a large housing and road programme → **34.9 Mt**.",
-        "Name a **signpost** for each: cement price, mortgage rates, capital budget releases."],
-      notes: "Scenario sizes are illustrative. Session 14 builds scenario trees and signposts properly." },
-    { type: "figure", kicker: "MACHINE LEARNING, RESPONSIBLY", title: "More Complex Is Not More Accurate", ...F("f08"), illus: true, points: [
+    { type: "figure", topic: "2.2", id: "ml", short: "Machine learning", links: [{ to: "backtest", text: "judged by the same test as" }],
+      title: "Machine Learning: More Complex Is Not More Accurate", ...F("f08"), illus: true, points: [
         "We made the trend curve more and more flexible.",
         "Fit to the **past** barely changed (about **4%** error).",
         "Forecasts of the **future** got much worse: from 4% to over **90%** error.",
         "**Overfitting**: the model memorises the past instead of learning its pattern. ML earns its place with many series and many drivers — and only after a backtest."],
       notes: "Gradient boosting and neural nets help when there are many related series (SKUs, stores) and many drivers. Watch for data leakage: never let the model see information from the period it forecasts." },
-    { type: "check", q: "Your sales team forecasts next year at 'this year + 10%'. A backtested trend-plus-seasonal model says +4%, with a range of −2% to +10%. What should you do?",
+    { type: "figure", topic: "2.3", id: "forecast", short: "The 2026 forecast",
+      title: "The 2026 Forecast: A Number and a Range", ...F("f05"), illus: true, points: [
+        "Base forecast for 2026: about **32.9 Mt**.",
+        "Monthly bands show where each month will probably fall (90% range).",
+        "For the year: roughly **31.0–34.9 Mt**, based on how far past years strayed from the model.",
+        "Say it as a range: 'about 33, very likely between 31 and 35'."] },
+    { type: "figure", topic: "2.3", id: "scenarios", short: "Scenarios",
+      title: "Scenarios: Plan for More Than One Future", ...F("f06"), illus: true, points: [
+        "**Downside (−8%)**: another price spike and weak real incomes → **30.3 Mt**.",
+        "**Base**: trend and season continue → **32.9 Mt**.",
+        "**Upside (+6%)**: a large housing and road programme → **34.9 Mt**.",
+        "Name a **signpost** for each: cement price, mortgage rates, capital budget releases."],
+      notes: "Scenario sizes are illustrative. Session 14 builds scenario trees and signposts properly." },
+    { type: "check", topic: "2.3", links: [{ to: "scoreboard", text: "revisit" }],
+      title: "Check 2.3: 'This Year Plus 10%' vs a Backtested Model", q: "Your sales team forecasts next year at 'this year + 10%'. A backtested trend-plus-seasonal model says +4%, with a range of −2% to +10%. What should you do?",
       options: ["Average the two and use +7%", "Start from +4%, ask for named, specific reasons for any upward adjustment, and plan capacity against the range", "Use +10% — the sales team knows the market", "Ignore the sales team; use +4% exactly"], answer: 1,
       explain: "B. The backtested model is the disciplined baseline; judgement adjusts it only for specific, recorded reasons (a new contract, a new region), and plans cover the range. A splits the difference without evidence; C ignores the planning fallacy; D throws away information the model cannot see." },
 
-    // =============================================================== PART 3
-    { type: "section", label: "PART", num: 3, title: "Size the Market and Decide", sub: "Two routes to one number — then a capacity choice.",
-      question: "Does the market add up — and how much capacity should we plan for?" },
-    { type: "worked", kicker: "TOP-DOWN SIZING", title: "Start From the Whole Economy", tableW: 5.6,
+    // =============================================================== PART 3 · SIZE THE MARKET AND DECIDE
+    { type: "section", part: 3, title: "Size the Market and Decide" },
+    { type: "worked", topic: "3.1", id: "topdown", short: "Top-down sizing",
+      title: "Top-Down Sizing: Start From the Whole Economy", tableW: 5.6,
       table: { head: ["Step", "Value", "Source"],
         rows: [["Population, 2025", "237.5 million", "World Bank"], ["Cement use per person", "≈ 129 kg a year", "CemNet estimate"], ["Market = population × use", "≈ 30.6 Mt", "calculation"], ["Industry report (GCR 16)", "≈ 33.9 Mt", "Global Cement Report"]] },
       steps: ["Top-down sizing starts from a **big, known number** and multiplies by a **rate of use**.",
@@ -141,18 +160,25 @@ module.exports = ({ fig }) => {
               "The **rate of use** carries all the weight — test it against peers at similar incomes."],
       result: "Top-down is fast; its weak point is the **use-per-person** rate — and even published sources can disagree with themselves.",
       notes: "Sources: World Bank SP.POP.TOTL (Nigeria 2025: 237,527,782). CemNet, 'Nigeria is in the middle of a new cement capacity frenzy' (30 Apr 2026): consumption about 33.9 Mt (+8.5%, citing Global Cement Report 16); 129 kg per capita and world average about 550 kg are CemNet's estimates. CemNet uses the same population, so its 129 kg and 33.9 Mt are mutually inconsistent (33.9 Mt implies 143 kg): probably different reference years. A good classroom exercise: spot the inconsistency before trusting either number." },
-    { type: "concept", kicker: "BOTTOM-UP SIZING", title: "Add Up the Uses", icon: "FaLayerGroup",
+    { type: "concept", topic: "3.1", id: "bottomup", short: "Bottom-up sizing",
+      title: "Bottom-Up Sizing: Add Up the Uses", icon: "FaLayerGroup",
       plain: "**Bottom-up** sizing builds the market from its parts: homes, roads, factories and repairs, times the cement each needs.",
       formula: "market = Σ (units of activity × cement per unit)", formulaSize: 18,
       example: "About 450,000 new homes × ~32 t = **14.4 Mt**, plus repairs (6.5), public works (6.0), commercial (4.5), precast (2.4) = **33.8 Mt**.",
       why: "Slower, but it shows **which segments drive demand** — and which ones a housing programme, a capital-budget release or a price shock would hit.",
       notes: "Segment assumptions are stylised teaching numbers. Real sizing would use NBS housing data, the federal capital budget, company reports and project pipelines." },
-    { type: "figure", kicker: "RECONCILE", title: "Do the Routes Agree?", ...F("f07"), illus: true, points: [
+    { type: "figure", topic: "3.1", id: "reconcile", short: "Reconciling the routes", links: [{ to: "forecast", text: "and with the forecast in" }],
+      title: "Reconcile: Do the Two Routes Agree?", ...F("f07"), illus: true, points: [
         "Top-down **30.6 Mt**, bottom-up **33.8 Mt** (stylised), industry report **33.9 Mt**: within about 10%.",
         "If they disagree badly, one assumption is wrong. Find it before you build.",
         "New homes are the biggest segment: watch **mortgage rates, real incomes and land policy**.",
         "Three views pointing the same way — and an explanation for the gap — is what a board should see."] },
-    { type: "worked", kicker: "THE CAPACITY DECISION", title: "How Much to Build? Weigh the Cost of Being Wrong", tableW: 5.6, illus: true,
+    { type: "check", topic: "3.1", links: [{ to: "reconcile", text: "revisit" }],
+      title: "Check 3.1: Top-Down Says 32 Mt, Bottom-Up Says 45 Mt", q: "Top-down sizing gives 32 Mt and bottom-up gives 45 Mt. What is the best next step?",
+      options: ["Average them: 38.5 Mt", "Trust bottom-up because it is more detailed", "Use whichever supports the investment case", "Find which assumption explains the gap (e.g. tonnes per house or homes built) and check it against independent data"], answer: 3,
+      explain: "D. A 40% gap means at least one assumption is badly wrong; averaging hides it. Detail is not accuracy, and choosing the convenient number is motivated reasoning." },
+    { type: "worked", topic: "3.2", id: "capacity", short: "The capacity decision", links: [{ to: "scenarios", text: "uses the range from" }, { to: "case", text: "answers" }],
+      title: "The Capacity Decision: Weigh the Cost of Being Wrong", tableW: 5.6, illus: true,
       table: { head: ["Per tonne of demand", "₦ thousand"],
         rows: [["Too little capacity: margin lost on a sale we cannot make", "20"], ["Too much capacity: cost of an idle tonne of capacity", "8"], ["Critical ratio = 20 ÷ (20 + 8)", "0.71"]],
         total: ["Plan for the 71st percentile of demand", "≈ 33.6 Mt"] },
@@ -162,10 +188,8 @@ module.exports = ({ fig }) => {
               "If idle capacity were the dearer mistake, you would plan **below** the centre. The forecast is the same; the **decision** differs."],
       result: "Capacity = the demand level where the **cost of too little** balances the **cost of too much**.",
       notes: "The 'newsvendor' critical-fractile rule from operations management: choose the quantity at percentile Cu ÷ (Cu + Co). Here 20 ÷ 28 = 0.714; z = 0.57; 32.9 × exp(0.57 × 0.035) ≈ 33.6 Mt. With Nigeria's cement capacity already about double consumption, the cost of idle capacity for the industry is high — a reason to doubt the '5% and build' hook." },
-    { type: "check", q: "Top-down sizing gives 32 Mt and bottom-up gives 45 Mt. What is the best next step?",
-      options: ["Average them: 38.5 Mt", "Trust bottom-up because it is more detailed", "Use whichever supports the investment case", "Find which assumption explains the gap (e.g. tonnes per house or homes built) and check it against independent data"], answer: 3,
-      explain: "D. A 40% gap means at least one assumption is badly wrong; averaging hides it. Detail is not accuracy, and choosing the convenient number is motivated reasoning." },
-    { type: "lab", title: "Lab 3: Cement Demand in 2026", time: "20 minutes",
+    { type: "lab", id: "lab",
+      title: "Lab 3: Cement Demand in 2026", time: "20 minutes",
       data: "data/cement_demand_monthly.csv", r: "sessions/s03/R/s03_lab.R", py: "sessions/s03/python/s03_lab.py",
       steps: [
         "Plot the series and a 12-month moving average; mark the three shocks.",
@@ -175,18 +199,18 @@ module.exports = ({ fig }) => {
         "Size the market top-down and bottom-up; set capacity with the **critical ratio**."],
       deliver: "a one-page memo: 2026 demand (base, range, scenarios), market-sizing check, and a capacity recommendation with the cost logic." },
     { type: "recap", items: [
-        "Every series = **trend × season × shock**: seasonally adjust before judging a month.",
-        "**Backtest** every method; keep the one that wins on data it has not seen.",
-        "Give a **number, a range and scenarios** — and watch for the planning fallacy.",
-        "Size markets **two ways** and reconcile; check the per-person assumption against peers.",
-        "Set capacity with the **cost of being wrong**, not the central forecast."],
+        { t: "Every series = **trend × season × shock**: seasonally adjust before judging a month.", topic: "1.2" },
+        { t: "**Backtest** every method; keep the one that wins on data it has not seen.", topic: "2.1" },
+        { t: "Give a **number, a range and scenarios** — and watch for the planning fallacy.", topic: "2.3" },
+        { t: "Size markets **two ways** and reconcile; check the per-person assumption against peers.", topic: "3.1" },
+        { t: "Set capacity with the **cost of being wrong**, not the central forecast.", topic: "3.2" }],
       prework: "Read the case 'Fintech and Finance Transformation: The Rise of Ant Financial Services' (917-0029-1). Think: what makes a platform market different from a market for cement?",
       next: "Session 4: Market Structure, Platforms & Competition Policy" },
 
     // =============================================================== APPENDIX
-    { type: "section", label: "APPENDIX", num: 0, title: "Self-Study: Going Deeper", sub: "Read these before the quiz. They are not presented in class.",
-      question: "What else do I need to master Session 3 on my own?" },
-    { type: "lead", kicker: "FORECASTING WITHOUT GOOD DATA", title: "Forecasting in Nigeria When the Data Are Thin", study: true, leadLabel: "Use proxies and triangulate", leadSize: 17,
+    { type: "section", part: "A", label: "APPENDIX", title: "Self-Study: Going Deeper" },
+    { type: "lead", topic: "A.1", id: "thin-data", links: [{ to: "components", text: "extends" }],
+      title: "Forecasting in Nigeria When the Data Are Thin", study: true, leadLabel: "Use proxies and triangulate", leadSize: 17,
       lead: "Official series are often **late, revised or missing**. Good forecasters build from **proxies** and check them against each other.",
       leadFoot: "Three imperfect signals that agree beat one 'perfect' number.",
       points: [
@@ -194,7 +218,8 @@ module.exports = ({ fig }) => {
         { h: "Activity proxies", t: "Building permits, the PMI's construction and new-orders components, diesel and electricity use, port arrivals of inputs." },
         { h: "Big-picture anchors", t: "Population, urbanisation, real income growth and peer-country use per person." },
         { h: "Revisions and breaks", t: "Session 1's lesson: check base years and vintages before fitting any model." }] },
-    { type: "table", kicker: "WHICH METHOD WHEN", title: "A Forecasting Toolkit for Managers", study: true, fontSize: 11.5,
+    { type: "table", topic: "A.2", id: "toolkit", links: [{ to: "evidence", text: "extends" }],
+      title: "A Forecasting Toolkit for Managers", study: true, fontSize: 11.5,
       head: ["Method", "Best for", "Watch out for"], colW: [3.0, 4.5, 4.4],
       rows: [["Naïve (same as last period / last year)", "A benchmark every method must beat", "Misses trend or season"],
              ["Moving averages, exponential smoothing", "Stable series; many SKUs", "Lags at turning points"],
@@ -202,7 +227,8 @@ module.exports = ({ fig }) => {
              ["Driver (causal) models", "When you know what moves demand (prices, income)", "You must forecast the drivers too"],
              ["Machine learning (boosting, neural nets)", "Many series, many drivers, lots of data", "Overfitting; leakage; poor at breaks"],
              ["Judgement and scenarios", "One-offs, turning points, policy shocks", "Optimism; anchoring; record the reasons"]] },
-    { type: "mistakes", title: "Common Forecasting Mistakes", study: true,
+    { type: "mistakes", topic: "A.3", id: "mistakes",
+      title: "Common Forecasting Mistakes", study: true,
       items: [
         { bad: "Presenting a single number as 'the forecast'.", good: "Give a **base, a range and scenarios** with signposts." },
         { bad: "'Last year + X%' because that is how budgets are done.", good: "**Backtest** against simple rules; keep the winner." },
@@ -210,7 +236,8 @@ module.exports = ({ fig }) => {
         { bad: "Choosing the model that fits history best.", good: "Judge models on **data they have not seen**." },
         { bad: "Sizing only top-down.", good: "Cross-check **bottom-up**; reconcile the two." },
         { bad: "Planning capacity on the central forecast.", good: "Use the **cost of too little vs too much**." }] },
-    { type: "glossary", study: true, terms: [
+    { type: "glossary", topic: "A.3", id: "glossary",
+      study: true, terms: [
         { term: "Trend", def: "The long-run direction of a series." },
         { term: "Seasonal index", def: "How far a calendar month typically sits from an average month." },
         { term: "Seasonally adjusted", def: "A figure with the normal seasonal pattern removed." },
@@ -221,13 +248,41 @@ module.exports = ({ fig }) => {
         { term: "Planning fallacy", def: "The tendency to under-estimate costs and over-estimate benefits." },
         { term: "Top-down / bottom-up", def: "Sizing from a big total down, or from parts up." },
         { term: "Critical ratio", def: "Cost of too little ÷ (cost of too little + cost of too much)." }] },
-    { type: "readings", study: true, items: [
+    { type: "readings", topic: "A.3", id: "readings",
+      study: true, items: [
         { core: true, ref: "Sahay, Time Series Analysis and Forecasting (BEP8370)", why: "Trend, seasonality, smoothing and evaluation — the core reading." },
         { core: true, ref: "Sahay, Business Analytics at a Glance (BEP8363)", why: "Where forecasting sits in the analytics toolkit." },
         { ref: "Gujarati, Basic Econometrics", why: "Regression foundations behind the trend × season and driver models." },
         { ref: "Makridakis et al. (2018), 'The M4 Competition', IJF", why: "Large-scale evidence on which forecasting methods work." },
         { ref: "Tetlock & Gardner, Superforecasting (2015)", why: "Calibration, base rates and how to get better at judgement." },
         { ref: "Flyvbjerg (2006), reference-class forecasting", why: "Correcting the planning fallacy with the track record of similar projects." }] },
+  ];
+  slides.outline = [
+    { part: 1, title: "Read the Pattern", question: "What is the history of demand telling us?",
+      leadsTo: "Separate **trend, season and shock**… then project them forward.",
+      topics: [
+        { id: "1.1", title: "The three parts of every demand series", q: "What are trend, season and shock?" },
+        { id: "1.2", title: "Seasonality", q: "Was that bad month really bad?" },
+        { id: "1.3", title: "A forecast in one line", q: "How do trend and season make a forecast?" }] },
+    { part: 2, title: "Forecast Honestly", question: "Would our forecast have worked — and how sure can we be?",
+      from: "Part 1 built a model from the pattern. Part 2 asks the uncomfortable question: **would it have worked?**",
+      leadsTo: "A tested forecast, shown as a **range** — not a single point.",
+      topics: [
+        { id: "2.1", title: "Testing a forecast", q: "How would our method have done on data it never saw?" },
+        { id: "2.2", title: "What the evidence says about methods", q: "Simple or complex? Judgement or model?" },
+        { id: "2.3", title: "Ranges and scenarios", q: "How do we show uncertainty to a board?" }] },
+    { part: 3, title: "Size the Market and Decide", question: "How big is the market — and how much capacity should we build?",
+      from: "Part 2 gave a tested forecast with a range. Part 3 checks it against the **size of the market** and turns it into a decision.",
+      leadsTo: "A capacity decision that weighs the **cost of being wrong**.",
+      topics: [
+        { id: "3.1", title: "Sizing the market two ways", q: "Do top-down and bottom-up agree?" },
+        { id: "3.2", title: "The capacity decision", q: "How much should we build?" }] },
+    { part: "A", title: "Self-Study: Going Deeper", question: "What else do I need to master Session 3 on my own?",
+      from: "Each self-study slide extends a topic from class — follow the links back.",
+      topics: [
+        { id: "A.1", title: "Forecasting with thin data", q: "Extends 1.1 and 2.2." },
+        { id: "A.2", title: "Which method when", q: "Extends 2.2." },
+        { id: "A.3", title: "Mistakes, vocabulary and readings", q: "Check yourself before the quiz." }] },
   ];
   slides.titleNotes = "Open with the capacity decision: a forecast in disguise. Then show the 2024 budget — even the government's forecasts missed, and in a revealing pattern. Today we build a forecast we can defend: test it, give it a range, size the market two ways, and choose capacity from the cost of being wrong.";
   return slides;
